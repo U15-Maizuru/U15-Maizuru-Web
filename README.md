@@ -75,6 +75,18 @@ npm run preview
 
 - `npm run build` 実行後、`dist/` 内のファイル（HTML, CSS, 画像など）を Web サーバーにアップロードしてください。
 
+## Google Analytics タグ
+
+Google Analytics の測定ID（タグ）を `.env.local` に記述し、Viteの環境変数として管理します。
+
+###  設定手順
+
+`.env.local` ファイルを作成（プロジェクトルート）
+
+```env
+VITE_GOOGLE_TAG=G-xxxxx
+```
+
 ## ディレクトリ構成（抜粋）
 
 ```
@@ -83,6 +95,7 @@ npm run preview
 ├── src/
 │   ├── style.css
 │   ├── topics.js
+│   ├── gtag.js
 │   └── ...
 ├── public/
 │   ├── index.js
