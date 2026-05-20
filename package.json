@@ -1,7 +1,7 @@
 {
-  "name": "u15-ichinoseki-web",
+  "name": "U15-Maizuru-Web",
   "private": true,
-  "version": "1.3.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
