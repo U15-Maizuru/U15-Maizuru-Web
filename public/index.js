@@ -1,28 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const titleCount = document.getElementById('title-count');
   const titleContainer = document.getElementById('title-container');
+  const title = document.getElementById('title');
 
-  if (titleContainer) {
-    titleContainer.style.maxHeight = 'none';
+  if (titleCount && titleContainer) {
     const endHeight = titleContainer.scrollHeight;
     titleContainer.style.maxHeight = '0px';
-
-    if (titleContainer.style.maxHeight && titleContainer.style.maxHeight !== '0px') {
-        titleContainer.style.maxHeight = '0px';
-      } 
-      else {
-      titleCount.addEventListener('animationend', () => {
-        titleContainer.style.maxHeight = endHeight + 'px';
-      });
-    }
+    titleCount.addEventListener('animationend', () => {
+      titleContainer.style.maxHeight = `${endHeight}px`;
+    });
   }
 
-  const title = document.getElementById('title');
   if (title) {
-    const children = title.querySelectorAll('div');
-    children.forEach(child => {
+    title.querySelectorAll('div').forEach(child => {
       const span = child.querySelector('span');
-      span.addEventListener('animationend', (event) => {
+      if (!span) return;
+
+      span.addEventListener('animationend', event => {
         if (event.animationName === 'fade-in-up') {
           child.classList.remove('overflow-hidden');
         }
@@ -31,108 +25,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ヘッダーのトグル
 const toggleBtn = document.getElementById('menu-toggle');
 const dropdownMenu = document.getElementById('dropdown-menu');
 const dropdownIcon = document.getElementById('dropdown-icon');
 const dropdownLinks = document.querySelectorAll('.dropdown-link');
-let isOpen = false;
+let isDropdownOpen = false;
 
-toggleBtn.addEventListener('click', () => {
-  if (!isOpen) {
-    dropdownMenu.classList.remove('hidden');
-    dropdownIcon.classList.add('rotate-180');
-    isOpen = true;
-  } else {
-    dropdownMenu.classList.add('hidden');
-    dropdownIcon.classList.remove('rotate-180');
-    isOpen = false;
-  }
-});
-
-document.addEventListener('click', (e) => {
-  if (!toggleBtn.contains(e.target) && !dropdownMenu.contains(e.target) && isOpen) {
-    dropdownMenu.classList.add('hidden');
-    dropdownIcon.classList.remove('rotate-180');
-    isOpen = false;
-  }
-});
-
-dropdownLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    dropdownMenu.classList.add('hidden');
-    dropdownIcon.classList.remove('rotate-180');
-    isOpen = false;
-  });
-});
-
-// menu for mobile
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
+const logo = document.getElementById('logo');
 
-hamburger.addEventListener('click', () => {
-  const isOpen = hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('active', isOpen);
+const setBodyScroll = isBlocked => {
+  document.documentElement.classList.toggle('overflow-hidden', isBlocked);
+  document.body.classList.toggle('overflow-hidden', isBlocked);
+};
 
-  document.documentElement.classList.toggle('overflow-hidden', isOpen);
-  document.body.classList.toggle('overflow-hidden', isOpen);
-  
-  hamburger.setAttribute('aria-expanded', String(isOpen));
-});
+const setDropdown = isOpen => {
+  if (!dropdownMenu || !dropdownIcon) return;
+  dropdownMenu.classList.toggle('hidden', !isOpen);
+  dropdownIcon.classList.toggle('rotate-180', isOpen);
+  isDropdownOpen = isOpen;
+};
 
-// スクロール固定解除
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 640) {
-    document.documentElement.classList.remove('overflow-hidden');
-    document.body.classList.remove('overflow-hidden');
-  } else if (window.innerWidth < 640 && mobileMenu.classList.contains('active')) {
-    document.documentElement.classList.add('overflow-hidden');
-    document.body.classList.add('overflow-hidden');
-  }
-});
+const closeDropdown = () => setDropdown(false);
+const closeMobileMenu = () => {
+  if (!hamburger || !mobileMenu) return;
 
-function closeMobileMenu() {
   hamburger.classList.remove('active');
   mobileMenu.classList.remove('active');
-  document.documentElement.classList.remove('overflow-hidden');
-  document.body.classList.remove('overflow-hidden');
+  setBodyScroll(false);
   hamburger.setAttribute('aria-expanded', 'false');
+};
+
+if (toggleBtn && dropdownMenu && dropdownIcon) {
+  toggleBtn.addEventListener('click', () => {
+    setDropdown(!isDropdownOpen);
+  });
+
+  document.addEventListener('click', event => {
+    if (!toggleBtn.contains(event.target) && !dropdownMenu.contains(event.target) && isDropdownOpen) {
+      closeDropdown();
+    }
+  });
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', closeDropdown);
+  });
 }
 
-const mobileLinks = document.querySelectorAll('.mobile-link');
-mobileLinks.forEach(link => {
-  link.addEventListener('click', closeMobileMenu);
-});
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active', isOpen);
+    setBodyScroll(isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
 
-const logo = document.getElementById('logo');
-logo.addEventListener('click', closeMobileMenu);
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    if (mobileMenu.classList.contains('active')) {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-      document.documentElement.classList.remove('overflow-hidden');
-      document.body.classList.remove('overflow-hidden');
-      hamburger.setAttribute('aria-expanded', 'false');
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 640) {
+      setBodyScroll(false);
+    } else if (mobileMenu.classList.contains('active')) {
+      setBodyScroll(true);
     }
-  }
-});
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      closeMobileMenu();
+    }
+  });
+
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+}
+
+if (logo) {
+  logo.addEventListener('click', closeMobileMenu);
+}
 
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
-  const heroHeight = this.window.innerHeight;
-  const navHeight = 60;
+  if (!nav || !dropdownMenu) return;
 
-  if (this.window.scrollY > navHeight) {
-    nav.classList.add('backdrop-blur-sm', 'border-b-2', 'border-blue-300', 'shadow-md');
-    if (this.window.scrollY > heroHeight / 2) {
-      dropdownMenu.classList.add('border-blue-400');
-      dropdownMenu.classList.remove('border-white');
-    }
-  } else {
-    nav.classList.remove('backdrop-blur-sm', 'border-b-2', 'border-blue-300', 'shadow-md');
-    dropdownMenu.classList.add('border-white');
-    dropdownMenu.classList.remove('border-blue-400');
-  }
+  const heroHeight = window.innerHeight;
+  const navHeight = 60;
+  const isScrolled = window.scrollY > navHeight;
+
+  nav.classList.toggle('backdrop-blur-sm', isScrolled);
+  nav.classList.toggle('border-b-2', isScrolled);
+  nav.classList.toggle('border-blue-300', isScrolled);
+  nav.classList.toggle('shadow-md', isScrolled);
+
+  const isHalfScrolled = window.scrollY > heroHeight / 2;
+  dropdownMenu.classList.toggle('border-blue-400', isHalfScrolled);
+  dropdownMenu.classList.toggle('border-white', !isHalfScrolled);
 });
