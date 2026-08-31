@@ -1,6 +1,21 @@
 const TOPICS_URL = './topics.json';
 const VISIBLE_TOPICS = 3;
 
+// topics.json の link に書いた %VITE_XXX% を .env の値へ差し替える。
+// Vite の変数展開は HTML ファイルにしか効かず、public/topics.json は無加工で
+// 配信されるため、同じ記法をここで自前で解決する。
+const resolveEnvTokens = (value = '') => value.replace(
+  /%(VITE_[A-Z0-9_]+)%/g,
+  (token, name) => {
+    const resolved = import.meta.env[name];
+    if (resolved) return resolved;
+    // .env に無いキーはリンクを潰す。href に %VITE_...% が残るより、
+    // リンクなしの項目として表示されたほうが実害が小さい
+    console.warn(`topics.json: ${token} を解決できませんでした`);
+    return '';
+  }
+);
+
 const createTopicItem = (topic, extraClass = '') => `
   <a href="${topic.link}" class="block p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-white mb-2 ${extraClass}">
     <p class="text-sm text-gray-500 mb-1">${topic.date}</p>
@@ -81,7 +96,7 @@ const loadTopics = async () => {
     }
 
     const topics = await response.json();
-    insertTopicsSection(topics);
+    insertTopicsSection(topics.map(t => ({ ...t, link: resolveEnvTokens(t.link) })));
   } catch (error) {
     console.error('トピックス情報の読み込みに失敗しました:', error);
   }
