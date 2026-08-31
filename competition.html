@@ -302,37 +302,48 @@
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
                     <div class="bg-white rounded-xl p-8 hover-card flex flex-col gap-6">
                         <h3 class="text-xl font-semibold text-blue-700 border-b pb-2">🏆 勝利条件</h3>
+                        <p class="mt-2">以下のうち、いずれか1つを満たした場合に勝利となります。</p>
                         <ul class="list-disc pl-6 mt-2 space-y-1">
-                            <li class="marker:text-base ">規定ターン終了時にアイテム数が多い</li>
-                            <li>相手のマスにブロックを置く（アタック）</li>
-                            <li>相手を4方向からブロックで囲む（閉じ込め）</li>
-                            <li>相手がブロックのあるマスに移動（衝突）</li>
-                            <li>通信エラーなどで競技中断</li>
+                            <li class="marker:text-base">規定のターン数を終了した時点で、獲得したアイテム数が相手より多い</li>
+                            <li>相手がブロックのあるマスに移動する（衝突）</li>
+                            <li>相手がいるマスにブロックを置く（アタック）</li>
+                            <li>相手が上下左右4方向をブロックで囲まれる（閉じ込め）</li>
+                            <li>相手が自分でブロックに囲まれる（自縛）</li>
+                            <li>相手が通信エラーなどで競技を中断させる（中断）</li>
                         </ul>
-                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">🎮 試合形式</h3>
-                        <p class="mt-2">同じマップで先攻・後攻を入れ替えて2回対戦。勝利数が多い方が勝者。1回目は選手番号の小さい方が先攻。</p>
-                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">📊 対戦ポイント</h3>
+                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">🎮 試合における勝敗</h3>
+                        <p class="mt-2">同じ相手と同じマップで先攻と後攻を入れ替えて2回ゲームを行い、勝利数が多い方をその試合の勝者とします。1回目のゲームでは、組み合わせ表で割り当てられた選手番号の小さい選手を先攻、大きい選手を後攻とします。</p>
+                        <p class="mt-2">勝利数が同じ場合は、2ゲームの合計ポイントが多い方を試合の勝者とし、同点の場合はマップを変更して再試合を行います。</p>
+                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">📊 獲得ポイント</h3>
+                        <p class="mt-2">各ゲームの勝敗に対する点数の割り当ては以下の通りです。</p>
                         <ul class="list-disc pl-6 mt-2 space-y-1">
-                            <li>アイテム数 × 10点（勝者・敗者とも）</li>
-                            <li>早期勝利：残りアイテム数 × 7点（勝者）</li>
-                            <li>衝突・通信中断：敗者はアイテム数 × 3点 減点</li>
+                            <li>Ⅰ. アイテム【両】：獲得したアイテム数 × 10点</li>
+                            <li>Ⅱ. 一撃ボーナス（ペナルティ）
+                                <ul class="list-disc pl-6 mt-1 space-y-1">
+                                    <li>アタック・閉じ込め【勝】：50点を加点</li>
+                                    <li>衝突・自縛・中断【敗】：獲得したアイテム数 × 3点を減点</li>
+                                </ul>
+                            </li>
+                            <li>Ⅲ. 総取り【勝】：残りのアイテム数 × 6点を加点</li>
                         </ul>
-                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2">📐 対戦方法</h3>
+                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">📐 競技方法</h3>
                         <ul class="list-disc pl-6 mt-2 space-y-1">
-                            <li>トーナメント方式（組み合わせは実行委員会）</li>
-                            <li>規定数未満：リーグ方式（勝ち点制）</li>
-                            <li>規定数超過：予選あり（方法は委員会決定）</li>
+                            <li>原則としてトーナメント方式により順位を決定（組み合わせは実行委員会にて行います）</li>
+                            <li>エントリー数が規定数に満たなかった場合、または規定数を超えて予選を行う場合には、総当たり戦（リーグ方式）を実施することがあります</li>
+                            <li>総当たり戦は勝ち点制（勝利：3点、引き分け：1点、敗北：0点）にて順位を決定</li>
+                            <li>勝ち点が同じ場合は全試合の合計ポイント、勝ち点・合計ポイントも同点の場合は直接対決の結果にて順位を決定</li>
+                            <li>詳細な予選の方法等は実行委員会にて決定します</li>
                         </ul>
                         <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">🗺️ マップとターン</h3>
                         <ul class="list-disc pl-6 mt-2 space-y-1">
                             <li>マップサイズ：横15 × 縦17</li>
-                            <li>初期位置：中央より左が先攻、右が後攻</li>
-                            <li>ターン数：100〜240ターン</li>
+                            <li>初期位置：マップ中央より左側に先攻、右側に後攻（配置される場所はマップごとに異なります）</li>
+                            <li>ターン数：先攻と後攻がそれぞれ1回の命令を実行した時点で1ターン。1ゲームは100ターン以上240ターン以下</li>
                         </ul>
-                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">💻 プログラム提出</h3>
-                        <p class="mt-2">指定期日までに提出。対戦ごとの変更不可。</p>
+                        <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">💻 プログラム</h3>
+                        <p class="mt-2">プログラムは指定された期日までに提出し、試合やゲームごとにプログラムを変更することはできません。</p>
                         <h3 class="text-xl font-semibold text-blue-700 border-b pb-2 mt-8">📌 その他</h3>
-                        <p class="mt-2">不測の事態は実行委員会が判断。</p>
+                        <p class="mt-2">不測の事態による競技の取り扱いについては実行委員会にて判断します。</p>
                     </div>
                 </div>
             </div>
