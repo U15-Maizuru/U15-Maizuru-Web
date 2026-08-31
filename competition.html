@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>競技部門</title>
-    <meta name="description" content="競技部門">
+    <title>競技部門 | U-15 プログラミングコンテスト 舞鶴大会</title>
+    <meta name="description" content="U-15 プログラミングコンテスト 舞鶴大会 競技部門のページ。対戦型プログラミングプラットフォーム「CHaser」の解説、開発環境、大会競技ルール、エントリー方法を掲載しています。">
     <link rel="icon" href="./images/favicon.ico" sizes="any">
     <link rel="icon" href="./images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
@@ -129,7 +129,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 text-left">
-                        <a href="https://chaser.maizuru-ct.ac.jp/" target="_blank"
+                        <a href="https://chaser.maizuru-ct.ac.jp/" target="_blank" rel="noopener noreferrer"
                             class="bg-white rounded-xl p-6 hover-card flex flex-row">
                             <div class="flex flex-col gap-2">
                                 <div class="link-button text-center px-5 md:px-8">ブロック版 (Scratch風)</div>
@@ -138,7 +138,7 @@
                                 </p>
                             </div>
                         </a>
-                        <a href="https://pychaser.maizuru-ct.ac.jp/" target="_blank"
+                        <a href="https://pychaser.maizuru-ct.ac.jp/" target="_blank" rel="noopener noreferrer"
                             class="bg-white rounded-xl p-6 hover-card flex flex-row">
                             <div class="flex flex-col gap-2">
                                 <div class="link-button text-center px-5 md:px-8">Python版 </div>
@@ -207,7 +207,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-2">
                     <div class="bg-white rounded-xl p-6 hover-card flex flex-col items-center">
                         <div class="mt-10 w-full max-w-4xl bg-white shadow-lg rounded-lg p-1">
-                            <img id="slide" src="./images/CHaser/スライド2.PNG" class="w-full border rounded transition-opacity duration-300">
+                            <img id="slide" src="./images/CHaser/スライド2.PNG" alt="CHaser解説スライド 2枚目" class="w-full border rounded transition-opacity duration-300">
                         </div>
 
                         <div class="mt-6 items-center gap-4">
@@ -237,6 +237,7 @@
 
                                 setTimeout(() => {
                                     slide.src = `./images/CHaser/スライド${current}.PNG`;
+                                    slide.alt = `CHaser解説スライド ${current}枚目`;
                                     slide.classList.remove('opacity-0');
                                 }, 300);
                                 document.getElementById('pageInput').value = current;
@@ -269,7 +270,7 @@
                         <div class="flex flex-row items-center">
                             <p class="font-semibold">その他の資料のダウンロードは</p>
                             <a href="https://drive.google.com/drive/folders/1TR66F6s8TO9FvOfd5_GBnOAkZ5NR9LCt?usp=sharing"
-                                target="_blank" class="group flex ml-0.5 gap-0.5">
+                                target="_blank" rel="noopener noreferrer" class="group flex ml-0.5 gap-0.5">
                                 <div class="pt-[1.5px]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
                                         viewBox="0 0 24 24">
