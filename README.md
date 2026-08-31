@@ -22,6 +22,26 @@ U-15 プログラミングコンテスト 舞鶴大会の公式ウェブサイ�
 トピックス（お知らせ）データは `public/topics.json` に記述されています。
 内容を変更したい場合は、該当の JSON ファイルを直接編集してください。
 
+`link` に URL を入れると、その項目がリンクになり別タブで開きます。リンク不要の項目は
+`link` を空文字 `""` にしてください。
+
+## エントリーフォーム URL の変更方法
+
+エントリーフォームの URL は `.env` の `VITE_ENTRY_URL` の 1 箇所で管理しています。
+
+```
+VITE_ENTRY_URL=https://docs.google.com/forms/d/e/.../viewform
+```
+
+`index.html` / `competition.html` 側では `%VITE_ENTRY_URL%` と書いてあり、
+`npm run dev` / `npm run build` の際にこの値へ置き換わります。
+
+`public/topics.json` の `link` にも `%VITE_ENTRY_URL%` と書けます。ただしこちらは Vite の
+機能ではなく、`src/topics.js` が読み込み時に解決しています（`public/` 配下のファイルは
+Vite が加工しないため）。
+
+フォームを差し替えるときは `.env` だけを編集してください。
+
 
 ## セットアップ手順
 
@@ -46,7 +66,7 @@ npm install
 npm run dev
 ```
 
-- ブラウザで `http://localhost:5173/` を開くと、変更が即座に反映されます。
+- ブラウザで `http://localhost:5175/` を開くと、変更が即座に反映されます。
 - 開発作業中の確認に最適です。
 
 ## ビルド
@@ -97,6 +117,7 @@ VITE_GOOGLE_TAG=G-xxxxx
 │   ├── topics.js
 │   ├── gtag.js
 │   └── ...
+├── .env            # エントリーフォーム URL など、HTML に埋め込む設定値
 ├── public/
 │   ├── index.js
 │   ├── topics.json # トピックス（お知らせ）データ

@@ -116,8 +116,8 @@
                         </div>
                         <div class="flex justify-center my-10 animate-scale-up"
                             style="animation-delay: 2.7s; animation-fill-mode: both;">
-                            <a href="#" target="_blank"
-                                class="link-button text-xl sm:text-2xl" style="pointer-events: none;">開催決定！</a>
+                            <a href="%VITE_ENTRY_URL%" target="_blank" rel="noopener noreferrer"
+                                class="link-button text-xl sm:text-2xl">エントリー受付中！</a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
             <div class="container">
                 <h2 class="text-4xl font-bold text-center mb-10 md:mb-14">概要</h2>
                 <p class="text-lg pb-0">
-                    U-15プログラミングコンテスト舞鶴大会は、小中学生を対象にしたITイベントです。CHaserを使ったと競技部門を開催し、創造力と論理力を育みます。</p>
+                    U-15プログラミングコンテスト舞鶴大会は、小中学生を対象にしたITイベントです。CHaserを使った競技部門を開催し、創造力と論理力を育みます。</p>
                 <div class="flex flex-col md:flex-row md:justify-center md:items-center md:gap-10">
                     <div class="rounded-xl border-3 border-blue-500 shadow-xl shadow-blue-500/25 overflow-hidden my-8 max-w-full md:max-w-1/2 mx-auto">
                         <img src="./images/u15-procon.png" alt="U-15 プログラミングコンテスト 舞鶴大会のポスター" draggable="false" class="w-full h-auto">
@@ -150,7 +150,7 @@
                             <div class="flex flex-col pl-5 md:pl-0">
                                 <h3 class="text-xl font-semibold mb-1 md:mb-2">本戦</h3>
                                 <div class="flex flex-col sm:flex-row sm:gap-2 md:flex-col md:gap-0">
-                                    <time datetime="2025-11-30" class="text-gray-900">2026年11月15日 (日)</time>
+                                    <time datetime="2026-11-15" class="text-gray-900">2026年11月15日 (日)</time>
                                     <p class="text-gray-900">10:00〜16:30(予定)</p>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
         <section id="divisions" class="py-20 px-8">
             <div class="container">
                 <h2 class="text-4xl font-bold text-center mb-12">部門</h2>
-                <div class="flex grid-cols-2 gap-6 py-8 sm:flex-row md:gap-8">
+                <div class="flex flex-col gap-6 py-8 sm:flex-row md:gap-8">
                     <a href="./competition.html" class="bg-white p-10 rounded-2xl flex-1 hover-card">
                         <h3 class="text-3xl font-bold text-blue-800 mb-4">競技部門</h3>
                         <p class="mb-0">
@@ -209,7 +209,7 @@
                             アイテムの取得やブロックによる妨害など、戦略的なAI行動をプログラムで実装し、勝利を目指します。
                         </p>
                     </a>
-                    <div class="bg-white p-10 rounded-lg flex-1 hover-card">
+                    <div class="bg-white p-10 rounded-2xl flex-1 shadow-lg shadow-blue-400/50">
                         <h3 class="text-3xl font-bold text-orange-500 mb-4">ゲーム部門</h3>
                         <p class="mb-4">
                             発想力と表現力を活かした オリジナルゲーム作品 を募集します。
@@ -219,7 +219,7 @@
                 </div>
                 
                 <div class="flex flex-col gap-6 sm:flex-row md:gap-8">
-                    <div class="bg-white p-10 rounded-lg flex-1 hover-card">
+                    <div class="bg-white p-10 rounded-2xl flex-1 shadow-lg shadow-blue-400/50">
                         <h3 class="text-3xl font-bold text-green-600 mb-4">ものつくり部門</h3>
                         <p class="mb-4">
                             電子工作・IoT・AI などを活用した システムやデバイス作品 を募集します。
@@ -227,7 +227,7 @@
                             予選通過後は、希望者は 高専生と一緒に制作を進めることも可能 です。
                         </p>
                     </div>
-                    <div class="bg-white p-10 rounded-lg flex-1 hover-card">
+                    <div class="bg-white p-10 rounded-2xl flex-1 shadow-lg shadow-blue-400/50">
                         <h3 class="text-3xl font-bold text-purple-600 mb-4">アイデア部門</h3>
                         <p class="mb-4">
                             プログラミングやICTを活用し、地域の課題解決やSDGsの目標達成につながる アイディア を募集します。
@@ -251,8 +251,15 @@
                                 <span
                                     class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">1</span>
                                 <h3 class="flex items-center mb-1 text-2xl font-semibold text-gray-900">応募締切（第1回）</h3>
-                                <time datetime="2025-10-07"
-                                    class="block mt-1 mb-2 text-lg font-normal leading-none text-gray-900">10月14日 (水) 消印有効</time>
+                                <time datetime="2026-10-14"
+                                    class="block mt-1 mb-2 text-lg font-normal leading-none text-gray-900">10月14日 (水) まで</time>
+                            </div>
+                            <div class="mb-5 ml-6">
+                                <span
+                                    class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">2</span>
+                                <h3 class="text-2xl font-semibold text-gray-900">応募締切（第2回）</h3>
+                                <time datetime="2026-10-28"
+                                    class="block mt-1 mb-2 text-lg font-normal leading-none text-gray-900">10月28日 (水) まで</time>
                             </div>
                             <div class="mb-5 ml-6">
                                 <span
@@ -260,29 +267,22 @@
                                 <h3 class="text-2xl font-semibold text-gray-900">予選結果通知</h3>
                                 <p class="block mt-1 mb-2 text-lg font-normal leading-none text-gray-900">10月14日以降、通過者にメールでお知らせします。</p>
                             </div>
-                            <div class="mb-5 ml-6">
-                                <span
-                                    class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">2</span>
-                                <h3 class="text-2xl font-semibold text-gray-900">応募締切（第2回）</h3>
-                                <time datetime="2025-11-11"
-                                    class="block mt-1 mb-2 text-lg font-normal leading-none text-gray-900">10月28日 (水) 消印有効</time>
-                            </div>
                             <div class="mb-1 ml-6">
                                 <span
                                     class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">4</span>
                                 <h3 class="text-2xl font-semibold text-gray-900">本選</h3>
-                                <time datetime="2025-11-30"
+                                <time datetime="2026-11-15"
                                     class="block mt-1 mb-2 text-lg font-normal leading-none text-gray-900">11月15日
                                     (日) 10:00〜16:30</time>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="flex flex-col items-center mx-auto mt-7 gap-3"> -->
-                        <!-- <a href="https://forms.gle/McSDzK67WE2FMbpJ8" target="_blank" class="link-button">今すぐエントリーする</a> -->
+                    <div class="flex flex-col items-center mx-auto mt-7 gap-3">
+                        <a href="%VITE_ENTRY_URL%" target="_blank" rel="noopener noreferrer" class="link-button">今すぐエントリーする</a>
                         <!-- <div class="link-button">エントリー受付は終了しました</div> -->
-                        <!-- <p class="text-gray-500 pl-[1em] -indent-[1em]">※ エントリーには Google アカウントが必要になります。</p> -->
-                        <!-- <p class="text-gray-900 pl-[1em] -indent-[1em]">プログラムの提出方法はエントリー時の案内をご確認ください。</p> -->
-                    <!-- </div> -->
+                        <p class="text-gray-500 pl-[1em] -indent-[1em]">※ エントリーには Google アカウントが必要になります。</p>
+                        <p class="text-gray-900 pl-[1em] -indent-[1em]">プログラムの提出方法はエントリー時の案内をご確認ください。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -332,13 +332,13 @@
                 <div class="flex flex-col justify-center">
                     <p class="text-lg">
                         U-15プログラミングコンテスト舞鶴大会に向けて、舞鶴高専の公開講座を開催します。
-                        詳細および申し込みは<a href="https://www.maizuru-ct.ac.jp/contribution/open_seminar/" target="_blank" class="text-blue-500 hover:underline">舞鶴高専公開講座ページ</a>をご確認ください。
+                        詳細および申し込みは<a href="https://www.maizuru-ct.ac.jp/contribution/open_seminar/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">舞鶴高専公開講座ページ</a>をご確認ください。
                     </p>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 text-left">
 
                         <!-- プログラミングコンテストに挑戦 -->
-                        <a href="https://www.maizuru-ct.ac.jp/event/os20260823/" target="_blank" class="bg-white rounded-xl p-6 hover-card flex flex-col items-center">
+                        <a href="https://www.maizuru-ct.ac.jp/event/os20260823/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-6 hover-card flex flex-col items-center">
                             <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
                                 <!-- Heroicons: LightBulb -->
                                 <svg class="h-8 w-8 sm:h-10 sm:w-10" fill="none" stroke="currentColor"
@@ -348,7 +348,9 @@
                                 </svg>
                             </div>
                             <div class="flex flex-col text-left">
-                                <h3 class="text-xl font-semibold mb-1">プログラミングコンテストに挑戦しよう</h3>
+                                <h3 class="text-xl font-semibold mb-1">プログラミングコンテストに挑戦しよう
+                                    <span class="ml-1 align-middle inline-block px-2 py-0.5 text-sm font-semibold text-gray-600 bg-gray-200 rounded-full">終了</span>
+                                </h3>
                                 <p class="text-gray-900">開催日時：8月23日（日）13:00</p>
                                 <p class="text-gray-900">対象：小学生・中学生</p>
                                 <p class="text-gray-900">定員：20名</p>
@@ -359,7 +361,7 @@
                         </a>
 
                         <!-- CHaser講座 -->
-                        <a href="https://www.maizuru-ct.ac.jp/event/os20260906-3/" target="_blank" class="bg-white rounded-xl p-6 hover-card flex flex-col items-center">
+                        <a href="https://www.maizuru-ct.ac.jp/event/os20260906-3/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-6 hover-card flex flex-col items-center">
                             <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
                                 <!-- Heroicons: CommandLine -->
                                 <svg class="h-8 w-8 sm:h-10 sm:w-10" fill="none" stroke="currentColor"
@@ -405,12 +407,12 @@
 
                         <!-- 1列目：舞鶴市・高浜町 -->
                         <div class="flex justify-center gap-10 mb-6">
-                            <a href="https://www.city.maizuru.lg.jp/" target="_blank" class="group">
+                            <a href="https://www.city.maizuru.lg.jp/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     舞鶴市<span class="a-link"></span>
                                 </p>
                             </a>
-                            <a href="https://www.town.takahama.lg.jp/" target="_blank" class="group">
+                            <a href="https://www.town.takahama.lg.jp/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     高浜町<span class="a-link"></span>
                                 </p>
@@ -419,12 +421,12 @@
 
                         <!-- 2列目：教育委員会 -->
                         <div class="flex justify-center gap-10 mb-6">
-                            <a href="https://www.city.maizuru.lg.jp/" target="_blank" class="group">
+                            <a href="https://www.city.maizuru.lg.jp/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     舞鶴市教育委員会<span class="a-link"></span>
                                 </p>
                             </a>
-                            <a href="https://www.town.takahama.lg.jp/" target="_blank" class="group">
+                            <a href="https://www.town.takahama.lg.jp/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     高浜町教育委員会<span class="a-link"></span>
                                 </p>
@@ -433,17 +435,17 @@
 
                         <!-- 3列目：企業 -->
                         <div class="flex justify-center gap-10 mb-6">
-                            <a href="https://woody-h.com/" target="_blank" class="group">
+                            <a href="https://woody-h.com/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     株式会社ウッディーハウス<span class="a-link"></span>
                                 </p>
                             </a>
-                            <a href="https://www.coworkation-village-maizuru.com/" target="_blank" class="group">
+                            <a href="https://www.coworkation-village-maizuru.com/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     Coworkation Village MAIZURU<span class="a-link"></span>
                                 </p>
                             </a>
-                            <a href="https://www.kanadevia.com/" target="_blank" class="group">
+                            <a href="https://www.kanadevia.com/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     カナデビア株式会社<span class="a-link"></span>
                                 </p>
@@ -452,12 +454,12 @@
 
                         <!-- 4列目：企業 -->
                         <div class="flex justify-center gap-10 mb-6">
-                            <a href="https://infonic.co.jp/" target="_blank" class="group">
+                            <a href="https://infonic.co.jp/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     インフォニック株式会社<span class="a-link"></span>
                                 </p>
                             </a>
-                            <a href="https://kddi-agile.com/" target="_blank" class="group">
+                            <a href="https://kddi-agile.com/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     KDDIアジャイル開発センター株式会社<span class="a-link"></span>
                                 </p>
@@ -466,7 +468,7 @@
                         
                         <!-- 最後列：ITジュニア（中央寄せ） -->
                         <div class="flex justify-center gap-10">
-                            <a href="https://www.ajitep.org/" target="_blank" class="group">
+                            <a href="https://www.ajitep.org/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">
                                     NPO法人 ITジュニア育成交流協会<span class="a-link"></span>
                                 </p>
@@ -479,7 +481,7 @@
                     <div class="mb-12 text-center">
                         <h3 class="text-2xl font-bold text-gray-800 mb-5">併催</h3>
                         <div class="flex flex-col md:flex-row gap-6 md:gap-10">
-                            <a href="https://sites.google.com/view/maizuru-programming-contest/" target="_blank" class="group">
+                            <a href="https://sites.google.com/view/maizuru-programming-contest/" target="_blank" rel="noopener noreferrer" class="group">
                                 <p class="text-lg text-gray-700 relative inline-block">舞鶴高専杯プログラミングコンテスト<span class="a-link"></span></p>
                             </a>    
                         </div>
@@ -530,7 +532,7 @@
             <!-- SNSリンク区切り -->
             <div class="w-full h-0.5 my-6 bg-gray-700"></div>
             <p class="text-sm text-gray-300 font-normal mt-6 mb-3 text-wrap break-keep">Copyright &copy;
-                U-15&nbsp;プログラミング<wbr>コンテスト&nbsp;<wrb>舞鶴大会
+                U-15&nbsp;プログラミング<wbr>コンテスト&nbsp;<wbr>舞鶴大会
             </p>
         </div>
     </footer>
