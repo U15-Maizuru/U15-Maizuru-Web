@@ -17,7 +17,7 @@ const resolveEnvTokens = (value = '') => value.replace(
 );
 
 const createTopicItem = (topic, extraClass = '') => `
-  <a href="${topic.link}" class="block p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-white mb-2 ${extraClass}">
+  <a href="${topic.link}"${topic.link ? ' target="_blank" rel="noopener noreferrer"' : ''} class="block p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-white mb-2 ${extraClass}">
     <p class="text-sm text-gray-500 mb-1">${topic.date}</p>
     <p class="text-lm font-semibold text-gray-800">${topic.title}</p>
     <p class="text-lm text-gray-800 pl-4 text-base whitespace-pre-nowrap md:whitespace-pre-line">${topic.description}</p>
