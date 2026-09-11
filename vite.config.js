@@ -1,5 +1,16 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+import fg from 'fast-glob'
+
+// guide/*.html (CHaser 解説ページ) はページ数が多く、増減のたびに
+// この設定を手で編集するのを避けるため、動的に列挙して input に追加する。
+const guidePages = Object.fromEntries(
+  fg.sync('guide/*.html').map(file => [
+    `guide-${file.replace(/^guide\//, '').replace(/\.html$/, '')}`,
+    file,
+  ])
+)
+
 export default defineConfig({
   base: './',
   server: {
@@ -16,6 +27,7 @@ export default defineConfig({
       input: {
         top: 'index.html',
         competition: 'competition.html',
+        ...guidePages,
       },
     },
   },

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4章　条件分岐 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 4章　条件分岐">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="font-bold text-blue-700">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">4章　条件分岐</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>4章 条件分岐</h2>
+<p>周辺情報を使って「もし〇〇なら、こう動く」という判断をするブロックが「もし〜なら」ブロックです。3章で「調べる」方法を学んだので、この章ではその結果をもとに「判断して動く」方法を学びます。</p>
+<h3>3-1 もし〜なら、そうでなければ（if〜else）</h3>
+<p><strong>課題</strong>：上のマスがブロックかどうかで、動く方向を自動的に切り替えるプログラムを作ろう。「上がブロックのときは別の方向へ、そうでないときは上へ」進むようにしたい。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>3章で学んだ「周辺情報を取得する」ブロックと、「もし〜なら」ブロックを組み合わせます。</li>
+<li>「もし〇〇なら」の条件部分には、周辺情報の「上」がBlockかどうかを判定する部品がはまります。</li>
+<li>条件が成り立たなかったときの動きも指定したい場合、「もし〜なら」ブロックには続きの部分が用意されていないか、ツールボックスを確認してみましょう。</li>
+<li>この判断を1回だけでなく毎ターン行うには、全体をどんなブロックで包む必要があるでしょうか（2章で学んだ「繰り返す」ブロックの、回数を指定しないタイプを思い出してみましょう）。</li>
+</ul>
+<p>まずは自分で「もし〜なら、そうでなければ」の形を組んでみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-07_if_else_3-1.png" alt="3-1 if〜else" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-1 if〜else</figcaption>
+</figure>
+<p>「上がブロックなら右へ、そうでなければ上へ進む」という判断をしたいとき、「もし〜なら」ブロックの条件部分に「自分の上のマスがBlockか」を入れ、「実行」の中に「右へ移動」を、「そうでなければ」の中に「上へ移動」を入れます。さらに全体を「ずっと繰り返す」ブロックで包むことで、毎ターンこの判断を繰り返し行うプログラムになります。</p>
+<h5>「ずっと繰り返す」で包む意味</h5>
+<p>2章で学んだ「〇回繰り返す」は、回数が決まっている繰り返しでした。しかし対戦は何ターン続くか事前にはわかりません。「ゲームが終わるまでずっと、毎ターン周りを確認して判断する」という動きを表現するために、回数を決めない「ずっと繰り返す」ブロックを使います。「ずっと繰り返す」の中に「周辺情報を取得する→もし〜なら判断する」という一連の流れを入れておくと、毎ターン最新の状況を取得し直してから判断できるようになります。これがCHaserで自律的に動くプログラムの基本形です。</p>
+</div></details><h4>注意したいこと</h4>
+<ul>
+<li><strong>「そうでなければ」を付け忘れる</strong>：「もし〜なら」ブロックだけだと、条件が成り立たなかったときに何もしない（その場で待つ）動きになります。条件に当てはまらなかったら別の行動をしたい場合は、必ず「そうでなければ」の部分を追加しましょう。</li>
+<li><strong>条件の向きを逆にしてしまう</strong>：「上がブロックなら」のつもりが、ドロップダウンの選択ミスで別の方角や別の種類を指定していた、というのはよくある間違いです。条件ブロックの中身を、声に出して読み上げて確認する習慣をつけましょう。</li>
+<li><strong>「ずっと繰り返す」の中に周辺情報の取得を入れ忘れる</strong>：一度取得した周辺情報を使い回していると、状況が変わっても古い情報のまま判断し続けてしまいます。判断の直前に情報を取得し直しているか確認しましょう。</li>
+</ul>
+<h3>3-2 もし〜なら、そうでなくもし〜（if〜elif）</h3>
+<p><strong>課題</strong>：3つの状況を優先順位付きで判定するプログラムを作ろう。「近くにアイテムがあれば取りに行く。なければ上がブロックかどうかを確認して、ブロックなら別方向へ、そうでなければ上へ進む」という判断をしたい。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>条件が2つ（if〜else）ではなく3つ以上になるとき、「もし〜なら」ブロックには条件を追加できる仕組みがあります。ツールボックスや、ブロック左上の設定アイコン（⚙）を確認してみましょう。</li>
+<li>複数の条件を並べるとき、<strong>どの条件を1番上に置くか</strong>がとても重要です。「見つけたら絶対に優先したいこと」と「それ以外のときの判断」、どちらを先に確認すべきか考えてみましょう。</li>
+<li>条件は上から順番に調べられ、最初に当てはまったものだけが実行される、という性質を思い出しましょう。</li>
+</ul>
+<p>自分なりの優先順位で条件を並べてみて、意図どおりに動くか確認してから、解答例を見てみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-08_if_elif_3-2.png" alt="3-2 if〜elif" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-2 if〜elif</figcaption>
+</figure>
+<p>このステージでは、次の3つの条件を上から順番にチェックします。</p>
+<ol>
+<li>左にアイテムがある → 取りに行く</li>
+<li>（1でなければ）上がブロック → 右へ</li>
+<li>（どちらでもなければ）それ以外 → 上へ</li>
+</ol>
+<h5>条件の並べ方が結果を左右する</h5>
+<p>たとえば「左にアイテムがあり、かつ上もブロックである」という状況を考えてみましょう。もし条件の順番を逆にして「上がブロックか」を先に判定してしまうと、本当は取りに行きたかった左のアイテムを無視して、右へ逃げてしまいます。「もし〜なら、そうでなくもし〜」ブロックは、上から順に調べて最初に当てはまったものだけを実行し、それ以降の条件は一切チェックしません。つまり、優先したい条件ほど上に置く、というのが基本ルールです。CHaserでは「アイテムを取れるチャンスは逃したくないが、危険（ブロックとの衝突や自縛）は絶対に避けたい」という場面が多いので、どちらをどれだけ優先するかを意識して条件を並べる練習をしておくと、後の章の複雑な判断にも役立ちます。</p>
+</div></details><h3>演習問題</h3>
+<ol>
+<li>「右にアイテムがあれば右へ、そうでなく下がブロックなら上へ、それ以外は下へ」という判断を、「もし〜なら、そうでなくもし〜、そうでなければ」の形で組んでみましょう。</li>
+<li>3-2の例で、もし条件1と条件2の順番を入れ替えたら、どんな場合に結果が変わってしまうか、具体的な状況を1つ考えてみましょう。</li>
+</ol>
+<blockquote>
+<p><strong>付録2への案内</strong>：3章・4章に対応するステージ3は全6課題あります。本文で扱った3-1・3-2に加えて、3-3「アイテムをたどってみよう」、3-4「周りだけじゃわからない？」、3-5「ジグザグの迷路を進もう」、3-6「市松模様の壁を進もう」の解答例を、付録2「ステージ3　フィールド情報と条件分岐」に掲載しています。条件分岐をいくつも積み重ねると、どのくらいの規模のプログラムになるのかを実感できます。</p>
+</blockquote>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-03.html" class="text-blue-600 hover:underline">← 3章　フィールド情報を読み取る</a><a href="./tutorial-05.html" class="text-blue-600 hover:underline sm:text-right">5章　探査：近隣探査と遠方探査 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

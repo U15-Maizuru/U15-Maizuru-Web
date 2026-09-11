@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チュートリアル解答例集 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） チュートリアル全ステージ（1-1〜9-3）のBlockly解答例集です。">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="font-bold text-blue-700">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">資料</p>
+      <h1 class="mb-6 text-3xl font-bold">チュートリアル解答例集</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">このページには全ステージの解答例が掲載されています。自分で組んだプログラムと見比べたいときに開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <p>第2部・第3部では、いくつかの代表的なステージだけを取り上げて「解答例」を詳しく解説してきました。この付録では、チュートリアルのステージ1〜9（1-1〜9-3、全39ステージ）について、実際にクリアしたときのBlocklyプログラムを1つずつ掲載します。</p>
+<p>どのプログラムも「これが唯一の正解」というわけではなく、あくまで一例です。目標ブロック数より少ないブロック数でクリアしている場合もあれば、目標ぎりぎりまでブロックを使っている場合もあります。自分が組んだプログラムと見比べて、「同じ考え方で組めているか」「もっと少ないブロックで組めそうか」を確認する材料として活用してください。各ステージの見出しには、そのステージの目標ブロック数と、実際に使われたブロック数を「（現在／目標）」の形で添えています。</p>
+<h3>ステージ1　移動（1-1〜1-4）</h3>
+<p>本文第2部1章に対応します。基本の移動ブロックを使う練習です。</p>
+<h4>1-1　キャラクターを移動させよう１（2／3）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_1-1_walk1.png" alt="1-1 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">1-1 解答例</figcaption>
+</figure>
+<p>「上方向に移動する」ブロックを2つ並べるだけの、もっとも単純な形です。目標の3個より少ない2個でクリアしており、必要最小限の手数で目的地に着けることがわかります。</p>
+</div></details><h4>1-2　キャラクターを移動させよう２（2／3）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_1-2_walk2.png" alt="1-2 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">1-2 解答例</figcaption>
+</figure>
+<p>1-1と同じく2ブロックの構成ですが、進む方向の組み合わせが異なります。フィールドの形が変わっても、考え方は「アイテムまでの最短の道筋を、移動ブロックを並べて表す」という同じものです。</p>
+</div></details><h4>1-3　いろいろな方法に移動させよう（6／8）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_1-3_walk_variety.png" alt="1-3 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">1-3 解答例</figcaption>
+</figure>
+<p>上下左右の移動ブロックを組み合わせて、より複雑な経路を進みます。1マスごとに向きを変える必要がある場面が増え、どの順番で方向ブロックを並べるかがそのまま経路の形になることが実感できます。</p>
+</div></details><h4>1-4　移動の順序を考えよう（7／8）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_1-4_walk_order.png" alt="1-4 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">1-4 解答例</figcaption>
+</figure>
+<p>本文1章1-4で解説した「移動の順序」の解答例です。同じ移動ブロックの組み合わせでも、並べる順序を間違えるとゴールにたどり着けません。実行結果を見ながら、順番を1つずつ確認して組み立てる練習になります。</p>
+</div></details><h3>ステージ2　繰り返し（2-1〜2-5）</h3>
+<p>本文第2部2章に対応します。「〇回繰り返す」ブロックで、同じ移動を何度も書く手間を省きます。</p>
+<h4>2-1　繰り返しを使おう（3／3）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_2-1_loop1.png" alt="2-1 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-1 解答例</figcaption>
+</figure>
+<p>本文2章2-1の解答例です。同じ方向への移動を「〇回繰り返す」ブロックでまとめ、目標ブロック数ちょうどの3個でクリアしています。</p>
+</div></details><h4>2-2　繰り返しをつなげよう（9／9）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_2-2_loop_chain.png" alt="2-2 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-2 解答例</figcaption>
+</figure>
+<p>「〇回繰り返す」ブロックを複数個、順番につなげる構成です。1つの繰り返しだけでは表現できない、方向転換をともなう経路を、繰り返しの連続で表しています。</p>
+</div></details><h4>2-3　繰り返すところを考えよう１（4／6）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_2-3_loop_scope1.png" alt="2-3 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-3 解答例</figcaption>
+</figure>
+<p>「実行」の中にどのブロックを入れ、どのブロックを繰り返しの外に出すか、繰り返しの範囲（スコープ）を考えるステージです。目標の6個より少ない4個でクリアしており、繰り返しの範囲を正しく見極めるほどブロック数を節約できることがわかります。</p>
+</div></details><h4>2-4　繰り返すところを考えよう２（9／9）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_2-4_loop_scope2.png" alt="2-4 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-4 解答例</figcaption>
+</figure>
+<p>2-3の発展形で、繰り返す範囲の見極めがさらに重要になります。繰り返しの中に入れるブロックと外に置くブロックを整理しながら組み立てます。</p>
+</div></details><h4>2-5　繰り返しを繰り返そう（8／8）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_2-5_nested_loop.png" alt="2-5 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-5 解答例</figcaption>
+</figure>
+<p>本文2章2-5の解答例です。「〇回繰り返す」ブロックの中に、さらに「〇回繰り返す」ブロックを入れる、繰り返しの入れ子（ネスト）構造になっています。外側の繰り返しが2回まわるたびに、内側の繰り返しがまるごと2回実行されます。</p>
+</div></details><h3>ステージ3　フィールド情報と条件分岐（3-1〜3-6）</h3>
+<p>本文第2部3章（フィールド情報）・4章（条件分岐）に対応します。周辺情報を調べて「もし〜なら」で判断する練習です。</p>
+<h4>3-1　周りを見て行動しよう１（5／7）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_3-1_look1.png" alt="3-1 解答例" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-1 解答例</figcaption>
+</figure>
+<p>本文4章3-1の解答例です。「もし〜なら、そうでなければ」ブロックを使い、上のマスがブロックかどうかで進む方向を切り替えます。</p>
+</div></details><h4>3-2　周りを見て行動しよう２（7／7）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_3-2_look2.png" alt="3-2 解答例" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-2 解答例</figcaption>
+</figure>
+<p>本文4章3-2の解答例です。「もし〜なら、そうでなくもし〜」で3つの条件を優先順位付きで判定し、目標ブロック数ちょうどでクリアしています。</p>
+</div></details><h4>3-3　アイテムをたどってみよう（20／20）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_3-3_follow_item.png" alt="3-3 解答例" style="width:88%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-3 解答例</figcaption>
+</figure>
+<p>周辺情報をもとに、アイテムのある方向へ何ターンも追いかけ続けるプログラムです。これまでのステージより条件分岐の数が増え、目標ブロック数ぴったりの20個を使う、やや大がかりな構成になっています。</p>
+</div></details><h4>3-4　周りだけじゃわからない？（10／12）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_3-4_blind_spot.png" alt="3-4 解答例" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-4 解答例</figcaption>
+</figure>
+<p>自分のすぐ周り（周辺情報）だけでは判断しきれない状況を扱うステージです。1マス先の情報だけに頼らず、複数の条件を組み合わせて安全な方向を選んでいます。</p>
+</div></details><h4>3-5　ジグザグの迷路を進もう（10／12）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_3-5_zigzag.png" alt="3-5 解答例" style="width:68%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-5 解答例</figcaption>
+</figure>
+<p>ジグザグ状に折れ曲がった迷路を、周辺情報と条件分岐を組み合わせて進みます。曲がり角ごとに周辺情報を取得し直し、そのつど正しい方向を選び直す構成です。</p>
+</div></details><h4>3-6　市松模様の壁を進もう（7／10、残りターン数50）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_3-6_checker.png" alt="3-6 解答例" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">3-6 解答例</figcaption>
+</figure>
+<p>市松模様（チェッカー状）に並んだブロックをよけながら進みます。他のステージと違って残りターン数が50に制限されており、無駄な動きをせずに効率よく判断する必要があります。</p>
+</div></details><h3>ステージ4　探査（look・search）の活用（4-1〜4-6）</h3>
+<p>本文第2部5章（look・search）・6章（探査した情報の活用）に対応します。</p>
+<h4>4-1　遠くを見てみよう（17／20）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_4-1_search1.png" alt="4-1 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-1 解答例</figcaption>
+</figure>
+<p>本文6章4-1の解答例です。上・下・左の順に遠方探査し、いちばん遠いマスにアイテムがあった方向へ「ずっと繰り返す」で進み続けます。どの方向にも見つからなければ右へ進みます。本文では説明を分かりやすくするため右・左の2択に絞って解説していますが、実際のステージでは3方向を順に調べる形になります。一直線に9マス分を調べるsearchブロックの結果をもとに、進む方向を1回だけ決める、という考え方は同じです。</p>
+</div></details><h4>4-2　情報をリストにまとめよう（29／200）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_4-2_list_info.png" alt="4-2 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-2 解答例</figcaption>
+</figure>
+<p>本文6章4-2の解答例です。「リスト〔遠方情報リスト〕で〔アイテム〕の最初の出現箇所を検索」ブロックの結果を<code>≠ 0</code>と比べることで、「9マスのどこかにアイテムがあるか」を判定しています。上・下・左の3方向について同じ判定を繰り返し、見つかった方向へ進み続けます。本文では右・左の2択に絞って解説していますが、判定のしかたは同じです。目標ブロック数が200と非常に緩やかに設定されており、ブロック数の少なさより「まとめて調べる」考え方を身につけることが主眼のステージだとわかります。</p>
+</div></details><h4>4-3　自分の位置を確かめよう（29／30、残りターン数20）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_4-3_my_position.png" alt="4-3 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-3 解答例</figcaption>
+</figure>
+<p>変数を使って自分のX座標・Y座標を管理し、フィールド上での自分の位置を把握しながら進みます。本文第2部9章（ステージ7）で学ぶ変数の使い方を、探査ステージの中で先取りして使う内容です。残りターン数も20に制限されています。</p>
+</div></details><h4>4-4　自縛を回避しよう（14／16、残りターン数20）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_4-4_avoid_suicide.png" alt="4-4 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-4 解答例</figcaption>
+</figure>
+<p>本文6章4-4の解答例です。アイテムに向かう前にlookで先の状況を覗き見て、進んだ結果ブロックに挟まれてしまう「自縛」が起きないかを事前に確認しています。</p>
+</div></details><h4>4-5　斜め方向をlookで見つけよう（21／25）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_4-5_diagonal_look.png" alt="4-5 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-5 解答例</figcaption>
+</figure>
+<p>lookブロックが取得する周囲9マスには、上下左右だけでなく斜め方向（UpLeft・UpRightなど）の情報も含まれています。このステージでは、その斜め方向の情報を活用してアイテムを見つけます。</p>
+</div></details><h4>4-6　近くはlook、遠くはsearch（41／45）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_4-6_look_and_search.png" alt="4-6 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-6 解答例</figcaption>
+</figure>
+<p>lookとsearchを役割分担させる、探査ステージの集大成です。近くの安全確認にはlook、遠くのアイテム探しにはsearchというように、目的に応じて2種類の探査ブロックを使い分けています。これまでのステージの中でもブロック数が多く、複雑な条件分岐が積み重なった構成になっています。</p>
+</div></details><h3>ステージ5　ターンの仕組み（5-1〜5-5）</h3>
+<p>本文第2部7章に対応します。「自分のターンを待つ」ブロックを使い、対戦相手と交互に動く前提でプログラムを組みます。</p>
+<h4>5-1　自分の番を待ってみよう１（3／6）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_5-1_wait_turn1.png" alt="5-1 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">5-1 解答例</figcaption>
+</figure>
+<p>本文7章5-1の解答例です。「自分のターンを待つ」ブロックを「ずっと繰り返す」の中、判断の直前に置く基本の形を、目標の半分のブロック数でクリアしています。</p>
+</div></details><h4>5-2　自分の番を待ってみよう２（13／15）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_5-2_wait_turn2.png" alt="5-2 解答例" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">5-2 解答例</figcaption>
+</figure>
+<p>get_readyと条件分岐を組み合わせた発展課題です。毎ターン最新の周辺情報を受け取りながら、複数の条件を判定しています。</p>
+</div></details><h4>5-3　たくさんアイテムをゲットしよう（10／35）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_5-3_many_items.png" alt="5-3 解答例" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">5-3 解答例</figcaption>
+</figure>
+<p>1つだけでなく複数のアイテムを連続して回収するステージです。目標ブロック数35に対して10個と、ブロック数にはかなり余裕があり、確実に動くことを優先した構成になっています。</p>
+</div></details><h4>5-4　CPUとアイテムを取り合おう（20／25、残りターン数80）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_5-4_vs_cpu.png" alt="5-4 解答例" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">5-4 解答例</figcaption>
+</figure>
+<p>CPU（対戦相手）が同じフィールドで動く中、アイテムを取り合うステージです。自分のターンを待ちながら、相手の動きも意識した判断が求められます。</p>
+</div></details><h4>5-5　番を待ちつつ遠くを探そう（24／25）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_5-5_wait_and_search.png" alt="5-5 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">5-5 解答例</figcaption>
+</figure>
+<p>get_readyとsearchを組み合わせた総合課題です。毎ターン最新の情報を受け取りながら、遠方まで探査して行動を決める、ステージ4とステージ5の内容を統合したような構成になっています。</p>
+</div></details><h3>ステージ6　ブロック設置とアタック（6-1〜6-4）</h3>
+<p>本文第2部8章に対応します。相手のマスにブロックを設置してアタック勝ちを狙う練習です。</p>
+<h4>6-1　相手にブロックを置いてみよう１（6／8）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_6-1_block_place1.png" alt="6-1 解答例" style="width:73%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">6-1 解答例</figcaption>
+</figure>
+<p>本文8章6-1の解答例です。「もし〜なら、そうでなければ」の条件を「マスの種類がEnemyかどうか」に置き換え、右隣に相手がいればブロックを設置し、いなければ右へ移動します。</p>
+</div></details><h4>6-2　広いマップでブロックを置こう（12／20、残りターン数50）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_6-2_wide_map.png" alt="6-2 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">6-2 解答例</figcaption>
+</figure>
+<p>フィールドは中央の3行だけが通路になっていて、その左寄りにCool、右寄りにHotが立っています。そしてこのステージは、ステージ6で<strong>はじめて相手が動き回る</strong>課題です（6-1と6-3の相手は、その場から一歩も動きません）。</p>
+<p>繰り返しの中身は、6-1をほんの少し広げただけです。上・下・右のどれかに相手がいればその方向にブロックを置き、どこにもいなければ右へ進む。それだけです。</p>
+<p>注目してほしいのは、<strong>繰り返しの外、いちばん先頭に置かれた「左方向にブロックを置く」</strong>です。一見すると何の役にも立たない1個に見えますが、これが無いとこのステージは<strong>絶対にクリアできません</strong>。</p>
+<h5>先頭の1個が無いと勝てない理由</h5>
+<p>自分も相手も、毎ターン必ず1マスずつ動きます。ということは、自分が1回動いて相手が1回動くたびに、2人の距離は「2マス縮む・変わらない・2マス広がる」のどれかにしかなりません。つまり、<strong>距離が偶数なら偶数のまま、奇数なら奇数のまま</strong>で、偶奇は永久に入れ替わらないのです。</p>
+<p>このステージの初期配置は、間が8マス空いた<strong>偶数</strong>です。ところが相手を倒すには、距離1（<strong>奇数</strong>）で隣り合ってブロックを置くしかありません。移動を繰り返しているかぎり距離は偶数のままなので、<code>もし右のマスがプレイヤーなら</code>という条件は<strong>一度も成立しません</strong>。相手はいつも斜めか、2マス先か、4マス先にいて、決して隣には来てくれないのです。</p>
+<p>そこで先頭の1個が効きます。「ブロックを置く」は、<strong>自分はその場から動かない</strong>命令でした（第2部8章）。この1ターンだけ自分が足踏みして相手だけが動くので、そこで距離の偶奇がずれます。以降は距離が奇数になり、はじめて隣り合えるようになります。</p>
+<p>置く方向を「左」にしているのは、自分の後ろ側なら通り道の邪魔にならないからです。上でも下でも構いません。</p>
+<h5>左を見なくてよい理由</h5>
+<p>条件は上・下・右の3つだけで、左を確認していません。手抜きに見えますが、これで足りています。相手が自分の<strong>左（後ろ）に回り込む</strong>には、3行しかない通路の中で、必ず一度は自分の真上か真下を通らなければなりません。そこで捕まえられるので、相手が左に現れることはないのです。</p>
+<h5>どのくらい確実か</h5>
+<p>この12個のプログラムを50000回シミュレーションしたところ、<strong>すべてクリア</strong>しました。決着までのターン数は最短5・中央値9・最長12で、50ターンの制限には余裕をもって収まります。相手の動きがランダムでも確実に勝てるのは、上で見たとおり「相手は自分の横をすり抜けられない」からです。</p>
+</div></details><h4>6-3　相手にブロックを置いてみよう２（11／15）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_6-3_block_place2.png" alt="6-3 解答例" style="width:88%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">6-3 解答例</figcaption>
+</figure>
+<p>ブロックが散らばったフィールドで相手に近づく課題です。「下に相手がいれば下にブロックを置く／そうでなくもし右がブロックなら、上がブロックかどうかで上下に避ける／そうでなければ右へ進む」という判断を、「ずっと繰り返す」の中で毎ターン行います。壁にぶつかったら上下にずれて回り込む、という素直な組み立てで、6-1と6-4のあいだを埋める位置づけのステージです。</p>
+</div></details><h4>6-4　動く相手にブロックを置いてみよう（30／99、残りターン数30）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_6-4_moving_target.png" alt="6-4 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">6-4 解答例</figcaption>
+</figure>
+<p>本文8章6-4の解答例です。中央の3×3のブロックの輪をはさんで相手と追いかけっこをします。開始直後に<code>上方向にブロックを置く</code>で自分の上をふさいでおき、そのあとは「その方角に相手がいれば置く／空いていれば進む／ブロックなら次の方角へ」という3択の判断を、下→右→上→左の順に「ずっと繰り返す」の入れ子として4段重ねています。残りターン数が30と短く設定されており、目標ブロック数99に対して実際に使われているのは30個と、限られた手数の中で相手を捉える工夫が求められます。</p>
+</div></details><h3>ステージ7　変数と関数（7-1〜7-3）</h3>
+<p>本文第2部9章に対応します。プログラムを整理して読みやすくするための道具を学びます。</p>
+<h4>7-1　変数を使ってみよう（35／35）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-1_variable.png" alt="7-1 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-1 解答例</figcaption>
+</figure>
+<p>本文9章7-1の解答例です。「移動方向」という変数に一度だけ判定結果をセットし、以降はその変数の中身をもとに移動し続けます。目標ブロック数ちょうどの35個です。</p>
+</div></details><h4>7-2　関数を使ってみよう（77／99）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>本文9章7-2の解答例です。「アイテムゲット」「ランダム移動」という2つの関数を定義し、メインの処理からそれぞれを呼び出しています。もとは3つのブロックが横に並んだ1枚の画像でしたが、関数ごとに見比べやすいよう、ブロックのまとまりごとに画像を分けて縦に並べています。</p>
+<h5>メインの処理</h5>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-2_function1_main.png" alt="7-2 メインの処理" style="width:65%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-2 メインの処理</figcaption>
+</figure>
+<p>「ずっと繰り返す」の中で「もし、アイテムゲット関数の戻り値が『未発見』なら、ランダム移動関数を呼び出す」という判断だけを行っています。実際にアイテムを探す処理も、ランダムに動く処理も、それぞれ専用の関数に任せることで、メインの処理はとても短くシンプルになっています。</p>
+<h5>関数「アイテムゲット」</h5>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-2_function1_itemget.png" alt="7-2 関数アイテムゲット" style="width:70%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-2 関数アイテムゲット</figcaption>
+</figure>
+<p>上下左右のマスにアイテムがあるかどうかを順番に確認し、見つかった方向へ移動して「アイテムゲット？」に「ゲットだぜ」をセットします。どの方向にもなければ「未発見」のまま関数を抜けます。この「アイテムゲット？」の値を、メインの処理が確認しているわけです。</p>
+<h5>関数「ランダム移動」</h5>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-2_function1_randmove.png" alt="7-2 関数ランダム移動" style="width:95%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-2 関数ランダム移動</figcaption>
+</figure>
+<p>ブロックがない方向をリストに集め、その中からランダムに1つを選んで移動します。「アイテムゲット」関数が「未発見」を返したとき、メインの処理からこの関数が呼び出されます。関数を分けたことで、「アイテムを探す」と「ランダムに動く」という2つの役割が、それぞれ独立した部品としてはっきり分かれていることが見て取れます。</p>
+</div></details><h4>7-3　関数を使ってみよう２（76／99）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>7-2の考え方をさらに発展させ、複数の関数を組み合わせて1つの大きな処理を組み立てています。こちらも関数ごとに画像を分けて掲載します。</p>
+<h5>メインの処理</h5>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-3_function2_main.png" alt="7-3 メインの処理" style="width:63%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-3 メインの処理</figcaption>
+</figure>
+<p>「自分のターンを待つ」のあと、「進行方向」に関数「アイテム方向」の戻り値をセットし、それが<code>null</code>（該当なしの意味）なら関数「ランダム方向」の戻り値をセットし直してから、「進行方向」へ移動します。2つの関数の結果を変数「進行方向」で受け渡ししているのがポイントです。</p>
+<h5>関数「アイテム方向」</h5>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-3_function2_itemdir.png" alt="7-3 関数アイテム方向" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-3 関数アイテム方向</figcaption>
+</figure>
+<p>上下左右のマスにアイテムがあるかどうかを確認し、見つかった方向を返します。7-2の「アイテムゲット」関数とよく似ていますが、その場で移動してしまうのではなく「どの方向か」という情報だけを返し、実際に動くかどうかの判断はメインの処理に任せている点が違います。</p>
+<h5>関数「ランダム方向」</h5>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_7-3_function2_randdir.png" alt="7-3 関数ランダム方向" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-3 関数ランダム方向</figcaption>
+</figure>
+<p>ブロックがない方向をリストに集め、ランダムに1つ選んで返します。7-2の「ランダム移動」関数と似た処理ですが、こちらもその場で移動せず「どの方向か」を返すだけにとどめてあります。「アイテム方向」「ランダム方向」の両方を「方向を返すだけの部品」として統一しておくことで、メインの処理からはどちらも同じように扱えるようになっています。</p>
+</div></details><h3>ステージ8　総合演習（8-1〜8-3）</h3>
+<p>本文第2部10章に対応する、これまでの集大成となる総合演習ステージです。</p>
+<h4>8-1　障害物を回避しよう（51／500）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/tutorial_answers/ss_8-1_obstacle.png" alt="8-1 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">8-1 解答例</figcaption>
+</figure>
+<p>本文10章8-1の解答例です。下へ進み、ブロックにぶつかったら左へ避けて再び下へ、避けた歩数を変数「移動量」で数えておいて、安全になったら中央へ戻る、という一連の流れが1つのプログラムにまとまっています。目標ブロック数500に対して51個と、これまでの道具を組み合わせれば比較的少ないブロック数で対応できることがわかります。</p>
+</div></details><h4>8-2　行き止まりを回避しよう（173／200、残りターン数100）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>行き止まりに突き当たったときの回避と復帰を、進行方向・後退方向・回避方向・復帰方向といった複数の変数で管理する、8-1よりさらに複雑な総合課題です。</p>
+<figure class="my-6 flex flex-col items-center">
+<a href="../images/guide/part4/tutorial_answers_raw/ss_8-2_deadend.png" target="_blank" rel="noopener noreferrer" title="クリックで原寸大表示"><img src="../images/guide/part4/tutorial_answers_raw/ss_8-2_deadend.png" alt="8-2 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy"></a>
+<figcaption class="mt-2 text-sm text-gray-500">8-2 解答例</figcaption>
+</figure>
+</div></details><h4>8-3　見つけた情報を記録しよう（373／999、残りターン数999）</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>チュートリアル全体の中でもっとも複雑な、最終ステージの解答例です。自分のX座標・Y座標を変数で管理しながら、遠方探査で見つけたアイテムの位置をリスト（メモ）に記録し、その記録をもとに行動する、本文第2部9章までの道具をほぼすべて動員した構成になっています。</p>
+<figure class="my-6 flex flex-col items-center">
+<a href="../images/guide/part4/tutorial_answers_raw/ss_8-3_record_info.png" target="_blank" rel="noopener noreferrer" title="クリックで原寸大表示"><img src="../images/guide/part4/tutorial_answers_raw/ss_8-3_record_info.png" alt="8-3 解答例" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy"></a>
+<figcaption class="mt-2 text-sm text-gray-500">8-3 解答例</figcaption>
+</figure>
+</div></details><h3>ステージ9　総仕上げ（9-1〜9-3）</h3>
+<p>ステージ8までを終えた人のための、チュートリアルの最後のブロックです。ここまでのステージと違い、<strong>本文では扱っていません</strong>。また、本書には解答例の画像も収録していません。「もう解答例を見なくても、自分の力で組み立てられるようになった人」に向けたステージだからです。</p>
+<p>3つのステージには、それぞれ次のような性格があります。</p>
+<table>
+<thead>
+<tr>
+<th>ステージ</th>
+<th>名前</th>
+<th>目標ブロック数</th>
+<th>残りターン数</th>
+<th>ツールボックス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9-1</td>
+<td>全部のセンサーを使いこなそう</td>
+<td>300</td>
+<td>150</td>
+<td>CHaser／プログラム／変数</td>
+</tr>
+<tr>
+<td>9-2</td>
+<td>CPUとの総合アイテム争奪戦</td>
+<td>999</td>
+<td>150</td>
+<td>CHaser／プログラム／変数</td>
+</tr>
+<tr>
+<td>9-3</td>
+<td>自由チャレンジ</td>
+<td>999</td>
+<td>200</td>
+<td>CHaser／演算／繰り返し／算数／テキスト／リスト／変数／関数（すべて）</td>
+</tr>
+</tbody>
+</table>
+<h4>9-1　全部のセンサーを使いこなそう</h4>
+<p>「センサー」とは、本書で学んできた<strong>周辺情報（get_ready）・近隣探査（look）・遠方探査（search）</strong>の3つのことです。ステージ4では look と search を、ステージ3・5では周辺情報を、それぞれ別々に練習してきました。9-1は、その3つを1つのプログラムの中で状況に応じて使い分ける課題です。フィールドにはブロックが配置されており、「近くの安全は周辺情報と look で、遠くの目標は search で」という役割分担が自然に必要になります。</p>
+<h4>9-2　CPUとの総合アイテム争奪戦</h4>
+<p>CPUが操作する相手と、同じフィールドでアイテムを取り合います。5-4「CPUとアイテムを取り合おう」の本格版で、フィールドにはアイテムが多数配置されています。取りに行く判断（第2部6章）、自縛を避ける判断（4-4）、相手にブロックを置く判断（第2部8章）を、すべて1つのプログラムに同居させることになります。ここまで学んだ内容の総合力が問われる、実質的な卒業試験です。</p>
+<h4>9-3　自由チャレンジ</h4>
+<p>ツールボックスに<strong>本番のプログラミング画面と同じ全カテゴリ</strong>が並ぶ、制限のないステージです。目標ブロック数999、残りターン数200という、事実上の上限なし。ここまでで身につけた道具を、自分の好きなように組み合わせて試せます。</p>
+<p>第4部に進んで本番の対戦用プログラムを書く前に、この9-3で自分のアイデアを試しておくと、ちょうどよい橋渡しになります。実際、9-3のツールボックスは第4部1章で説明するプログラミング画面とほぼ同じなので、「カテゴリからブロックを探す」操作にここで慣れておけます。</p>
+<hr>
+<p>ステージ1から9まで、こうして見比べてみると、使っているブロックの種類そのものは移動・繰り返し・条件分岐・探査・変数・関数という、本文で学んだ数種類の道具しかないことに気づきます。ステージが進むにつれてプログラムが複雑に見えるのは、道具の種類が増えているからではなく、その道具をどう組み合わせるかの工夫が積み重なっているからです。行き詰まったときは、複雑なプログラムを一度にすべて理解しようとせず、「これはどの道具とどの道具の組み合わせでできているか」を1つずつ分解して読み解いてみてください。</p>
+
+      </article>
+
+      
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
