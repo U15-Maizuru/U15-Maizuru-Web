@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9章　変数と関数を活用する | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 9章　変数と関数を活用する">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="font-bold text-blue-700">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">9章　変数と関数を活用する</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>9章 変数と関数を活用する</h2>
+<p>ここまでのステージでも、条件分岐や繰り返しを駆使して、それなりに複雑なプログラムを組んできました。しかし、プログラムが複雑になるほど、同じような処理があちこちに散らばって、組み立てるのも見返すのも大変になっていきます。この章では、プログラムを整理して読みやすくするための、変数と関数という2つの道具を学びます。</p>
+<h3>変数のブロックは2つで1組</h3>
+<p>7-1に入る前に、変数を表すブロックを見ておきましょう。ステージ7-1のツールボックスには、ピンク色のブロックが2種類、最初から用意されています。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-21a_var_blocks.png" alt="図：ステージ7-1の変数ブロック。上が値を取り出す側、下が値を入れる側" style="width:65%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ステージ7-1の変数ブロック。上が値を取り出す側、下が値を入れる側</figcaption>
+</figure>
+<p>上の<code>移動方向</code>が、変数の<strong>中身を取り出す</strong>ブロックです。他のブロックのくぼみにはめ込んで使います。下の<code>移動方向 に 〔　〕をセット</code>が、変数に<strong>値を入れる</strong>ブロックです。「をセット」と書いてあるほうが入れる側、と覚えてください。</p>
+<p>変数は「名前の付いた箱」です。「セット」で箱に入れておけば、あとは<code>移動方向</code>ブロックを置くだけで、いつでも中身を取り出せます。なお、このステージでは箱の名前（「移動方向」）はあらかじめ決められています。自分で新しい変数を作れるようになるのは、ステージ8以降と本番のプログラミング画面です。</p>
+<h3>7-1 変数を活用しよう</h3>
+<p><strong>課題</strong>：右方向にアイテムがあるかどうかを一度だけ調べて方針を決め、あとはその方針に沿ってずっと進み続けるプログラムを作ろう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>5章・6章で学んだ遠方探査と「含まれているか」の判定を使って、右方向にアイテムがあるかどうかを一度だけ調べます。</li>
+<li>調べた結果（右へ進むべきか、左へ進むべきか）を、後からずっと使い続けたい場合、その結果をどこかに「覚えておく」仕組みが必要です。</li>
+<li>このステージのツールボックスには、ピンク色の<code>移動方向</code>ブロックと、<code>移動方向 に 〔　〕をセット</code>ブロックが最初から用意されています。この2つが変数のブロックです。片方が「箱に入れる」係、もう片方が「箱から取り出す」係です。どちらがどちらでしょうか。</li>
+<li>変数に名前を付けて値をセットし、「ずっと繰り返す」の中ではその変数の中身を使って移動する、という2段階の構成にできないか考えてみましょう。</li>
+</ul>
+<p>まずは自分で変数ブロックを使って組んでみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-21_var_7-1.png" alt="7-1 変数を活用しよう" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">7-1 変数を活用しよう</figcaption>
+</figure>
+<p>このステージでは「移動方向」という名前の変数を使います。まず、右方向に遠方探査（search）した結果の中に、アイテムが含まれているかどうかを調べます。含まれていれば変数「移動方向」に「右」を、含まれていなければ「左」をセットします。そして「ずっと繰り返す」ブロックの中では、判定のたびに条件を書き直すのではなく、「移動方向」変数の中身の方向へひたすら移動し続けます。</p>
+<h5>変数が読みやすさを生む仕組み</h5>
+<p>もし変数を使わずに書こうとすると、「ずっと繰り返す」の中で毎回「アイテムが右にあったかどうか」を判定し直す必要が出てきます。しかし、このステージでは最初の1回だけ判定すれば、あとはその結果（右へ進むか、左へ進むか）がターンをまたいでも変わりません。「一度決めた方針を、変数という名前の箱に入れておき、後からその箱の中身を何度も使い回す」というのが変数の基本的な使い方です。買い物リストをメモに書いておいて、後で何度も見返すのと同じ感覚です。変数に分かりやすい名前（「移動方向」など）を付けておくことで、後でプログラムを見返したときに「これは何のための値だったか」がすぐに分かる、というメリットもあります。</p>
+</div></details><h4>注意したいこと</h4>
+<ul>
+<li><strong>変数に値をセットするタイミングを間違える</strong>：「ずっと繰り返す」の中で毎回セットし直してしまうと、変数を使う意味が薄れてしまいます（判定のたびに条件が変わるステージなら、あえて繰り返しの中でセットし直すこともあります。目的に応じて判断しましょう）。</li>
+<li><strong>変数名を後から見て分からなくなる</strong>：「a」や「x」のような名前より、「移動方向」のように何を表すかが分かる名前を付けたほうが、後で読み返すときに役立ちます。</li>
+</ul>
+<h3>関数のブロックは「定義」と「呼び出し」の2種類</h3>
+<p>7-2に進む前に、関数のブロックも見ておきましょう。ステージ7-2のツールボックスには、紫色のブロックが4つ用意されています。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-22d_func_blocks.png" alt="図：ステージ7-2の関数ブロック。大きいほうが定義、小さいほうが呼び出し" style="width:50%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ステージ7-2の関数ブロック。大きいほうが定義、小さいほうが呼び出し</figcaption>
+</figure>
+<p>大きくて中にすき間があるブロック（<code>関数 アイテムゲット …返す</code>と<code>関数 ランダム移動</code>）が、関数を<strong>定義する</strong>ブロックです。このすき間に処理のブロックを入れて、中身を作ります。</p>
+<p>小さいブロック（<code>アイテムゲット</code>と<code>ランダム移動</code>）が、その関数を<strong>呼び出す</strong>ブロックです。メインの処理には、こちらを置きます。</p>
+<p>2つの定義ブロックをよく見ると、形が違うことに気づきます。<code>アイテムゲット</code>のほうには「返す」というくぼみが付いていて、結果を呼び出し元に返せます。<code>ランダム移動</code>のほうにはそれがなく、実行するだけです。この違いが、9章の冒頭で触れた「戻り値」のあるなしです。</p>
+<h3>7-2 関数を使ってみよう</h3>
+<p><strong>課題</strong>：「アイテムを探して取る」処理と「ランダムに動く」処理を、それぞれ名前の付いた部品にまとめて、メインの処理をすっきりさせよう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>このステージのツールボックスには、紫色の関数ブロックが4つ用意されています。</li>
+<li>関数の中身にあたるブロックの塊も、<code>アイテム発見</code>・<code>ランダム移動</code>というラベル付きで用意されています。これらを定義ブロックの中にはめ込むのが、このステージの組み立てです。</li>
+<li>関数を定義するブロックは、メインの処理とは直接つながらない、独立した塊としてワークスペースに置かれることを覚えておきましょう。</li>
+<li>メインの処理（「ずっと繰り返す」ブロック）では、関数の中身を全部書く代わりに、関数の名前が付いたブロックを呼び出すだけで済ませられないか考えてみましょう。</li>
+</ul>
+<p>まず、それぞれの処理を1つの関数としてどう定義するか、自分で組んでみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>この解答例では「アイテムゲット」と「ランダム移動」という2つの関数を定義し、メインの処理からそれらを呼び出しています。まずメインの処理を見てみましょう。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-22a_func_main.png" alt="図：メインの処理。ターンを待ち、アイテムが見つからなければランダム移動を呼び出す" style="width:85%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：メインの処理。ターンを待ち、アイテムが見つからなければランダム移動を呼び出す</figcaption>
+</figure>
+<p>メインの処理は「自分のターンを待つ→もしアイテムゲット関数の結果が『未発見』なら、ランダム移動関数を呼び出す」という、たった数個のブロックにまとまっています。実際の探索や移動の手順は、次の2つの関数の中に押し込められています。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-22b_func_item.png" alt="図：アイテムゲット関数。上下左右のアイテムを順に確認し、取れたら結果を返す" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：アイテムゲット関数。上下左右のアイテムを順に確認し、取れたら結果を返す</figcaption>
+</figure>
+<p>「アイテムゲット」関数は、上下左右にアイテムがあるかどうかを順番に確認し、あれば取りに行って「ゲットだぜ」という結果を返します。どこにも見つからなければ「未発見」を返すので、メインの処理はその戻り値を見て次の行動を決められます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-22c_func_random.png" alt="図：ランダム移動関数。ブロックのない方向をリストに集め、その中から1つを選んで移動する" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ランダム移動関数。ブロックのない方向をリストに集め、その中から1つを選んで移動する</figcaption>
+</figure>
+<p>「ランダム移動」関数は、ブロックのない方向をリストに集め、その中からランダムに1つを選んで移動します。ブロックのある方向を最初から候補から外しているので、壁に突っ込んで衝突する心配がありません。</p>
+<h5>関数が読みやすさを生む仕組み</h5>
+<p>関数を使わずに全部の処理を1本の流れで書くと、「アイテムを探す処理」と「ランダムに動く処理」が入り混じって、どこからどこまでが何のための処理か分かりにくくなります。関数を使うと、「アイテムゲット」「ランダム移動」という名前をつけた小さな部品に処理を切り分けられます。メインの処理を読むときは、部品の中身を気にせず「アイテムゲットを試して、ダメならランダム移動」という大きな流れだけを追えばよく、逆に部品（関数）の中身を直したいときは、その部品だけに集中して修正できます。これは、料理のレシピを「下ごしらえ」「炒める」「盛り付け」のように工程を分けて書くのと同じ考え方です。</p>
+</div></details><h4>注意したいこと</h4>
+<ul>
+<li><strong>関数を定義しただけで満足してしまう</strong>：関数はブロックを組んだだけでは実行されません。メインの処理の中で、その関数の名前が付いたブロックを呼び出して、はじめて中身が実行されます。</li>
+<li><strong>関数の中で使っている変数と、外で使っている変数を混同する</strong>：関数の中だけで使う一時的な値と、プログラム全体で使い回す変数を区別できるようにしておくと、後の複雑なプログラムでも混乱しにくくなります。</li>
+<li><strong>1つの関数に詰め込みすぎる</strong>：あれもこれもと1つの関数に処理を詰め込むと、結局読みにくくなってしまいます。「アイテムを探す」「ランダムに動く」のように、1つの関数には1つの役割だけを持たせるのがコツです。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>7-1のステージで、もし「アイテムが右になければ、さらに上を確認し、それもなければ左」という3択にしたい場合、変数「移動方向」をどう使えばよいか考えてみましょう。</li>
+<li>「相手にブロックを設置する」処理（8章）を、関数として切り出すとしたら、関数にどんな名前を付け、どんな処理を中に入れますか。</li>
+</ol>
+<blockquote>
+<p><strong>付録2への案内</strong>：ステージ7は全3課題です。本文で扱った7-1・7-2に加えて、7-3「関数を使ってみよう２」の解答例を付録2「ステージ7　変数と関数」に掲載しています。7-3は、7-2の「その場で移動してしまう関数」を「進む方向だけを返す関数」に作り替えた発展形で、関数の役割をそろえるとメインの処理がどれだけ読みやすくなるかがよく分かる例です。</p>
+</blockquote>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-08.html" class="text-blue-600 hover:underline">← 8章　ブロック設置とアタック攻撃</a><a href="./tutorial-10.html" class="text-blue-600 hover:underline sm:text-right">10章　総合演習 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

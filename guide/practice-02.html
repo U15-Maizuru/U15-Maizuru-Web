@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2章　対戦ルームの使い方 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第4部　実践 2章　対戦ルームの使い方">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="font-bold text-blue-700">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第4部　実践</p>
+      <h1 class="mb-6 text-3xl font-bold">2章　対戦ルームの使い方</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>2章 対戦ルームの使い方</h2>
+<p>プログラムができたら、いよいよ対戦の準備です。対戦は「ルーム」と呼ばれる場所に、CoolとHotの2人（またはCPU）が入ることで始まります。</p>
+<h3>マップを選ぶ</h3>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/fig4-02a_room_select.png" alt="図：ルーム選択画面。マップ一覧から選び、対戦方法と合言葉を決める" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ルーム選択画面。マップ一覧から選び、対戦方法と合言葉を決める</figcaption>
+</figure>
+<p>まずはマップを選びます。大会本番で使われるマップだけでなく、ランダムマップや迷路マップなど、練習用のマップもたくさん用意されています。第1部から第3部までのチュートリアルでは、あらかじめ決められた小さなフィールドで練習してきましたが、本番のマップはずっと広く、フィールドの形も多彩です。練習の段階から、いろいろな種類のマップで自分のプログラムを試しておくと、本番でも慌てずに対応できます。</p>
+<h3>対戦の種類を選ぶ</h3>
+<p>マップを選んだら、「VS対戦」（人と人との対戦）か「CPU対戦」（コンピューターが操作する相手との対戦）かを選べます。</p>
+<h4>コラム：まずはCPU対戦で試そう</h4>
+<p>いきなり人と対戦するのは緊張するものです。CPU対戦を使えば、好きなタイミングで何度でも練習でき、自分のプログラムのどこが弱点かをじっくり確認できます。第2部・第3部で学んだ「自縛を避ける」「動く相手にブロックを設置する」といった判断が、実際の対戦でちゃんと機能しているか、CPU対戦で繰り返し試してみることをおすすめします。慣れてきたら、VS対戦で実際の相手の予測不能な動きにも対応できるか試してみましょう。</p>
+<h3>ルームを決定する</h3>
+<p>合言葉を決めてルーム情報を確認したら、「ルーム決定」ボタンを押します。「合言葉」は、同じルームに入りたい相手と共有するための合図のようなものです。友達同士で対戦したいときは、あらかじめ同じ合言葉を決めておきましょう。</p>
+<h3>プログラムファイルを読み込んで対戦開始</h3>
+<p>ルームが決まると、「cool」側と「hot」側それぞれのプレイヤーが、「ファイルを選択」ボタンから自分の作ったプログラムファイルを読み込みます。両方のプレイヤーが準備できると、「ゲームスタート」ボタンが現れます。このボタンを押せば、いよいよ試合開始です。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/fig4-02b_battle_prep.png" alt="図：左＝ファイル選択前の待機画面、右＝両者の準備が整い「ゲームスタート」ボタンが現れた状態" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：左＝ファイル選択前の待機画面、右＝両者の準備が整い「ゲームスタート」ボタンが現れた状態</figcaption>
+</figure>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>プログラムを保存し忘れて、対戦の直前にファイルが見つからない</strong>：第4部1章のプログラミング画面で「保存」を押し忘れると、せっかく組んだプログラムを対戦で読み込めません。プログラムを完成させたら、まず保存する習慣をつけましょう。</li>
+<li><strong>合言葉を相手と共有し忘れる</strong>：VS対戦で友達と対戦したいときは、同じ合言葉・同じルームを選んでいるか、事前に確認しましょう。</li>
+<li><strong>マップの特徴を確認せずに対戦を始めてしまう</strong>：マップによってフィールドの広さや形が大きく異なります。自分のプログラムがそのマップの広さや形を想定して作られているか、対戦を始める前に確認しておくと安心です。</li>
+</ul>
+<h2>第4部のまとめ、そして本書の締めくくり</h2>
+<p>これで、CHaserのルールを理解し（第1部）、Blockly（第2部）とPython（第3部）でチュートリアルをクリアする力を身につけ、実際の対戦の準備の仕方（第4部）まで、ひととおり学び終えました。</p>
+<p>CHaserは、覚える命令の種類こそ多くありませんが、「今の状況をどう読み取り、どう判断するか」を突き詰めていくと、驚くほど奥の深いゲームです。本書で学んだ移動・繰り返し・条件分岐・情報の取得・変数・関数という道具は、CHaserだけでなく、これからあなたが出会う他のプログラミングの課題でも、きっと役に立つはずです。</p>
+<h2>第4部 確認クイズ</h2>
+<p><strong>1章 プログラミング画面の使い方</strong></p>
+<ol>
+<li>ワークスペースの一番上に必ず置く必要があるブロックは何ですか。</li>
+<li>実行結果がうまくいかないとき、まずどこを確認するとよいでしょうか。</li>
+</ol>
+<p><strong>2章 対戦ルームの使い方</strong></p>
+<ol>
+<li>対戦を始める前に選べる2種類の対戦方法は何ですか。</li>
+<li>「ゲームスタート」ボタンは、どんな状態になると表示されますか。</li>
+</ol>
+<p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
+<p>まずは自分のプログラムを実際に動かし、勝ったり負けたりしながら、次はどう直せばもっと強くなるかを考えてみてください。そうやって試行錯誤を重ねることこそが、プログラミングの一番の練習方法です。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./practice-01.html" class="text-blue-600 hover:underline">← 1章　プログラミング画面の使い方</a><span></span></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
