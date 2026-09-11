@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6章　探査した情報で行動を決める | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 6章　探査した情報で行動を決める">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="font-bold text-blue-700">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">6章　探査した情報で行動を決める</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>6章 探査した情報で行動を決める</h2>
+<h3>4-1 遠方情報で行動を決めよう</h3>
+<p><strong>課題</strong>：一直線に遠くまで探査した情報をもとに、進む方向を決めるプログラムを作ろう。「探査したいちばん遠いマスにアイテムがあれば右へ、なければ左へ進み続けたい」。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>5章で学んだ遠方探査（search）ブロックの結果は、0番目（隣）から8番目（いちばん遠い）まで番号が付いていました。「いちばん遠いマス」は何番目でしょうか。</li>
+<li>「もし〜なら、そうでなければ」ブロック（4章）と組み合わせて、条件によって進む方向を変えます。</li>
+<li>「動きながら考える」のではなく「先に一度だけ見渡してから、方針を決めて進み続ける」構成にできないか考えてみましょう。</li>
+</ul>
+<p>まずは自分で遠方探査と条件分岐を組み合わせて、挑戦してみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-13_search_action_4-1.png" alt="4-1 遠方情報で行動を決めよう" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-1 遠方情報で行動を決めよう</figcaption>
+</figure>
+<p>このステージの課題は「右方向9マス目にアイテムがあれば右へ、なければ左へ進み続ける」というものです。「右方向に遠方探査する」ブロックで得た情報の8番目（いちばん遠いマス）がItemかどうかを「もし〜なら」ブロックで判定し、条件に応じて「ずっと右へ移動」または「ずっと左へ移動」を実行します。</p>
+<p>このステージのポイントは、「動きながら考える」のではなく「考えてから動く」構成になっていることです。最初に一度だけ遠方探査で遠くまで見渡し、その結果に応じて進む方向を決めたら、あとはその方向へ迷わず進み続けます。行き当たりばったりに動くよりも、先に情報を集めてから方針を決めるほうが、無駄のない動きになる場面があるということを、このステージで体感できます。</p>
+</div></details><h3>4-2 情報をまとめて活用しよう</h3>
+<p><strong>課題</strong>：探査した9マスの中に、アイテムが（何番目でもよいので）1つでも含まれているかどうかで、進む方向を決めよう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>4-1では「8番目かどうか」という1点だけを調べました。今度は「9マスのどこかに」という調べ方が必要です。</li>
+<li>ツールボックスに、<code>リスト〔　〕で以下のアイテムの最初の出現箇所を検索：〔　〕</code>という長いブロックが用意されています。これは「そのリストの中で、指定したものが<strong>何番目に最初に出てくるか</strong>」を教えてくれるブロックです。</li>
+<li>そのブロックといっしょに、<code>=</code>の比較ブロックと数字の<code>0</code>ブロックも用意されています。この3つをどう組み合わせれば「どこかにある／どこにもない」を判定できるでしょうか。</li>
+<li>1マスずつ「0番目はItemか、1番目はItemか…」と条件を9個も並べる必要はありません。</li>
+</ul>
+<p>自分なりの方法で「含まれているか」を判定してみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-14_search_in_4-2.png" alt="4-2 情報をまとめて活用しよう" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-2 情報をまとめて活用しよう</figcaption>
+</figure>
+<p>「最初の出現箇所を検索」ブロックの結果を、<code>&gt; 0</code>（0より大きい）と比べているのがポイントです。このブロックは、探したものが見つかればその位置を<strong>1から数えた番号</strong>（隣のマスが1、いちばん遠いマスが9）で返し、<strong>どこにも見つからなければ0</strong>を返します。つまり「結果が0より大きい」は、そのまま「9マスのどこかにアイテムがあった」という意味になります。</p>
+<p>条件が成り立てば「ずっと右へ移動」、成り立たなければ「ずっと左へ移動」を実行します。</p>
+<blockquote>
+<p><strong>番号の数え方に注意</strong>：5章で学んだ「遠方情報の〇番目のマス」は0から数えました（0番目が隣）。一方この「最初の出現箇所を検索」ブロックは1から数えます（1が隣）。同じ探査結果を扱っているのに数え方が違うのは、「見つからなかった」を0で表すためです。ここは間違えやすいので、<code>&gt; 0</code>は「見つかった」という決まり文句として覚えてしまうのが早道です。</p>
+</blockquote>
+<h5>位置を指定せずに探す利点</h5>
+<p>4-1では「8番目（いちばん遠いマス）」というピンポイントの位置を指定していました。しかし実際の対戦では、アイテムがちょうど9マス目にあるとは限りません。3マス目にあるかもしれないし、5マス目にあるかもしれません。「9マスのどこかにアイテムがあれば」という調べ方をすれば、アイテムがどの位置にあっても見つけられるようになります。1つ1つの位置を指定して確認するよりも、まとめて「あるか・ないか」を聞くほうが、実戦ではずっと使い勝手のよい判断になります。</p>
+</div></details><h3>複数の条件を組み合わせる：かつ・または</h3>
+<p>次の4-4に進む前に、条件の組み立てに使う道具をもう1つ増やしておきましょう。</p>
+<p>4章では「もし〜なら」ブロックの条件に、判定部品を1つだけはめ込んでいました。しかし「左上がブロックで、<strong>かつ</strong>右上もブロック」のように、2つの条件が同時に成り立つかどうかを調べたい場面もあります。</p>
+<p>このようなときに使うのが、ツールボックスに用意されている「〜かつ〜」という<strong>論理演算ブロック</strong>です。このブロックには左右2つのくぼみがあり、そこに判定部品を1つずつはめ込むと、2つの条件をまとめて1つの条件として扱えるようになります。真ん中のドロップダウンで「かつ」と「または」を切り替えられます。ステージ4-4のツールボックスには、このブロックと、条件を反対にする「〜ではない」ブロックが並んでいます。</p>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>意味</th>
+<th>成り立つとき</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>かつ</td>
+<td>両方とも満たす</td>
+<td>左の条件と右の条件が、どちらも成り立つとき</td>
+</tr>
+<tr>
+<td>または</td>
+<td>どちらか一方でも満たす</td>
+<td>左と右の少なくとも一方が成り立つとき</td>
+</tr>
+</tbody>
+</table>
+<p>「両脇がふさがれていて危険」を判定したいなら、片方だけふさがっていても危険ではないので「かつ」を選びます。逆に「上か下のどちらかにアイテムがあれば動く」なら「または」です。日本語で条件を声に出してみて、「〜も〜も」なら「かつ」、「〜か〜か」なら「または」と考えると選び間違えにくくなります（Pythonでは<code>and</code>・<code>or</code>に対応します。第3部6章）。</p>
+<h3>4-4 自縛を回避しよう</h3>
+<p><strong>課題</strong>：アイテムを取りに行った結果、自分の周りをブロックで挟まれてしまう「自縛」を避けよう。</p>
+<p>第1部4章で学んだ「アイテムを取ると、その場所にブロックが出現する」というルールを思い出してください。アイテムを取りに行った結果、自分の周りが両側からブロックで挟まれてしまうことがあります。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>「取れるアイテムは全部取る」だけでは危険な場合があります。取りに行く前に、取った後の状況を先読みできないか考えてみましょう。</li>
+<li>5章で学んだ近隣探査（look）ブロックは、まだ移動していない先のマスの様子を覗き見できました。これをどう使えば、「進んだ後に挟まれないか」を事前に確認できるでしょうか。</li>
+<li>手順を分解すると、次のような形になります。①アイテムの方向を確認する ②その方向へ進んだ場合、両脇がブロックになっていないか確認する ③危険なら別の方向を選ぶ。</li>
+<li>②の「両脇とも」は、直前に学んだ「かつ」の論理演算ブロックで表せます。</li>
+</ul>
+<p>このステージは、これまでのステージのように「1つの決まった形」に収まる課題ではありません。まずは自分なりの判定方法を考えて組んでみましょう。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-15_jibaku_4-4.png" alt="4-4 自縛を回避しよう（危険な状況の例）" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">4-4 自縛を回避しよう（危険な状況の例）</figcaption>
+</figure>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>Blocklyでの解答例は、<strong>付録2「チュートリアル解答例集」の4-4</strong>に掲載しています。上のヒントの手順（①アイテムの方向を確認 ②その方向へ進んだ場合に両脇がブロックにならないか確認 ③危険なら別方向）が、「もし〜なら」の入れ子と「かつ」の論理演算ブロックでそのまま形になっているので、自分の組んだブロックと見比べてみてください。同じ処理をPythonで書いた例は、第3部6章の4-4で1行ずつ解説しています。</p>
+</div></details><h3>演習問題</h3>
+<ol>
+<li>4-1のプログラムで、もしアイテムが9マス目ではなく5マス目にあった場合、期待どおりに動くでしょうか。理由も考えてみましょう。</li>
+<li>4-4について、「上にアイテムがあり、その両脇がブロック」以外にも自縛が起こりうる状況を1つ考え、どう対処すればよいか書き出してみましょう。</li>
+</ol>
+<blockquote>
+<p><strong>付録2への案内</strong>：5章・6章に対応するステージ4は全6課題あります。本文で扱った4-1・4-2・4-4に加えて、4-3「自分の位置を確かめよう」、4-5「斜め方向をlookで見つけよう」、4-6「近くはlook、遠くはsearch」の解答例を、付録2「ステージ4　探査（look・search）の活用」に掲載しています。とくに4-6は、2種類の探査を目的に応じて使い分ける集大成の課題なので、本章の締めくくりとして目を通しておくとよいでしょう。</p>
+</blockquote>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-05.html" class="text-blue-600 hover:underline">← 5章　探査：近隣探査と遠方探査</a><a href="./tutorial-07.html" class="text-blue-600 hover:underline sm:text-right">7章　ターンの仕組みとget_ready →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

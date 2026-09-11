@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockly基本操作 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 Blockly基本操作">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="font-bold text-blue-700">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">Blockly基本操作</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>この先の読み方（第2部・第3部共通）</h2>
+<p>第2部・第3部で扱うチュートリアルの各ステージは、それ自体が「どう組めばクリアできるか」を考えるパズルです。答えを先に読んでしまうと、パズルとしての面白さが半減してしまいます。そこで本書では、各ステージを次の順番で説明します。</p>
+<ol>
+<li><strong>課題</strong>：クリアするために何をすればよいか</li>
+<li><strong>💡 考えるヒント</strong>：どの章で学んだ道具（移動・繰り返し・条件分岐など）を、どう組み合わせられそうかの手がかり（ただし具体的なブロックの並びまでは明かしません）</li>
+<li><strong>（ここで一度、実際にBlockly画面を開いて自分で組んでみましょう）</strong></li>
+<li><strong>解答例</strong>：実際のブロックの組み方と、なぜそう組むのかという解説</li>
+</ol>
+<p>必ず3の時点で一度手を止め、自分の力でステージに挑戦してから、解答例に進んでください。うまくいかなくても構いません。「どこまでは自分の考えで合っていたか」を解答例と見比べることが、いちばんの勉強になります。</p>
+<p>なお本文では、各章の考え方を伝えるのに適した代表的なステージだけを取り上げます。チュートリアルには全部で39のステージ（1-1〜9-3）があり、本文で触れなかったステージも含めた<strong>全ステージのBlockly解答例を、巻末の付録2「チュートリアル解答例集」にまとめてあります</strong>。本文の章を読み終えたら、その章に対応するステージを付録2で通して眺めてみると、同じ道具が少しずつ形を変えて使われていることが見えてきます。各章の終わりに、対応する付録2のステージを案内しています。</p>
+<h2>0章 Blockly基本操作</h2>
+<p>第2部では、Blocklyでブロックを組み立てながらCHaserのキャラクターを動かす方法を、チュートリアルのステージ順に沿って説明していきます。本格的なステージに入る前に、Blockly共通の操作方法を確認しておきましょう。</p>
+<h3>Blocklyから始める狙い</h3>
+<p>CHaserにはPythonでプログラムを書く方法も用意されていますが、本書ではあえてBlocklyから先に学びます。理由は、Blocklyがプログラムの「構造」を目に見える形にしてくれるからです。文字だけのコードでは、インデント（字下げ）のズレや、かっこの閉じ忘れといった、見た目では気づきにくいミスが起こりがちです。Blocklyでは、ブロックの形そのものが「ここは繰り返しの中」「ここは条件分岐の中」という構造を表すので、パズルを組み立てる感覚でプログラムの骨組みを理解できます。第3部でPythonを学ぶときも、「Blocklyのあのブロックが、このPythonの行に対応している」という形で理解できるので、遠回りに見えて実は近道です。</p>
+<h3>画面の基本用語</h3>
+<p>Blocklyの画面には、共通して使われる名前が付いた場所があります。ブロックを組み立てるメインの作業スペースを「ワークスペース」、ブロックの部品が並んでいる左側の一覧を「ツールボックス」と呼びます。これらはCHaserだけでなく、Blocklyを使った他の学習教材（後述）でも共通して使われる呼び方なので、覚えておくと他の教材を触るときにも役立ちます。</p>
+<p>ツールボックスの見た目は、ステージによって2種類あります。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-00e_toolbox_flat.png" alt="図：ステージ1-1のツールボックス。使うブロックだけが並んでいる" style="width:38%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ステージ1-1のツールボックス。使うブロックだけが並んでいる</figcaption>
+</figure>
+<p>チュートリアルの前半（ステージ1〜7）では、上の図のように<strong>そのステージで使うブロックだけ</strong>が一覧にそのまま並びます。ステージ1-1なら、上下左右4方向の「〇〇方向に移動する」ブロックだけです。使わないブロックは最初から出てこないので、迷わずに済むようになっています。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-00f_toolbox_category.png" alt="図：ステージ9-3のツールボックス。ブロックがカテゴリに分かれている" style="width:30%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ステージ9-3のツールボックス。ブロックがカテゴリに分かれている</figcaption>
+</figure>
+<p>一方、ステージ8以降と、本番のプログラミング画面（第4部1章）では、使えるブロックの数が多いため、上の図のように「CHaser」「演算」「繰り返し」…といった<strong>カテゴリ</strong>に分かれていて、カテゴリ名をクリックすると中身が開きます。</p>
+<p>本書で「ツールボックスから〇〇ブロックを探しましょう」と書いてあるときは、前半のステージなら一覧をそのまま眺め、後半ならカテゴリを開いて探す、と読み替えてください。</p>
+<h3>ブロックをつなげる</h3>
+<p>Blocklyのブロックは、パズルのピースのような形をしています。ブロックの上下（処理を順番に実行するブロック）や内側（条件や繰り返しの中に入れるブロック）には、他のブロックをはめ込む「くぼみ」や「でっぱり」があります。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-00a_connect_before.png" alt="図：つなげる前。上のブロックの下にでっぱり、下のブロックの上にくぼみがある" style="width:40%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：つなげる前。上のブロックの下にでっぱり、下のブロックの上にくぼみがある</figcaption>
+</figure>
+<p>上の図では、2つの移動ブロックが離れて置かれています。よく見ると、上のブロックの下側に小さなでっぱりが、下のブロックの上側にくぼみがあるのが分かります。この2つを、ドラッグ＆ドロップで近づけてみましょう。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-00b_connect_after.png" alt="図：つなげた後。2つのブロックがすき間なくはまっている" style="width:40%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：つなげた後。2つのブロックがすき間なくはまっている</figcaption>
+</figure>
+<p>近づけると、カチッとはまる感覚でつながります。つなげたブロックは上から順番に実行されるので、この形は「上に1マス動いてから、右に1マス動く」という意味になります。</p>
+<p>つなげたブロックを外したいときは、外したいブロックを（それより下につながっているブロックごと）つまんで、離れた場所にドラッグします。不要になったブロックは、ワークスペース右下にあるゴミ箱アイコンにドラッグすると削除できます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-00d_trash.png" alt="図：ワークスペース右下。上から順に、中央に戻すボタン・拡大・縮小・ゴミ箱" style="width:30%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ワークスペース右下。上から順に、中央に戻すボタン・拡大・縮小・ゴミ箱</figcaption>
+</figure>
+<p>ゴミ箱の上には、ワークスペースを操作するボタンが3つ並んでいます。いちばん上は表示を中央に戻すボタン、その下の＋と−は拡大・縮小です。ブロックが画面の外に行ってしまって見失ったときは、いちばん上のボタンを押すと戻ってきます。なお、<strong>拡大・縮小を触ると本書の図と大きさが変わって見える</strong>ので、慣れるまでは初期状態のままにしておくとよいでしょう。</p>
+<p>組んだブロックを全部消してやり直したいときは、画面上部の「削除」ボタンが使えます。</p>
+<h3>ブロックの向きを選ぶ</h3>
+<p>「〇〇方向に移動する」のような命令ブロックには、多くの場合ドロップダウン（▼）が付いています。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-00c_dropdown.png" alt="図：ドロップダウンをクリックすると、上・下・左・右の選択肢が開く" style="width:55%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ドロップダウンをクリックすると、上・下・左・右の選択肢が開く</figcaption>
+</figure>
+<p>ここをクリックすると「上・下・左・右」などの選択肢が表示され、同じ形のブロックで複数の方向の命令を作れます。今選ばれている項目にはチェックマークが付くので、意図した向きになっているかをここで確認できます。</p>
+<h3>変数ブロック・関数ブロック</h3>
+<p>繰り返しの中で使う値を覚えておきたいときは「変数」ブロックを使います。変数に名前を付けて、そこに値をセット（代入）し、以降はその変数名のブロックを命令の中で使い回せます（9章で詳しく扱います）。</p>
+<p>同じ処理のまとまりに名前を付けて呼び出したいときは「関数」ブロックを使います。関数を定義するブロックの中に処理を組み立てておくと、後からその名前のブロック1つで、まとめて呼び出せるようになります（9章で詳しく扱います）。関数を定義するブロックは、メインの処理を組み立てているブロックの列とは直接つながっていない、独立した1つの塊としてワークスペースに置かれます。「あれ、つながっていないのに動くの？」と不思議に思うかもしれませんが、これはBlocklyの標準的な仕組みで、関数はどこからでも名前で呼び出せるように、あえて独立させて配置するのが一般的なルールです。</p>
+<p>なお、チュートリアルのステージでは、<strong>変数や関数を自分で作る必要はありません</strong>。そのステージで使う変数（たとえば7-1の「移動方向」）や関数の定義ブロック（7-2の「アイテムゲット」「ランダム移動」）は、あらかじめツールボックスに用意されています。自分で名前を付けて新しく作るのは、ステージ8以降や本番のプログラミング画面で「変数」カテゴリを開いたときになります。</p>
+<h3>コラム：Blocklyは他の教材でも使われている</h3>
+<p>Blocklyは、Google社が公開しているブロックプログラミングのしくみ（ライブラリ）です。実は、学校の授業で使われる「Code.org」や、マイコン教材の「Microsoft MakeCode」など、CHaser以外の多くの学習教材も、このBlocklyのしくみをベースに作られています。つまり、ここで身につけた「ブロックをつなげる」「ドロップダウンで設定を選ぶ」「変数・関数ブロックを使う」という操作の感覚は、CHaser専用のものではなく、他のプログラミング教材に触れたときにもそのまま活かせる、汎用的なスキルなのです。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>ブロックが思ったところにくっつかない</strong>：くぼみとでっぱりの位置を近づけると、対応する場所が光って接続候補を教えてくれます。焦らずゆっくりドラッグしましょう。</li>
+<li><strong>繰り返しや条件の「中」に入れたつもりが「下」につながっていた</strong>：ブロックの内側（インデントされた部分）と外側（同じ高さの部分）は見た目が似ていて間違えやすいポイントです。実行してみて動きが想定と違うときは、まずここを疑いましょう。</li>
+<li><strong>ドロップダウンの選択を変え忘れる</strong>：他のステージからコピーしたブロックをそのまま使うと、向きが「上」のままになっていることがあります。動かしたい方向になっているか、実行前に必ず確認しましょう。</li>
+</ul>
+<p>準備ができたら、実際のステージに沿ってブロックの組み方を見ていきましょう。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./rules-06.html" class="text-blue-600 hover:underline">← チュートリアルの始め方</a><a href="./tutorial-01.html" class="text-blue-600 hover:underline sm:text-right">1章　移動 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

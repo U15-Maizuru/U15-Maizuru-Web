@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8章　ブロック設置とアタック攻撃 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 8章　ブロック設置とアタック攻撃">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="font-bold text-blue-700">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">8章　ブロック設置とアタック攻撃</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>8章 ブロック設置とアタック攻撃</h2>
+<p>第1部5章で学んだとおり、相手のいるマスにブロックを設置すると「アタック勝ち」になります。この章では、実際にブロックを設置して相手を攻撃するプログラムの組み方を学びます。</p>
+<h3>ブロック設置コマンド：put</h3>
+<p>まず、ブロックを設置する命令そのものを確認しましょう。移動が「〇〇方向に移動する」ブロックだったのに対し、ブロック設置には別の専用ブロックが用意されています。ツールボックスから探してみましょう。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-18_put_intro.png" alt="ブロック設置コマンド" style="width:50%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ブロック設置コマンド</figcaption>
+</figure>
+<p>「〇〇方向にブロックを設置する」ブロックを使うと、指定した方向の隣接マスにブロックを置くことができ、上下左右4方向に設置可能です。</p>
+<p>改めて確認しておきたいのは、この1つのブロックが持つ2つの意味です。相手のマスに設置すればアタック勝ちですが、自分の逃げ道をふさぐようにブロックを置いてしまうと、後で自分が動けなくなる原因にもなります。「攻撃の武器」であると同時に「使い方を誤ると自分を苦しめる諸刃の剣」でもあることを、常に意識しておきましょう。</p>
+<h3>6-1 相手にブロックを設置しよう</h3>
+<p><strong>課題</strong>：右隣に相手がいればブロックを設置して撃破し、それ以外のときは右へ移動するプログラムを作ろう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>組み立て方は4章で学んだ「もし〜なら、そうでなければ」の形とよく似ています。何が変わるでしょうか（ヒント：条件の中身が「マスの種類がBlockかどうか」ではなく、別の種類になります）。</li>
+<li>7章で学んだ「自分のターンを待つ」ブロックを、どこに置く必要があるか思い出しましょう。</li>
+<li>「実行」の中身は移動ではなく、設置のブロックになります。</li>
+</ul>
+<p>自分で条件分岐と設置ブロックを組み合わせて挑戦してみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-19_attack_6-1.png" alt="6-1 相手にブロックを設置" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">6-1 相手にブロックを設置</figcaption>
+</figure>
+<p>このステージの課題は「右隣に相手がいればブロックを設置して撃破！ それ以外は右へ移動」というものです。組み立て方は3章・4章で学んだ「もし〜なら、そうでなければ」の形とほぼ同じで、条件が「マスの種類がBlockかどうか」から「マスの種類がEnemyかどうか」に変わっただけです。7章で学んだ「自分のターンを待つ」ブロックを繰り返しの中に入れ、毎ターン最新の周辺情報をもとに、右隣が相手かどうかを判定します。相手も毎ターン自由に動くので、一度だけの判定ではなく、「ずっと繰り返す」の中で判定し続けることではじめて相手の動きに対応できます。</p>
+</div></details><h3>6-4 動く相手にブロックを設置しよう</h3>
+<p><strong>課題</strong>：相手は動き回っていて、上下左右どこから来るか分からない。いずれかの方向に相手が来たらすかさずブロックを設置し、来ていなければ相手を追いかけて動こう。</p>
+<p>このステージのフィールドは、中央に3×3のブロックの輪があり、その左右にCoolとHotが立っています。輪のまわりをぐるぐる回りながら追いかけっこをする形になります。しかも残りターン数は30と短く、のんびり探している余裕はありません。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-20_attack_moving_6-4.png" alt="6-4 動く相手にブロックを設置（フィールドの様子）" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">6-4 動く相手にブロックを設置（フィールドの様子）</figcaption>
+</figure>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>6-1では「右」だけを確認していましたが、今度は上下左右の4方向すべてを確認する必要があります。</li>
+<li>1つの方向について、判断は3通りあります。①その方向に相手がいる → ブロックを置く ②その方向が空いている → そちらへ進む ③その方向がブロック → その方向はあきらめて、次の方向を調べる。この3通りを「もし〜なら、そうでなくもし〜、そうでなければ」で書けないでしょうか。</li>
+<li>③の「次の方向を調べる」は、「そうでなければ」の中に、次の方向についての同じ判断をまるごと入れることで表せます。方向の数だけ、入れ子が深くなっていきます。</li>
+<li>一気に完成させようとせず、まず1方向分だけを作って動きを確認し、それから残りの方向を1つずつ足していくと組み立てやすくなります。</li>
+<li>どの深さで判断していても、行動する前には毎回「自分のターンを待つ」を通る必要があります（7章）。</li>
+</ul>
+<p>自分なりに4方向分の判定を組み合わせて挑戦してみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p>これまでのステージより一段階複雑になります。「相手がいれば置く／空いていれば進む／ブロックなら次の方向へ」という3択の判断を、下→右→上→左の順に、「そうでなければ」の中へ入れ子にして4段重ねる、という組み立てになります。1段深くなるたびに、調べる方向が1つずつ切り替わっていきます。</p>
+<p>実際に組み上がったブロックの全体像は、<strong>付録2「チュートリアル解答例集」の6-4</strong>に掲載しています。ここまで説明した骨組みが、そのままブロックの形になっていることを確認してみてください。同じ処理をPythonで書いた例は、第3部8章の6-4で解説しています。</p>
+</div></details><h4>注意したいこと</h4>
+<ul>
+<li><strong>4方向のチェックを一部省略してしまう</strong>：上下左右のうち、たとえば「上」の確認を忘れると、上から来た相手を取り逃してしまいます。4方向すべてを1つずつ、抜け漏れなく確認しましょう。</li>
+<li><strong>ブロックを置く方向と相手がいる方向を取り違える</strong>：「右に相手がいるなら、右にブロックを置く」というように、判定した方角とブロックを置く方角を必ず一致させましょう。</li>
+<li><strong>入れ子が深くなって、今どの方向を調べているか見失う</strong>：4段も入れ子にすると、画面の右のほうへどんどんブロックがずれていきます。1段ずつ「これは何方向を調べているブロックか」を指で追って確認しましょう。組みながら不安になったら、いったん実行して動きを見るのが確実です。</li>
+<li><strong>どこかの分岐で「自分のターンを待つ」を入れ忘れる</strong>：入れ子の各段の最後に「自分のターンを待つ」が必要です。1か所でも抜けると、その分岐に入ったときだけ情報が更新されなくなります。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>6-1のプログラムに、上下左右すべての方向を確認する条件を追加し、「上下左右いずれかに相手がいれば設置する」プログラムに拡張してみましょう。</li>
+<li>アタック勝ちと衝突（敗北）は、どちらも「ブロックのあるマスに関係する」できごとです。この2つを混同しないために、どんなことに注意すればよいか考えてみましょう。</li>
+</ol>
+<blockquote>
+<p><strong>付録2への案内</strong>：ステージ6は全4課題あります。本文で扱った6-1・6-4に加えて、6-2「広いマップでブロックを置こう」、6-3「相手にブロックを置いてみよう２」の解答例を、付録2「ステージ6　ブロック設置とアタック」に掲載しています。この2つは、6-1から6-4へ向かう階段のちょうど中間にあたります。とくに<strong>6-2は、相手がはじめて動き回るステージ</strong>です（6-1と6-3の相手は動きません）。プログラムの形は6-1とほとんど同じなのに、たった1個ブロックを足さないと絶対にクリアできない、という不思議な課題になっています。その1個が何なのかは、ぜひ自分で考えてから付録2を見てください。</p>
+</blockquote>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-07.html" class="text-blue-600 hover:underline">← 7章　ターンの仕組みとget_ready</a><a href="./tutorial-09.html" class="text-blue-600 hover:underline sm:text-right">9章　変数と関数を活用する →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

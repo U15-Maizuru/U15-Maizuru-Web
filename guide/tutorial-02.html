@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2章　繰り返し | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 2章　繰り返し">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="font-bold text-blue-700">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">2章　繰り返し</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>2章 繰り返し</h2>
+<h3>2-1 繰り返し（4回繰り返す）</h3>
+<p><strong>課題</strong>：同じ方向に何度も移動する動きを、なるべく少ないブロック数で作ろう。</p>
+<p>前章では、移動ブロックを進みたい回数だけ並べる方法を学びました。もし「右に100マス進む」という課題が出たら、同じ方法で解けるでしょうか。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>ツールボックスの中から「〇回繰り返す」のような、繰り返しを表すブロックを探してみましょう。</li>
+<li>繰り返しブロックには、他のブロックを入れられる「くぼんだ」内側の空間があります。そこに何を入れれば、同じ命令を何度も実行させられるでしょうか。</li>
+<li>繰り返す回数は、ブロックの数値部分を書き換えるだけで変更できます。</li>
+</ul>
+<p>まずは「〇回繰り返す」ブロックを使って、右に4マス進む動きを作ってみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-03_loop_2-1.png" alt="2-1 繰り返し" style="width:65%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-1 繰り返し</figcaption>
+</figure>
+<p>「4回繰り返す」ブロックの内側に「右方向に移動する」ブロックを1つだけ入れると、右に4マス移動する処理になります。同じ命令を何度も書かなくてOKです。</p>
+<h5>繰り返しがもたらす楽さ</h5>
+<p>前章の「移動ブロックを並べる」やり方にも間違いはありませんが、もし「右に100マス進む」という課題が出たら、ブロックを100個並べるのはとても大変です。しかも、後から「やっぱり99マスにしたい」と直そうとすると、1個ずつ数えて削除する羽目になります。「繰り返す」ブロックを使えば、数字を1か所（99）に書き換えるだけで済みます。プログラミングでは、「同じことを何度も書く」代わりに「1回書いて繰り返す」という考え方がとても大切です。これは第3部で学ぶPythonの<code>for</code>文でも全く同じ考え方が登場します。</p>
+</div></details><h3>2-5 繰り返しを繰り返し（ネスト）</h3>
+<p><strong>課題</strong>：『右に2マス→上に2マス』という1セットの動きを、もう一度繰り返して合計2セット分動こう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>「繰り返す」ブロックの中に、さらに「繰り返す」ブロックを入れることができます。これをネスト（入れ子）と呼びます。</li>
+<li>『右×2 → 上×2』という1セットをどう表現するか、まず考えてみましょう。それを、外側からもう一度繰り返すには、どんな形にすればよいでしょうか。</li>
+<li>組み終わったら、いちばん外側のブロックだけをつまんで少しだけ持ち上げてみると、中に入っているブロックが一緒に動くかどうかで、正しく入れ子になっているか確認できます。</li>
+</ul>
+<p>自分でネスト構造を組んでみて、実行結果がイメージどおりか確認してから、解答例を見てみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-04_loop_2-5.png" alt="2-5 繰り返しを繰り返し" style="width:75%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">2-5 繰り返しを繰り返し</figcaption>
+</figure>
+<p>このステージでは『右×2 → 上×2』という1セットの動きを、外側の「2回繰り返す」ブロックでもう一度繰り返しています。つまり「2回繰り返す」ブロックの中に、「右に2回移動」の繰り返しブロックと「上に2回移動」の繰り返しブロックを、この順番で2つ並べて入れる形になります。</p>
+</div></details><h4>注意したいこと</h4>
+<ul>
+<li><strong>外側と内側を取り違える</strong>：繰り返しの中に繰り返しを入れるときは、外側と内側のブロックのくぼみを間違えないよう注意しましょう。どのブロックがどの繰り返しの中に入っているか、色や枠の形を目で追いながら組み立てるのがコツです。</li>
+<li><strong>回数を掛け算し忘れる</strong>：「2回繰り返す」の中に「右に2回移動」が入っていると、実際には右に2×2＝4マス移動します。「合計何マス動くか」は、外側の回数と内側の回数を掛け算して確認する癖をつけましょう。</li>
+<li><strong>繰り返しの中身が空のまま実行してしまう</strong>：繰り返すブロックだけ置いて、中に何も入れずに実行すると、何も起こらないまま終わってしまいます。エラーは出ないので、意図した動きになっていないときはまず中身が入っているか確認しましょう。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>「右×3 → 下×1」というセットを3回繰り返すには、外側の繰り返しの回数と、内側に入れるブロックはどうなるか考えてみましょう。</li>
+<li>1-4で作った経路を、繰り返しブロックを使ってブロックの数を減らせないか考えてみましょう（ヒント：全部を1つの繰り返しにまとめる必要はありません）。</li>
+</ol>
+<h3>発展：繰り返しをやめる条件</h3>
+<p>ここで使った「〇回繰り返す」は、あらかじめ決まった回数だけ繰り返すブロックです。CHaserには、これとは別に「ずっと繰り返す」ブロックもあります（4章や7章で登場します）。回数が決まっている作業には「〇回繰り返す」を、「ゲームが終わるまでずっと」のように回数が決まっていない作業には「ずっと繰り返す」を、と使い分けるのがポイントです。</p>
+<blockquote>
+<p><strong>付録2への案内</strong>：本文で取り上げなかった2-2「繰り返しをつなげよう」、2-3・2-4「繰り返すところを考えよう」を含め、ステージ2の全5課題の解答例を付録2「ステージ2　繰り返し」に掲載しています。特に2-3・2-4は「繰り返しの中に入れるブロックと、外に置くブロック」を見極める練習になるので、本章の内容が身についたか確かめるのに向いています。</p>
+</blockquote>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-01.html" class="text-blue-600 hover:underline">← 1章　移動</a><a href="./tutorial-03.html" class="text-blue-600 hover:underline sm:text-right">3章　フィールド情報を読み取る →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

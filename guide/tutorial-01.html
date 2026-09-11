@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1章　移動 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 1章　移動">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="font-bold text-blue-700">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">1章　移動</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>1章 移動：連続移動と複雑な移動</h2>
+<h3>1-1 連続移動</h3>
+<p><strong>課題</strong>：プレイヤーを同じ方向に複数回動かして、少し離れたアイテムまで移動しよう。</p>
+<p>プレイヤーを1マス動かす基本のブロックが「〇〇方向に移動する」ブロックです。まずはこのブロックがどんな形をしているか、ツールボックスから探して、ワークスペースに1つ置いてみましょう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>「〇〇方向に移動する」ブロックは、1回実行すると何マス進みますか。2マス進みたいときは、このブロックをどうすればよいでしょうか。</li>
+<li>ブロックのドロップダウン（▼）で、方向を選べることを確認しましょう。</li>
+</ul>
+<p>まずは自分でブロックをワークスペースに並べて、実行ボタンを押してみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-01_move_1-1.png" alt="1-1 連続移動" style="width:55%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">1-1 連続移動</figcaption>
+</figure>
+<p>上の例では「上方向に移動する」ブロックを2つ並べています。実行すると、キャラクターは上に1マス、また1マス、と合計2マス移動します。ブロックの向きはドロップダウンで切り替えられるので、「右方向に移動する」を3つ並べれば右に3マス進みます。</p>
+<h5>1マス移動だけを用意した意味</h5>
+<p>「3マス進む」という命令が最初から用意されていれば楽なのに、と思うかもしれません。しかしCHaserでは、あえて「1マス移動」という最小の命令だけを用意しています。理由は、CHaserが1ターンごとに1手だけ行動する対戦ゲームだからです。実際の対戦では、1マス進むごとに相手も1手動きます。もし「3マス進む」という命令があると、その間に相手がどう動いたかを確認できないまま3手分先に進んでしまい、不利な状況に気づけません。1マスずつ命令することで、後の章で学ぶ「毎ターン周囲を確認してから動く」という考え方につなげやすくしているのです。</p>
+</div></details><h3>1-4 複雑な移動</h3>
+<p><strong>課題</strong>：ブロックを避けながら、アイテムのマスまでたどり着こう。</p>
+<p>このステージでは、フィールドの途中にブロックが置かれていて、まっすぐ進むだけではアイテムにたどり着けません。実際にBlockly画面でステージ1-4を開き、フィールドの様子を確認してみましょう。</p>
+<h4>💡 考えるヒント</h4>
+<ul>
+<li>フィールドの絵を見て、自分のいる場所からアイテムまで、ブロックを避けながらどう進めばよいか、まず頭の中で（または紙に書いて）経路を考えましょう。</li>
+<li>縦方向・横方向、それぞれ何マス動けばよいかを、方向ごとにまとめて数えると整理しやすくなります。</li>
+<li>移動ブロックは、進みたい順番のとおりに上から並べる必要があります。</li>
+</ul>
+<p>自分なりの経路を考えて、実際にブロックを並べてから、下の解答例と見比べてみましょう。</p>
+<hr>
+<h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-02_move_1-4.png" alt="1-4 複雑な移動" style="width:60%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">1-4 複雑な移動</figcaption>
+</figure>
+<p>このステージでは「右×3 → 上×2 → 右×1」という経路でゴールできます。移動ブロックを、進みたい順番のとおりに上から並べていくだけです。</p>
+</div></details><h4>注意したいこと</h4>
+<ul>
+<li><strong>マス数を数え間違える</strong>：フィールドの左上を基準に、縦・横のマス目を1つずつ指で追いながら数えると間違いにくくなります。</li>
+<li><strong>ブロックの順番を間違える</strong>：Blocklyでは上から下へ命令が実行されます。組んだ順番と経路の順番がズレていないか、実行前に見比べましょう。</li>
+<li><strong>同じ向きのブロックを1つにまとめてしまう</strong>：「右方向に移動する」ブロックが1つだけだと、右に1マスしか進みません。3マス進みたいなら3つ並べる必要があります（回数を指定して繰り返す方法は次章で学びます）。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>「左×2 → 下×1 → 左×2」という経路でゴールするには、どんなブロックをどんな順番で並べればよいでしょうか。紙に書き出してから、実際にBlocklyで組んでみましょう。</li>
+<li>自分でフィールドの絵を描き、アイテムまでの経路を考えて、必要な移動ブロックの並びをノートに書き出してみましょう。</li>
+</ol>
+<h3>発展：最短ルートを考える</h3>
+<p>同じゴールにたどり着くにも、遠回りのルートと最短ルートがあります。チュートリアルには「プログラムブロックを〇個以下でクリア」という条件が付いていることがあります。これは、できるだけ少ない命令数でゴールすることを促す条件です。移動ブロックを並べる前に、フィールド全体を見渡して、遠回りせずに済むルートがないか考えてみましょう。次の章で学ぶ「繰り返し」を使うと、同じ移動でもさらに少ないブロック数で表現できるようになります。</p>
+<blockquote>
+<p><strong>付録2への案内</strong>：本文で取り上げなかった1-2「キャラクターを移動させよう２」・1-3「いろいろな方法に移動させよう」を含め、ステージ1の全4課題の解答例を付録2「ステージ1　移動」に掲載しています。</p>
+</blockquote>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-00.html" class="text-blue-600 hover:underline">← Blockly基本操作</a><a href="./tutorial-02.html" class="text-blue-600 hover:underline sm:text-right">2章　繰り返し →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

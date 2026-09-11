@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5章　探査：近隣探査と遠方探査 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 5章　探査：近隣探査と遠方探査">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="font-bold text-blue-700">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <h1 class="mb-6 text-3xl font-bold">5章　探査：近隣探査と遠方探査</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>5章 探査：近隣探査と遠方探査</h2>
+<p>周辺情報（map_info）で分かるのは自分のすぐ隣のマスまでです。もっと遠くまで様子を見たいときのために、CHaserには2種類の探査ブロックが用意されています。</p>
+<h3>近隣探査</h3>
+<p>「近隣探査」ブロック（Python編ではlookという命令に対応します）は、指定した方向の隣のマスを中心とした、周囲9マスの情報を取得します。つまり、自分がまだ移動していない場所を、先回りして覗き見ることができます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-09_look.png" alt="近隣探査" style="width:50%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">近隣探査</figcaption>
+</figure>
+<p>上の例のように「右方向を近隣探査する」を実行すると、右隣のマスを中心にした周囲9マスの情報がまとめて手に入ります。得られた情報から「中央（指定方向のマス自体）はBlockか」「右上はEnemyか」のように、方角名を指定して1つずつ調べられます（実際の値の取り出し方はPython編・第3部5章で詳しく確認します）。</p>
+<h4>「1歩先」を覗く意味</h4>
+<p>3章の周辺情報だけでは、自分の隣のマスまでしか分かりません。しかし「右に1マス進んだら、その先はブロックだらけで動けなくなってしまう」という状況を、進んでしまう前に知りたいことがあります。近隣探査ブロックを使えば、実際にはまだ動いていないのに、動いた後の周囲の様子を先に確認できます。これは、6章で学ぶ「自縛（じばく）を避ける」ための重要な武器になります。</p>
+<h3>遠方探査</h3>
+<p>「遠方探査」ブロック（Python編ではsearchという命令に対応します）は、指定した方向に一直線に9マス分の情報を、まとめて取得します。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/fig2-11_search.png" alt="遠方探査" style="width:50%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">遠方探査</figcaption>
+</figure>
+<p>遠方探査で得られる情報は、隣のマスが0番目、いちばん遠いマスが8番目、という番号（インデックス）で管理されています。「1マス先（0番目）はBlock」「5マス先（4番目）はEnemy」のように、番号を指定してその方向の遠くの様子を確認できます（実際の値の取り出し方はPython編・第3部5章で詳しく確認します）。</p>
+<h4>近隣探査と遠方探査の違いを整理する</h4>
+<p>この2つのブロックはどちらも「探査」という名前が付いていますが、調べる範囲の形がまったく違います。近隣探査は指定した1マスを中心とした「正方形（9マス）」を、遠方探査は指定した方向への「一直線（9マス）」を調べます。「周りに何があるか広く浅く知りたい」なら近隣探査、「この方向にアイテムか相手がいるか、遠くまで一気に知りたい」なら遠方探査、というように目的に応じて使い分けます。</p>
+<table>
+<thead>
+<tr>
+<th>ブロック</th>
+<th>調べる範囲</th>
+<th>向いている場面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>近隣探査（look）</td>
+<td>指定方向の隣マスを中心とした周囲9マス</td>
+<td>その方向に進んだ後の安全確認</td>
+</tr>
+<tr>
+<td>遠方探査（search）</td>
+<td>指定方向への一直線9マス</td>
+<td>遠くのアイテムや相手を素早く見つける</td>
+</tr>
+</tbody>
+</table>
+<h4>注意したいこと</h4>
+<ul>
+<li><strong>番号（インデックス）が1から始まると勘違いする</strong>：遠方探査の結果は0番目が「隣」、8番目が「いちばん遠い」です。「9マス先を知りたいのに8番目を指定してしまった」あるいは逆に「0番目を1マス目と思わず、うっかり1番目（実際は2マス先）を指定してしまった」という間違いが起こりがちです。数え始めが0であることを必ず確認しましょう。</li>
+<li><strong>近隣探査と遠方探査の範囲を混同する</strong>：近隣探査は正方形の範囲、遠方探査は一直線の範囲です。「遠方探査で斜め方向の情報も取れるはず」といった思い込みをしないよう注意しましょう。</li>
+<li><strong>探査した情報を、探査した時点のまま使い続けてしまう</strong>：3章と同じく、探査結果もその瞬間のスナップショットです。何ターンも前の探査結果を使い回すと、状況が変わっていて判断がずれてしまいます。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>右方向に9マス先まで遠方探査したとき、「3マス先」の情報を取り出すには何番目を指定すればよいでしょうか。</li>
+<li>「右に進んでも大丈夫か」を進む前に確認したい場合、近隣探査と遠方探査のどちらを使うのが適切か、理由とあわせて答えてみましょう。</li>
+</ol>
+<p>近隣探査（周囲を見る）と遠方探査（一直線に遠くを見る）を使い分けることで、より先を読んだ行動ができるようになります。次の章では、この遠方探査を使って実際に行動を決めるステージに挑戦します。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-04.html" class="text-blue-600 hover:underline">← 4章　条件分岐</a><a href="./tutorial-06.html" class="text-blue-600 hover:underline sm:text-right">6章　探査した情報で行動を決める →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
