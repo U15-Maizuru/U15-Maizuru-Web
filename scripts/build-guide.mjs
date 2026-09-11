@@ -308,6 +308,8 @@ function renderShell({ slug, title, description, breadcrumb, contentHtml, spoile
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <link rel="stylesheet" href="../src/style.css">
+  <!-- Google Analytics -->
+  <script type="module" src="../src/gtag.js"></script>
 </head>
 <body class="bg-white text-gray-800">
   <header class="border-b border-gray-200 bg-white">
