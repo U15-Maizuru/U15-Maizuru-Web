@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6章　総合演習と、Blockly⇔Python対応表 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 6章　総合演習と、Blockly⇔Python対応表">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="font-bold text-blue-700">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">6章　総合演習と、Blockly⇔Python対応表</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>6章 総合演習と、Blockly⇔Python対応表</h2>
+<p>入門編の第2部10章（ステージ8）に対応します。</p>
+<h3>総合演習：障害物を回避しよう（ステージ8-1）</h3>
+<p>入門編と同じく、このステージには、あらかじめ用意された答えのコードはありません。ここまでに学んだPythonの書き方を組み合わせて、自分の力でコードを完成させる、「卒業試験」です。</p>
+<p>課題は、次のようなものでした（入門編の第2部10章より）。</p>
+<blockquote>
+<p>下へ進み、ブロックにぶつかったら、下にブロックがなくなるまで左へ移動して再び下へ移動。左へ移動した歩数を変数「移動量」にカウントしておいて、右にブロックがなければ「移動量」分だけ中央に戻る。</p>
+</blockquote>
+<p>課題を、6つの要素に分けて、それぞれ第2部のどの章の書き方で書けるかを、確かめてみましょう。</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>対応する章</th>
+<th>使う書き方の例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下へ進む</td>
+<td>1章</td>
+<td><code>walk(Down)</code></td>
+</tr>
+<tr>
+<td>下がブロックかどうかを確認する</td>
+<td>2章</td>
+<td><code>if map_info[Down] == Block:</code></td>
+</tr>
+<tr>
+<td>ブロックがなくなるまで、左へ移動し続ける</td>
+<td>1章・2章</td>
+<td><code>while map_info[Down] == Block:</code> のような、条件付きの繰り返し</td>
+</tr>
+<tr>
+<td>左へ動いた回数を数える</td>
+<td>5章</td>
+<td><code>move_count += 1</code> のような、変数の更新</td>
+</tr>
+<tr>
+<td>右にブロックがないか確認してから、数えた回数だけ中央に戻る</td>
+<td>2章・5章</td>
+<td><code>for</code>（または<code>while</code>）と<code>if</code>の組み合わせ</td>
+</tr>
+<tr>
+<td>毎ターン、相手の動きも見ながら繰り返す</td>
+<td>4章</td>
+<td><code>while True:</code>の中で<code>get_ready()</code></td>
+</tr>
+</tbody>
+</table>
+<h3>組み立てのヒント</h3>
+<ol>
+<li>まず、6つの要素を、それぞれ単独のPythonコードとして書き出してみる。</li>
+<li>「下へ進んで、ブロックにぶつかったら止まる」部分だけを、<code>while</code>と<code>if</code>で組み、実際に動かして確かめる。</li>
+<li>確認できたら、「左へ避ける」部分を追加し、避けた歩数を数える変数を用意する。</li>
+<li>最後に、「右にブロックがなければ戻る」部分を追加し、全体を<code>while True:</code>と<code>get_ready()</code>で包む。</li>
+</ol>
+<p>ステージ8-1も、チュートリアルのPython画面で解けます。大きな課題は、小さな部品に分けて、1つずつ確実に動くことを確認しながら、組み上げていくのがコツです。Pythonでは、Blocklyのように「どこまで組み終わったか」が形で見えないぶん、こまめに実行して、結果を確かめながら進めることが大切です。Pythonの画面（第3部1章）の「マップ」タブでは、ブロックやアイテムを置いて、練習用のマップを自分で作れます。ステージ8-1のような、障害物のあるマップを作って、試してみましょう。</p>
+<p><code>print()</code>でコードの途中の値を出力すると、その値が実行画面の出力欄に表示されます。うまく動かないときは、<code>print(map_info)</code>などで、プログラムが今何を見ているかを確かめてみましょう。</p>
+<h3>演習問題</h3>
+<ol>
+<li>「変数の値を1増やす」書き方を使って、「アイテムを取った回数を数える」変数を作り、10回集めたら、特別な行動をする、というコードを考えてみましょう。</li>
+<li>実際にこのステージのコードを書き、うまくいかなかった部分があれば、後述のBlockly⇔Python対応表を見ながら、第2部のどの章の内容を復習すればよいか確認してみましょう。</li>
+</ol>
+<h2>第2部のまとめ</h2>
+<p>第2部では、入門編でBlocklyを使って学んだ考え方を、Pythonの文法でどう書くかを学びました。変数への代入（<code>=</code>）と比較（<code>==</code>）の違い、インデントによる構造の表現、<code>if</code>・<code>for</code>・<code>while</code>・<code>def</code>という基本の文型、そして<code>in</code>・<code>and</code>・<code>or</code>・<code>not</code>といった判定を組み合わせる演算子まで、CHaserのプログラムを組むために必要な道具は、一通りそろいました。</p>
+<p>BlocklyとPythonは、見た目こそ大きく違いますが、「1マスずつ動く」「条件によって判断を変える」「同じ処理をまとめて繰り返す」「情報に名前を付けて覚えておく」「処理をひとまとまりの部品にする」という、根っこにある考え方は完全に同じです。次の第3部では、この道具を使って、実際に対戦に挑みます。</p>
+<h2>Blockly⇔Python対応表</h2>
+<p>入門編で登場したブロックと、Pythonの書き方を、機能ごとにまとめました。入門編のブロックをPythonで書き直すときの、索引として使ってください。</p>
+<p><strong>移動・設置</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blockly（ブロック）</th>
+<th>Python（書き方）</th>
+<th>対応する章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「〇〇方向に移動する」</td>
+<td><code>walk(方向)</code></td>
+<td>1章</td>
+</tr>
+<tr>
+<td>「〇〇方向にブロックを設置する」</td>
+<td><code>put(方向)</code></td>
+<td>4章</td>
+</tr>
+</tbody>
+</table>
+<p><strong>情報の取得</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blockly（ブロック）</th>
+<th>Python（書き方）</th>
+<th>対応する章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「周辺情報を取得する」</td>
+<td><code>map_info</code>（<code>get_ready()</code>の戻り値）</td>
+<td>2章</td>
+</tr>
+<tr>
+<td>「自分のターンを待つ」</td>
+<td><code>get_ready()</code></td>
+<td>4章</td>
+</tr>
+<tr>
+<td>「近隣探査」（look）</td>
+<td><code>look(方向)</code> → <code>look_info</code></td>
+<td>3章</td>
+</tr>
+<tr>
+<td>「遠方探査」（search）</td>
+<td><code>search(方向)</code> → <code>search_info</code></td>
+<td>3章</td>
+</tr>
+</tbody>
+</table>
+<p><strong>繰り返し</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blockly（ブロック）</th>
+<th>Python（書き方）</th>
+<th>対応する章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「〇回繰り返す」</td>
+<td><code>for _ in range(回数):</code></td>
+<td>1章</td>
+</tr>
+<tr>
+<td>「ずっと繰り返す」</td>
+<td><code>while True:</code></td>
+<td>1章</td>
+</tr>
+</tbody>
+</table>
+<p><strong>条件分岐・判定</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blockly（ブロック）</th>
+<th>Python（書き方）</th>
+<th>対応する章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「もし〜なら、そうでなければ」</td>
+<td><code>if:</code> ／ <code>else:</code></td>
+<td>2章</td>
+</tr>
+<tr>
+<td>「もし〜なら、そうでなくもし〜」</td>
+<td><code>if:</code> ／ <code>elif:</code> ／ <code>else:</code></td>
+<td>2章</td>
+</tr>
+<tr>
+<td>「＝」の比較ブロック（ドロップダウンで<code>≠</code>・<code>&gt;</code>などに変更）</td>
+<td><code>==</code> ／ <code>!=</code> ／ <code>&gt;</code></td>
+<td>2章</td>
+</tr>
+<tr>
+<td>「リスト〔　〕で以下の〔　〕の最初の出現箇所を検索」ブロック</td>
+<td><code>first_index(リスト, 値)</code>（変換されたコードに出てくる）</td>
+<td>3章・5章</td>
+</tr>
+<tr>
+<td>（↑を<code>&gt; 0</code>と比べる書き方の、Pythonでの短い言い換え）</td>
+<td><code>値 in リスト</code></td>
+<td>3章</td>
+</tr>
+<tr>
+<td>論理演算ブロック（「〜かつ〜」／「〜または〜」）</td>
+<td><code>and</code> ／ <code>or</code></td>
+<td>3章</td>
+</tr>
+<tr>
+<td>「〜ではない」ブロック</td>
+<td><code>not</code></td>
+<td>3章</td>
+</tr>
+</tbody>
+</table>
+<p><strong>変数・関数</strong></p>
+<table>
+<thead>
+<tr>
+<th>Blockly（ブロック）</th>
+<th>Python（書き方）</th>
+<th>対応する章</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>変数ブロック（値をセット）</td>
+<td><code>変数名 = 値</code></td>
+<td>0章・5章</td>
+</tr>
+<tr>
+<td>変数の値を更新する組み方</td>
+<td><code>変数名 = 変数名 + 1</code>（<code>+=</code>）</td>
+<td>5章</td>
+</tr>
+<tr>
+<td>関数ブロック（定義）</td>
+<td><code>def 関数名():</code></td>
+<td>5章</td>
+</tr>
+<tr>
+<td>関数ブロック（呼び出し）</td>
+<td><code>関数名()</code></td>
+<td>5章</td>
+</tr>
+<tr>
+<td>「空のリストを作成」ブロック</td>
+<td><code>[]</code></td>
+<td>5章</td>
+</tr>
+<tr>
+<td>「リスト〔　〕挿入位置：最後　値：〔　〕」ブロック</td>
+<td><code>.append(値)</code></td>
+<td>5章</td>
+</tr>
+<tr>
+<td>「リスト〔　〕取得　ランダム」ブロック</td>
+<td><code>random.choice(リスト)</code></td>
+<td>5章</td>
+</tr>
+</tbody>
+</table>
+<p><code>first_index()</code>は、リストの中で特定の値が最初に見つかった位置を返す、Blocklyが変換のときに補う補助関数です。<strong>位置は1から数え、見つからなければ0</strong>を返します（5章）。<code>search_info[番号]</code>が0から数えるのとは数え方が違うので、注意してください。</p>
+<h2>第2部 確認クイズ</h2>
+<p><strong>0章 Pythonの基礎と、CHaserの書き方</strong></p>
+<ol>
+<li>命令の書き方は、チュートリアルのPython画面と、対戦用のPython画面とで、どう違いますか。</li>
+<li>対戦用の骨組みのプログラムのうち、自分で書き換えるのは、どの部分ですか。</li>
+<li><code>direction = Right</code>と<code>direction == Right</code>は、それぞれどういう意味ですか。</li>
+<li><code>if</code>や<code>for</code>の行の最後に、必ず付ける記号は何ですか。</li>
+</ol>
+<p><strong>1章 移動と繰り返し</strong></p>
+<ol>
+<li>プレイヤーを左に1マス動かすコードを書いてみましょう。</li>
+<li><code>range(4)</code>は、どんな数字の並びを作りますか。</li>
+</ol>
+<p><strong>2章 情報の読み取りと条件分岐</strong></p>
+<ol>
+<li><code>map_info[Left]</code>は、何を表しますか。</li>
+<li><code>if</code>・<code>elif</code>・<code>else</code>は、それぞれどんなときに実行されますか。</li>
+</ol>
+<p><strong>3章 探査と、行動の決め方</strong></p>
+<ol>
+<li><code>look</code>の結果と<code>search</code>の結果では、値の取り出し方がどう違いますか。</li>
+<li><code>look(Up)</code>を実行したとき、<code>look_info[Center]</code>は、自分から見てどのマスの情報ですか。</li>
+<li><code>search_info[9]</code>と書くと、どうなりますか。理由もあわせて答えてみましょう。</li>
+</ol>
+<p><strong>4章 ターンの仕組みと、攻撃</strong></p>
+<ol>
+<li><code>map_info = get_ready()</code>は、どんな2つのことをしていますか。</li>
+<li>1回の番で、<code>walk</code>・<code>put</code>・<code>look</code>・<code>search</code>のうち、行動できるのは何回ですか。</li>
+<li>初めの距離が偶数で、相手が動き回るとき、移動だけを繰り返すプログラムで、相手に勝てないのはなぜですか。また、どうすれば勝てますか。</li>
+</ol>
+<p><strong>5章 変数と関数</strong></p>
+<ol>
+<li>Pythonで関数を定義するときに使う、キーワードは何ですか。</li>
+<li><code>free = []</code>と<code>free.append(Up)</code>は、それぞれ何をしていますか。</li>
+<li>関数の中で、関数の外にある変数に新しい値を代入したいとき、関数の先頭に何を書きますか。</li>
+</ol>
+<p><strong>6章 総合演習</strong></p>
+<ol>
+<li><code>count = count + 1</code>は、どんな順番で処理されますか。</li>
+<li>この書き方を、短く書くと、どうなりますか。</li>
+</ol>
+<p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
+<p>次の第3部では、Pythonの画面の使い方と、対戦ルームの使い方を説明します。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-05.html" class="text-blue-600 hover:underline">← 5章　変数と関数</a><a href="./practice-01.html" class="text-blue-600 hover:underline sm:text-right">1章　Pythonの画面の使い方 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

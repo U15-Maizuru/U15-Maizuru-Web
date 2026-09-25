@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3章　やりたいことをプログラムにする | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第3部　実践 3章　やりたいことをプログラムにする">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="font-bold text-blue-700">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第3部　実践</p>
+      <h1 class="mb-6 text-3xl font-bold">3章　やりたいことをプログラムにする</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>3章 やりたいことをプログラムにする</h2>
+<p>第2部までで、CHaserのプログラムを書くための道具（移動・繰り返し・条件分岐・探査・変数・関数）は一通りそろいました。ところが、いざ「こう動かしたい」というアイデアが浮かんでも、<strong>それをどうやってプログラムにすればよいのか</strong>が分からず、手が止まってしまうことがあります。</p>
+<p>この章では、アイデアを、動くプログラムにするまでの<strong>考え方の手順</strong>を学びます。教材には、CHaserの対戦で使える動き（斜めにいる敵への対応、遠くの様子を先に見る、いちばん近い場所を探す、など）を取り上げます。ただ、ねらいは動きそのものではなく、「どうやってプログラムにしたか」を、順を追って見ていくことです。</p>
+<p>この章のプログラムは、Pythonで書きます。入門編の第3部3章に、ブロックで組める部分（斜めの敵への対応、いつlookするか、など）を、Blocklyで組んだ図があります。ブロックと見比べたいときは、そちらを見てください。第2部（特に5章の関数）を読んでから進んでください。辞書・タプル・<code>global</code>のように、第2部で扱っていないPythonの書き方は、初めて使う場面で説明します。この章のコードは、簡易版ではなく、<strong>正式な本番用の書き方</strong>（命令に<code>player.</code>を付ける）です。チュートリアルのPython画面で試すときは、<code>player.</code>を外してください。</p>
+<p>また、この章は、答えを一つに決めるものではありません。同じ「やりたいこと」でも、プログラムにする方法は何通りもあります。どれを採用するかは、自分のプログラムで試しながら決めてください。</p>
+<h3>考え方：やりたいことを、プログラムにする4ステップ</h3>
+<p>「こう動かしたい」というアイデアは、日本語で浮かびます。ところが、コンピューターは日本語をそのままでは理解してくれません。日本語から、動くコードまでの間には、次の4つのステップがあります。この章のどの例でも、この順番で考えています。</p>
+<ol>
+<li>
+<p><strong>やりたいことを1文で書く</strong></p>
+<p>例：「覚えているアイテムのうち、近いものを取りに行きたい」</p>
+</li>
+<li>
+<p><strong>あいまいな言葉を、数えられるものに直す</strong></p>
+<p>「近い」は何マス離れているか、「最近」は何ターン前か、というように、<strong>数えたり比べたりできるもの</strong>に置き換えます。</p>
+</li>
+<li>
+<p><strong>日本語のまま、小さな手順に分ける</strong></p>
+<p>「①覚えているマスを全部見る」「②アイテムだけ選ぶ」「③いちばん近いものを決める」…と、1つの手順が1〜数行のコードになる大きさまで分けます。</p>
+</li>
+<li>
+<p><strong>手順を1つずつ、コードの部品に置き換える</strong></p>
+<p>下の表のように、手順の形ごとに使う「型」がだいたい決まっています。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>手順の形</th>
+<th>コードの型</th>
+<th>この章での例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>候補を全部、順番に調べる</td>
+<td><code>for … in …:</code></td>
+<td>斜めの4方向、上下左右の4マス</td>
+</tr>
+<tr>
+<td>条件に合うものだけ選ぶ</td>
+<td><code>if 条件:</code></td>
+<td><code>if map_info[…] == Enemy:</code></td>
+</tr>
+<tr>
+<td>行動できたら、そこで終わる</td>
+<td><code>return True</code></td>
+<td><code>take_turn</code>の各判断</td>
+</tr>
+<tr>
+<td>「最近」「近い」を判定する</td>
+<td>引き算して、数字と比べる</td>
+<td>lookの条件、追いかける距離</td>
+</tr>
+<tr>
+<td>場所から情報を引く</td>
+<td>辞書<code>辞書[(x, y)]</code></td>
+<td><code>memory</code></td>
+</tr>
+<tr>
+<td>「いちばん近い（大きい）もの」を探す</td>
+<td>最初は<code>None</code>にしておき、より近いものが見つかるたびに入れ替える</td>
+<td>覚えているアイテムを追う</td>
+</tr>
+<tr>
+<td>「近い順」に広げて調べる</td>
+<td>順番待ちの列（<code>queue</code>）に入れ、先頭から取り出す</td>
+<td>幅優先探索</td>
+</tr>
+<tr>
+<td>何個あるか数える</td>
+<td><code>count = 0</code>から始めて、当てはまるたびに<code>+= 1</code></td>
+<td>脱出口を数える</td>
+</tr>
+<tr>
+<td>同じものを二度調べない</td>
+<td>調べたものを辞書に登録し、<code>in</code>で確認する</td>
+<td><code>first_dir</code></td>
+</tr>
+</tbody>
+</table>
+<p>うまく作るコツは、<strong>最初から全部を作ろうとせず、手順①だけを書いて動かし、確かめてから次の手順を足していく</strong>ことです。第2部6章の総合演習と同じ進め方です。</p>
+<h4>やってみよう：「隣に敵がいたら攻撃する」</h4>
+<p>いちばん簡単な例で、4つのステップを一通りやってみましょう。</p>
+<p><strong>ステップ1：やりたいことを1文で書く</strong></p>
+<p>隣に敵がいたら、ブロックを置いて攻撃したい。</p>
+<p><strong>ステップ2：あいまいな言葉を、数えられるものに直す</strong></p>
+<ul>
+<li>「隣」→ 上・下・左・右のどれか</li>
+<li>「敵がいる」→ <code>map_info[方向] == Enemy</code>（第2部2章で学んだ書き方）</li>
+<li>「攻撃する」→ その方向に<code>player.put(方向)</code></li>
+</ul>
+<p><strong>ステップ3：日本語のまま、小さな手順に分ける</strong></p>
+<ol>
+<li>上・下・左・右を、1つずつ見る</li>
+<li>その方向に敵がいるか、確かめる</li>
+<li>いたら、その方向にブロックを置く</li>
+<li>置いたら、この仕事は終わり（あとで使うので、<code>True</code>を返す）</li>
+<li>どの方向にもいなければ、何もしない（<code>False</code>を返す）</li>
+</ol>
+<p><strong>ステップ4：手順を1つずつ、コードの部品に置き換える</strong></p>
+<p>手順1は「候補を全部、順番に調べる」なので<code>for</code>、手順2は「条件に合うものだけ選ぶ」なので<code>if</code>、手順4と5は「終わったことを知らせる」ので<code>return</code>です。</p>
+<pre><code class="language-python">def attack_adjacent_enemy():
+    for direction in (Up, Down, Left, Right):   # 手順1：4方向を順に
+        if map_info[direction] == Enemy:        # 手順2：敵がいるか
+            player.put(direction)               # 手順3：ブロックを置く
+            return True                         # 手順4：行動した
+    return False                                # 手順5：何もしなかった
+</code></pre>
+<p>手順の番号とコードの行が、1対1で対応していることを確かめてください。<strong>日本語の手順が細かく書けていれば、コードは自然に決まります</strong>。反対に、コードが書けなくて手が止まったときは、手順の分け方が足りていないことがほとんどです。手順を、もっと細かく分けてみましょう。</p>
+<p>この章の以降の例は、どれも、この4ステップで組み立てていきます。</p>
+<h3>部品を組み合わせる：判断を優先順位で並べる</h3>
+<p>CHaserでは、1ターンに行動できるのは1回だけです。ある行動をしたら、そのターンはもう終わりです。この性質を使うと、前の節で作ったような関数（「やりたいこと」1つぶんの部品）を、次のような形で組み合わせられます。</p>
+<ol>
+<li>「こういう状況なら、こう動く」という判断を、関数として1つずつ用意する。</li>
+<li>それぞれの関数は、<strong>行動したら<code>True</code>、当てはまらなくて何もしなかったら<code>False</code></strong>を返す。</li>
+<li>優先したい順に上から呼び出し、<code>True</code>が返ってきたらそのターンを終える。</li>
+</ol>
+<pre><code class="language-python">def take_turn():
+    if attack_adjacent_enemy():   # 1. 隣に敵がいたら攻撃
+        return
+    if grab_visible_item():       # 2. 見えているアイテムを取る
+        return
+    random_walk()                 # 3. なければランダムに歩く
+
+while True:
+    map_info = player.get_ready()
+    take_turn()
+</code></pre>
+<p><code>return</code>は第2部5章で学んだとおり、関数をそこで終わらせる命令です。<code>if attack_adjacent_enemy():</code>の中で<code>return</code>すれば、それより下の判断は実行されません。つまり、<strong>上に書いた判断ほど優先される</strong>ということです。プログラム全体の動きは、この「並べる順番」と「各関数の中身」で決まります。</p>
+<p><code>attack_adjacent_enemy</code>は、前の節で作ったものです。ほかの2つも、同じ4ステップで作れます。どれも第2部までに学んだ書き方だけでできています。</p>
+<pre><code class="language-python">def attack_adjacent_enemy():
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Enemy:
+            player.put(direction)        # 敵のマスにブロックを置く
+            return True
+    return False
+
+
+def grab_visible_item():
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Item:
+            player.walk(direction)
+            return True
+    return False
+
+
+def random_walk():
+    free_directions = []
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] != Block:
+            free_directions.append(direction)
+    if free_directions:
+        player.walk(random.choice(free_directions))
+    else:
+        player.look(Up)     # 四方が塞がったときの保険
+</code></pre>
+<p><code>for direction in (Up, Down, Left, Right):</code>は、括弧の中の方向を1つずつ<code>direction</code>に入れて繰り返す書き方です。<code>map_info</code>と<code>player</code>は、第2部でも使ったものと同じです。</p>
+<blockquote>
+<p><strong>ここで覚えておきたい約束</strong>：1つの関数の中で<code>player.walk</code>・<code>player.put</code>・<code>player.look</code>・<code>player.search</code>を呼ぶのは、<strong>多くても1回</strong>にしましょう。1ターンに行動できるのは1回だけなので、2回呼ぶと2回目は次のターンにずれ込み、思ったとおりに動かなくなります。</p>
+</blockquote>
+<p>以降の節では、この<code>take_turn</code>の中に並べる部品を、「やりたいこと」ごとに1つずつ作っていきます。</p>
+<h3>例1 同じ「やりたいこと」を、3通りのプログラムにする（斜めに敵がいたら）</h3>
+<p><strong>この例で身につく考え方</strong>：同じ「やりたいこと」でも、プログラムにする方法は1つとは限りません。複数の書き方を作って、比べて選びます。</p>
+<p><code>map_info</code>を見ると、敵が斜め（<code>UpLeft</code>・<code>UpRight</code>・<code>DownLeft</code>・<code>DownRight</code>）にいることがあります。このときの動き方は、勝敗に直結する重要な場面です。まず、何が問題になるのかを整理しましょう。</p>
+<p>敵が斜めにいるとき、次に<strong>縦か横に隣り合う形を作った側</strong>は、その直後に相手の手番が来ます。相手は隣にいる自分にブロックを置いてアタックできるので、自分から隣り合いを作るのは危険です。逆に、相手が隣り合いを作ってくれたなら、次は自分の手番なので、こちらがアタックできます。</p>
+<p>ここから、斜めに敵がいるときの動き方が3通り考えられます。どれも「自分から隣り合いを作らない」という点は共通です。</p>
+<h4>手順に分けてみよう</h4>
+<p><strong>やりたいこと</strong>：敵が斜めにいるときに、自分から隣り合いを作らないように動く。</p>
+<p>この文を、次の5つの手順に分けると、プログラムにできます。3つの選択肢は、④だけが違い、ほかの手順は共通です。</p>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>手順</th>
+<th>コードの部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>斜めの4方向を1つずつ調べる</td>
+<td><code>for diagonal in …:</code></td>
+</tr>
+<tr>
+<td>②</td>
+<td>その方向に敵がいるか確かめる</td>
+<td><code>if map_info[diagonal] == Enemy:</code></td>
+</tr>
+<tr>
+<td>③</td>
+<td>隣り合いができてしまう2マスの方向（または離れる方向）を求める</td>
+<td><code>APPROACH[diagonal]</code>、<code>ESCAPE[diagonal]</code></td>
+</tr>
+<tr>
+<td>④</td>
+<td>選択肢ごとの行動をする（A：その側をlook、B：反対に歩く、C：通れるほうを塞ぐ）</td>
+<td><code>player.look</code>、<code>player.walk</code>、<code>player.put</code></td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>行動したら<code>True</code>、斜めに敵がいなければ<code>False</code>を返す</td>
+<td><code>return True</code>、<code>return False</code></td>
+</tr>
+</tbody>
+</table>
+<p>③で使うのが、次の「表」（辞書）です。</p>
+<h4>選択肢A：動かずに待つ（wait）</h4>
+<p>相手が近づいてくるのを待つ作戦です。ただし、CHaserに「何もしない」という命令はありません。動かずに1ターンを使える行動は、<code>look</code>・<code>search</code>・<code>put</code>のいずれかです。ここでは、敵のいる側を<code>look</code>して待つことにします。lookなら情報も手に入り、なおかつ何も壊しません。</p>
+<pre><code class="language-python"># 斜めの方向ごとに、「敵に近づく2つの方向」を用意しておく
+APPROACH = {
+    UpLeft: (Up, Left),
+    UpRight: (Up, Right),
+    DownLeft: (Down, Left),
+    DownRight: (Down, Right),
+}
+
+def wait_diagonal_enemy():
+    for diagonal in APPROACH:
+        if map_info[diagonal] == Enemy:
+            player.look(APPROACH[diagonal][0])  # 動かず敵の側を見る
+            return True
+    return False
+</code></pre>
+<p><code>APPROACH</code>は「辞書」と呼ばれるもので、<code>{キー: 値, ...}</code>の形で書き、<code>APPROACH[UpLeft]</code>のように<strong>キー</strong>を指定して値を取り出します。ここでは、斜めの方向をキー、その斜めに近づくための2つの方向（縦と横）をまとめた組を値にしています。<code>for diagonal in APPROACH:</code>とすると、キー（4つの斜め方向）が1つずつ取り出されます。</p>
+<p><strong>この表の意味（座標で考える）</strong></p>
+<p>自分を<code>(0, 0)</code>、右が<code>x</code>の＋、下が<code>y</code>の＋とします。右上（<code>UpRight</code>）の敵は<code>(1, -1)</code>にいます。この敵が自分と縦か横に隣り合うには、<code>(0, -1)</code>（自分の上）か<code>(1, 0)</code>（自分の右）のどちらかのマスに入る必要があります。この2マスは、自分にも敵にも隣り合っています。</p>
+<p>つまり、<code>APPROACH[UpRight] = (Up, Right)</code>の2方向は、「敵が隣り合うために入ってくるマス」であり、同時に「自分がそこへ歩くと隣り合いができてしまうマス」です。ほかの3つの斜めも、同じ考え方で決まっています。</p>
+<p><code>wait_diagonal_enemy</code>で<code>APPROACH[diagonal][0]</code>の方向を<code>look</code>するのは、そこが敵の側だからです。右上の敵なら<code>look(Up)</code>となり、上方向の<code>x = -1〜1</code>、<code>y = -3〜-1</code>のマスが見えます。敵がいま立っている<code>(1, -1)</code>も、その範囲に入っています。</p>
+<h4>選択肢B：反対側に離れる（evade）</h4>
+<p>隣り合いを作らないように、敵から遠ざかる作戦です。</p>
+<pre><code class="language-python"># 斜めの方向ごとに、「敵から離れる2つの方向」
+ESCAPE = {
+    UpLeft: (Down, Right),
+    UpRight: (Down, Left),
+    DownLeft: (Up, Right),
+    DownRight: (Up, Left),
+}
+
+def evade_diagonal_enemy():
+    for diagonal in ESCAPE:
+        if map_info[diagonal] == Enemy:
+            for direction in ESCAPE[diagonal]:
+                if map_info[direction] != Block:
+                    player.walk(direction)
+                    return True
+    return False
+</code></pre>
+<p>離れる方向が2つあるのは、片方がブロックで塞がっていることもあるからです。通れる方を先に見つけたほうへ進みます。</p>
+<h4>選択肢C：敵の近づく道を塞ぐ（block）</h4>
+<p>敵が近づくために通るマスにブロックを置いて、隣り合えなくする作戦です。</p>
+<pre><code class="language-python">def block_diagonal_enemy():
+    for diagonal in APPROACH:
+        if map_info[diagonal] == Enemy:
+            for direction in APPROACH[diagonal]:
+                if map_info[direction] != Block:
+                    player.put(direction)  # 接近路を塞ぐ
+                    return True
+    return False
+</code></pre>
+<p>1回に塞げるのは、2つの接近路のうち1マスだけです。もう1マスは空いたままなので、敵がそちらから隣り合ってくる可能性は残ります。</p>
+<h4>3つを比べて、選ぶ</h4>
+<p>3つとも、<code>take_turn</code>に並べる位置は同じ（<code>attack_adjacent_enemy</code>の直後）で、関数名を差し替えるだけで切り替えられます。</p>
+<pre><code class="language-python">def take_turn():
+    if attack_adjacent_enemy():
+        return
+    if wait_diagonal_enemy():     # ← evade_… や block_… に替えられる
+        return
+    ...
+</code></pre>
+<p>それぞれに長所と短所があります。</p>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>長所</th>
+<th>気をつけたい点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 待つ</td>
+<td>自分は隣り合いを作らない。lookで敵の周りの様子も分かる</td>
+<td>相手も待つと、お互いに動かなくなることがある</td>
+</tr>
+<tr>
+<td>B 離れる</td>
+<td>敵との距離をあけられる</td>
+<td>逃げた先で別の敵接近や行き止まりに当たることがある</td>
+</tr>
+<tr>
+<td>C 塞ぐ</td>
+<td>敵の接近路を1つ消せる</td>
+<td>自分の隣にブロックが増え、自分の動ける方向も減る</td>
+</tr>
+</tbody>
+</table>
+<p>どれが向いているかは、相手のプログラムや、マップの形によっても変わります。3つを全部書いて、自分のプログラム同士や、CPU対戦で試してみましょう。</p>
+<h3>例2 あいまいな言葉を、数字にする（いつlookするか）</h3>
+<p><strong>この例で身につく考え方</strong>：「近く」「最近」のようなあいまいな言葉は、<strong>何かを数えて、数字を比べる式</strong>に直せば、プログラムにできます。</p>
+<p>前の節では、<code>look</code>を「動かずに1ターンを使う行動」として使いました。lookのもう1つの使い方は、<strong>遠くの様子を先に知ること</strong>です。</p>
+<p><code>get_ready()</code>が返す<code>map_info</code>は、自分のすぐ周りの9マスだけです。その外側にいる敵は見えません。そこで、<code>look</code>を使って、進む先の様子を先に確かめます。</p>
+<p><code>look</code>は、指定した方向の<strong>2マス先</strong>を中心とする周囲9マスを教えてくれます。たとえば<code>player.look(Up)</code>を実行すると、上方向の1〜3マス先の範囲が、次の形で<code>look_info</code>に入ります。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>左</th>
+<th>中</th>
+<th>右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3マス先</td>
+<td><code>look_info[UpLeft]</code></td>
+<td><code>look_info[Up]</code></td>
+<td><code>look_info[UpRight]</code></td>
+</tr>
+<tr>
+<td>2マス先</td>
+<td><code>look_info[Left]</code></td>
+<td><code>look_info[Center]</code></td>
+<td><code>look_info[Right]</code></td>
+</tr>
+<tr>
+<td>1マス先</td>
+<td><code>look_info[DownLeft]</code></td>
+<td><code>look_info[Down]</code></td>
+<td><code>look_info[DownRight]</code></td>
+</tr>
+<tr>
+<td>自分</td>
+<td></td>
+<td>★</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>look</code>を使うと、ちょうど<code>map_info</code>の外側にいる敵を先に見つけられます。ただし、lookは<strong>1ターンを使う</strong>ので、その間は移動もアイテム取得もできません。むやみに撃つと、アイテムを集める速さが落ちます。そこで、「いつ撃つか」が考えどころになります。</p>
+<p>ここでは、<strong>敵を見た直後の数ターンだけ、進行方向をlookする</strong>という作戦を作ります。敵がすぐ近くにいたなら、また近くにいる可能性が高いからです。</p>
+<p><strong>やりたいこと</strong>：敵が近くにいそうなときだけ、進行方向をlookする。</p>
+<p>このままでは、プログラムにできません。「近くにいそう」「撃ちすぎない」といった<strong>あいまいな言葉</strong>を、コンピューターが計算できる形に直す必要があるからです。コツは、「何を数えれば言えるか」を考えることです。</p>
+<table>
+<thead>
+<tr>
+<th>やりたいこと（言葉）</th>
+<th>数えるもの</th>
+<th>式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>敵が近くにいそう</td>
+<td>敵を最後に見てから、何ターンたったか</td>
+<td><code>turn_counter - last_enemy_turn &lt;= 4</code></td>
+</tr>
+<tr>
+<td>撃ちすぎない</td>
+<td>最後にlookしてから、何ターンたったか</td>
+<td><code>turn_counter - last_look_turn &gt;= 3</code></td>
+</tr>
+<tr>
+<td>どこを見るか</td>
+<td>最後に進んだ方向</td>
+<td><code>current_dir</code></td>
+</tr>
+</tbody>
+</table>
+<p>「4ターン以内」「3ターン以上」の数字は、この作戦の調整つまみです。そして、この式を計算するために、次の3つを覚えておく必要があります。</p>
+<ul>
+<li>いま何ターン目か（<code>turn_counter</code>）</li>
+<li>最後に敵を見たのは何ターン目か（<code>last_enemy_turn</code>）</li>
+<li>最後にlookしたのは何ターン目か（<code>last_look_turn</code>）</li>
+</ul>
+<p>さらに、「進行方向」を覚えるために、<code>player.walk</code>を包む関数<code>move</code>を作ります。</p>
+<pre><code class="language-python">turn_counter = 0          # 何ターン目か（メインループで1ずつ増やす）
+last_enemy_turn = -999    # 最後に敵を見たターン（-999は「まだ」）
+last_look_turn = -999     # 最後にlookしたターン
+current_dir = Left        # 直前に進んだ方向
+
+
+def move(direction):
+    global current_dir
+    player.walk(direction)
+    current_dir = direction
+
+
+def look_toward(direction):
+    global last_look_turn, last_enemy_turn
+    look_info = player.look(direction)
+    last_look_turn = turn_counter
+    if look_info is not None and Enemy in look_info:  # 敵が見えたか
+        last_enemy_turn = turn_counter
+
+
+def look_ahead_if_enemy_nearby():
+    # 直近4ターン以内に敵を見た？
+    saw_enemy_recently = turn_counter - last_enemy_turn &lt;= 4
+    # 前回のlookから3ターン以上あいた？
+    looked_long_ago = turn_counter - last_look_turn &gt;= 3
+    if saw_enemy_recently and looked_long_ago:
+        look_toward(current_dir)
+        return True
+    return False
+</code></pre>
+<p><strong><code>global</code></strong>は、関数の外にある変数を、関数の中で<strong>書き換える</strong>ときに必要な宣言です。関数の中で読むだけなら不要（<code>map_info</code>のように）ですが、<code>current_dir = direction</code>のように新しい値を代入するときは、<code>global current_dir</code>と先に書かないと、関数の中だけの別の変数になってしまい、外の変数は変わりません。</p>
+<p><code>Enemy in look_info</code>は、「<code>look_info</code>のリストの中に<code>Enemy</code>が含まれているか」を調べる書き方です。<code>look_info is not None</code>を先に確認しているのは、試合が終わった直後などで情報が取れなかったときに、エラーで止まらないようにするためです。</p>
+<p><strong>条件の計算例</strong></p>
+<p><code>look_ahead_if_enemy_nearby</code>の2つの条件は、ターン数の引き算だけで決まります。いま<code>turn_counter</code>が10だとします。</p>
+<table>
+<thead>
+<tr>
+<th><code>last_enemy_turn</code></th>
+<th><code>last_look_turn</code></th>
+<th><code>10 - last_enemy_turn &lt;= 4</code></th>
+<th><code>10 - last_look_turn &gt;= 3</code></th>
+<th>lookする？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>2 &lt;= 4 → 成り立つ</td>
+<td>5 &gt;= 3 → 成り立つ</td>
+<td>する</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>2 &lt;= 4 → 成り立つ</td>
+<td>1 &gt;= 3 → 成り立たない</td>
+<td>しない（さっき撃った）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>7 &lt;= 4 → 成り立たない</td>
+<td>5 &gt;= 3 → 成り立つ</td>
+<td>しない（敵を見てから時間がたった）</td>
+</tr>
+<tr>
+<td>-999</td>
+<td>-999</td>
+<td>1009 &lt;= 4 → 成り立たない</td>
+<td>1009 &gt;= 3 → 成り立つ</td>
+<td>しない（敵をまだ見ていない）</td>
+</tr>
+</tbody>
+</table>
+<p><code>last_enemy_turn</code>の最初の値を<code>-999</code>にしておくと、「まだ一度も敵を見ていない」ときは引き算の結果が大きくなり、1つ目の条件が成り立ちません。2つの条件が<strong>両方</strong>成り立ったときだけ、lookします。</p>
+<p>メインループでは、ターンごとに<code>turn_counter</code>を1つ増やし、<code>map_info</code>に敵がいたら<code>last_enemy_turn</code>を更新します。</p>
+<pre><code class="language-python">while True:
+    map_info = player.get_ready()
+    turn_counter += 1
+    if Enemy in map_info:
+        last_enemy_turn = turn_counter
+    take_turn()
+</code></pre>
+<blockquote>
+<p><strong>骨組みに貼るときの注意</strong>：この<code>while True:</code>を、第2部0章の骨組みの<code>main</code>の中に置く場合は、ここで代入している<code>turn_counter</code>と<code>last_enemy_turn</code>を、<code>main</code>の先頭の<code>global</code>にも付け足します（<code>global player, map_info, turn_counter, last_enemy_turn</code>）。付け足さないと、<code>main</code>の中だけの別の変数になってしまい、エラーになります。</p>
+</blockquote>
+<p><code>take_turn</code>の中には、アイテム取得より下、探索より上に<code>look_ahead_if_enemy_nearby()</code>を置きます。アイテムを取れるときは取り、取れなくて敵が近くにいそうなときだけ先を見る、という順番です。</p>
+<p>なお、<code>move</code>を使うときは、これまでの<code>player.walk(direction)</code>をすべて<code>move(direction)</code>に書き換えておきましょう。そうしないと、<code>current_dir</code>が更新されず、進行方向が古いままになります。</p>
+<h3>例3 情報を覚えておく（自分の位置と地図）</h3>
+<p><strong>この例で身につく考え方</strong>：プログラムは、前のターンに見たことを勝手には覚えていません。あとで使いたい情報は、<strong>変数や辞書に、自分で書き込んで</strong>おきます。</p>
+<p>次の2つの節（探索とアイテム追跡）では、<strong>見たことのあるマスを覚えておく</strong>ことが必要になります。<code>map_info</code>は毎ターン作り直されるので、そのままでは前のターンに見た情報は残りません。そこで、自分で「地図」を作って持ち続けます。</p>
+<p><strong>やりたいこと</strong>：見たことのあるマスの中身を覚えておいて、あとで使えるようにする。</p>
+<p>これも、いくつかの疑問に分けて考えます。</p>
+<ol>
+<li><strong>何を覚える？</strong> 「どこのマスが」「何だったか」の組です。「場所から中身を引く」ので、辞書がぴったりです。</li>
+<li><strong>場所をどう表す？</strong> マスに番号を振るための<strong>座標</strong>が必要です。ところが、<code>map_info</code>には「自分の周り」しか入っていないので、絶対的な位置は教えてくれません。そこで、スタート地点を<code>(0, 0)</code>と決め、歩いた分だけ自分の座標を数えて更新します。</li>
+<li><strong>周りのマスの座標は？</strong> 「自分の座標 ＋ 方角ごとのずれ」で求められます。右隣なら<code>(+1, 0)</code>、左上なら<code>(-1, -1)</code>です。このずれを、方角ごとにまとめた表が<code>OFFSET</code>です。</li>
+</ol>
+<p>この3つを、次のコードにしていきます。</p>
+<h4>座標を決める</h4>
+<p>地図に書き込むには、マスを区別するための<strong>座標</strong>が必要です。自分が最初にいた場所を<code>(0, 0)</code>とし、右に進むと<code>x</code>が増え、下に進むと<code>y</code>が増えるものとします。自分がいまどこにいるかは、歩くたびに数えて更新します。前の節で作った<code>move</code>を、位置の記録も行うように書き直します。</p>
+<pre><code class="language-python">my_x, my_y = 0, 0    # 自分の位置（スタート地点が(0, 0)）
+
+# 方角ごとの、座標のずれ（x は右が +、y は下が +）
+OFFSET = {
+    UpLeft: (-1, -1), Up: (0, -1), UpRight: (1, -1),
+    Left: (-1, 0),                  Right: (1, 0),
+    DownLeft: (-1, 1), Down: (0, 1), DownRight: (1, 1),
+}
+
+
+def move(direction):
+    global my_x, my_y, current_dir
+    player.walk(direction)
+    dx, dy = OFFSET[direction]
+    my_x += dx                     # 歩いた分だけ自分の座標を更新
+    my_y += dy
+    current_dir = direction
+    # 立っているマスは床（アイテムがあっても、もう取ったので）
+    memory[(my_x, my_y)] = Floor
+</code></pre>
+<p><code>(0, -1)</code>のように、かっこで囲んで並べたものを<strong>タプル</strong>と呼びます。リストと似ていますが、中身を後から変えられない点が違い、「2つの値のセット」を1つの値として扱いたいときに便利です。ここでは<code>(x, y)</code>の座標をひとまとめにするのに使います。</p>
+<p><code>dx, dy = OFFSET[direction]</code>は、タプルの2つの値を、それぞれ<code>dx</code>と<code>dy</code>に一度に代入する書き方です。</p>
+<p><strong>計算の例</strong>：自分が<code>(4, 3)</code>にいて<code>move(Right)</code>を実行すると、<code>OFFSET[Right]</code>は<code>(1, 0)</code>なので、<code>my_x</code>は<code>4 + 1 = 5</code>、<code>my_y</code>は<code>3 + 0 = 3</code>になり、自分の座標は<code>(5, 3)</code>に変わります。上に歩けば<code>OFFSET[Up]</code>は<code>(0, -1)</code>なので、<code>y</code>が1減ります。</p>
+<h4>見たことのあるマスを覚える</h4>
+<p>見えたマスの中身は、座標をキーにした辞書に書き込んでいきます。</p>
+<pre><code class="language-python">memory = {}    # 座標(x, y) → そのマスの中身（Floor / Block / Item）
+
+
+def remember_surroundings():
+    for direction in OFFSET:
+        dx, dy = OFFSET[direction]
+        if map_info[direction] != Enemy:  # 敵は動くので書かない
+            memory[(my_x + dx, my_y + dy)] = map_info[direction]
+</code></pre>
+<p><strong>計算の例</strong>：自分が<code>(4, 3)</code>にいて、<code>map_info[UpRight]</code>が<code>Item</code>だったとします。<code>OFFSET[UpRight]</code>は<code>(1, -1)</code>なので、書き込む座標は<code>(4 + 1, 3 + (-1)) = (5, 2)</code>です。つまり<code>memory[(5, 2)] = Item</code>と書かれます。この計算を8方向すべてについて繰り返しているのが<code>remember_surroundings</code>です。</p>
+<p><code>memory[(3, 5)] = Block</code>のように書くと、「座標(3, 5)はブロック」と覚えます。あとで<code>memory.get((3, 5))</code>とすれば、覚えていればその値、<strong>まだ見ていなければ<code>None</code></strong>が返ります。この「まだ見ていない」を判定できることが、次の節で役に立ちます。</p>
+<p>毎ターンの最初に<code>remember_surroundings()</code>を呼ぶようにします。<code>take_turn</code>の1行目に置くのがよいでしょう。</p>
+<pre><code class="language-python">def take_turn():
+    remember_surroundings()          # まず見えたものを地図に書き込む
+    if attack_adjacent_enemy():
+        return
+    ...
+</code></pre>
+<p>同じように、<code>look</code>で見えた9マスも地図に書き込めます。前の節の<code>look_toward</code>を、見えた内容を<code>memory</code>に書き込むように書き直しましょう。lookの中心は「2マス先」なので、位置の計算に注意が必要です。</p>
+<pre><code class="language-python">def look_toward(direction):
+    global last_look_turn, last_enemy_turn
+    look_info = player.look(direction)
+    last_look_turn = turn_counter
+    if look_info is not None:
+        dx, dy = OFFSET[direction]
+        center_x = my_x + dx * 2       # lookの中心（2マス先）の座標
+        center_y = my_y + dy * 2
+        if Enemy in look_info:
+            last_enemy_turn = turn_counter
+        for around in OFFSET:
+            ox, oy = OFFSET[around]
+            if look_info[around] != Enemy:
+                cell = (center_x + ox, center_y + oy)
+                memory[cell] = look_info[around]
+        if look_info[Center] != Enemy:
+            memory[(center_x, center_y)] = look_info[Center]
+</code></pre>
+<p><strong>計算の例</strong>：自分が<code>(4, 3)</code>にいて<code>look(Up)</code>を実行したとします。<code>OFFSET[Up]</code>は<code>(0, -1)</code>なので、lookの中心は<code>(4 + 0 × 2, 3 + (-1) × 2) = (4, 1)</code>です。あとは、中心から<code>OFFSET[around]</code>だけずらした座標に、<code>look_info[around]</code>を書き込みます。たとえば<code>look_info[UpLeft]</code>は<code>(4 - 1, 1 - 1) = (3, 0)</code>、<code>look_info[Right]</code>は<code>(4 + 1, 1 + 0) = (5, 1)</code>です。見えた9マスの座標は次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x=3</th>
+<th>x=4</th>
+<th>x=5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y=0（3マス先）</td>
+<td><code>UpLeft</code></td>
+<td><code>Up</code></td>
+<td><code>UpRight</code></td>
+</tr>
+<tr>
+<td>y=1（2マス先）</td>
+<td><code>Left</code></td>
+<td><code>Center</code></td>
+<td><code>Right</code></td>
+</tr>
+<tr>
+<td>y=2（1マス先）</td>
+<td><code>DownLeft</code></td>
+<td><code>Down</code></td>
+<td><code>DownRight</code></td>
+</tr>
+</tbody>
+</table>
+<h3>例4 「いちばん近い」を探す（探索の道順）</h3>
+<p><strong>この例で身につく考え方</strong>：一見簡単そうな「やりたいこと」でも、実現するには考えることが多い場合があります。そんなときは、<strong>疑問を1つずつ解いていく</strong>ことで、手順に分けられます。</p>
+<p>アイテムが見つからないとき、どこへ進むかも、プログラムで決める大事な部分です。第2部5章のランダム移動は、同じ場所を行ったり来たりしやすい欠点があります。そこで、<strong>まだ見ていないマスのうち、いちばん近いところを目指す</strong>方法を作ります。</p>
+<p><strong>やりたいこと</strong>：まだ見ていないマスのうち、いちばん近いところへ向かう「最初の一歩」の方向を知りたい。</p>
+<p>これをプログラムにするには、いくつかの疑問を順番に解いていく必要があります。</p>
+<ol>
+<li>
+<p><strong>まっすぐ向かえばよいのでは？</strong></p>
+<p>間にブロックがあると、そこでつっかえてしまいます。<code>memory</code>という地図を使って、ブロックを避けた道順を調べる必要があります。</p>
+</li>
+<li>
+<p><strong>「いちばん近い」をどうやって見つける？</strong></p>
+<p>自分から1歩で行けるマスをすべて調べ、次にそこから1歩で行ける（自分から2歩の）マスをすべて調べ、その次は3歩のマス…と、池に石を投げたときの波紋のように、<strong>近いほうから順に</strong>広げていきます。最初に見つかった「まだ見ていないマス」が、いちばん近いマスです。この探し方を<strong>幅優先探索（BFS）</strong>と呼びます。</p>
+</li>
+<li>
+<p><strong>調べる順番をどう管理する？</strong></p>
+<p>これから調べるマスを、見つけた順に1列に並べた<strong>順番待ちの列（<code>queue</code>）</strong>に入れます。先頭から順に取り出せば、先に見つけた（＝近い）マスから調べられるので、近い順が自然に保たれます。</p>
+</li>
+<li>
+<p><strong>同じマスを二度調べたくない。</strong></p>
+<p>調べ始めたマスは、辞書<code>first_dir</code>に登録します。<code>next_cell not in first_dir</code>（登録されていない）なら、初めて来たマスだと分かります。</p>
+</li>
+<li>
+<p><strong>知りたいのは道順の全部ではなく、最初の一歩だけ。</strong></p>
+<p>実際に歩くのは1ターンに1歩で、次のターンには新しい情報でまた計算し直します。そこで、各マスに「そのマスへ行くときの<strong>最初の一歩</strong>」を持たせておき、隣のマスへ広げるときに引き継ぎます（自分から直接出る隣のマスだけは、その方向を新しく決めます）。</p>
+</li>
+<li>
+<p><strong>どこで終わる？</strong></p>
+<p>「まだ見ていないマス」にたどり着いたら、そのマスに引き継がれていた最初の一歩を答えにして終わります。全部調べても見つからなければ<code>None</code>です。まだ見ていないマスは通れるかどうか分からないので、終点にはしても、そこから先へは広げません。</p>
+</li>
+</ol>
+<p>以上を、順番に手順に並べ直すと、次のようになります。コードの各行にも、対応する番号をコメントで付けてあります。</p>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>手順</th>
+<th>コードの部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>出発点（自分のいるマス）を登録し、順番待ちの列に入れる</td>
+<td><code>start</code>、<code>first_dir</code>、<code>queue</code>、<code>head</code></td>
+</tr>
+<tr>
+<td>②</td>
+<td>順番待ちが残っているあいだ、次を繰り返す</td>
+<td><code>while head &lt; len(queue) …</code></td>
+</tr>
+<tr>
+<td>③</td>
+<td>列の先頭のマスを1つ取り出す</td>
+<td><code>x, y = queue[head]</code>、<code>head += 1</code></td>
+</tr>
+<tr>
+<td>④</td>
+<td>そのマスの上・下・左・右の隣を1つずつ調べる</td>
+<td><code>for direction in …</code>、<code>next_cell</code></td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>初めて来たマスなら、最初の一歩を決める</td>
+<td><code>if next_cell not in first_dir …</code>、<code>step</code></td>
+</tr>
+<tr>
+<td>⑥</td>
+<td>まだ見ていないマスなら終了。通れるマスなら、列に加えて先へ広げる</td>
+<td><code>return step</code>、<code>queue.append(next_cell)</code></td>
+</tr>
+<tr>
+<td>⑦</td>
+<td>最後まで見つからなければ<code>None</code>を返す</td>
+<td><code>return None</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">def first_step_to_unknown(max_nodes=600):
+    &quot;&quot;&quot;未知のマスへの最初の一歩の方向を返す。なければ None&quot;&quot;&quot;
+    start = (my_x, my_y)                  # ① 出発点
+    first_dir = {start: None}             # ① 各マスへの「最初の一歩」
+    queue = [start]                       # ① 順番待ちの列
+    head = 0                              # ① 何番目まで調べたか
+    while head &lt; len(queue) and head &lt; max_nodes:    # ② 残っている間
+        x, y = queue[head]                # ③ 先頭を取り出す
+        head += 1
+        for direction in (Up, Down, Left, Right):    # ④ 隣を調べる
+            dx, dy = OFFSET[direction]
+            next_cell = (x + dx, y + dy)
+            if next_cell not in first_dir:    # ⑤ 初めて来たマスなら
+                step = first_dir[(x, y)]
+                if step is None:
+                    step = direction          # ⑤ 出発点から出る一歩
+                cell = memory.get(next_cell)
+                if cell is None:
+                    return step               # ⑥ 未知のマス：終了
+                if cell != Block:
+                    first_dir[next_cell] = step   # ⑥ 通れる：広げる
+                    queue.append(next_cell)
+    return None                           # ⑦ 見つからなかった
+</code></pre>
+<p>読み解くポイントは3つです。</p>
+<ul>
+<li><code>queue</code>は、調べるマスを<strong>先に見つけた順</strong>に並べたリストです。<code>head</code>で、そのどこまで調べ終わったかを持ち、前から順に取り出します。これで、近いマスが必ず先に調べられます。</li>
+<li><code>first_dir</code>には、そのマスへ行くときの最初の一歩を覚えさせます。これを次のマスへ受け渡していくので、遠いマスに着いたときでも、「最初にどちらへ歩けばよいか」が分かります。</li>
+<li><code>memory.get(next_cell)</code>が<code>None</code>のマスは「まだ見ていない」マスです。通れるかどうかは分からないので、<strong>途中の道には使わず、たどり着いた時点で探索を終える</strong>ようにしています。</li>
+</ul>
+<p><code>max_nodes</code>は、調べるマスの数の上限です。広いマップで探索に時間がかかりすぎないようにしています。</p>
+<h4>途中経過を追ってみよう</h4>
+<p>次の小さな地図で、<code>first_step_to_unknown</code>が実際にどう動くかを追ってみます。<code>#</code>はブロック、<code>.</code>は通れるマス、<code>?</code>はまだ見ていないマス（<code>memory</code>にない）、<code>S</code>は自分の位置<code>(1, 1)</code>です。</p>
+<pre><code>      x=0  1  2  3  4
+y=0     #  #  #  #  #
+y=1     #  S  .  .  ?
+y=2     #  .  #  .  #
+y=3     #  #  #  #  #
+</code></pre>
+<p><code>while</code>の繰り返し1回ごとに、<code>queue</code>の先頭のマスを取り出し、上・下・左・右の順に隣を調べます。</p>
+<table>
+<thead>
+<tr>
+<th>回</th>
+<th>取り出すマス</th>
+<th>上・下・左・右の調べ結果</th>
+<th>調べ終わったあとの<code>queue</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>(1, 1)</code>（自分）</td>
+<td>上<code>(1, 0)</code>はブロック／下<code>(1, 2)</code>は通れる → 追加（最初の一歩＝下）／左<code>(0, 1)</code>はブロック／右<code>(2, 1)</code>は通れる → 追加（最初の一歩＝右）</td>
+<td><code>(1, 2)</code>、<code>(2, 1)</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>(1, 2)</code></td>
+<td>上<code>(1, 1)</code>は調査済み／下<code>(1, 3)</code>・左<code>(0, 2)</code>・右<code>(2, 2)</code>はブロック（行き止まり）</td>
+<td><code>(2, 1)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>(2, 1)</code></td>
+<td>上<code>(2, 0)</code>・下<code>(2, 2)</code>はブロック／左<code>(1, 1)</code>は調査済み／右<code>(3, 1)</code>は通れる → 追加（最初の一歩＝右）</td>
+<td><code>(3, 1)</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>(3, 1)</code></td>
+<td>上<code>(3, 0)</code>はブロック／下<code>(3, 2)</code>は通れる → 追加／左<code>(2, 1)</code>は調査済み／右<code>(4, 1)</code>は<strong>未知</strong> → 終了</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>4回目に、<code>(4, 1)</code>が<code>memory</code>にない（<code>memory.get</code>が<code>None</code>）ので、<code>return step</code>で終わります。このときの<code>step</code>は、<code>(3, 1)</code>に着いたときに引き継いでいた「最初の一歩」で、<strong>右</strong>です。自分から見て<code>(4, 1)</code>は右に3マス先ですが、この関数が返すのは、そこへ向かう最初の一歩の方向だけです。</p>
+<p>ここで大事なのは、2回目の<code>(1, 2)</code>のように、<strong>行き止まりの枝も先に調べられている</strong>ことです。近いマスから順に広げるので、遠回りの道を選んでしまうことはありません。</p>
+<p><code>explore</code>は、この結果が<code>Right</code>なら、<code>map_info[Right]</code>がブロックでないことを確かめてから<code>move(Right)</code>で1歩だけ歩きます。次のターンにはまた新しい<code>memory</code>で、最初から計算し直します。</p>
+<p>この関数を使って、探索を次のように書き換えます。</p>
+<pre><code class="language-python">def explore():
+    step = first_step_to_unknown()
+    if step is not None and map_info[step] != Block:
+        move(step)
+    else:
+        random_walk()     # 道がなければランダム移動
+</code></pre>
+<p><code>take_turn</code>の最後を、<code>random_walk()</code>から<code>explore()</code>に置き換えます。</p>
+<h3>例5 小さな部品を足して、動きを整える</h3>
+<p><strong>この例で身につく考え方</strong>：できあがった部品に、小さな関数を足したり、数字を変えたりするだけで、動きを調整できます。調整したい数字は、名前を付けた変数（<strong>調整つまみ</strong>）にしておくと、あとから変えやすくなります。</p>
+<p>ここまでのプログラムに、さらに2つの小さな工夫を足してみましょう。どちらも、数行の関数と数字1つで作れます。</p>
+<h4>覚えているアイテムを追う（範囲を決める）</h4>
+<p>アイテムは、いったん見えたあとで視界から外れることがあります。たとえば、通りすがりに斜め前のアイテムが見えたのに、別のことを優先して取り損ねた場合です。そのままでは、そのアイテムの場所を忘れてしまいます。</p>
+<p>でも、「準備」の節で作った<code>memory</code>には、見えたマスの中身が残っています。そこで、<code>memory</code>の中から<code>Item</code>と書かれたマスを探し出し、そこへ向かうことができます。ただし、あまり遠いアイテムを追いかけていると、その間に探索が進みません。<strong>追いかける距離の上限</strong>を決めておくのがポイントです。</p>
+<p><strong>やりたいこと</strong>：覚えているアイテムのうち、近いものを取りに行きたい。</p>
+<p>先ほどの4ステップで、順番に考えてみましょう。</p>
+<p><strong>（ステップ2）あいまいな言葉を数えられるものに直す</strong></p>
+<ul>
+<li>「覚えているアイテム」→ <code>memory</code>の中で、値が<code>Item</code>のマス</li>
+<li>「近い」→ 自分からそのマスまで、<strong>あと何歩</strong>で行けるか。歩くのは縦と横だけなので、<code>横に離れたマス数 ＋ 縦に離れたマス数</code>で見積もれる（間にブロックがない場合）</li>
+<li>「遠すぎるものは追わない」→ その歩数が、上限<code>MEMORY_PURSUIT_RANGE</code>以下</li>
+</ul>
+<p><strong>（ステップ3・4）手順に分けて、コードにする</strong></p>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>手順</th>
+<th>コードの部分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>覚えているマスを全部見て、アイテムのマスだけ選ぶ</td>
+<td><code>for cell in memory:</code>、<code>if memory[cell] == Item:</code></td>
+</tr>
+<tr>
+<td>②</td>
+<td>それぞれの歩数を求める</td>
+<td><code>abs(cell[0] - my_x) + abs(cell[1] - my_y)</code></td>
+</tr>
+<tr>
+<td>③</td>
+<td>上限以内で、いちばん近いものを1つ決める</td>
+<td><code>nearest</code>、<code>nearest_distance</code>（「いちばん近いものを探す」型）</td>
+</tr>
+<tr>
+<td>④</td>
+<td>そのマスに近づく向きを決めて、1歩歩く</td>
+<td><code>step_toward(nearest)</code></td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>追いかける相手がいなければ、何もしない</td>
+<td><code>return False</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">MEMORY_PURSUIT_RANGE = 2    # 何マス以内のアイテムまで追いかけるか
+
+
+def pursue_remembered_item():
+    nearest = None                                # ③ いちばん近い候補
+    nearest_distance = MEMORY_PURSUIT_RANGE + 1   # ③ 上限＋1から始める
+    for cell in memory:                           # ① 覚えている全マスを
+        if memory[cell] == Item:                  # ① アイテムだけ選ぶ
+            # ② 縦横に合わせて何マス離れているか
+            distance = abs(cell[0] - my_x) + abs(cell[1] - my_y)
+            if distance &lt; nearest_distance:       # ③ いままでより近い
+                nearest = cell
+                nearest_distance = distance
+    if nearest is None:
+        return False                              # ⑤ 追う相手がいない
+    return step_toward(nearest)                   # ④ 近づく
+
+
+def step_toward(target):
+    dx = target[0] - my_x                # ④ 目標との差（右が＋）
+    dy = target[1] - my_y                # ④ 目標との差（下が＋）
+    directions = []
+    if dx != 0:
+        directions.append(Right if dx &gt; 0 else Left)
+    if dy != 0:
+        directions.append(Down if dy &gt; 0 else Up)
+    if abs(dy) &gt; abs(dx):
+        directions.reverse()  # 離れている軸を先に試す
+    for direction in directions:
+        if map_info[direction] in (Floor, Item):
+            move(direction)
+            return True
+    return False
+</code></pre>
+<h4>補足：コードの細かい部分</h4>
+<p><strong>上限より遠いアイテムを除くしくみ（<code>pursue_remembered_item</code>）</strong></p>
+<p><code>for cell in memory:</code>は、辞書<code>memory</code>のキー、つまり覚えているすべてのマスの座標<code>(x, y)</code>を1つずつ取り出す書き方です。<code>memory[cell] == Item</code>で、そのマスがアイテムだと覚えているものだけに絞ります。</p>
+<p>自分との距離は、<code>abs(cell[0] - my_x) + abs(cell[1] - my_y)</code>で求めています。<code>abs</code>は絶対値（マイナスを外した値）を返す命令で、これは「横に何マス、縦に何マス離れているか」を足した値です。歩くのは縦と横だけなので、この値がそのまま「あと何歩かかるか」の目安になります（間にブロックがない場合）。</p>
+<p><code>nearest_distance</code>は、はじめに<code>MEMORY_PURSUIT_RANGE + 1</code>にしておきます。すると、<code>distance &lt; nearest_distance</code>という比較は、「上限以内で、いままで見つけたどれよりも近い」という意味になり、<strong>上限より遠いアイテムは最初から候補に入りません</strong>。候補が1つも見つからなければ<code>nearest</code>は<code>None</code>のままなので、<code>return False</code>で何もせず終わります。</p>
+<p><strong>近づく向きの決め方（<code>step_toward</code>）</strong></p>
+<p>目標との差<code>dx</code>・<code>dy</code>を求めると、どちらへ進めば近づけるかが分かります。<code>dx</code>が正なら目標は右、負なら左にあります。<code>dy</code>が正なら下、負なら上です。<code>Right if dx &gt; 0 else Left</code>は、「<code>dx &gt; 0</code>なら<code>Right</code>、そうでなければ<code>Left</code>」を1行で書く形です。</p>
+<p><code>dx</code>または<code>dy</code>が0のとき、その方向へは進む必要がないので、<code>if dx != 0:</code>のように0でないときだけ候補に加えます。候補は、<strong>離れているほう</strong>の方向を先に並べます（<code>abs(dy) &gt; abs(dx)</code>のときは並びを逆にします）。</p>
+<p>たとえば、自分が<code>(4, 3)</code>にいて、次のようなアイテムを覚えているとします。上限は2です。</p>
+<table>
+<thead>
+<tr>
+<th>覚えているアイテム</th>
+<th>距離</th>
+<th>上限内か</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(6, 3)</code></td>
+<td>2</td>
+<td>○</td>
+</tr>
+<tr>
+<td><code>(5, 4)</code></td>
+<td>2</td>
+<td>○</td>
+</tr>
+<tr>
+<td><code>(4, 8)</code></td>
+<td>5</td>
+<td>×（遠すぎる）</td>
+</tr>
+</tbody>
+</table>
+<p><code>(6, 3)</code>と<code>(5, 4)</code>はどちらも距離2で、<code>memory</code>に先に書き込まれたほうが選ばれます。仮に<code>(6, 3)</code>が選ばれたとすると、<code>dx = 2</code>、<code>dy = 0</code>なので、進む候補は<code>Right</code>だけです。<code>(5, 4)</code>が選ばれたとすると、<code>dx = 1</code>、<code>dy = 1</code>で、<code>Right</code>と<code>Down</code>が候補になり、<code>Right</code>から先に試します。</p>
+<p>候補の方向は<code>map_info[direction] in (Floor, Item)</code>で、<strong>いま実際に見えている情報</strong>で歩けるかを確かめます。ブロックなら次の候補を試し、どの候補も歩けなければ<code>False</code>を返します。</p>
+<p><strong>うまくいかないとき</strong></p>
+<p>次のような場面では、<code>pursue_remembered_item</code>は<code>False</code>を返し、<code>take_turn</code>は次の判断（lookや探索）に進みます。</p>
+<ul>
+<li>上限の範囲内にアイテムを覚えていない</li>
+<li>近づく方向がブロックで塞がっている</li>
+</ul>
+<p>この<code>step_toward</code>は、間のブロックを避けて回り込むことまではしません。壁の向こうにあるアイテムは追えず、<code>False</code>を返して次の判断に任せます。近いアイテムほど間にブロックが入りにくいので、上限を小さくしておくと、こうした「近づけない」場面は起きにくくなります。</p>
+<p>なお、覚えているアイテムは、すでに誰かに取られていることもあります。ただ、そのアイテムが自分の周りの9マスに入れば、次のターンの<code>remember_surroundings()</code>で<code>memory</code>が最新の内容に書き換わり、もう追わなくなります。</p>
+<p><strong><code>take_turn</code>のどこに置くか</strong></p>
+<p>「見えているアイテム」（<code>grab_visible_item</code>）の直後に置きます。見えているものを先に取り、見えていないものは覚えているものを追う、という順番です。</p>
+<pre><code class="language-python">    if grab_visible_item():
+        return
+    if pursue_remembered_item():     # ← ここ
+        return
+</code></pre>
+<p><code>MEMORY_PURSUIT_RANGE</code>の数字を2、5、10と変えると、追いかけ方がどう変わるかを試せます。</p>
+<h4>行き止まりを避ける（脱出口を数える）</h4>
+<p>アイテムを取ると、<strong>取る前に立っていたマス（元のマス）にブロックが出現する</strong>のでした（第1部4章）。ブロックに囲まれた場所にアイテムがあると、取った瞬間に自分の背後が塞がって逃げ道がなくなり、自縛してしまうことがあります。</p>
+<p><strong>やりたいこと</strong>：取ったあとに閉じ込められそうなアイテムは、取らない。</p>
+<p>「閉じ込められそう」も、そのままではプログラムにできません。数えられる形に直していきます。</p>
+<ol>
+<li><strong>「閉じ込められる」を数字にする</strong>：進んだ先から、次に歩ける方向が<strong>いくつ</strong>あるか（<strong>出口の数</strong>）を数えます。0なら閉じ込められ、少ないほど危険です。</li>
+<li><strong>出口をどう数える？</strong>：進んだ先の上下左右の4マスのうち、ブロックでないものを数えます。</li>
+<li><strong>見ていないマスは？</strong>：通れるかもしれないので、出口として数えます（<code>memory.get(cell) != Block</code>は、<code>None</code>のときも成り立ちます）。</li>
+<li><strong>特別扱いするマスがある</strong>：進んだ先から見て「いま自分が立っているマス」は、普通は床なので通れます。ただし、<strong>アイテムを取る動きのときだけは、そこがブロックになる</strong>ので、出口に数えません。</li>
+</ol>
+<p>この4つを、そのままコードにしたのが次の関数です。</p>
+<pre><code class="language-python">def count_exits(direction):
+    &quot;&quot;&quot;direction へ進んだあと、そこから出られる方向の数&quot;&quot;&quot;
+    dx, dy = OFFSET[direction]
+    new_x, new_y = my_x + dx, my_y + dy
+    picks_item = map_info[direction] == Item  # アイテムを取る動きか
+    exits = 0
+    for side in (Up, Down, Left, Right):
+        sx, sy = OFFSET[side]
+        cell = (new_x + sx, new_y + sy)
+        if cell == (my_x, my_y):
+            if not picks_item:  # 取ると元のマスは塞がる
+                exits += 1
+        elif memory.get(cell) != Block:  # 未知のマスは通れる扱い
+            exits += 1
+    return exits
+</code></pre>
+<p><strong>計算の例</strong>：自分が<code>(4, 3)</code>にいて、右の<code>(5, 3)</code>にアイテムがあるとします。覚えている周りは、<code>(5, 2)</code>がブロック、<code>(5, 4)</code>が床、<code>(6, 3)</code>がブロックです。<code>count_exits(Right)</code>は、進んだ先<code>(5, 3)</code>から見た上下左右を調べます。</p>
+<table>
+<thead>
+<tr>
+<th>進んだ先から見た方向</th>
+<th>マス</th>
+<th>数える？</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上</td>
+<td><code>(5, 2)</code></td>
+<td>数えない</td>
+<td>ブロック</td>
+</tr>
+<tr>
+<td>下</td>
+<td><code>(5, 4)</code></td>
+<td><strong>1つ数える</strong></td>
+<td>床</td>
+</tr>
+<tr>
+<td>左</td>
+<td><code>(4, 3)</code></td>
+<td>数えない</td>
+<td>元のマス。アイテムを取ると、ブロックになる</td>
+</tr>
+<tr>
+<td>右</td>
+<td><code>(6, 3)</code></td>
+<td>数えない</td>
+<td>ブロック</td>
+</tr>
+</tbody>
+</table>
+<p>合計は1です。もしこれがアイテムではなく床なら、元のマスも通れるので合計は2になります。この関数は、「取ると出口が1つ減る」ことまで数えに入れています。</p>
+<p>この関数を<code>grab_visible_item</code>に組み込みます。「出口が2つ以上残る取り方」を先に探し、なければ「1つ以上」、それでもなければ見送ります。</p>
+<pre><code class="language-python">def grab_visible_item():
+    for min_exits in (2, 1):  # 出口が多い取り方を優先
+        for direction in (Up, Down, Left, Right):
+            if map_info[direction] == Item:
+                if count_exits(direction) &gt;= min_exits:
+                    move(direction)
+                    return True
+    return False
+</code></pre>
+<p>出口が0になる取り方は、どの条件でも選ばれません。目先のアイテムより、自分が生き残ることを優先する考え方です。</p>
+<p>先ほどの例（合計1）では、<code>min_exits</code>が2のときは見送られ、次の<code>min_exits</code>が1のときに、<code>1 &gt;= 1</code>となって取られます。ほかに取れるアイテムがあれば、そちらが先に選ばれます。</p>
+<h3>全部をつなげると</h3>
+<p>ここまで作った部品を、優先順位の連鎖に並べ直すと、次のようになります。</p>
+<pre><code class="language-python">def take_turn():
+    remember_surroundings()              # 見えたものを地図に書く
+    if attack_adjacent_enemy():          # 1. 隣の敵を攻撃
+        return
+    if wait_diagonal_enemy():            # 2. 斜めの敵への対応
+        return
+    if grab_visible_item():              # 3. 見えているアイテム
+        return
+    if pursue_remembered_item():         # 4. 覚えているアイテム
+        return
+    if look_ahead_if_enemy_nearby():     # 5. 敵が近ければ先を見る
+        return
+    explore()                            # 6. 未踏のマスを探す
+
+
+while True:
+    map_info = player.get_ready()
+    turn_counter += 1
+    if Enemy in map_info:
+        last_enemy_turn = turn_counter
+    take_turn()
+</code></pre>
+<p>順番を入れ替えたり、一部を抜いたりして、動きがどう変わるかを見てみましょう。優先順位の連鎖は、「部品を足す」「順番を変える」「条件の数字を変える」という3つの操作だけで、プログラムの動きを組み替えられる形になっています。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>「やりたいこと」が大きすぎて、手が止まる</strong>：無理にコードを書こうとせず、日本語の手順を、1つが数行のコードになる大きさまで細かく分けましょう。分けた手順を、1つずつ書いて動かして確かめると、途中でどこが違うかも見つけやすくなります。</li>
+<li><strong>あいまいな言葉のまま、コードに書こうとする</strong>：「近い」「最近」「多い」などは、<strong>何を数えて、いくつと比べるのか</strong>を決めてから書きます。</li>
+<li><strong><code>global</code>を書き忘れる</strong>：関数の中で<code>my_x += dx</code>のように代入する変数には、その関数の先頭で<code>global my_x</code>と宣言が必要です。忘れると、エラーになるか、外の変数が更新されません。</li>
+<li><strong><code>player.walk</code>を直接呼んでしまう</strong>：自分の位置と進行方向を覚えるには、歩くときは必ず<code>move</code>を通します。途中で直接<code>player.walk</code>を呼ぶと、記録している位置が実際の位置とずれ、地図が使い物にならなくなります。</li>
+<li><strong>1つの関数で行動を2回呼ぶ</strong>：<code>player.walk</code>・<code>put</code>・<code>look</code>・<code>search</code>は、1ターンに1回だけです。行動したら<code>return True</code>で終わらせましょう。</li>
+<li><strong>同じ座標系で数える</strong>：<code>memory</code>のキーや<code>first_dir</code>のキーは、すべて<code>(x, y)</code>のタプルです。<code>(y, x)</code>の順で書いたり、リストで書いたりすると、辞書の中で別のキーとして扱われ、見つからなくなります。</li>
+<li><strong><code>map_info</code>の内容を、過去のものと取り違える</strong>：<code>map_info</code>は毎ターン新しくなります。前のターンの情報を残したいときは、<code>memory</code>に書き込んでおく必要があります。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>「斜めに敵がいたら」の3つの関数（<code>wait_…</code>・<code>evade_…</code>・<code>block_…</code>）を、すべて自分のプログラムに書いてみましょう。1つずつ<code>take_turn</code>に差し替え、CPU対戦や友達との対戦で、結果や動き方にどんな違いが出るか記録してみましょう。</li>
+<li>選択肢A（待つ）では、相手も待つタイプだった場合、お互いに動かなくなる可能性があります。「同じ場所で連続して待った回数を数え、上限を超えたら別の行動に切り替える」という工夫を、変数を使って書いてみましょう。</li>
+<li><code>look_ahead_if_enemy_nearby</code>の<code>&lt;= 4</code>と<code>&gt;= 3</code>の数字を変えると、lookを撃つ頻度がどう変わるか、考えてみましょう。撃ちすぎると、どんな困ったことが起きるでしょうか。</li>
+<li><code>MEMORY_PURSUIT_RANGE</code>を2、5、10と変えて動かし、アイテムの集まり方にどんな違いが出るか観察してみましょう。</li>
+<li><code>first_step_to_unknown</code>では、「まだ見ていないマス」を目指しました。「覚えているアイテム」を目標にするには、どこをどう書き換えればよいでしょうか。</li>
+<li>「途中経過を追ってみよう」の地図で、<code>(3, 1)</code>がブロックだったら、<code>first_step_to_unknown</code>は何を返しますか。<code>queue</code>がどう変わるかを、表のように書き出して考えてみましょう。</li>
+<li>脱出口の計算例で、<code>(5, 4)</code>もブロックだったら、<code>count_exits(Right)</code>はいくつになりますか。そのアイテムは取られるでしょうか。</li>
+<li>自分で「やりたいこと」を1つ考え、この章の4ステップ（1文で書く → あいまいな言葉を数えられるものに → 手順に分ける → コードにする）で、プログラムにしてみましょう。（例：直前に進んだ方向とは、反対には進まないようにしたい）</li>
+</ol>
+<h2>第3部のまとめ、そして本書の締めくくり</h2>
+<p>これで、CHaserのルールを理解し（第1部）、Pythonで命令を書く力を身につけ（第2部）、実際の対戦の準備の仕方と、やりたいことをプログラムにする考え方（第3部）まで、ひととおり学び終えました。</p>
+<p>CHaserは、覚える命令の種類こそ多くありませんが、「今の状況をどう読み取り、どう判断するか」を突き詰めていくと、驚くほど奥の深いゲームです。本書で学んだ移動・繰り返し・条件分岐・情報の取得・変数・関数という道具は、CHaserだけでなく、これからあなたが出会う他のプログラミングの課題でも、きっと役に立つはずです。</p>
+<h2>第3部 確認クイズ</h2>
+<p><strong>1章 Pythonの画面の使い方</strong></p>
+<ol>
+<li>自分のプログラムを書くとき、書き換えてよいのは、骨組みのどの部分ですか。</li>
+<li>実行結果がうまくいかないとき、まずどこを確認するとよいでしょうか。</li>
+</ol>
+<p><strong>2章 対戦ルームの使い方</strong></p>
+<ol>
+<li>対戦を始める前に選べる2種類の対戦方法は何ですか。</li>
+<li>Pythonのプログラムを対戦ルームで使うには、どのファイルを、どこから読み込みますか。</li>
+</ol>
+<p><strong>3章 やりたいことをプログラムにする</strong></p>
+<ol>
+<li>「やりたいこと」をプログラムにするときの、4つのステップを順に答えてください。</li>
+<li>「近くにいる」のようなあいまいな言葉は、プログラムにするために、どのように直しますか。</li>
+<li><code>take_turn</code>の中で、<code>if</code>と<code>return</code>を並べて判断を書くと、上に書いた判断ほど優先されるのはなぜですか。</li>
+<li><code>look(Up)</code>を実行したとき、<code>look_info[Center]</code>はどのマスの情報を表しますか。</li>
+<li>関数の中で、関数の外にある変数<code>my_x</code>に新しい値を代入したいとき、関数の先頭に何を書く必要がありますか。</li>
+</ol>
+<p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
+<p>まずは自分のプログラムを実際に動かし、勝ったり負けたりしながら、次はどう直せばもっと強くなるかを考えてみてください。そうやって試行錯誤を重ねることこそが、プログラミングの一番の練習方法です。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./practice-02.html" class="text-blue-600 hover:underline">← 2章　対戦ルームの使い方</a><span></span></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
