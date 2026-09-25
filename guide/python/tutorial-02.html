@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2章　情報の読み取りと条件分岐 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 2章　情報の読み取りと条件分岐">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="font-bold text-blue-700">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">2章　情報の読み取りと条件分岐</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>2章 情報の読み取りと条件分岐</h2>
+<p>入門編の第2部3・4章（ステージ3）に対応します。</p>
+<h3>CHaserのしくみの要点</h3>
+<ul>
+<li>自分の周りの9マス（自分自身と、上下左右・斜めの8マス）の情報は、自分の番が来たときに<code>get_ready()</code>が返します。この9マス分の情報を、<strong>周辺情報</strong>（<code>map_info</code>）と呼びます。</li>
+<li>周辺情報は、その瞬間の情報です。自分や相手が動けば、状況は変わります。<strong>判断のたびに、最新の情報を取得し直す</strong>のが基本です（4章）。</li>
+<li>チュートリアルのPython画面では、<code>map_info</code>は自動で更新されます。CPUのいないステージなら、開始時点の周辺情報が最初から<code>map_info</code>に入っていて、<code>walk</code>などの行動のあとにも新しくなります（0章）。本番では、<code>map_info = player.get_ready()</code>で自分で受け取ります。</li>
+<li>マスの中身は、<code>Floor</code>（何もない）・<code>Block</code>（ブロック）・<code>Item</code>（アイテム）・<code>Enemy</code>（相手）の4種類です。</li>
+</ul>
+<h3>周辺情報から、方角を指定して取り出す</h3>
+<p><code>map_info</code>から、方角を指定して1つのマスの情報を取り出せます。</p>
+<pre><code class="language-python">map_info[Up]           # 上のマス      → Block  （上はブロック）
+map_info[Down]         # 下のマス      → Item   （下にアイテムあり）
+map_info[Left]         # 左のマス      → Floor  （左は空き）
+map_info[DownLeft]     # 左下のマス    → Enemy  （左下に相手）
+</code></pre>
+<p>方角の名前は、次の3×3の並びに対応しています。<code>Center</code>は、自分自身のいるマスです。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UpLeft</code></td>
+<td><code>Up</code></td>
+<td><code>UpRight</code></td>
+</tr>
+<tr>
+<td><code>Left</code></td>
+<td><code>Center</code></td>
+<td><code>Right</code></td>
+</tr>
+<tr>
+<td><code>DownLeft</code></td>
+<td><code>Down</code></td>
+<td><code>DownRight</code></td>
+</tr>
+</tbody>
+</table>
+<p>Blocklyで「周辺情報の、上の方角を選ぶ」ドロップダウンを使っていたところが、Pythonでは<code>[Up]</code>という角かっこの指定に対応します。</p>
+<h3>条件を式にする</h3>
+<p>「上がブロックなら」という条件は、<code>==</code>で比較する式にします。</p>
+<pre><code class="language-python">map_info[Up] == Block     # 上がブロックなら True、そうでなければ False
+map_info[Up] != Block     # 上がブロックでないなら True
+</code></pre>
+<p><code>==</code>（等しい）と<code>!=</code>（等しくない）は、どちらも結果が<code>True</code>か<code>False</code>になる式です。この式を<code>if</code>の条件に置けば、Blocklyの「もし〔自分の上のマスがBlockなら〕」と同じ判断ができます。</p>
+<h3>if〜else（ステージ3-1）</h3>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Block:
+        walk(Right)
+    else:
+        walk(Up)
+</code></pre>
+<p>「上がブロックなら右へ、そうでなければ上へ」進むプログラムです。<code>while True:</code>の中に<code>if</code>が入っている、2段のインデント構造が、入門編の「ずっと繰り返す」ブロックの中に「もし〜なら」ブロックが入っている形に対応します。</p>
+<h3>if〜elif〜else（ステージ3-2）</h3>
+<p>条件が3つ以上あるときは、<code>elif</code>を使います。</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Left] == Item:
+        walk(Left)
+    elif map_info[Up] == Block:
+        walk(Right)
+    else:
+        walk(Up)
+</code></pre>
+<p><code>if</code>・<code>elif</code>・<code>else</code>は、<strong>上から順に調べられ、最初に成り立ったところだけが実行されます</strong>。だから、優先したい条件ほど上に書きます。たとえば、上の2つの条件を入れ替えると、「左にアイテムがあり、かつ上もブロック」という状況で、左のアイテムではなく、右へ逃げてしまいます。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>方角の名前を、クォートで囲む</strong>：<code>map_info[&quot;Up&quot;]</code>のように書くとエラーになります。<code>Up</code>・<code>Block</code>などは、文字列ではなく、あらかじめ用意された名前です。</li>
+<li><strong>角かっこと丸かっこを間違える</strong>：<code>map_info[Up]</code>は角かっこ、<code>walk(Up)</code>は丸かっこです。</li>
+<li><strong><code>elif</code>を<code>else if</code>や<code>elseif</code>と書く</strong>：Pythonでは、<code>elif</code>という1つの単語です。</li>
+<li><strong><code>else</code>に条件を書く</strong>：<code>else</code>は「それ以外すべて」を表すので、<code>else:</code>のように、条件なしでコロンだけを付けます。</li>
+<li><strong><code>if</code>と<code>elif</code>・<code>else</code>のインデントを揃え忘れる</strong>：同じまとまりの<code>if</code>・<code>elif</code>・<code>else</code>は、同じ深さで揃えます。</li>
+<li><strong>取得した情報を、使い回してしまう</strong>：<code>map_info</code>は、取得したその瞬間の情報です。ずっと同じ<code>map_info</code>で判断し続けると、状況が変わっても気づけません（4章）。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>「右にアイテムがあれば右へ、そうでなく下がブロックなら上へ、それ以外は下へ」という判断を、<code>if</code>〜<code>elif</code>〜<code>else</code>で書いてみましょう。</li>
+<li>上の3-2のコードで、1行目の条件と2行目の条件を入れ替えると、どんな場合に結果が変わりますか。</li>
+</ol>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-01.html" class="text-blue-600 hover:underline">← 1章　移動と繰り返し</a><a href="./tutorial-03.html" class="text-blue-600 hover:underline sm:text-right">3章　探査と、行動の決め方 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

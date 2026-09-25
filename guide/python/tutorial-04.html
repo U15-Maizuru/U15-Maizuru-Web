@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4章　ターンの仕組みと、攻撃 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 4章　ターンの仕組みと、攻撃">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="font-bold text-blue-700">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">4章　ターンの仕組みと、攻撃</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>4章 ターンの仕組みと、攻撃</h2>
+<p>入門編の第2部7・8章（ステージ5・6）に対応します。</p>
+<h3>CHaserのしくみの要点</h3>
+<ul>
+<li>対戦では、CoolとHotが<strong>1手ずつ交互に</strong>行動します。自分の番が来るまでは、行動できません。</li>
+<li>1回の番で、行動できるのは<strong>1回だけ</strong>です。<code>walk</code>・<code>put</code>・<code>look</code>・<code>search</code>の4つは、どれも1回の行動で、使うとその番は終わりです。</li>
+<li>プログラムの基本の流れは、「<code>get_ready()</code>で番を待つ → 行動を1つ → <code>get_ready()</code>で次の番を待つ → 行動を1つ → …」の繰り返しです。</li>
+<li>チュートリアルでは、相手（CPU）のいるステージ（5-1、6-1など）で、毎ターン<code>get_ready()</code>が必要です。書かないと、最初の1回動いたところで止まります。CPUのいないステージでは省略できます。本番では、必ず必要です。</li>
+<li><code>put</code>（ブロックを置く）は、自分は<strong>その場から動きません</strong>。置いたぶんだけ、自分は1手使います。</li>
+<li>自分の番が来た瞬間は、相手はまだ動いていません。<strong>その瞬間に相手が上下左右のどれかに隣り合っていれば、その方向に<code>put</code>することで、確実にアタック勝ちになります。</strong></li>
+</ul>
+<h3>ターンを待つ：<code>get_ready</code></h3>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    walk(Right)
+</code></pre>
+<p><code>get_ready()</code>は、自分の番が来るまで待ち、番が来たら、そのときの周辺情報を返します。この1行で、「待つ」と「最新の周辺情報を受け取る」の両方をしています。かっこの中が空なのは、方向を指定する必要がない（ただ待つだけ）からです。</p>
+<p><code>get_ready()</code>は、<code>while True:</code>の中、判断の直前に置きます。</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Right] == Enemy:
+        put(Right)
+    else:
+        walk(Right)
+</code></pre>
+<p>「<code>get_ready()</code>で最新の情報を受け取る」→「その情報をもとに<code>if</code>で判断する」という2段階を、毎ターン繰り返すのが基本の形です。もし<code>get_ready()</code>を<code>while True:</code>の外に1回だけ書くと、最初の1回しか待たず、それ以降は古い情報のまま判断し続けてしまいます。</p>
+<h3>ブロックを置く：<code>put</code></h3>
+<pre><code class="language-python">put(Down)
+</code></pre>
+<p><code>put(方向)</code>は、方向のマスにブロックを置く命令です。書き方は<code>walk(方向)</code>と同じで、動詞が<code>walk</code>から<code>put</code>に変わっただけです。相手のいるマスに置けばアタック勝ちですが、自分の逃げ道をふさげば、自分が動けなくなる可能性もあります。</p>
+<p>上の例のように、「右隣が<code>Enemy</code>なら<code>put</code>、そうでなければ<code>walk</code>」という形が、アタックの基本形です（ステージ6-1）。</p>
+<h3>落とし穴：距離の偶奇</h3>
+<p>相手が動き回るステージでは、移動だけを繰り返しても、<strong>絶対に勝てない</strong>場合があります。</p>
+<p>自分も相手も、毎ターン必ず1マス動きます。自分が1回動いて、相手が1回動くたびに、2人のマンハッタン距離（縦のずれ＋横のずれ）は、「2縮む」「変わらない」「2広がる」のどれかにしかなりません。だから、<strong>距離が偶数なら偶数のまま、奇数なら奇数のまま</strong>で、偶奇は永久に変わらないのです。</p>
+<p>アタック勝ちには、距離1（奇数）で隣り合う必要があります。<strong>初めの距離が偶数で、相手が動き回るなら、移動だけを繰り返しても、一度も隣り合えません。</strong></p>
+<p>ステージ6-2（初めの距離8）と6-4（初めの距離4）が、これにあたります。実機のチュートリアル（Python）で、6-2に、先頭の<code>put</code>がないコードを3回試したところ、3回ともクリアできませんでした。先頭に<code>put</code>を入れたコードは、3回ともクリアできました。</p>
+<p>解決法は、<code>put</code>です。<code>put</code>は自分が動かない行動なので、1回置くと、自分だけ足踏みして、偶奇がずれます。プログラムの先頭に、1回<code>put</code>を入れるだけで、以降は距離が奇数になり、隣り合えるようになります。</p>
+<pre><code class="language-python">map_info = get_ready()
+put(Left)           # 先頭で1回だけ：自分の後ろに置いて、距離の偶奇をずらす
+
+while True:
+    map_info = get_ready()
+    # ここから、通常の追いかけ（判断と移動）
+</code></pre>
+<p>置く方向は、自分の通り道の邪魔にならない、後ろ側にするのが無難です。</p>
+<h3>上下左右を順に確認する（ステージ6-4）</h3>
+<p>ステージ6-4は、中央に3×3のブロックの輪があり、その左右にCoolとHotが立ちます。相手はランダムに動きます。次のコードは、「その方角に相手がいれば置く／空きマスなら進む／ブロックなら次の方角を確認する」という判断を、下→右→上→左の順に、入れ子にして重ねたものです。</p>
+<pre><code class="language-python">map_info = get_ready()
+put(Up)             # 先頭の1回：距離の偶奇をずらす
+map_info = get_ready()
+while True:
+    if map_info[Down] == Enemy:
+        put(Down)
+    elif map_info[Down] == Floor:
+        walk(Down)
+    else:
+        while True:
+            if map_info[Right] == Enemy:
+                put(Right)
+            elif map_info[Right] == Floor:
+                walk(Right)
+            else:
+                while True:
+                    if map_info[Up] == Enemy:
+                        put(Up)
+                    elif map_info[Up] == Floor:
+                        walk(Up)
+                    else:
+                        while True:
+                            if map_info[Left] == Enemy:
+                                put(Left)
+                            elif map_info[Left] == Floor:
+                                walk(Left)
+                            else:
+                                walk(Right)
+                            map_info = get_ready()
+                    map_info = get_ready()
+            map_info = get_ready()
+    map_info = get_ready()
+</code></pre>
+<p>かなり長く見えますが、同じパターンの繰り返しです。ある方角が空きマスでなくなる（ブロックにぶつかる）と、<code>else</code>の中の新しい<code>while True:</code>に入り、次の方角を見張ります。1段深くなるたびに、見張る方角が1つずつ変わっています。深い入れ子のどこにいても、次の判断の前には、必ず<code>map_info = get_ready()</code>で最新の情報を取り直しています。</p>
+<p>先頭の<code>put(Up)</code>は、上で説明した距離の偶奇をずらすための1回です。このコードは、実機のチュートリアル（Python）のステージ6-4で、6回試して6回ともクリアできました。</p>
+<h4>長いコードを読むコツ</h4>
+<p>入れ子が深いコードは、いきなり全体を理解しようとせず、次の順に読みます。</p>
+<ol>
+<li>いちばん外側の<code>while True:</code>が何をしているかだけを、大づかみにつかむ。</li>
+<li><code>if</code>・<code>elif</code>・<code>else</code>が、どんな条件で分かれているかを確認する。</li>
+<li><code>else</code>の中に新しい<code>while True:</code>があれば、「新しい繰り返しの始まり」として、そこで区切って読む。</li>
+<li>同じインデントの深さの行を目で追って、対応する<code>if</code>と<code>else</code>を、ペアで確認する。</li>
+</ol>
+<p>このコードは、Blocklyから変換された形なので、入れ子が深くなっています。次の節のように、リストを使うと、短く書けます（演習問題3）。</p>
+<h4>同じ動きを、短く書く</h4>
+<p>入れ子にしなくても、同じ動きを、短く書けます。見張る方角を<strong>リスト</strong>にして、「いま見張っている方角の番号」を、変数<code>i</code>に覚えさせます。</p>
+<pre><code class="language-python">directions = [Down, Right, Up, Left]   # 見張る方角の順番
+i = 0                                  # いま見張っている方角の番号
+map_info = get_ready()
+put(Up)                                # 先頭の1回：距離の偶奇をずらす
+while True:
+    map_info = get_ready()
+    # 相手もいない・空きマスでもない（ふさがった）方角は、次の方角へ
+    while i &lt; 3 and map_info[directions[i]] not in (Enemy, Floor):
+        i += 1
+    d = directions[i]
+    if map_info[d] == Enemy:
+        put(d)
+    elif map_info[d] == Floor:
+        walk(d)
+    else:
+        walk(Right)
+</code></pre>
+<p>入れ子のコードでは、ふさがった方角に出会うと、1段深いところへ進み、前の方角には戻りませんでした。ここでは、<code>i</code>を進めることが、その「1段深く進む」にあたります。<code>i</code>は増えるだけで、減りません。最後の方角（<code>Left</code>）までふさがっていたら、<code>walk(Right)</code>です。<code>in (Enemy, Floor)</code>は、「<code>Enemy</code>か<code>Floor</code>のどちらかである」という意味で、<code>not in</code>は、その反対です。このコードは、実機のチュートリアル（Python）のステージ6-4で、8回試して8回ともクリアできました（入れ子のコードは6回中6回）。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong><code>get_ready()</code>を、<code>while True:</code>の外に1回だけ書く</strong>：2回目以降は、古い情報のまま判断します。</li>
+<li><strong><code>get_ready()</code>の戻り値を、受け取らない</strong>：<code>get_ready()</code>だけを書いて<code>map_info = </code>を忘れると、最新の情報を使えません。</li>
+<li><strong>行動を、<code>get_ready()</code>なしで続けて呼ぶ</strong>：<code>walk</code>や<code>put</code>を<code>get_ready()</code>なしで続けて呼ぶと、意図したタイミングで動かないことがあります。</li>
+<li><strong>入れ子の中の<code>get_ready()</code>を、一部の分岐で書き忘れる</strong>：その分岐だけ、情報が更新されません。</li>
+<li><strong>移動だけで勝てると思い込む</strong>：初めの距離が偶数で、相手が動き回るなら、先頭の<code>put</code>が必要です。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li><code>get_ready()</code>を<code>while True:</code>の外に1回だけ書いた場合と、中に毎回書いた場合とで、動きにどんな違いが出るか、コードを書いて比べてみましょう。</li>
+<li>「自分のターンを待ってから、右に相手がいればブロックを置く」処理を、<code>get_ready()</code>と<code>put</code>を使って書いてみましょう。</li>
+<li>6-4のコードを、方角のリストを使って、入れ子にせずに、短く書き直してみましょう。（ヒント：いま見張っている方角の番号を、変数に覚えさせます）</li>
+<li>距離の偶奇について、初めの距離が奇数のとき、先頭の<code>put</code>は必要でしょうか。理由といっしょに答えてみましょう。</li>
+</ol>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-03.html" class="text-blue-600 hover:underline">← 3章　探査と、行動の決め方</a><a href="./tutorial-05.html" class="text-blue-600 hover:underline sm:text-right">5章　変数と関数 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

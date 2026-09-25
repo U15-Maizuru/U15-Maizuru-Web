@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_ROOT = path.resolve(__dirname, '..');
 const BOOK_ROOT = path.resolve(SITE_ROOT, '..', 'CHaser-Book');
 const ASSETS_IMAGES_ROOT = path.join(BOOK_ROOT, 'assets', 'images');
-const OUT_DIR = path.join(SITE_ROOT, 'guide');
+const GUIDE_DIR = path.join(SITE_ROOT, 'guide');
 const IMAGES_OUT_ROOT = path.join(SITE_ROOT, 'public', 'images', 'guide');
 
 // 入門編(Blockly版)は、両版共通の章(manuscript_shared)と入門編だけの章(manuscript_blockly)からなる。
@@ -30,7 +30,7 @@ const md = new MarkdownIt({ html: true, linkify: true });
 // `md` は CHaser-Book からの相対パス。応用編(Python版)・索引(付録4)は対象外。
 // ---------------------------------------------------------------------------
 
-const manifest = [
+const blocklyManifest = [
   { slug: 'rules-01', group: 'part1', groupLabel: '第1部　CHaserを知る', title: 'CHaserとは', md: 'manuscript_shared/part1/01_chaser_toha.md' },
   { slug: 'rules-02', group: 'part1', groupLabel: '第1部　CHaserを知る', title: 'フィールドの構成要素', md: 'manuscript_shared/part1/02_field.md' },
   { slug: 'rules-03', group: 'part1', groupLabel: '第1部　CHaserを知る', title: 'プレイヤーの行動', md: 'manuscript_shared/part1/03_actions.md' },
@@ -55,13 +55,105 @@ const manifest = [
   { slug: 'practice-03', group: 'part3', groupLabel: '第3部　実践', title: '3章　やりたいことをプログラムにする', md: 'manuscript_blockly/part3/03_strategies.md' },
 ];
 
-const referencePages = [
-  { slug: 'answers', title: '演習・確認クイズの解答', spoiler: true },
-  { slug: 'tutorial-examples', title: 'チュートリアル解答例集', spoiler: true },
-  { slug: 'glossary', title: '用語集', spoiler: false },
+const P1 = '第1部　CHaserを知る';
+const P2 = '第2部　Python編';
+const P3 = '第3部　実践';
+
+const pythonManifest = [
+  { slug: 'rules-01', group: 'part1', groupLabel: P1, title: 'CHaserとは', md: 'manuscript_shared/part1/01_chaser_toha.md' },
+  { slug: 'rules-02', group: 'part1', groupLabel: P1, title: 'フィールドの構成要素', md: 'manuscript_shared/part1/02_field.md' },
+  { slug: 'rules-03', group: 'part1', groupLabel: P1, title: 'プレイヤーの行動', md: 'manuscript_shared/part1/03_actions.md' },
+  { slug: 'rules-04', group: 'part1', groupLabel: P1, title: 'アイテム取得とブロック出現', md: 'manuscript_shared/part1/04_item_block.md' },
+  { slug: 'rules-05', group: 'part1', groupLabel: P1, title: '勝利条件', md: 'manuscript_shared/part1/05_win_conditions.md' },
+  { slug: 'rules-06', group: 'part1', groupLabel: P1, title: 'Pythonを書く場所', md: 'manuscript_python/part1/06_tutorial_start.md' },
+
+  { slug: 'tutorial-00', group: 'part2', groupLabel: P2, title: '0章　Pythonの基礎と、CHaserの書き方', md: 'manuscript_python/part2/01_basics.md' },
+  { slug: 'tutorial-01', group: 'part2', groupLabel: P2, title: '1章　移動と繰り返し', md: 'manuscript_python/part2/02_move_loop.md' },
+  { slug: 'tutorial-02', group: 'part2', groupLabel: P2, title: '2章　情報の読み取りと条件分岐', md: 'manuscript_python/part2/03_info_condition.md' },
+  { slug: 'tutorial-03', group: 'part2', groupLabel: P2, title: '3章　探査と、行動の決め方', md: 'manuscript_python/part2/04_search.md' },
+  { slug: 'tutorial-04', group: 'part2', groupLabel: P2, title: '4章　ターンの仕組みと、攻撃', md: 'manuscript_python/part2/05_turn_attack.md' },
+  { slug: 'tutorial-05', group: 'part2', groupLabel: P2, title: '5章　変数と関数', md: 'manuscript_python/part2/06_var_func.md' },
+  { slug: 'tutorial-06', group: 'part2', groupLabel: P2, title: '6章　総合演習と、Blockly⇔Python対応表', md: 'manuscript_python/part2/07_summary.md' },
+
+  { slug: 'practice-01', group: 'part3', groupLabel: P3, title: '1章　Pythonの画面の使い方', md: 'manuscript_python/part3/01_programming_screen.md' },
+  { slug: 'practice-02', group: 'part3', groupLabel: P3, title: '2章　対戦ルームの使い方', md: 'manuscript_python/part3/02_room_and_battle.md' },
+  { slug: 'practice-03', group: 'part3', groupLabel: P3, title: '3章　やりたいことをプログラムにする', md: 'manuscript_python/part3/03_strategies.md' },
 ];
 
-const readingOrder = ['index', ...manifest.map(m => m.slug)];
+// 版ごとの設定。`root` は、出力したHTMLからサイトのルートへの相対パス。
+const editions = [
+  {
+    id: 'blockly',
+    outDir: GUIDE_DIR,
+    root: '../',
+    siteName: 'CHaser解説（Blockly編）',
+    description: 'CHaser入門編（Blockly版）の解説トップページ。ルール解説、Blocklyチュートリアル、実践編の目次です。',
+    manifest: blocklyManifest,
+    references: [
+      { slug: 'answers', title: '演習・確認クイズの解答', spoiler: true },
+      { slug: 'tutorial-examples', title: 'チュートリアル解答例集', spoiler: true },
+      { slug: 'glossary', title: '用語集', spoiler: false },
+    ],
+    files: {
+      answers: 'manuscript_blockly/appendix/01_answers.md',
+      examples: 'manuscript_blockly/appendix/02_tutorial_examples.md',
+      glossary: 'manuscript_blockly/appendix/03_glossary.md',
+    },
+    switchTo: { href: './python/index.html', label: '応用編（Python版）へ' },
+    introHtml: `
+  <p>この解説は、対戦型プログラミング競技 <strong>CHaser（チェイサー）</strong> を、Blocklyでのブロック組み立てを通してはじめて触る人のための入門書です。CHaserでは、あなたが組んだプログラムがフィールド上のキャラクターを代わりに動かします。試合が始まったら直接操作はできません。「相手がこう来たら、自分はこう動く」という判断をあらかじめプログラムとして組み立てておく――そのための考え方を、ルール解説からチュートリアル、実際の対戦画面の使い方、やりたいことをプログラムにする手順まで順番に説明します。</p>
+
+  <p>いちばんおすすめの読み方は、<strong>第1部 → 第2部 → 第3部</strong>の順番です。第1部でルールを理解してから、第2部でBlocklyのステージに挑戦し、第3部で本番の対戦準備と、自分の戦略をプログラムにする考え方を確認します。とにかく早く対戦したいときは、第3部の1章・2章を先に読んでも構いません。</p>
+
+  <p>ブロックでは組みにくい動き（地図を覚える、道順を探索するなど）に挑戦したくなったら、続編の <a href="./python/index.html">応用編（Python版）</a> に進んでください。この解説で身につけた「考え方」は、そのまま使えます。</p>
+
+  <div class="my-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+    <p class="font-semibold">⚠️ 読み進める前に</p>
+    <p class="mt-1 text-sm">第2部の各ステージは、それ自体が「どう組めばクリアできるか」を考えるパズルです。各ページの「解答例」は折りたたんであります。<strong>先に自分でBlockly画面を開いて組んでみてから</strong>、解答例を開いて見比べることをおすすめします。答えを先に見てしまうと、いちばん面白いところを飛ばすことになります。</p>
+  </div>`,
+    groupDescriptions: {
+      part1: '対戦ルール、フィールド、勝敗の決まり方、チュートリアルの始め方を説明します。まずはここから。',
+      part2: 'ブロックを組み立ててステージをクリアする方法を、章ごとに説明します。各章に「課題 → 考えるヒント → 解答例（折りたたみ）」の順で書かれています。',
+      part3: 'チュートリアルを終えたら、本番のプログラミング画面と対戦ルームの使い方を確認しましょう。3章では、「こう動かしたい」というアイデアをブロックのプログラムにする考え方を、例を交えて説明します。',
+    },
+    answersParts: '第1部・第2部・第3部',
+  },
+  {
+    id: 'python',
+    outDir: path.join(GUIDE_DIR, 'python'),
+    root: '../../',
+    siteName: 'CHaser解説（Python編）',
+    description: 'CHaser応用編（Python版）の解説トップページ。ルール解説、Pythonの書き方、実践編の目次です。',
+    manifest: pythonManifest,
+    references: [
+      { slug: 'answers', title: '演習・確認クイズの解答', spoiler: true },
+      { slug: 'glossary', title: '用語集', spoiler: false },
+    ],
+    files: {
+      answers: 'manuscript_python/appendix/01_answers.md',
+      glossary: 'manuscript_python/appendix/02_glossary.md',
+    },
+    switchTo: { href: '../index.html', label: '入門編（Blockly版）へ' },
+    introHtml: `
+  <p>この解説は、対戦型プログラミング競技 <strong>CHaser（チェイサー）</strong> のプログラムを、Pythonで書くための応用編です。CHaserでは、あなたが書いたプログラムがフィールド上のキャラクターを代わりに動かします。試合が始まったら直接操作はできません。「相手がこう来たら、自分はこう動く」という判断をあらかじめ手順として書いておく――そのための書き方を、ルール解説からPythonの基礎、対戦画面の使い方、やりたいことをプログラムにする手順まで順番に説明します。</p>
+
+  <p>次のどちらの人にも読めるように書いています。</p>
+  <ul>
+    <li><strong>入門編（Blockly版）を読み終えた人</strong>：ブロックで組んだ動きを、Pythonの文字のコードで書けるようになります。各章の冒頭に、入門編のどの章に対応するかが書いてあります。<a href="../index.html">入門編（Blockly版）の解説はこちら</a>。</li>
+    <li><strong>Pythonを書いたことがある人</strong>：入門編を読んでいなくても構いません。第1部でルールを確認し、第2部0章と、各章の「CHaserのしくみの要点」を読めば、CHaser特有の決まりごとは押さえられます。</li>
+  </ul>
+
+  <p>いちばんおすすめの読み方は、<strong>第1部 → 第2部 → 第3部</strong>の順番です。早く対戦したいときは、第1部 → 第2部0章 → 第3部の1章・2章と読み、必要になった章に戻っても構いません。</p>
+
+  <p>チュートリアルの各ステージの解答例は、入門編の <a href="../tutorial-examples.html">チュートリアル解答例集</a> に、ブロックで載っています。この解説では、本文のコードを解答例としています。</p>`,
+    groupDescriptions: {
+      part1: '対戦ルーム、フィールド、勝敗の決まり方と、Pythonを書く場所（チュートリアルの画面と、対戦用の画面）を説明します。まずはここから。',
+      part2: 'Pythonの基礎と、CHaserの命令をPythonで書く方法を、章ごとに説明します。コードは、チュートリアルのPython画面にそのまま入力して試せる書き方です。',
+      part3: 'Pythonの対戦画面と対戦ルームの使い方を確認したあと、3章で「こう動かしたい」というアイデアをPythonのプログラムにする考え方を、例を交えて説明します。',
+    },
+    answersParts: '第1部・第2部・第3部',
+  },
+];
 
 // ---------------------------------------------------------------------------
 // Markdown 前処理・変換ヘルパー
@@ -94,7 +186,7 @@ function scaleWidthPercent(nn) {
 
 // 原稿中の `![alt](相対パス){width=NN%}` を、画像を public/images/guide/ 配下へ
 // コピーしつつ <figure> の生HTMLに変換する。
-function convertImages(markdown, mdAbsPath) {
+function convertImages(markdown, mdAbsPath, root) {
   const imageRe = /!\[([^\]]*)\]\(([^)\s]+)\)(?:\{width=(\d+)%\})?/g;
   return markdown.replace(imageRe, (whole, alt, relSrc, widthPct) => {
     const srcAbs = path.resolve(path.dirname(mdAbsPath), relSrc);
@@ -107,7 +199,7 @@ function convertImages(markdown, mdAbsPath) {
     fs.mkdirSync(path.dirname(destAbs), { recursive: true });
     fs.copyFileSync(srcAbs, destAbs);
 
-    const publicUrl = '../images/guide/' + relUnderAssets.split(path.sep).join('/');
+    const publicUrl = root + 'images/guide/' + relUnderAssets.split(path.sep).join('/');
     const width = widthPct ? scaleWidthPercent(Number(widthPct)) : 60;
     const safeAlt = alt.replace(/"/g, '&quot;');
     const isRaw = relUnderAssets.split(path.sep).includes('tutorial_answers_raw');
@@ -159,11 +251,11 @@ function readManuscript(relPath) {
 // 各ページ固有の変換
 // ---------------------------------------------------------------------------
 
-function buildChapterHtml(entry) {
+function buildChapterHtml(ed, entry) {
   const mdAbsPath = path.join(BOOK_ROOT, entry.md);
   let raw = fs.readFileSync(mdAbsPath, 'utf8');
   raw = stripLeadingH1(raw);
-  raw = convertImages(raw, mdAbsPath);
+  raw = convertImages(raw, mdAbsPath, ed.root);
   let html = renderMarkdown(raw);
   if (entry.foldAnswers) {
     html = foldMatchingSections(html, b => b.level === 4 && b.text.trim() === '解答例');
@@ -171,9 +263,9 @@ function buildChapterHtml(entry) {
   return html;
 }
 
-// 付録1: 確認クイズ・演習問題の解答(入門編の原稿には、Python編の解答は含まれない)。
-function buildAnswersHtml() {
-  let raw = readManuscript('manuscript_blockly/appendix/01_answers.md');
+// 付録1: 確認クイズ・演習問題の解答(各版の原稿には、その版の解答だけが入っている)。
+function buildAnswersHtml(ed) {
+  let raw = readManuscript(ed.files.answers);
   // 先頭の「# 付録」と、付録1〜4の概要リストを除去
   raw = raw.replace(/^#\s+付録\n[\s\S]*?(?=##\s+付録1)/, '');
   // 「## 付録1 ...」の見出し自体は除去(ページ側でタイトルを出すため)。以降の説明文は残す。
@@ -182,8 +274,8 @@ function buildAnswersHtml() {
 }
 
 // 付録2: 分割画像(_partN)をraw(分割前)画像へ差し替え、ステージごとに折りたたむ。
-function buildTutorialExamplesHtml() {
-  let raw = readManuscript('manuscript_blockly/appendix/02_tutorial_examples.md');
+function buildTutorialExamplesHtml(ed) {
+  let raw = readManuscript(ed.files.examples);
   raw = raw.replace(/^##\s+付録2[^\n]*\n/m, '');
 
   // 印刷用に画像を分割していた旨の記述を除去(Webでは分割しないため)
@@ -226,31 +318,37 @@ function buildTutorialExamplesHtml() {
   }
   raw = outLines.join('\n');
 
-  const mdAbsPath = path.join(BOOK_ROOT, 'manuscript_blockly/appendix/02_tutorial_examples.md');
-  raw = convertImages(raw, mdAbsPath);
+  const mdAbsPath = path.join(BOOK_ROOT, ed.files.examples);
+  raw = convertImages(raw, mdAbsPath, ed.root);
 
   let html = renderMarkdown(raw);
   html = foldMatchingSections(html, b => b.level === 4 && /^\d+-\d+/.test(b.text.trim()), { requireImage: true });
   return html;
 }
 
-function buildGlossaryHtml() {
-  let raw = readManuscript('manuscript_blockly/appendix/03_glossary.md');
-  raw = raw.replace(/^##\s+付録3[^\n]*\n/m, '');
+function buildGlossaryHtml(ed) {
+  let raw = readManuscript(ed.files.glossary);
+  raw = raw.replace(/^##\s+付録\d+[^\n]*\n/m, '');
   return renderMarkdown(raw);
 }
+
 
 // ---------------------------------------------------------------------------
 // ページテンプレート
 // ---------------------------------------------------------------------------
 
-function renderToc(currentSlug) {
-  const groups = [
-    { label: '第1部　CHaserを知る', items: manifest.filter(m => m.group === 'part1') },
-    { label: '第2部　チュートリアル', items: manifest.filter(m => m.group === 'part2') },
-    { label: '第3部　実践', items: manifest.filter(m => m.group === 'part3') },
-    { label: '資料', items: referencePages },
-  ];
+function renderToc(ed, currentSlug) {
+  const groups = [];
+  for (const m of ed.manifest) {
+    let g = groups.find(x => x.group === m.group);
+    if (!g) {
+      g = { group: m.group, label: m.groupLabel, items: [] };
+      groups.push(g);
+    }
+    g.items.push(m);
+  }
+  groups.push({ group: 'references', label: '資料', items: ed.references });
+
   const topLink = `<li class="mb-3"><a href="./index.html" class="${currentSlug === 'index' ? 'font-bold text-blue-700' : 'font-semibold text-gray-800 hover:text-blue-600'}">解説トップ</a></li>`;
   const body = groups.map(g => `
     <div class="mb-4">
@@ -262,12 +360,13 @@ function renderToc(currentSlug) {
   return `<ul class="mb-2">${topLink}</ul>${body}`;
 }
 
-function renderPrevNext(slug) {
+function renderPrevNext(ed, slug) {
+  const readingOrder = ['index', ...ed.manifest.map(m => m.slug)];
   const idx = readingOrder.indexOf(slug);
   if (idx === -1) return '';
   const prevSlug = idx > 0 ? readingOrder[idx - 1] : null;
   const nextSlug = idx < readingOrder.length - 1 ? readingOrder[idx + 1] : null;
-  const titleOf = s => (s === 'index' ? '解説トップ' : manifest.find(m => m.slug === s)?.title ?? s);
+  const titleOf = s => (s === 'index' ? '解説トップ' : ed.manifest.find(m => m.slug === s)?.title ?? s);
   const prevHtml = prevSlug
     ? `<a href="./${prevSlug}.html" class="text-blue-600 hover:underline">← ${titleOf(prevSlug)}</a>`
     : '<span></span>';
@@ -277,7 +376,7 @@ function renderPrevNext(slug) {
   return `<div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between">${prevHtml}${nextHtml}</div>`;
 }
 
-function renderShell({ slug, title, description, breadcrumb, contentHtml, spoiler = false, spoilerText = '' }) {
+function renderShell(ed, { slug, title, description, breadcrumb, contentHtml, spoiler = false, spoilerText = '' }) {
   const spoilerBanner = spoiler
     ? `<div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
         <p class="font-semibold">⚠️ ネタバレ注意</p>
@@ -290,22 +389,23 @@ function renderShell({ slug, title, description, breadcrumb, contentHtml, spoile
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title} | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <title>${title} | ${ed.siteName} | U-15 プログラミングコンテスト 舞鶴大会</title>
   <meta name="description" content="${description}">
-  <link rel="icon" href="../images/favicon.ico" sizes="any">
-  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
-  <link rel="stylesheet" href="../src/style.css">
+  <link rel="icon" href="${ed.root}images/favicon.ico" sizes="any">
+  <link rel="icon" href="${ed.root}images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="${ed.root}images/apple-touch-icon.png">
+  <link rel="stylesheet" href="${ed.root}src/style.css">
   <!-- Google Analytics -->
-  <script type="module" src="../src/gtag.js"></script>
+  <script type="module" src="${ed.root}src/gtag.js"></script>
 </head>
 <body class="bg-white text-gray-800">
   <header class="border-b border-gray-200 bg-white">
-    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
-      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
-      <nav class="flex items-center gap-4 text-sm font-semibold">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">${ed.siteName}</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
         <a href="./index.html" class="hover:text-blue-600">目次</a>
-        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+        <a href="${ed.switchTo.href}" class="hover:text-blue-600">${ed.switchTo.label}</a>
+        <a href="${ed.root}competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
       </nav>
     </div>
   </header>
@@ -315,7 +415,7 @@ function renderShell({ slug, title, description, breadcrumb, contentHtml, spoile
       <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
         <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
         <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
-          ${renderToc(slug)}
+          ${renderToc(ed, slug)}
         </nav>
       </details>
     </aside>
@@ -328,14 +428,12 @@ function renderShell({ slug, title, description, breadcrumb, contentHtml, spoile
         ${contentHtml}
       </article>
 
-      ${renderPrevNext(slug)}
+      ${renderPrevNext(ed, slug)}
 
       <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
         <p class="font-semibold">参考資料</p>
         <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
-          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
-          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
-          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+          ${ed.references.map(r => `<li><a class="text-blue-600 hover:underline" href="./${r.slug}.html">${r.title}</a></li>`).join('\n          ')}
         </ul>
       </div>
     </main>
@@ -349,14 +447,15 @@ function renderShell({ slug, title, description, breadcrumb, contentHtml, spoile
 `;
 }
 
-function writePage(slug, options) {
-  const html = renderShell({ slug, ...options });
-  fs.writeFileSync(path.join(OUT_DIR, `${slug}.html`), html, 'utf8');
-  console.log(`  guide/${slug}.html`);
+function writePage(ed, slug, options) {
+  const html = renderShell(ed, { slug, ...options });
+  const outPath = path.join(ed.outDir, `${slug}.html`);
+  fs.writeFileSync(outPath, html, 'utf8');
+  console.log(`  ${path.relative(SITE_ROOT, outPath).split(path.sep).join('/')}`);
 }
 
 // ---------------------------------------------------------------------------
-// index.html (目次トップページ) ― 原稿の「はじめに」を Blockly版向けに要約して手書き
+// index.html (目次トップページ) ― 原稿の「はじめに」を版ごとに要約して手書き(introHtml)
 // ---------------------------------------------------------------------------
 
 function renderCardGrid(items) {
@@ -367,36 +466,22 @@ function renderCardGrid(items) {
   </div>`;
 }
 
-function buildIndexHtml() {
-  const part1Items = manifest.filter(m => m.group === 'part1');
-  const part2Items = manifest.filter(m => m.group === 'part2');
-  const part3Items = manifest.filter(m => m.group === 'part3');
+function buildIndexHtml(ed) {
+  const groups = [];
+  for (const m of ed.manifest) {
+    if (!groups.some(g => g.group === m.group)) groups.push({ group: m.group, label: m.groupLabel });
+  }
+  const sections = groups.map((g, i) => `
+  <h2${i > 0 ? ' class="mt-10"' : ''}>${g.label}</h2>
+  <p>${ed.groupDescriptions[g.group]}</p>
+  ${renderCardGrid(ed.manifest.filter(m => m.group === g.group))}`);
 
-  return `
-  <p>この解説は、対戦型プログラミング競技 <strong>CHaser（チェイサー）</strong> を、Blocklyでのブロック組み立てを通してはじめて触る人のための入門書です。CHaserでは、あなたが組んだプログラムがフィールド上のキャラクターを代わりに動かします。試合が始まったら直接操作はできません。「相手がこう来たら、自分はこう動く」という判断をあらかじめプログラムとして組み立てておく――そのための考え方を、ルール解説からチュートリアル、実際の対戦画面の使い方、やりたいことをプログラムにする手順まで順番に説明します。</p>
-
-  <p>いちばんおすすめの読み方は、<strong>第1部 → 第2部 → 第3部</strong>の順番です。第1部でルールを理解してから、第2部でBlocklyのステージに挑戦し、第3部で本番の対戦準備と、自分の戦略をプログラムにする考え方を確認します。とにかく早く対戦したいときは、第3部の1章・2章を先に読んでも構いません。</p>
-
-  <div class="my-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
-    <p class="font-semibold">⚠️ 読み進める前に</p>
-    <p class="mt-1 text-sm">第2部の各ステージは、それ自体が「どう組めばクリアできるか」を考えるパズルです。各ページの「解答例」は折りたたんであります。<strong>先に自分でBlockly画面を開いて組んでみてから</strong>、解答例を開いて見比べることをおすすめします。答えを先に見てしまうと、いちばん面白いところを飛ばすことになります。</p>
-  </div>
-
-  <h2>第1部　CHaserを知る</h2>
-  <p>対戦ルール、フィールド、勝敗の決まり方、チュートリアルの始め方を説明します。まずはここから。</p>
-  ${renderCardGrid(part1Items)}
-
-  <h2 class="mt-10">第2部　チュートリアル</h2>
-  <p>ブロックを組み立ててステージをクリアする方法を、章ごとに説明します。各章に「課題 → 考えるヒント → 解答例（折りたたみ）」の順で書かれています。</p>
-  ${renderCardGrid(part2Items)}
-
-  <h2 class="mt-10">第3部　実践</h2>
-  <p>チュートリアルを終えたら、本番のプログラミング画面と対戦ルームの使い方を確認しましょう。3章では、「こう動かしたい」というアイデアをブロックのプログラムにする考え方を、例を交えて説明します。</p>
-  ${renderCardGrid(part3Items)}
+  return `${ed.introHtml}
+${sections.join('\n')}
 
   <h2 class="mt-10">資料</h2>
   <p>自分の答え合わせや、用語の確認に使ってください。</p>
-  ${renderCardGrid(referencePages)}
+  ${renderCardGrid(ed.references)}
   `;
 }
 
@@ -404,56 +489,62 @@ function buildIndexHtml() {
 // メイン処理
 // ---------------------------------------------------------------------------
 
-function main() {
-  // 原稿から参照されなくなった画像が残らないよう、画像は毎回作り直す
-  fs.rmSync(IMAGES_OUT_ROOT, { recursive: true, force: true });
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-  fs.mkdirSync(IMAGES_OUT_ROOT, { recursive: true });
+function buildEdition(ed) {
+  fs.mkdirSync(ed.outDir, { recursive: true });
+  console.log(`${ed.siteName} のページを生成します...`);
 
-  console.log('guide ページを生成します...');
-
-  writePage('index', {
+  writePage(ed, 'index', {
     title: '解説トップ',
-    description: 'CHaser入門編（Blockly版）の解説トップページ。ルール解説、Blocklyチュートリアル、実践編の目次です。',
+    description: ed.description,
     breadcrumb: '',
-    contentHtml: buildIndexHtml(),
+    contentHtml: buildIndexHtml(ed),
   });
 
-  for (const entry of manifest) {
-    writePage(entry.slug, {
+  for (const entry of ed.manifest) {
+    writePage(ed, entry.slug, {
       title: entry.title,
-      description: `CHaser解説（Blockly編） ${entry.groupLabel} ${entry.title}`,
+      description: `${ed.siteName} ${entry.groupLabel} ${entry.title}`,
       breadcrumb: entry.groupLabel,
-      contentHtml: buildChapterHtml(entry),
+      contentHtml: buildChapterHtml(ed, entry),
       spoiler: Boolean(entry.foldAnswers),
       spoilerText: '各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。',
     });
   }
 
-  writePage('answers', {
+  writePage(ed, 'answers', {
     title: '演習・確認クイズの解答',
-    description: 'CHaser解説（Blockly編） 第1部・第2部・第3部の演習問題・確認クイズの解答です。',
+    description: `${ed.siteName} ${ed.answersParts}の演習問題・確認クイズの解答です。`,
     breadcrumb: '資料',
-    contentHtml: buildAnswersHtml(),
+    contentHtml: buildAnswersHtml(ed),
     spoiler: true,
-    spoilerText: 'このページには第1部・第2部・第3部の演習問題・確認クイズの解答が含まれています。',
+    spoilerText: `このページには${ed.answersParts}の演習問題・確認クイズの解答が含まれています。`,
   });
 
-  writePage('tutorial-examples', {
-    title: 'チュートリアル解答例集',
-    description: 'CHaser解説（Blockly編） チュートリアル全ステージ（1-1〜9-3）のBlockly解答例集です。',
-    breadcrumb: '資料',
-    contentHtml: buildTutorialExamplesHtml(),
-    spoiler: true,
-    spoilerText: 'このページには全ステージの解答例が掲載されています。自分で組んだプログラムと見比べたいときに開いてください。',
-  });
+  if (ed.files.examples) {
+    writePage(ed, 'tutorial-examples', {
+      title: 'チュートリアル解答例集',
+      description: `${ed.siteName} チュートリアル全ステージ（1-1〜9-3）のBlockly解答例集です。`,
+      breadcrumb: '資料',
+      contentHtml: buildTutorialExamplesHtml(ed),
+      spoiler: true,
+      spoilerText: 'このページには全ステージの解答例が掲載されています。自分で組んだプログラムと見比べたいときに開いてください。',
+    });
+  }
 
-  writePage('glossary', {
+  writePage(ed, 'glossary', {
     title: '用語集',
-    description: 'CHaser解説（Blockly編） 用語集。',
+    description: `${ed.siteName} 用語集。`,
     breadcrumb: '資料',
-    contentHtml: buildGlossaryHtml(),
+    contentHtml: buildGlossaryHtml(ed),
   });
+}
+
+function main() {
+  // 原稿から参照されなくなった画像が残らないよう、画像は毎回作り直す
+  fs.rmSync(IMAGES_OUT_ROOT, { recursive: true, force: true });
+  fs.mkdirSync(IMAGES_OUT_ROOT, { recursive: true });
+
+  for (const ed of editions) buildEdition(ed);
 
   console.log('完了しました。');
 }
