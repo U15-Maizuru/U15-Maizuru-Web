@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blockly基本操作 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
-  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 Blockly基本操作">
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル Blockly基本操作">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
@@ -40,7 +40,7 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
       <ul class="space-y-1">
         <li><a href="./tutorial-00.html" class="font-bold text-blue-700">Blockly基本操作</a></li>
 <li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
@@ -57,10 +57,11 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
       <ul class="space-y-1">
         <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
 <li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
       </ul>
     </div>
 
@@ -77,15 +78,15 @@
     </aside>
 
     <main class="min-w-0 flex-1">
-      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル</p>
       <h1 class="mb-6 text-3xl font-bold">Blockly基本操作</h1>
       <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
         <p class="font-semibold">⚠️ ネタバレ注意</p>
         <p class="mt-1 text-sm">各ステージの「解答例」は折りたたんであります。自分の力で挑戦してから開いてください。</p>
       </div>
       <article class="prose prose-blue max-w-none prose-img:mx-auto">
-        <h2>この先の読み方（第2部・第3部共通）</h2>
-<p>第2部・第3部で扱うチュートリアルの各ステージは、それ自体が「どう組めばクリアできるか」を考えるパズルです。答えを先に読んでしまうと、パズルとしての面白さが半減してしまいます。そこで本書では、各ステージを次の順番で説明します。</p>
+        <h2>この先の読み方</h2>
+<p>第2部で扱うチュートリアルの各ステージは、それ自体が「どう組めばクリアできるか」を考えるパズルです。答えを先に読んでしまうと、パズルとしての面白さが半減してしまいます。そこで本書では、各ステージを次の順番で説明します。</p>
 <ol>
 <li><strong>課題</strong>：クリアするために何をすればよいか</li>
 <li><strong>💡 考えるヒント</strong>：どの章で学んだ道具（移動・繰り返し・条件分岐など）を、どう組み合わせられそうかの手がかり（ただし具体的なブロックの並びまでは明かしません）</li>
@@ -97,7 +98,7 @@
 <h2>0章 Blockly基本操作</h2>
 <p>第2部では、Blocklyでブロックを組み立てながらCHaserのキャラクターを動かす方法を、チュートリアルのステージ順に沿って説明していきます。本格的なステージに入る前に、Blockly共通の操作方法を確認しておきましょう。</p>
 <h3>Blocklyから始める狙い</h3>
-<p>CHaserにはPythonでプログラムを書く方法も用意されていますが、本書ではあえてBlocklyから先に学びます。理由は、Blocklyがプログラムの「構造」を目に見える形にしてくれるからです。文字だけのコードでは、インデント（字下げ）のズレや、かっこの閉じ忘れといった、見た目では気づきにくいミスが起こりがちです。Blocklyでは、ブロックの形そのものが「ここは繰り返しの中」「ここは条件分岐の中」という構造を表すので、パズルを組み立てる感覚でプログラムの骨組みを理解できます。第3部でPythonを学ぶときも、「Blocklyのあのブロックが、このPythonの行に対応している」という形で理解できるので、遠回りに見えて実は近道です。</p>
+<p>CHaserにはPythonのような文字のコードでプログラムを書く方法も用意されていますが（続編の応用編で扱います）、この本ではBlocklyを使います。理由は、Blocklyがプログラムの「構造」を目に見える形にしてくれるからです。文字だけのコードでは、インデント（字下げ）のズレや、かっこの閉じ忘れといった、見た目では気づきにくいミスが起こりがちです。Blocklyでは、ブロックの形そのものが「ここは繰り返しの中」「ここは条件分岐の中」という構造を表すので、パズルを組み立てる感覚でプログラムの骨組みを理解できます。ここでブロックを通して身につけた「考え方」は、文字のコードに進むときにもそのまま使えます。</p>
 <h3>画面の基本用語</h3>
 <p>Blocklyの画面には、共通して使われる名前が付いた場所があります。ブロックを組み立てるメインの作業スペースを「ワークスペース」、ブロックの部品が並んでいる左側の一覧を「ツールボックス」と呼びます。これらはCHaserだけでなく、Blocklyを使った他の学習教材（後述）でも共通して使われる呼び方なので、覚えておくと他の教材を触るときにも役立ちます。</p>
 <p>ツールボックスの見た目は、ステージによって2種類あります。</p>
@@ -110,7 +111,7 @@
 <img src="../images/guide/part2/fig2-00f_toolbox_category.png" alt="図：ステージ9-3のツールボックス。ブロックがカテゴリに分かれている" style="width:30%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
 <figcaption class="mt-2 text-sm text-gray-500">図：ステージ9-3のツールボックス。ブロックがカテゴリに分かれている</figcaption>
 </figure>
-<p>一方、ステージ8以降と、本番のプログラミング画面（第4部1章）では、使えるブロックの数が多いため、上の図のように「CHaser」「演算」「繰り返し」…といった<strong>カテゴリ</strong>に分かれていて、カテゴリ名をクリックすると中身が開きます。</p>
+<p>一方、ステージ8以降と、本番のプログラミング画面（第3部1章）では、使えるブロックの数が多いため、上の図のように「CHaser」「演算」「繰り返し」…といった<strong>カテゴリ</strong>に分かれていて、カテゴリ名をクリックすると中身が開きます。</p>
 <p>本書で「ツールボックスから〇〇ブロックを探しましょう」と書いてあるときは、前半のステージなら一覧をそのまま眺め、後半ならカテゴリを開いて探す、と読み替えてください。</p>
 <h3>ブロックをつなげる</h3>
 <p>Blocklyのブロックは、パズルのピースのような形をしています。ブロックの上下（処理を順番に実行するブロック）や内側（条件や繰り返しの中に入れるブロック）には、他のブロックをはめ込む「くぼみ」や「でっぱり」があります。</p>
