@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5章　変数と関数 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 5章　変数と関数">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="font-bold text-blue-700">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">5章　変数と関数</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>5章 変数と関数</h2>
+<p>入門編の第2部9章（ステージ7）に対応します。</p>
+<h3>CHaserのしくみの要点</h3>
+<ul>
+<li>CHaserのプログラムは、<strong>前のターンに見たことを、勝手には覚えていません</strong>。<code>map_info</code>も、毎ターン新しく作り直されます。あとで使いたい情報は、変数に自分で入れておきます。</li>
+<li>プログラムが長くなると、判断が何行にもなって、読みにくくなります。<strong>1つの判断を、名前を付けた関数にまとめる</strong>と、全体が短く読みやすくなります。</li>
+</ul>
+<h3>変数に、決めた方針を覚えさせる（ステージ7-1）</h3>
+<p>「右方向をsearchして、アイテムがあれば右、なければ左へ、ずっと進む」というプログラムを、変数で書いてみます。</p>
+<pre><code class="language-python">map_info = get_ready()
+search_info = search(Right)
+if Item in search_info:
+    direction = Right
+else:
+    direction = Left
+
+while True:
+    map_info = get_ready()
+    walk(direction)
+</code></pre>
+<p>最初に1回だけ探査して、その結果を変数<code>direction</code>に入れます。あとの<code>while True:</code>の中では、判断をやり直さずに、<code>direction</code>の中身の方向へ、ずっと歩き続けます。変数は、「値を入れておく箱」と考えると分かりやすくなります。箱の中身は、別の値を代入するまで、そのまま保たれます。</p>
+<p>3章の4-1と比べると、<code>if</code>の中に<code>while True:</code>が2つあった形が、1つの<code>while True:</code>にまとまっています。「方針を決める」部分と「動く」部分を分けると、プログラムが読みやすくなります。</p>
+<h4>変数の値を更新する</h4>
+<p>変数の値を、今の値に1を足したものに置き換えるには、次のように書きます。</p>
+<pre><code class="language-python">count = count + 1
+count += 1          # 同じ意味の、短い書き方
+</code></pre>
+<p><code>=</code>の右側が先に計算され、その結果が左の変数に代入されます。「回数を数える」ときに使います。</p>
+<h4>Blocklyから変換された<code>first_index</code>の定義</h4>
+<p>3章で触れた<code>first_index</code>は、次のような関数です。Blocklyから変換されたコードには、この関数の定義が含まれています。</p>
+<pre><code class="language-python">def first_index(my_list, elem):
+  try: index = my_list.index(elem) + 1
+  except: index = 0
+  return index
+</code></pre>
+<p>大事なのは、最後の<code>+ 1</code>と、見つからなかったときの<code>0</code>です。同じ<code>search_info</code>でも、数え方が2種類あるので、注意してください。</p>
+<table>
+<thead>
+<tr>
+<th>書き方</th>
+<th>数え方</th>
+<th>隣のマス</th>
+<th>いちばん遠いマス</th>
+<th>見つからないとき</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>search_info[番号]</code></td>
+<td>0から数える</td>
+<td><code>search_info[0]</code></td>
+<td><code>search_info[8]</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>first_index(search_info, Item)</code></td>
+<td>1から数える</td>
+<td><code>1</code></td>
+<td><code>9</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>first_index</code>が「見つからない」を<code>0</code>で表すために、位置のほうを1からにずらしている、と考えると筋が通ります。<code>first_index</code>の結果を<code>search_info[ ]</code>の番号に使うなら、1を引きます。</p>
+<h3>関数にまとめる（ステージ7-2）</h3>
+<p>Pythonでは、関数を<code>def</code>（define：定義する）で作ります。「上下左右にアイテムがあれば取りに行く」判断を、関数にしてみます。</p>
+<pre><code class="language-python">def get_item():
+    &quot;&quot;&quot;上下左右にアイテムがあれば取りに行って True、なければ False を返す&quot;&quot;&quot;
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Item:
+            walk(direction)
+            return True
+    return False
+</code></pre>
+<p><code>def get_item():</code>が関数の始まりで、インデントされた範囲が中身です。かっこの中には、受け取りたい値（引数）を書きます（この関数は、受け取る値がないので空です）。<code>return</code>は、その関数をそこで終わらせて、値を呼び出し元に返す命令です。ここでは、アイテムを見つけて取りに行けたら<code>True</code>、どこにもなければ<code>False</code>を返します。</p>
+<p>もう1つ、「ブロックのない方向を、ランダムに選んで歩く」関数です。</p>
+<pre><code class="language-python">import random   # 乱数を使うときは、プログラムの先頭に書く
+
+def random_move():
+    free = []
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] != Block:
+            free.append(direction)
+    if free:
+        walk(random.choice(free))
+</code></pre>
+<p><code>free = []</code>は、中身が空のリストです。ブロックでない方向を、<code>.append(方向)</code>で1つずつ加えていきます。<code>random.choice(リスト)</code>は、リストの中から、ランダムに1つ選ぶ命令です（チュートリアルの画面では、先頭に<code>import random</code>が必要です。本番用の骨組みでは、<code>from lib.pyCHaser import *</code>で使えるので、書かなくても動きます）。<code>if free:</code>は、リストが空でないときだけ、という意味です。</p>
+<p>メインの処理は、この2つの関数を呼び出すだけになります。</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if not get_item():
+        random_move()
+</code></pre>
+<p>「アイテムを取りに行けなかったときだけ、ランダムに歩く」と、日本語のように読めます。それぞれの関数の中身がどれだけ複雑でも、メインの処理は短く読めるのが、関数を使う最大の利点です。</p>
+<h3>戻り値を、行動ではなく「答え」にする（ステージ7-3）</h3>
+<p><code>get_item</code>は、判断と移動を、1つの関数の中で行いました。関数の役割を「進む方向を答えるだけ」にすると、もっと使い回しがききます。</p>
+<pre><code class="language-python">def item_direction():
+    &quot;&quot;&quot;アイテムのある方向を返す。なければ None&quot;&quot;&quot;
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Item:
+            return direction
+    return None
+
+
+while True:
+    map_info = get_ready()
+    direction = item_direction()
+    if direction is None:
+        random_move()
+    else:
+        walk(direction)
+</code></pre>
+<p><code>None</code>は、「該当なし」を表す、Pythonの特別な値です。値が<code>None</code>かどうかは、<code>is None</code>で調べます。判断（どの方向か）と行動（歩く）を分けておくと、方向の答えを、歩く以外（たとえば、ブロックを置く）にも使えます。</p>
+<h3>関数の外の変数</h3>
+<p>関数の中から、関数の外の変数（<code>map_info</code>など）は、<strong>読むだけなら</strong>、そのまま使えます。関数の中で、外の変数に<strong>新しい値を代入する</strong>ときは、関数の先頭で、<code>global 変数名</code>と宣言する必要があります（第3部3章の例2で、初めて使います）。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong><code>def</code>の行末の<code>:</code>を忘れる</strong>：<code>if</code>や<code>while</code>と同じく、<code>def 関数名():</code>にも<code>:</code>が必要です。</li>
+<li><strong><code>return</code>がないと、値は返らない</strong>：値を答えにしたい関数には、<code>return</code>で返す値を指定します。何も返さない関数は<code>None</code>が返ります。</li>
+<li><strong>関数を定義しただけで、呼び出し忘れる</strong>：<code>def</code>で定義しただけでは、何も起きません。<code>get_item()</code>のように、関数名の後に丸かっこを付けて呼び出してはじめて、中身が実行されます。</li>
+<li><strong>リストと変数の役割を混同する</strong>：1つの値を覚えておくのが変数、複数の値を集めておくのがリストです。</li>
+<li><strong><code>random.choice</code>に、空のリストを渡す</strong>：エラーになります。<code>if free:</code>で、空でないことを確かめてから使います。</li>
+<li><strong>関数の外の変数に、<code>global</code>なしで代入する</strong>：関数の中だけの、別の変数になってしまい、外の変数は変わりません。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li><code>Item in search_info</code>と、<code>first_index(search_info, Item) &gt; 0</code>は、どちらも「アイテムがあるか」を調べています。<code>first_index</code>を使うと、<code>in</code>より何が分かるでしょうか。</li>
+<li><code>random_move</code>を参考に、「ブロックのない方向」ではなく「アイテムのある方向」だけをリストに集める関数を考えてみましょう。</li>
+<li><code>item_direction</code>の<code>return None</code>を、<code>return</code>の1行に書き換えると、どうなりますか。</li>
+</ol>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-04.html" class="text-blue-600 hover:underline">← 4章　ターンの仕組みと、攻撃</a><a href="./tutorial-06.html" class="text-blue-600 hover:underline sm:text-right">6章　総合演習と、Blockly⇔Python対応表 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

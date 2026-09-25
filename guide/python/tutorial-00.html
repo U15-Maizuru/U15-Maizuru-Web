@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0章　Pythonの基礎と、CHaserの書き方 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 0章　Pythonの基礎と、CHaserの書き方">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="font-bold text-blue-700">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">0章　Pythonの基礎と、CHaserの書き方</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <p>第2部では、CHaserのプログラムをPythonで書くための道具を、順番に学びます。</p>
+<h2>この部の読み方</h2>
+<p>入門編では、ステージごとに「課題 → ヒント → 挑戦 → 解答例」の順で、自分でブロックを組む練習をしました。この本では、その考え方をPythonの文法でどう書くかを中心に説明します。だから、ステージの課題を1つずつ解く形ではなく、<strong>書き方の解説と、コードの例、つまずきやすい点</strong>を中心に進めます。</p>
+<p>この部のコードは、<strong>チュートリアルのPython画面にそのまま入力できる書き方</strong>（<code>walk(Up)</code>）で書きます。本番用（Pythonの画面・対戦）では、命令の前に<code>player.</code>を付けます。違いは、0章で説明します。</p>
+<p>各章は、入門編の次の章に対応しています。</p>
+<table>
+<thead>
+<tr>
+<th>この本の章</th>
+<th>内容</th>
+<th>入門編の章（ステージ）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0章</td>
+<td>Pythonの基礎と、CHaserの書き方（チュートリアルと本番の違い）</td>
+<td>第2部0章</td>
+</tr>
+<tr>
+<td>1章</td>
+<td>移動と繰り返し</td>
+<td>第2部1・2章（ステージ1・2）</td>
+</tr>
+<tr>
+<td>2章</td>
+<td>情報の読み取りと条件分岐</td>
+<td>第2部3・4章（ステージ3）</td>
+</tr>
+<tr>
+<td>3章</td>
+<td>探査と、行動の決め方</td>
+<td>第2部5・6章（ステージ4）</td>
+</tr>
+<tr>
+<td>4章</td>
+<td>ターンの仕組みと、攻撃</td>
+<td>第2部7・8章（ステージ5・6）</td>
+</tr>
+<tr>
+<td>5章</td>
+<td>変数と関数</td>
+<td>第2部9章（ステージ7）</td>
+</tr>
+<tr>
+<td>6章</td>
+<td>総合演習と、Blockly⇔Python対応表</td>
+<td>第2部10章（ステージ8）</td>
+</tr>
+</tbody>
+</table>
+<p>入門編を読んでいない人のために、各章の最初に<strong>「CHaserのしくみの要点」</strong>を置きました。入門編を読んだ人は、飛ばして構いません。</p>
+<h2>0章 Pythonの基礎と、CHaserの書き方</h2>
+<p>この章では、CHaserのプログラムをPythonで書く場所と、その書き方（2通り）、Pythonの基本ルールを確認します。Pythonを知っている人は、「Pythonを書く2つの場所」から「CHaserで使う名前」までを読めば十分です。</p>
+<h3>Pythonを書く2つの場所</h3>
+<p>CHaserには、Pythonのコードを書く場所が2つあります。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>チュートリアル（Python）</th>
+<th>Pythonの画面・対戦</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>開き方</td>
+<td>ステージ選択画面の右上を「Python」に切り替えて、ステージを選ぶ</td>
+<td>トップ画面の「Python」</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>ステージをPythonでクリアする練習</td>
+<td>対戦用のプログラムを書く・対戦する</td>
+</tr>
+<tr>
+<td>命令の書き方</td>
+<td>名前だけ：<code>walk(Up)</code></td>
+<td><code>player.</code>を付ける：<code>player.walk(Up)</code></td>
+</tr>
+<tr>
+<td>準備</td>
+<td>いらない（<code>import</code>も、接続もなし）</td>
+<td>骨組み（下）を使う</td>
+</tr>
+</tbody>
+</table>
+<p>この本の第2部のコードは、<strong>チュートリアルにそのまま入力できる書き方</strong>（<code>walk(Up)</code>）で書きます。本番用に使うときは、命令の前に<code>player.</code>を付け、骨組みの中に入れます（<code>walk(Up)</code> → <code>player.walk(Up)</code>）。第3部の実践では、本番用の書き方で書きます。</p>
+<h3>チュートリアルのPythonは「簡易版」</h3>
+<p>チュートリアルのPython画面は、<code>walk(Up)</code>と書くだけで、キャラクターを動かせるように作られた<strong>簡易版</strong>です。書いたコードは、画面が、CHaserのステージ用に<strong>変換</strong>してから動かしています。だから、書いたコードは、<strong>普通のPythonとしては動きません</strong>。たとえば、<code>walk(Up)</code>だけを書いたファイルを、パソコンのPythonで動かすと、「<code>walk</code>という名前がありません（<code>NameError</code>）」というエラーになります。<code>walk</code>などの命令や、方角の名前は、この画面が用意しているからです。</p>
+<p>普通のPythonにはない、次のような決まりと制限があります。</p>
+<ul>
+<li>命令の結果が、<code>map_info</code>などの変数に、<strong>自動で入る</strong>（普通のPythonでは、<code>map_info = ...</code>と書かない限り、変数は変わりません）。</li>
+<li>CPUのいないステージでは、開始時点の<code>map_info</code>が最初から入っていて、<code>get_ready()</code>を<strong>書かなくても</strong>動く。</li>
+<li><code>import</code>なしで、<code>Up</code>や<code>Block</code>が使える。</li>
+<li>次の書き方は、エラーになる（実機で確かめた）：関数の外の<code>return</code>、<code>[walk(Up) for ...]</code>のような内包表記や<code>lambda</code>の中で命令を使うこと、<code>f = walk</code>のように<code>( )</code>を付けずに命令の名前だけを使うこと。命令は、<code>for</code>文や<code>def</code>（関数）の中でも、<code>walk(Up)</code>のように書きます。</li>
+</ul>
+<p>対戦用のPythonの画面（第3部）は、こちらが<strong>正式な形</strong>です。命令を<code>player.walk(Up)</code>と書き、骨組みの中にコードを書き、<code>map_info = player.get_ready()</code>で自分で受け取ります。チュートリアルで書いたコードは、そのまま本番に貼っても動きません。命令の前に<code>player.</code>を付けるなど、書き換えが必要です。チュートリアルは、考え方を練習するための簡易版、本番は、実際に対戦するためのプログラム、と使い分けてください。</p>
+<h3>チュートリアルのPython画面</h3>
+<p>ステージ選択画面の右上にある「ブロック／Python」の切り替えを「Python」にしてからステージを選ぶと、Pythonのチュートリアル画面が開きます。切り替えは、次に開いたときにも残ります。ステージのクリア済みの表示は、ブロックとPythonで別々に管理されます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../../images/guide/part4/deck_tutorial_python_screen.png" alt="図：チュートリアルのPython画面（ステージ1-1）。左がエディタ、右が盤面と出力欄" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：チュートリアルのPython画面（ステージ1-1）。左がエディタ、右が盤面と出力欄</figcaption>
+</figure>
+<p>画面は、左のエディタ、右の盤面と「残りターン数」、その下の出力欄でできています。ヘッダーのボタンは「実行」「停止」「保存」「開く」で、実行中は「実行」が「リセット」に変わります。「保存」「開く」は、Pythonのファイル（<code>.py</code>）の書き出しと読み込みです。</p>
+<p>この画面には、次の決まりがあります。</p>
+<ul>
+<li><strong>命令は名前だけで書く</strong>：<code>walk(Up)</code>・<code>look(Up)</code>・<code>search(Up)</code>・<code>put(Up)</code>・<code>get_ready()</code>です。<code>player.walk(Up)</code>と書くと、「<code>player</code> という名前はまだ決まっていません」というエラーになります。</li>
+<li><strong><code>import</code>なしで、方角（<code>Up</code>など）とマスの種類（<code>Floor</code>・<code>Block</code>・<code>Item</code>・<code>Enemy</code>）が使える</strong>：乱数を使うときだけ、先頭に<code>import random</code>と書きます。</li>
+<li><strong>命令の結果は、自動で変数に入る</strong>：<code>walk</code>・<code>put</code>・<code>get_ready</code>のあとの周辺情報は<code>map_info</code>に、<code>look</code>の結果は<code>look_info</code>に、<code>search</code>の結果は<code>search_info</code>に入ります。<code>map_info = get_ready()</code>のように、戻り値として受け取る書き方でも構いません。</li>
+<li><strong><code>get_ready()</code>が必要なのは、相手（CPU）のいるステージ</strong>：CPUのいないステージ（ステージ1〜4、7、8など）では、開始時点の周辺情報がすでに<code>map_info</code>に入っていて、<code>get_ready()</code>を書かなくても動きます（書いても動きます）。CPUのいるステージ（5-1、6-1など）では、毎ターン<code>get_ready()</code>が必要です。書かないと、最初の1回動いたところで止まります。</li>
+<li><strong>ブロック数の目標は、判定しない</strong>：ステージ2-1〜2-5には行数の目安があり、超えていてもクリアはできます（クリア後に、「くり返し(for)や関数(def)を使うと、もっと短く書けるよ！」と表示されます）。</li>
+<li><strong><code>first_index</code>は使えない</strong>：Blocklyの「最初の出現箇所を検索」ブロックをPythonに変換すると出てくる<code>first_index(…)</code>は、この画面では定義されていません。かわりに<code>in</code>を使います（3章）。</li>
+<li><strong>出力欄</strong>：<code>print()</code>の結果や、エラー（行番号つき）、「&lt;&lt; 停止しました &gt;&gt;」などが表示されます。10秒たっても次の行動（<code>walk</code>など）が出てこないと、止まります。</li>
+</ul>
+<h3>本番用の骨組み（Pythonの画面・対戦）</h3>
+<p>ここまで説明してきた、チュートリアルのPythonは、<strong>簡易版</strong>でした。ここからが、対戦で実際に使う、<strong>正式なPythonのプログラム</strong>の形です。</p>
+<p>Pythonの画面（第3部1章）を開くと、最初から次のようなプログラムが書かれています。これが、本番用のCHaserのプログラムの骨組みです。</p>
+<pre><code class="language-python">import argparse
+from lib.pyCHaser import * # lib/pyCHaser.py
+
+player = None
+map_info = []
+
+def main(port, name, host):
+    global player, map_info
+
+    # サーバーと接続
+    player = Client(port=port, name=name, host=host)
+
+    while True:
+        # 準備完了 &amp; 周辺探査
+        map_info = player.get_ready()
+        # ブロックがなければ上へ、あれば右へ
+        if map_info[Up] != Block:
+            player.walk(Up)
+        else:
+            player.walk(Right)
+</code></pre>
+<p>その下に、プログラムを起動するための、決まった書き方が続きます。ここは書き換えません。</p>
+<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&quot;-p&quot;, &quot;--port&quot;, default=2009)
+    parser.add_argument(&quot;-n&quot;, &quot;--name&quot;, default=&quot;player&quot;)
+    parser.add_argument(&quot;-i&quot;, &quot;--host&quot;, default=&quot;localhost&quot;)
+    args = parser.parse_args()
+    main(port=args.port, name=args.name, host=args.host)
+</code></pre>
+<p>全部を理解する必要はありません。<strong>自分で書き換えるのは、<code>while True:</code>の中だけ</strong>です。ほかの部分は、次のような役割です。</p>
+<ul>
+<li><code>from lib.pyCHaser import *</code>：CHaserを動かすための道具を読み込みます。これで、<code>Client</code>、方角の名前（<code>Up</code>など）、マスの種類の名前（<code>Block</code>など）、乱数の道具（<code>random</code>）が使えるようになります。</li>
+<li><code>player = Client(...)</code>：ゲームに接続して、キャラクターを動かすための<code>player</code>を作ります。以降、<code>player.walk(Up)</code>のように書いて命令を出します。チュートリアルの画面では、この<code>player</code>がないので、<code>walk(Up)</code>と書きます。</li>
+<li><code>global player, map_info</code>：<code>player</code>と<code>map_info</code>は、プログラムの一番上（<code>main</code>の外）で作った変数です。<code>global</code>と書くことで、<code>main</code>の中での代入がその変数に反映されます。だから、自分で作る関数（5章）の中でも、<code>map_info</code>と<code>player</code>をそのまま使えます。</li>
+<li><code>while True:</code>：ずっと繰り返す、という意味です（後で説明します）。CHaserのプログラムは、何ターン続くか分からないので、基本的にこの繰り返しで全体を包みます。</li>
+<li><code>map_info = player.get_ready()</code>：自分の番が来るまで待って、来たら自分の周りの9マスの情報を受け取ります。本番では、<code>map_info</code>に自動では入らないので、この形で受け取ります。</li>
+</ul>
+<p><strong>チュートリアルで書いたコードを、本番に持っていくときは、命令の前に<code>player.</code>を付けて、<code>while True:</code>の中身は骨組みの<code>while True:</code>の中に、自分で作る関数は<code>def main</code>より上に、貼り付けてください。</strong> また、本番では、行動の前に必ず<code>map_info = player.get_ready()</code>が必要です（4章）。</p>
+<h3>CHaserで使う名前</h3>
+<p>CHaserのプログラムで使う名前は、次のとおりです。</p>
+<p><strong>命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>チュートリアルの書き方</th>
+<th>本番用の書き方</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_ready()</code></td>
+<td><code>player.get_ready()</code></td>
+<td>自分の番を待ち、周辺情報（周囲9マス）を返す</td>
+</tr>
+<tr>
+<td><code>walk(方向)</code></td>
+<td><code>player.walk(方向)</code></td>
+<td>方向に1マス移動する</td>
+</tr>
+<tr>
+<td><code>put(方向)</code></td>
+<td><code>player.put(方向)</code></td>
+<td>方向のマスにブロックを置く</td>
+</tr>
+<tr>
+<td><code>look(方向)</code></td>
+<td><code>player.look(方向)</code></td>
+<td>方向の2マス先を中心とした周囲9マスを調べる（近隣探査）</td>
+</tr>
+<tr>
+<td><code>search(方向)</code></td>
+<td><code>player.search(方向)</code></td>
+<td>方向に一直線9マスを調べる（遠方探査）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>方向とマスの種類</strong>（どちらの書き方でも同じ）</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>名前</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方向（移動・設置・探査の指定に使える）</td>
+<td><code>Up</code>・<code>Down</code>・<code>Left</code>・<code>Right</code></td>
+</tr>
+<tr>
+<td>方角（周辺情報の取り出しに使う）</td>
+<td>上の4つ、<code>UpLeft</code>・<code>UpRight</code>・<code>DownLeft</code>・<code>DownRight</code>・<code>Center</code>（自分自身のマス）</td>
+</tr>
+<tr>
+<td>マスの種類</td>
+<td><code>Floor</code>（何もない）・<code>Block</code>（ブロック）・<code>Item</code>（アイテム）・<code>Enemy</code>（相手）</td>
+</tr>
+</tbody>
+</table>
+<p>これらの名前は、クォート（<code>&quot;</code>）で囲まない、あらかじめ用意された値です。実際には、方角の名前は<code>UpLeft = 0</code>、<code>Up = 1</code>、…、<code>DownRight = 8</code>という整数の別名で、<code>map_info</code>は9個の要素を持つただのリストです。だから<code>map_info[Up]</code>は、リストの1番目（<code>Up</code>は1）を取り出しています。</p>
+<h3>Pythonの基本ルール</h3>
+<h4>変数と代入</h4>
+<p>値に名前を付けて覚えておく仕組みを変数といいます。</p>
+<pre><code class="language-python">direction = Right
+</code></pre>
+<p>これは「<code>direction</code>という名前の変数に、<code>Right</code>という値を入れる（代入する）」という意味です。左側が変数名、<code>=</code>が代入の記号、右側が入れたい値です。数学の「等しい」という意味の<code>=</code>とは違うので注意してください。</p>
+<h4>比較演算子</h4>
+<p>「等しいかどうか」を調べるときは、<code>=</code>を2つ重ねた<code>==</code>を使います。等しくないかは<code>!=</code>、大小は<code>&gt;</code>・<code>&lt;</code>・<code>&gt;=</code>・<code>&lt;=</code>です。</p>
+<pre><code class="language-python">map_info[Up] == Block    # 上がブロックか（TrueかFalseになる）
+</code></pre>
+<p><code>=</code>（代入）と<code>==</code>（比較）を混同するのは、初心者がもっともよくやってしまう間違いの1つです。</p>
+<h4>if文（条件分岐）と、インデント</h4>
+<p>「もし〇〇なら」を表すのが<code>if</code>です。</p>
+<pre><code class="language-python">if map_info[Up] == Block:
+    player.walk(Right)
+elif map_info[Left] == Item:
+    player.walk(Left)
+else:
+    player.walk(Up)
+</code></pre>
+<p><code>if</code>の条件の最後には<code>:</code>（コロン）を付けます。条件が成り立ったときに実行したい処理は、次の行から<strong>字下げ（インデント）</strong>して書きます。Blocklyでは、ブロックの「内側」にはめ込む形で表していた「中に入っているかどうか」を、Pythonでは<strong>インデントの深さ</strong>で表します。同じ深さの行は同じグループで、字下げが浅くなると、そのグループから抜けたことになります。本書では、1段につき半角スペース4つで揃えます。<code>elif</code>は「そうでなくもし」、<code>else</code>は「どれにも当てはまらなければ」です。上から順に調べて、最初に成り立ったところだけが実行されます。</p>
+<h4>for文とwhile文（繰り返し）</h4>
+<p>回数が決まっている繰り返しには<code>for</code>、回数が決まっていない繰り返しには<code>while</code>を使います。</p>
+<pre><code class="language-python">for count in range(4):    # 4回繰り返す
+    player.walk(Right)
+
+while True:               # ずっと繰り返す
+    player.walk(Right)
+</code></pre>
+<p><code>range(4)</code>は「0, 1, 2, 3」という4つの数字の並びを作ります。<code>for count in range(4):</code>は、その4つの数字を順に<code>count</code>に入れながら、インデントされた部分を4回繰り返します。<code>while 条件:</code>は、条件が成り立つ間、繰り返します。<code>while True:</code>は条件が常に成り立つので、ずっと繰り返します。</p>
+<h4>コメント</h4>
+<p><code>#</code>から行の終わりまでは、プログラムの動作に影響しない、人間が読むためのメモ（コメント）です。判断の意図を書き残しておくと、後で読み返すときに役に立ちます。</p>
+<h4>リストと、番号の指定</h4>
+<p>複数の値を順に並べてまとめて扱うものを<strong>リスト</strong>といいます。<code>map_info</code>もリストです。角かっこ<code>[ ]</code>に番号か名前（<code>Up</code>など）を書いて、1つの値を取り出します。</p>
+<pre><code class="language-python">free = []                # 空のリスト
+free.append(Up)          # 最後に追加する
+free[0]                  # 最初の要素を取り出す（番号は0から数える）
+</code></pre>
+<p>番号は<strong>0から</strong>数え始めます。<code>search</code>の結果（<code>search_info[0]</code>が隣、<code>search_info[8]</code>がいちばん遠い）も、この数え方です（3章）。</p>
+<h4>変数名について（ローマ字の名前）</h4>
+<p>チュートリアルの画面で、日本語の名前を付けたブロックの変数や関数をPythonに変換すると、<code>ido_hoko</code>（移動方向）のようなローマ字の名前になります。この本のコードでは、<code>direction</code>のように英単語の名前を使いますが、変換されたコードを読むときは「もとは日本語の名前だった」と考えると、意味が追いやすくなります。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong><code>=</code>と<code>==</code>を混同する</strong>：「代入」と「比較」は見た目が似ていますが、まったく違う意味です。<code>if</code>の条件の中では必ず<code>==</code>を使います。</li>
+<li><strong>インデントがずれる</strong>：コピー＆ペーストをしたときや、タブとスペースを混ぜたときに、インデントが揃わずエラーになることがあります。字下げの深さを目で確認する癖をつけましょう。</li>
+<li><strong><code>:</code>（コロン）を忘れる</strong>：<code>if</code>、<code>elif</code>、<code>else</code>、<code>for</code>、<code>while</code>、後で学ぶ<code>def</code>の行末には、必ず<code>:</code>が必要です。</li>
+<li><strong>チュートリアルで<code>player.</code>を付けてしまう／本番で<code>player.</code>を忘れる</strong>：チュートリアルでは<code>player.walk(Up)</code>が、本番では<code>walk(Up)</code>が、それぞれエラーになります。エラーの行番号で、命令の書き方を見直しましょう。</li>
+<li><strong><code>while True:</code>の外に、行動を書いてしまう</strong>：骨組みの<code>while True:</code>の外に書いた命令は、1回しか実行されません。毎ターン実行したい処理は、<code>while True:</code>の中に書きます。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>チュートリアルのステージ1-1をPythonで解いてみましょう（ステージ選択画面の右上を「Python」に切り替えます）。上に2マス進むには、どう書きますか。</li>
+<li>本番用の骨組みを、Pythonの画面で動かして、キャラクターがどう動くか観察してみましょう。「上がブロックでないとき」と「ブロックのとき」で、どう動きが変わりますか。</li>
+<li>骨組みの<code>if map_info[Up] != Block:</code>を<code>==</code>に書き換えると、動きはどう変わりますか。実際に動かして確かめてみましょう。</li>
+</ol>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./rules-06.html" class="text-blue-600 hover:underline">← Pythonを書く場所</a><a href="./tutorial-01.html" class="text-blue-600 hover:underline sm:text-right">1章　移動と繰り返し →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

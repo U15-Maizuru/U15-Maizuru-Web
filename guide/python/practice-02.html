@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2章　対戦ルームの使い方 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第3部　実践 2章　対戦ルームの使い方">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="font-bold text-blue-700">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第3部　実践</p>
+      <h1 class="mb-6 text-3xl font-bold">2章　対戦ルームの使い方</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>2章 対戦ルームの使い方</h2>
+<p>プログラムができたら、いよいよ対戦の準備です。対戦は「ルーム」と呼ばれる場所に、CoolとHotの2人（またはCPU）が入ることで始まります。</p>
+<h3>マップを選ぶ</h3>
+<figure class="my-6 flex flex-col items-center">
+<img src="../../images/guide/part4/fig4-02a_room_select.png" alt="図：ルーム選択画面。マップ一覧から選び、対戦方法と合言葉を決める" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ルーム選択画面。マップ一覧から選び、対戦方法と合言葉を決める</figcaption>
+</figure>
+<p>まずはマップを選びます。大会本番で使われるマップだけでなく、ランダムマップや迷路マップなど、練習用のマップもたくさん用意されています。本番のマップは、Pythonの画面の練習マップよりずっと広く、フィールドの形も多彩です。練習の段階から、いろいろな種類のマップで、自分のプログラムを試しておくと、本番でも慌てずに対応できます。</p>
+<h3>対戦の種類を選ぶ</h3>
+<p>マップを選んだら、「VS対戦」（人と人との対戦）か「CPU対戦」（コンピューターが操作する相手との対戦）かを選べます。</p>
+<h4>コラム：まずはCPU対戦で試そう</h4>
+<p>いきなり人と対戦するのは緊張するものです。CPU対戦を使えば、好きなタイミングで何度でも練習でき、自分のプログラムのどこが弱点かを、じっくり確認できます。「自縛を避ける」「動く相手にブロックを設置する」といった判断が、実際の対戦でちゃんと機能しているか、CPU対戦で繰り返し試してみることをおすすめします。慣れてきたら、VS対戦で、実際の相手の予測不能な動きにも対応できるか、試してみましょう。</p>
+<h3>ルームを決定する</h3>
+<p>合言葉を決めてルーム情報を確認したら、「ルーム決定」ボタンを押します。「合言葉」は、同じルームに入りたい相手と共有するための合図のようなものです。友達同士で対戦したいときは、あらかじめ同じ合言葉を決めておきましょう。</p>
+<h3>Pythonのプログラムファイルを読み込んで対戦開始</h3>
+<p>ルームが決まると、「cool」側と「hot」側それぞれのプレイヤーが、「ファイルを選択」ボタンから、自分の作ったプログラムファイルを読み込みます。</p>
+<p><strong>Pythonのファイル（<code>.py</code>）を選ぶと、自動でPythonの対戦画面に切り替わり、ルームへの参加の準備が始まります。</strong> ブロックで作ったファイルのように、接続ブロックを用意する必要はありません。ルームの情報は、画面が自動で把握してくれます。骨組みの<code>Client(port=port, name=name, host=host)</code>の部分は、書き換えずに、そのままにしておきましょう。</p>
+<p>読み込みが終わると、画面に「準備完了。試合開始をお待ちください」と表示されます。もしプログラムにエラーがあれば、「エラー：…」と表示されます。両方のプレイヤーが準備できると、「ゲームスタート」ボタンが現れます。このボタンを押せば、いよいよ試合開始です。試合が終わると、「試合終了」と表示されます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../../images/guide/part4/fig4-02b_battle_prep.png" alt="図：左＝ファイル選択前の待機画面、右＝両者の準備が整い「ゲームスタート」ボタンが現れた状態" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：左＝ファイル選択前の待機画面、右＝両者の準備が整い「ゲームスタート」ボタンが現れた状態</figcaption>
+</figure>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>プログラムをダウンロードし忘れて、対戦の直前にファイルが見つからない</strong>：Pythonの画面で「ダウンロード」を押し忘れると、せっかく書いたプログラムを、対戦で読み込めません。プログラムを完成させたら、まず保存する習慣をつけましょう。</li>
+<li><strong>骨組みを書き換えてしまう</strong>：<code>Client(...)</code>の呼び出しや、<code>main</code>の定義を書き換えると、対戦に参加できなくなることがあります。自分で書き換えるのは、<code>while True:</code>の中と、自分で作る関数です。</li>
+<li><strong>合言葉を相手と共有し忘れる</strong>：VS対戦で友達と対戦したいときは、同じ合言葉・同じルームを選んでいるか、事前に確認しましょう。</li>
+<li><strong>マップの特徴を確認せずに対戦を始めてしまう</strong>：マップによって、フィールドの広さや形が大きく異なります。自分のプログラムが、そのマップの広さや形を想定して作られているか、対戦を始める前に確認しておくと安心です。</li>
+</ul>
+<p>次の章では、「こう動かしたい」というアイデアを、どうやってPythonのプログラムにするかを、順を追って見ていきます。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./practice-01.html" class="text-blue-600 hover:underline">← 1章　Pythonの画面の使い方</a><a href="./practice-03.html" class="text-blue-600 hover:underline sm:text-right">3章　やりたいことをプログラムにする →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

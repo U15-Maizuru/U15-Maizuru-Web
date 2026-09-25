@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pythonを書く場所 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第1部　CHaserを知る Pythonを書く場所">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="font-bold text-blue-700">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第1部　CHaserを知る</p>
+      <h1 class="mb-6 text-3xl font-bold">Pythonを書く場所</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>6章 Pythonを書く場所</h2>
+<p>ルールがわかったところで、CHaserのプログラムをPythonで書く場所を確認しておきましょう。CHaserのトップ画面から、プログラムを作る場所は、次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th>場所</th>
+<th>書き方</th>
+<th>この本での扱い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>チュートリアル（ブロック）</strong></td>
+<td>ブロック（Blockly）で組む</td>
+<td>入門編で使います</td>
+</tr>
+<tr>
+<td><strong>チュートリアル（Python）</strong></td>
+<td>Pythonで書く</td>
+<td><strong>第2部で使います</strong></td>
+</tr>
+<tr>
+<td><strong>プログラミング</strong></td>
+<td>ブロック（Blockly）で組む</td>
+<td>ブロックで対戦用のプログラムを作る場所です</td>
+</tr>
+<tr>
+<td><strong>Python</strong></td>
+<td>Pythonで書く</td>
+<td><strong>第3部で使います</strong>（対戦用のプログラムを書く場所です）</td>
+</tr>
+</tbody>
+</table>
+<h3>チュートリアルをPythonで解く</h3>
+<p>「チュートリアル」を開くと、ステージ選択画面の右上に、「ブロック」と「Python」の切り替えがあります。「Python」に切り替えてからステージを選ぶと、ステージを、Pythonのコードで解く画面が開きます。同じステージを、ブロックでも、Pythonでも、解けます。切り替えは、次に開いたときにも残ります。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../../images/guide/part4/deck_tutorial_menu_python.png" alt="図：ステージ選択画面。右上の「ブロック／Python」で、解き方を切り替える" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">図：ステージ選択画面。右上の「ブロック／Python」で、解き方を切り替える</figcaption>
+</figure>
+<p>Pythonの画面では、左のエディタにコードを書いて、「実行」を押します。命令は、<code>walk(Up)</code>のように、名前だけで書きます。ただし、チュートリアルのPythonは、学習用の<strong>簡易版</strong>で、普通のPythonとしては動きません。本番用の正式な書き方との違いも含めて、第2部0章で説明します。</p>
+<h3>Pythonの画面（対戦用）</h3>
+<p>トップ画面の「Python」（「文字で書こう！」と書かれています）を開くと、対戦用のPythonのコードを書く専用の画面が開きます。書いたコードは、その場で実行できます。対戦相手のプログラム（「対戦AI」）や、対戦するマップも、この画面の中で用意できます。こちらでは、命令を<code>player.walk(Up)</code>のように、<code>player.</code>を付けて書きます。使い方の詳細は、第3部1章で説明します。</p>
+<h3>ブロックからPythonへ</h3>
+<p>ブロックで組んだプログラムを、Pythonで見たいときには、2つの方法があります。</p>
+<ul>
+<li><strong>ブロックのチュートリアルの「python」タブ</strong>：ブロックのチュートリアルの画面の右上にあるタブです。いま組んでいるブロックをPythonに書き直したときの形を、<strong>表示するだけ</strong>です。ここでコードを書くことはできません。</li>
+<li><strong>「プログラミング」の「Pythonで編集」ボタン</strong>：ブロックで組んだプログラムをPythonのコードに変換して、Pythonの画面で続きを書けます。</li>
+</ul>
+<p>どちらも、変換されたコードは、変数や関数の名前がローマ字になり、少し読みにくくなります（第2部0章）。また、<code>first_index</code>のように、Blocklyが変換のときに補う関数も出てきます（第2部3章）。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>チュートリアルで、<code>player.</code>を付けてしまう</strong>：チュートリアルのPython画面では、<code>player.walk(Up)</code>ではなく、<code>walk(Up)</code>と書きます。逆に、Pythonの画面（対戦用）では、<code>player.</code>が必要です。</li>
+<li><strong>ブロックのチュートリアルの「python」タブに、コードを書こうとする</strong>：このタブは表示専用です。Pythonで書くときは、ステージ選択画面で「Python」に切り替えます。</li>
+<li><strong>ステージ選択画面の切り替えを、忘れる</strong>：切り替えは、次に開いたときにも残ります。ブロックで解くつもりが、Pythonの画面が開いた、というときは、切り替えを見直しましょう。</li>
+</ul>
+<h2>第1部 確認クイズ</h2>
+<p><strong>1章 CHaserとは</strong></p>
+<ol>
+<li>CHaserの対戦中、プレイヤーは自分のキャラクターを直接操作できますか。</li>
+<li>CHaserの基本的な勝ち方は何でしょうか。</li>
+</ol>
+<p><strong>2章 フィールドの構成要素</strong></p>
+<ol>
+<li>フィールド上の4種類の要素をすべて挙げてください。</li>
+<li>アイテムとブロックの、通行のしやすさの違いは何でしょうか。</li>
+</ol>
+<p><strong>3章 プレイヤーの行動</strong></p>
+<ol>
+<li>プレイヤーが取れる行動は何種類ありますか。</li>
+<li>移動やブロック設置は、斜め方向にも行えますか。</li>
+</ol>
+<p><strong>4章 アイテム取得とブロック出現</strong></p>
+<ol>
+<li>アイテムを取ると、そのマスはどうなりますか。</li>
+<li>アイテムを深く考えずに取り続けると、どのような危険がありますか。</li>
+</ol>
+<p><strong>5章 勝利条件</strong></p>
+<ol>
+<li>特別勝利条件は何種類あり、それぞれ何と呼ばれていますか。</li>
+<li>「アタック勝ち」と「衝突」は、それぞれどんな行動によって起こりますか。</li>
+</ol>
+<p><strong>6章 Pythonを書く場所</strong></p>
+<ol>
+<li>チュートリアルをPythonで解くには、ステージ選択画面で何をしますか。</li>
+<li>ブロックのチュートリアルの「python」タブでは、何ができますか。</li>
+</ol>
+<p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
+<p>準備ができたら、第2部で、Pythonの書き方を学んでいきましょう。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./rules-05.html" class="text-blue-600 hover:underline">← 勝利条件</a><a href="./tutorial-00.html" class="text-blue-600 hover:underline sm:text-right">0章　Pythonの基礎と、CHaserの書き方 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

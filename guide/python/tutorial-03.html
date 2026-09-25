@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3章　探査と、行動の決め方 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 3章　探査と、行動の決め方">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="font-bold text-blue-700">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">3章　探査と、行動の決め方</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>3章 探査と、行動の決め方</h2>
+<p>入門編の第2部5・6章（ステージ4）に対応します。</p>
+<h3>CHaserのしくみの要点</h3>
+<ul>
+<li>周辺情報（<code>map_info</code>）で分かるのは、自分のすぐ隣のマスまでです。もっと遠くを見るための命令が、<code>look</code>（近隣探査）と<code>search</code>（遠方探査）の2つです。</li>
+<li><strong><code>look</code>は、指定した方向の2マス先を中心とした、周囲9マスを調べます。</strong> たとえば<code>look(Up)</code>なら、上に1〜3マス先の範囲を、横に3マス分です。</li>
+<li><strong><code>search</code>は、指定した方向に一直線に、9マス分を調べます。</strong></li>
+<li>探査は、移動やブロック設置と同じく<strong>1回の行動</strong>です。探査を実行したターンは、移動もアイテム取得もできません。むやみに使うと、アイテムを集める速さが落ちます。</li>
+</ul>
+<h3>look：近隣探査</h3>
+<pre><code class="language-python">look_info = look(Right)
+</code></pre>
+<p><code>look(方向)</code>は、指定した方向の2マス先を中心とした、周囲9マスの情報を返します。結果は<code>look_info</code>という変数に入れます。<code>map_info</code>と同じように、方角の名前で取り出せます。</p>
+<pre><code class="language-python">look_info[Center]       # 2マス先のマス（探査の中心）
+look_info[Up]           # 中心の上のマス
+look_info[DownRight]    # 中心の右下のマス
+</code></pre>
+<p>方角の名前は、探査した範囲を、地図と同じ向きで見た3×3のマスに対応します。<code>look(Up)</code>の場合は、次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>左</th>
+<th>中</th>
+<th>右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3マス先</td>
+<td><code>look_info[UpLeft]</code></td>
+<td><code>look_info[Up]</code></td>
+<td><code>look_info[UpRight]</code></td>
+</tr>
+<tr>
+<td>2マス先</td>
+<td><code>look_info[Left]</code></td>
+<td><code>look_info[Center]</code></td>
+<td><code>look_info[Right]</code></td>
+</tr>
+<tr>
+<td>1マス先</td>
+<td><code>look_info[DownLeft]</code></td>
+<td><code>look_info[Down]</code></td>
+<td><code>look_info[DownRight]</code></td>
+</tr>
+<tr>
+<td>自分</td>
+<td></td>
+<td>★</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>look_info[UpLeft]</code>は、「自分から見た左上」ではなく、「探査の<strong>中心</strong>から見た左上」のマスです。この違いを間違えないようにしましょう。</p>
+<h3>search：遠方探査</h3>
+<pre><code class="language-python">search_info = search(Left)
+</code></pre>
+<p><code>search(方向)</code>は、指定した方向に一直線に9マス分の情報を返します。結果は<code>search_info</code>に入れます。</p>
+<pre><code class="language-python">search_info[0]     # 1マス先（隣）
+search_info[4]     # 5マス先
+search_info[8]     # 9マス先（いちばん遠い）
+</code></pre>
+<p><code>search_info</code>は、方角の名前ではなく、<strong>番号</strong>で取り出します。番号は0から数えるので、<code>search_info[0]</code>が隣、<code>search_info[8]</code>がいちばん遠いマスです。「9マス先」を見たいのに<code>search_info[9]</code>と書くと、エラーになります（0〜8の9個しかないため）。</p>
+<p><strong>lookは正方形で方角の名前、searchは一直線で番号</strong>、と覚えると、取り出し方を間違えにくくなります。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>調べる範囲</th>
+<th>取り出し方</th>
+<th>向いている場面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>look(方向)</code></td>
+<td>2マス先を中心とした周囲9マス</td>
+<td><code>look_info[Center]</code>など、方角の名前</td>
+<td>進んだ先の安全確認</td>
+</tr>
+<tr>
+<td><code>search(方向)</code></td>
+<td>一直線に9マス</td>
+<td><code>search_info[3]</code>など、番号</td>
+<td>遠くのアイテムや相手を見つける</td>
+</tr>
+</tbody>
+</table>
+<h3>探査した情報で行動を決める（ステージ4-1）</h3>
+<p>まず、番号で取り出す形の練習として、「右方向をsearchして、9マス先にアイテムがあれば右へ、なければ左へ、ずっと進む」プログラムを見てみましょう。</p>
+<pre><code class="language-python">map_info = get_ready()
+search_info = search(Right)
+if search_info[8] == Item:
+    while True:
+        map_info = get_ready()
+        walk(Right)
+else:
+    while True:
+        map_info = get_ready()
+        walk(Left)
+</code></pre>
+<p>探査するのは最初の1回だけで、その結果に応じて選ばれた、どちらかの<code>while True:</code>だけが、ずっと動き続けます。インデントが3段階になっている点に注目してください。</p>
+<p>このコードの<code>get_ready()</code>は、CPUのいないチュートリアルのステージでは、省略できます。<strong>本番では、行動の前に必ず<code>get_ready()</code>を呼びます</strong>（4章）。上のコードは、その形で入れてあります（本番では、命令の前に<code>player.</code>を付けます）。</p>
+<p><strong>ただし、これはステージ4-1の答えではありません。</strong> 実機のステージ4-1では、アイテムは、上下左右のいちばん遠いところに、毎回どれか1か所だけ置かれます。しかも、いちばん遠いといっても、上下は8マス先、左右は7マス先で、9マス先（<code>search_info[8]</code>）は、フィールドの外です（値は<code>Block</code>になります）。だから、<code>search_info[8] == Item</code>は、このステージでは成り立ちません。実際のステージでは、次の<code>in</code>を使います。</p>
+<h3>「どこかにあるか」を調べる：<code>in</code></h3>
+<p>アイテムが何マス先にあるかに関係なく、「9マスのどこかにあるか」を調べるには、<code>in</code>を使います。</p>
+<pre><code class="language-python">search_info = search(Right)
+if Item in search_info:                # 9マスのどこかにアイテムがある
+    direction = Right
+else:
+    direction = Left
+</code></pre>
+<p><code>in</code>は、リストの中に、その値が含まれているかどうかを調べる演算子です。「<code>何か in リスト</code>」で、含まれていれば<code>True</code>、なければ<code>False</code>になります。位置は分かりませんが、「あるか・ないか」だけを知りたいなら、これがいちばん短く書けます。</p>
+<h4>上下左右を順に調べる（ステージ4-1・4-2の答え）</h4>
+<p>ステージ4-1・4-2では、アイテムがどの方向にあるか分かりません。上下左右を順にsearchして、見つかった方向へ進み続けます。</p>
+<pre><code class="language-python">for direction in (Up, Down, Left, Right):
+    search_info = search(direction)    # 1回の行動を使う
+    if Item in search_info:            # 9マスのどこかにアイテムがある
+        break                          # 見つかったので、調べるのをやめる
+while True:
+    walk(direction)
+</code></pre>
+<p><code>for direction in (Up, Down, Left, Right):</code>は、4つの方向を順に<code>direction</code>に入れて繰り返します。<code>break</code>は、繰り返しをそこで終わらせる命令です。アイテムが見つかった時点で終わるので、<code>direction</code>には、見つかった方向が入ったままです。あとの<code>while True:</code>で、その方向へ進み続けます。</p>
+<p>このコードは、実機のチュートリアル（Python）で、ステージ4-1を3回、4-2を6回試して、すべてクリアできました。本番で使うときは、<code>search</code>のたびに、その前に<code>get_ready()</code>が必要です。</p>
+<h4>Blocklyから変換されたコードに出てくる<code>first_index</code></h4>
+<p>入門編の4-2では、「リスト〔　〕で以下の〔　〕の最初の出現箇所を検索」ブロックを、<code>≠ 0</code>と比べて使いました。これをPythonに変換すると、次のようになります。</p>
+<pre><code class="language-python">if first_index(search_info, Item) &gt; 0:     # アイテムがあるか
+</code></pre>
+<p><code>first_index</code>は、Blocklyが変換のときに補う補助関数で、Pythonの画面の骨組みには含まれていません。自分で書くときは、<code>in</code>で十分です。変換されたコードを読むときのために、次のことだけ知っておいてください（定義は5章で説明します）。</p>
+<ul>
+<li><code>first_index</code>が返す位置は<strong>1から</strong>数えた番号です（隣が1、いちばん遠いマスが9）。</li>
+<li>見つからなければ<code>0</code>を返します。だから<code>&gt; 0</code>が「どこかにあった」の意味になります。</li>
+<li><code>search_info[番号]</code>は0から数えるので、数え方が違います。</li>
+</ul>
+<h3>条件を組み合わせる：<code>and</code>・<code>or</code>・<code>not</code></h3>
+<p>2つの条件を組み合わせるには、<code>and</code>（かつ）・<code>or</code>（または）を使います。条件を反対にするには、<code>not</code>を使います。</p>
+<pre><code class="language-python"># 右上も左上もブロックのとき
+if map_info[UpRight] == Block and map_info[UpLeft] == Block:
+
+# 右上か左上のどちらかがブロックのとき
+if map_info[UpRight] == Block or map_info[UpLeft] == Block:
+
+# 上がブロックでないとき（!= と同じ）
+if not (map_info[Up] == Block):
+</code></pre>
+<p>日本語で条件を声に出してみて、「〜も〜も」なら<code>and</code>、「〜か〜か」なら<code>or</code>と考えると、選び間違えにくくなります。</p>
+<h3>自縛を避ける（ステージ4-4）</h3>
+<p>アイテムを取りに行った結果、自分の周りが両側からブロックで挟まれてしまうことがあります（第1部4章）。上にアイテムがあるとき、それを取っても大丈夫か、<code>look</code>で先を見て確かめるプログラムです。</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Item:
+        # 上にアイテムがある場合、両脇がブロックかを確認
+        if map_info[UpRight] == Block and map_info[UpLeft] == Block:
+            look_info = look(Up)
+            map_info = get_ready()
+            if look_info[Center] == Block:
+                walk(Right)   # 先がブロックなら迂回
+            else:
+                walk(Up)      # 安全なら上へ
+        else:
+            walk(Up)
+    else:
+        walk(Right)
+</code></pre>
+<p>「上にアイテムがあるか」→「両脇（<code>UpRight</code>・<code>UpLeft</code>）がブロックか」→「<code>look</code>で、先（<code>look_info[Center]</code>、2マス先）がブロックか」と、<code>if</code>を入れ子にして、1つずつ確かめています。<code>look</code>は1回の行動なので、その直後に<code>get_ready()</code>を呼んで、次のターンの情報を受け取ってから、<code>walk</code>しています。</p>
+<p>インデントは3段階になりますが、1段ずつ「何を確認しているか」を読み解けば、難しい構造ではありません。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong><code>search_info[9]</code>と書く</strong>：番号は0〜8です。9番目は存在せず、エラーになります。</li>
+<li><strong><code>look</code>の結果を、番号で取り出そうとする</strong>：<code>look_info[0]</code>のような書き方はできません。<code>look</code>の結果は、方角の名前で取り出します。</li>
+<li><strong><code>look_info[UpLeft]</code>を、自分から見た左上と取り違える</strong>：探査の中心から見た左上です。</li>
+<li><strong><code>in</code>と<code>==</code>を混同する</strong>：「特定の位置と等しいか」は<code>==</code>、「リストのどこかに含まれているか」は<code>in</code>です。</li>
+<li><strong><code>and</code>と<code>or</code>を取り違える</strong>：日本語の条件文を先に書き出してから、どちらか判断しましょう。</li>
+<li><strong><code>if</code>の入れ子が深くなって、対応する<code>else</code>が分からなくなる</strong>：同じ深さの<code>if</code>と<code>else</code>（<code>elif</code>）を、ペアで目で追いましょう。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>右方向に9マス先までsearchしたとき、「3マス先」の情報を取り出すコードを書いてみましょう。</li>
+<li><code>look(Up)</code>を実行したとき、<code>look_info[UpLeft]</code>は、自分から見てどの位置のマスの情報ですか。</li>
+<li><code>Item in search_info</code>という条件を、<code>search_info</code>の9個の要素すべてを<code>or</code>でつないだ形で書き直してみましょう（実際にはこう書く必要はありませんが、<code>in</code>が何をしているかの理解に役立ちます）。</li>
+<li>4-4のコードで、<code>and</code>を<code>or</code>に変えてしまうと、判定の意味はどう変わりますか。</li>
+<li>チュートリアルのステージ4-1を、Pythonで解いてみましょう。</li>
+</ol>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-02.html" class="text-blue-600 hover:underline">← 2章　情報の読み取りと条件分岐</a><a href="./tutorial-04.html" class="text-blue-600 hover:underline sm:text-right">4章　ターンの仕組みと、攻撃 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

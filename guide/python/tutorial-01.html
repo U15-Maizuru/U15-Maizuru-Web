@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1章　移動と繰り返し | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第2部　Python編 1章　移動と繰り返し">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="font-bold text-blue-700">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第2部　Python編</p>
+      <h1 class="mb-6 text-3xl font-bold">1章　移動と繰り返し</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>1章 移動と繰り返し</h2>
+<p>入門編の第2部1・2章（ステージ1・2）に対応します。</p>
+<h3>CHaserのしくみの要点</h3>
+<ul>
+<li>動けるのは上下左右の4方向に1マスずつです。斜めには進めません。</li>
+<li>ブロックのマスや、フィールドの外に進むと、その場で負けになります（第1部5章）。<strong>移動する前に、進む先が安全か確かめる</strong>のが基本です。</li>
+<li>1回の命令で動けるのは1マスだけです。5マス進みたいなら、5回の命令が必要です。</li>
+</ul>
+<h3>移動：<code>walk</code></h3>
+<pre><code class="language-python">walk(Right)
+walk(Right)
+walk(Right)
+walk(Up)
+walk(Up)
+walk(Right)
+</code></pre>
+<p><code>walk(方向)</code>は、「プレイヤーを方向に1マス移動させる」命令です。かっこの中に、<code>Up</code>・<code>Down</code>・<code>Left</code>・<code>Right</code>のどれかを指定します。この6行は、「右に3マス、上に2マス、右に1マス」という経路です。コードは上から順に、1行ずつ実行されます。</p>
+<h3>繰り返し：<code>for</code></h3>
+<p>同じ命令を何度も書く代わりに、<code>for</code>文で繰り返しにします。</p>
+<pre><code class="language-python">for count in range(3):
+    walk(Right)
+for count in range(2):
+    walk(Up)
+walk(Right)
+</code></pre>
+<p><code>for count in range(3):</code>の下の、インデントされた行が、繰り返される中身です。上のコードは、前の6行と同じ動きになります。回数を変えたいときも、<code>range()</code>の数字を書き換えるだけで済みます。</p>
+<h4>繰り返しの繰り返し（ネスト）</h4>
+<p><code>for</code>の中に、別の<code>for</code>を入れることもできます。</p>
+<pre><code class="language-python">for count3 in range(2):
+    for count in range(2):
+        walk(Right)
+    for count2 in range(2):
+        walk(Up)
+</code></pre>
+<p>いちばん外側の<code>for</code>が2回繰り返し、その中で「右に2回」「上に2回」が、この順に実行されます。<strong>インデントの深さが、入れ子の深さ</strong>です。</p>
+<pre><code>for count3 in range(2):        ← 1段目（外側の繰り返し）
+    for count in range(2):     ← 2段目（外側の中の繰り返し）
+        walk(Right)     ← 3段目（さらにその中の命令）
+    for count2 in range(2):    ← 2段目に戻る（1つ目の繰り返しと同じ深さ）
+        walk(Up)        ← 3段目
+</code></pre>
+<p>この例では、外側と内側で<code>count</code>・<code>count2</code>・<code>count3</code>のように、違う変数名を使っています。同じ名前を使うと、どちらの繰り返しの変数か分からなくなるからです。</p>
+<h3>繰り返しの「中」と「外」</h3>
+<p>入門編の2-3・2-4で練習した「繰り返しの中に入れるものと、外に置くもの」は、インデントで決まります。</p>
+<pre><code class="language-python">walk(Down)            # 外：1回だけ
+for count in range(3):
+    walk(Right)       # 中：3回
+walk(Down)            # 外：3回のあと、1回だけ
+</code></pre>
+<h3>ずっと繰り返す：<code>while True</code></h3>
+<p>回数を決めずにずっと繰り返すときは、<code>while True:</code>を使います。CHaserの対戦は何ターン続くか分からないので、プログラム全体は、ほとんどの場合<code>while True:</code>の中に入ります（0章の骨組み）。</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    walk(Right)
+</code></pre>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>方向名のスペルを間違える</strong>：<code>Up</code>・<code>Down</code>・<code>Left</code>・<code>Right</code>は、大文字・小文字も含めて決まった綴りです。<code>up</code>と書くと、エラーになります。</li>
+<li><strong><code>range()</code>の数を、回数と混同する</strong>：<code>range(4)</code>は「0, 1, 2, 3」の4個の数字を作ります。「4個ある＝4回繰り返す」と読みます。</li>
+<li><strong>インデントの深さを間違える</strong>：本来は繰り返しの中に入れたい行がインデントされていないと、繰り返しの外に出てしまいます。<code>for</code>の下に何もインデントされた行がないと、エラーになります。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>「左×2 → 下×1 → 左×2」という経路を、<code>walk</code>だけで書いてみましょう。</li>
+<li>「右×3 → 下×1」というセットを3回繰り返すコードを、<code>for</code>の入れ子で書いてみましょう。</li>
+<li>上のネストの例で、外側の<code>range(2)</code>を<code>range(3)</code>に変えると、全体で右に何回、上に何回進みますか。</li>
+</ol>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./tutorial-00.html" class="text-blue-600 hover:underline">← 0章　Pythonの基礎と、CHaserの書き方</a><a href="./tutorial-02.html" class="text-blue-600 hover:underline sm:text-right">2章　情報の読み取りと条件分岐 →</a></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>

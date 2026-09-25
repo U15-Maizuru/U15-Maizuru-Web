@@ -2,11 +2,11 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import fg from 'fast-glob'
 
-// guide/*.html (CHaser 解説ページ) はページ数が多く、増減のたびに
-// この設定を手で編集するのを避けるため、動的に列挙して input に追加する。
+// guide/**/*.html (CHaser 解説ページ。入門編は guide/、応用編は guide/python/) はページ数が多く、
+// 増減のたびにこの設定を手で編集するのを避けるため、動的に列挙して input に追加する。
 const guidePages = Object.fromEntries(
-  fg.sync('guide/*.html').map(file => [
-    `guide-${file.replace(/^guide\//, '').replace(/\.html$/, '')}`,
+  fg.sync('guide/**/*.html').map(file => [
+    `guide-${file.replace(/^guide\//, '').replace(/\.html$/, '').replace(/\//g, '-')}`,
     file,
   ])
 )

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>演習・確認クイズの解答 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） 第1部・第2部・第3部の演習問題・確認クイズの解答です。">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="font-bold text-blue-700">演習・確認クイズの解答</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">資料</p>
+      <h1 class="mb-6 text-3xl font-bold">演習・確認クイズの解答</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">このページには第1部・第2部・第3部の演習問題・確認クイズの解答が含まれています。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <p>各部末の「確認クイズ」と、各章末の「演習問題」の解答をまとめました。</p>
+<p>ここに載せているのは<strong>あくまで解答の一例</strong>です。とくにプログラムを書く問題は、同じ動きをする書き方がいくつもあります。自分の答えと違っていても、動きが同じであれば間違いではありません。「なぜその答えになるのか」の部分を読んで、考え方が合っていたかを確かめてください。</p>
+<p>「自分で考えて書き出す」タイプの問題には、解答の代わりに<strong>確認のポイント</strong>を示しています。</p>
+<hr>
+<h3>第1部　確認クイズの解答</h3>
+<p><strong>1章 CHaserとは</strong></p>
+<ol>
+<li>直接操作できません。試合が始まったら、事前に書いたプログラムだけがキャラクターを動かします。</li>
+<li>相手より多くアイテムを集めることです（ただし、アタック勝ち・閉じ込め勝ちという特別勝利条件もあります）。</li>
+</ol>
+<p><strong>2章 フィールドの構成要素</strong></p>
+<ol>
+<li>プレイヤー（Cool）、プレイヤー（Hot）、アイテム、ブロックの4種類です。</li>
+<li>アイテムのマスは通れて、通ると取得できます。ブロックのマスは通れません（移動しようとすると衝突して敗北します）。</li>
+</ol>
+<p><strong>3章 プレイヤーの行動</strong></p>
+<ol>
+<li>2種類です（移動と、ブロック設置）。</li>
+<li>行えません。どちらも上下左右の4方向だけです。斜めに進みたいときは「上に1マス、右に1マス」のように2手に分けます。</li>
+</ol>
+<p><strong>4章 アイテム取得とブロック出現</strong></p>
+<ol>
+<li>そのマスにブロックが出現します。</li>
+<li>自分の周りがブロックだらけになり、身動きが取れなくなって「自縛」で敗北する危険があります。</li>
+</ol>
+<p><strong>5章 勝利条件</strong></p>
+<ol>
+<li>2種類で、「アタック勝ち」と「閉じ込め勝ち」です（それぞれ相手側から見ると「衝突」「自縛」という敗北になります）。</li>
+<li>アタック勝ちは、相手がいるマスにブロックを設置したときに起こります。衝突は、自分がブロックのあるマスに移動しようとしたときに起こります。</li>
+</ol>
+<p><strong>6章 Pythonを書く場所</strong></p>
+<ol>
+<li>ステージ選択画面の右上にある「ブロック／Python」の切り替えを、「Python」にしてから、ステージを選びます。</li>
+<li>ブロックをPythonに書き直したときの形を、表示することだけができます。コードを書いたり、編集したりはできません。</li>
+</ol>
+<hr>
+<h3>第2部　演習問題の解答</h3>
+<h4>0章 Pythonの基礎と、CHaserの書き方</h4>
+<ol>
+<li>次のとおりです。</li>
+</ol>
+<pre><code class="language-python">walk(Up)
+walk(Up)
+</code></pre>
+<p>命令は、<code>player.</code>を付けず、名前だけで書きます（<code>player.walk(Up)</code>と書くと、エラーになります）。
+2. <strong>確認のポイント</strong>：上がブロックでない間は、上へ進み続けます。上がブロックになると、右へ1マス進みます。次のターンには、また上を確認して、上がブロックでなければ上へ進みます。「毎ターン、<code>get_ready()</code>で最新の情報を受け取ってから、判断している」ことに気づけていれば十分です。
+3. 上がブロックのときだけ<code>player.walk(Up)</code>を実行し、そうでないときは右へ進むようになります。つまり、<strong>ブロックのマスへ、自分から動こうとして</strong>衝突し、負けてしまいます。<code>!=</code>（等しくない）と<code>==</code>（等しい）を取り違えると、動きが逆になる、という例です。</p>
+<h4>1章 移動と繰り返し</h4>
+<ol>
+<li>次のとおりです。</li>
+</ol>
+<pre><code class="language-python">walk(Left)
+walk(Left)
+walk(Down)
+walk(Left)
+walk(Left)
+</code></pre>
+<ol start="2">
+<li>次のように書けます（変数名は自由です）。</li>
+</ol>
+<pre><code class="language-python">for count in range(3):
+    for count2 in range(3):
+        walk(Right)
+    walk(Down)
+</code></pre>
+<p>内側の<code>for</code>で右に3マス進み、そのあと下に1マス進む、というセットを、外側の<code>for</code>が3回繰り返します。</p>
+<ol start="3">
+<li>右に6回、上に6回移動します（内側がそれぞれ2回、外側が3回なので、2×3＝6）。</li>
+</ol>
+<h4>2章 情報の読み取りと条件分岐</h4>
+<ol>
+<li>次のとおりです。</li>
+</ol>
+<pre><code class="language-python">if map_info[Right] == Item:
+    walk(Right)
+elif map_info[Down] == Block:
+    walk(Up)
+else:
+    walk(Down)
+</code></pre>
+<ol start="2">
+<li>「左にアイテムがあり、かつ上もブロック」という場合に結果が変わります。1行目と2行目を入れ替えると、<code>map_info[Up] == Block</code>が先に成り立ってしまい、<code>walk(Right)</code>が実行されて、左のアイテムを取り逃します。</li>
+</ol>
+<h4>3章 探査と、行動の決め方</h4>
+<ol>
+<li><code>search_info[2]</code>です（0番目が1マス先なので、3マス先は2番）。</li>
+</ol>
+<pre><code class="language-python">search_info = search(Right)
+search_info[2]   # 3マス先
+</code></pre>
+<ol start="2">
+<li><code>look_info[UpLeft]</code>は、探査の<strong>中心</strong>から見て、左上のマスの情報です。<code>look(Up)</code>なら、中心は自分の2マス先なので、<code>UpLeft</code>は「自分から見て、上に3マス、左に1マス」のマスです。自分から見た左上ではない点に注意してください。</li>
+<li>次のようになります。</li>
+</ol>
+<pre><code class="language-python">if (search_info[0] == Item or search_info[1] == Item or search_info[2] == Item
+    or search_info[3] == Item or search_info[4] == Item or search_info[5] == Item
+    or search_info[6] == Item or search_info[7] == Item or search_info[8] == Item):
+</code></pre>
+<p><code>in</code>は、この9個の比較を<code>or</code>でつないだのと同じことを、たった1つの書き方で済ませてくれている、ということが分かります。</p>
+<ol start="4">
+<li>
+<p><code>and</code>を<code>or</code>に変えると、「右上か左上の<strong>どちらか一方でも</strong>ブロックなら危険」という判定になってしまいます。片側だけふさがっていても、実際には挟まれないので、危険でない場面まで迂回するようになり、取れるはずのアイテムを取り逃すことが増えます。</p>
+</li>
+<li>
+<p>「上下左右を順に調べる」の節のコードが、答えの一例です。<code>for</code>で4方向を順にsearchし、<code>Item in search_info</code>が成り立ったら<code>break</code>で終わり、あとの<code>while True:</code>で、その<code>direction</code>へ進みます。</p>
+</li>
+</ol>
+<h4>4章 ターンの仕組みと、攻撃</h4>
+<ol>
+<li>次の2つを見比べてください。</li>
+</ol>
+<pre><code class="language-python"># 外に1回だけ書いた場合（よくない例）
+map_info = get_ready()
+while True:
+    if map_info[Right] == Enemy:
+        put(Right)
+    else:
+        walk(Right)
+</code></pre>
+<pre><code class="language-python"># 中に毎回書いた場合（基本の形）
+while True:
+    map_info = get_ready()
+    if map_info[Right] == Enemy:
+        put(Right)
+    else:
+        walk(Right)
+</code></pre>
+<p>前者は<code>map_info</code>が最初の1回から更新されないため、相手が右隣に来ても気づけず、ずっと同じ判断を繰り返します。後者は、毎ターン最新の情報で判断できます。</p>
+<ol start="2">
+<li>次のとおりです。</li>
+</ol>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Right] == Enemy:
+        put(Right)
+</code></pre>
+<ol start="3">
+<li>
+<p>4章の「同じ動きを、短く書く」のコードが、答えの一例です。見張る方角を<code>directions = [Down, Right, Up, Left]</code>とリストにし、番号<code>i</code>で、いま見張っている方角を覚えます。ふさがった方角では<code>i</code>を進めます（減らしません）。</p>
+<p>ちなみに、<code>for direction in (Down, Right, Up, Left):</code>で、毎ターン下から順に調べ直す書き方も考えられますが、こちらは、いったんふさがった方角が空くと、前の方角に戻ってしまうので、動きが変わります。実機のチュートリアル（Python）で、この書き方を8回試すと、5回クリアできました。8回中8回クリアできた、番号<code>i</code>を使う書き方のほうが、元のコードに近い動きです。</p>
+</li>
+<li>
+<p>不要です。初めの距離が奇数なら、移動だけを繰り返しても、距離は奇数のままなので、距離1で隣り合える可能性があります。先頭で<code>put</code>を入れると、かえって距離の偶奇が偶数にずれて、隣り合えなくなってしまいます。偶奇をずらす<code>put</code>が必要なのは、<strong>初めの距離が偶数のとき</strong>だけです。</p>
+</li>
+</ol>
+<h4>5章 変数と関数</h4>
+<ol>
+<li><code>Item in search_info</code>は「あるか・ないか」だけを教えてくれます。<code>first_index(search_info, Item)</code>は、それに加えて「<strong>何番目にあるか</strong>」という位置まで教えてくれます。位置が分かると、「あと何マス進めば届くか」「相手より自分のほうが近いか」といった判断に使えます。ただし、<code>first_index</code>が返す位置は、1から数えた番号（見つからなければ0）で、<code>search_info[番号]</code>の0から数える番号とは、ずれている点に注意が必要です。</li>
+<li>一例です。</li>
+</ol>
+<pre><code class="language-python">def item_directions():
+    result = []
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Item:
+            result.append(direction)
+    return result
+</code></pre>
+<p><code>random_move</code>との違いは、条件が「ブロックでない」から「アイテムである」に変わった点と、その場で移動せずに、リストを返すだけにした点です。
+3. 変わりません。<code>return</code>だけを書いても、<code>return None</code>と同じく、<code>None</code>が返ります。関数の最後まで<code>return</code>に出会わなかったときも、<code>None</code>が返ります。</p>
+<h4>6章 総合演習</h4>
+<ol>
+<li>一例です。</li>
+</ol>
+<pre><code class="language-python">item_count = 0
+while True:
+    map_info = get_ready()
+    if item_count == 10:
+        put(Right)          # 10個集めたら、特別な行動をする
+    elif map_info[Up] == Item:
+        walk(Up)
+        item_count += 1            # 取ったら、数を1増やす
+    else:
+        walk(Right)
+</code></pre>
+<p><code>item_count</code>を0から始め、アイテムを取った直後に1を足しているのがポイントです。数えるための変数は、繰り返しの<strong>外</strong>で0にしておかないと、毎ターン0に戻ってしまいます。また、1回の番で行動できるのは1回だけなので、<code>if</code>・<code>elif</code>・<code>else</code>にして、どれか1つだけが実行されるようにしています。</p>
+<ol start="2">
+<li><strong>確認のポイント</strong>：うまくいかなかった原因が、「Pythonの書き方が分からなかった」のか、「そもそも手順を思いつかなかった」のかを、区別してみてください。前者なら、第2部の対応する章とBlockly⇔Python対応表を、後者なら、入門編の第2部の同じ内容の章を読み返すのが近道です。</li>
+</ol>
+<hr>
+<h3>第2部　確認クイズの解答</h3>
+<p><strong>0章 Pythonの基礎と、CHaserの書き方</strong></p>
+<ol>
+<li>チュートリアルのPython画面では、<code>walk(Up)</code>のように、名前だけで書きます。対戦用のPython画面では、<code>player.walk(Up)</code>のように、<code>player.</code>を付けて書きます。</li>
+<li><code>while True:</code>の中と、自分で作る関数（<code>def main</code>より上）です（対戦用の骨組みの場合）。</li>
+<li><code>direction = Right</code>は、「<code>direction</code>という変数に<code>Right</code>を入れる」という<strong>代入</strong>です。<code>direction == Right</code>は、「<code>direction</code>の中身が<code>Right</code>と等しいかどうか」を調べる<strong>比較</strong>です。</li>
+<li><code>:</code>（コロン）です。</li>
+</ol>
+<p><strong>1章 移動と繰り返し</strong></p>
+<ol>
+<li><code>walk(Left)</code>です。</li>
+<li>0, 1, 2, 3という、4つの数字の並びを作ります。</li>
+</ol>
+<p><strong>2章 情報の読み取りと条件分岐</strong></p>
+<ol>
+<li>自分の左隣のマスに何があるか（<code>Floor</code>・<code>Block</code>・<code>Item</code>・<code>Enemy</code>のいずれか）を表します。</li>
+<li><code>if</code>はその条件が成り立ったとき、<code>elif</code>はそれより上の条件がすべて成り立たず、かつ自分の条件が成り立ったとき、<code>else</code>はどの条件も成り立たなかったときに実行されます。</li>
+</ol>
+<p><strong>3章 探査と、行動の決め方</strong></p>
+<ol>
+<li><code>look</code>の結果は、<code>look_info[Up]</code>のように<strong>方角の名前</strong>で、<code>search</code>の結果は、<code>search_info[0]</code>のように<strong>番号</strong>で取り出します。</li>
+<li>指定した方向の<strong>2マス先</strong>のマスの情報です（<code>look</code>の範囲の、真ん中のマスです）。</li>
+<li>エラー（<code>IndexError</code>）になります。<code>search_info</code>には、0番目から8番目までの9個しかなく、9番目は存在しないためです。</li>
+</ol>
+<p><strong>4章 ターンの仕組みと、攻撃</strong></p>
+<ol>
+<li>「自分の番が来るまで待つ」ことと、「番が来たときの、最新の周辺情報を受け取る」ことの2つです。</li>
+<li>1回だけです。<code>walk</code>・<code>put</code>・<code>look</code>・<code>search</code>は、どれも1回の行動で、使うとその番は終わります。</li>
+<li>自分も相手も毎ターン1マスずつ動くので、2人の距離の偶奇は変わりません。勝つには、距離1（奇数）で隣り合う必要があるので、初めの距離が偶数だと、隣り合えません。勝つには、プログラムの先頭で、<code>put</code>を1回入れます。<code>put</code>は自分が動かないので、偶奇がずれます。</li>
+</ol>
+<p><strong>5章 変数と関数</strong></p>
+<ol>
+<li><code>def</code>です。</li>
+<li><code>free = []</code>は、中身が空のリストを作っています。<code>free.append(Up)</code>は、そのリストの最後に、<code>Up</code>という値を追加しています。</li>
+<li><code>global 変数名</code>のように、<code>global</code>を書いてから、変数名を宣言します。書かないと、関数の中だけの別の変数として扱われ、外の変数は変わりません。</li>
+</ol>
+<p><strong>6章 総合演習</strong></p>
+<ol>
+<li><code>=</code>の右側の<code>count + 1</code>が先に計算され、その結果が、左側の<code>count</code>に代入されます。</li>
+<li><code>count += 1</code>と書けます。</li>
+</ol>
+<hr>
+<h3>第3部　演習問題の解答</h3>
+<h4>3章 やりたいことをプログラムにする</h4>
+<ol>
+<li><strong>確認のポイント</strong>：3つの関数は、<code>take_turn</code>の中で呼ぶ関数名を差し替えるだけで切り替えられます。「どの選択肢が強いか」よりも、<strong>相手や場面によって結果が変わるか</strong>に注目してください。負けた試合では、そのとき敵がどこにいて、自分がどう動いたかを思い出して、原因を1つ書き出してみましょう。</li>
+<li>一例です。待った回数を変数で数え、上限を超えたら<code>False</code>を返して、次の判断（アイテム取得や探索）に回します。</li>
+</ol>
+<pre><code class="language-python">wait_count = 0    # 連続で待った回数
+
+def wait_diagonal_enemy():
+    global wait_count
+    for diagonal in APPROACH:
+        if map_info[diagonal] == Enemy:
+            if wait_count &gt;= 3:          # 3回待っても動かなければ、待つのをやめる
+                wait_count = 0
+                return False
+            wait_count += 1
+            player.look(APPROACH[diagonal][0])
+            return True
+    wait_count = 0                       # 斜めに敵がいなければ、数え直す
+    return False
+</code></pre>
+<p><code>wait_count</code>を関数の<strong>外</strong>で0にしておくのと、<code>global</code>を書くのがポイントです。上限の数字を変えて、動きがどう変わるかも試してみましょう。</p>
+<ol start="3">
+<li><code>&lt;= 4</code>を大きくすると、敵を見てからlookし続ける期間が長くなります。<code>&gt;= 3</code>を小さくすると、lookの間隔が短くなります。どちらもlookを撃つ回数が増えます。lookは1ターンを使い、その間は移動もアイテム取得もできないので、撃ちすぎるとアイテムを集める速さが落ちます。</li>
+<li><strong>確認のポイント</strong>：数字を大きくすると遠くのアイテムまで追いかけるようになる一方、探索が進みにくくなることがあります。小さくすると、目の前のアイテムしか追わなくなります。どの数字のとき、自分の動きが「ちょうどよい」と感じたかを、理由といっしょに書き留めておきましょう。</li>
+<li>一例です。探索の終点を「まだ見ていないマス」から「覚えているアイテムのマス」に変えます。<code>memory.get(next_cell)</code>の結果が<code>Item</code>ならそこが目標です。まだ見ていないマス（<code>None</code>）は、通れるか分からないので、先へ広げないようにします。</li>
+</ol>
+<pre><code class="language-python">                cell = memory.get(next_cell)
+                if cell == Item:
+                    return step                      # 覚えているアイテムに着いた
+                if cell is not None and cell != Block:
+                    first_dir[next_cell] = step      # 通れると分かっているマスだけ広げる
+                    queue.append(next_cell)
+</code></pre>
+<ol start="6">
+<li><code>None</code>です。<code>(3, 1)</code>がブロックだと、<code>(2, 1)</code>から右へは広がれません。回を追うと、1回目に<code>(1, 2)</code>と<code>(2, 1)</code>が<code>queue</code>に入り、2回目の<code>(1, 2)</code>は行き止まり、3回目の<code>(2, 1)</code>は上下がブロック・右もブロックで、追加されるマスがありません。<code>queue</code>が空になって<code>while</code>が終わり、未知のマス<code>(4, 1)</code>にはたどり着けないので、<code>return None</code>になります。このとき<code>explore</code>は、<code>random_walk()</code>に切り替わります。</li>
+<li>0です。<code>(5, 3)</code>から見て、上・下・右がブロックで、左の元のマスもアイテムを取るとブロックになるため、出口が1つもありません。<code>min_exits</code>が2でも1でも<code>0 &gt;= min_exits</code>は成り立たないので、そのアイテムは取られません。</li>
+</ol>
+<hr>
+<h3>第3部　確認クイズの解答</h3>
+<p><strong>1章 Pythonの画面の使い方</strong></p>
+<ol>
+<li><code>while True:</code>の中と、自分で作る関数（<code>def main</code>より上）です。<code>import</code>の行や、<code>main</code>の定義、<code>if __name__ == &quot;__main__&quot;:</code>以降は、そのままにしておきます。</li>
+<li>出力欄です。エラーメッセージが出ていないか、出ていたら、どの行で、どんな種類のエラーが起きたかを確認します。</li>
+</ol>
+<p><strong>2章 対戦ルームの使い方</strong></p>
+<ol>
+<li>VS対戦（人と人との対戦）と、CPU対戦（コンピューターが操作する相手との対戦）の2種類です。</li>
+<li>Pythonの画面で「ダウンロード」した、Pythonのファイル（<code>.py</code>）を、対戦ルームの「ファイルを選択」ボタンから読み込みます。</li>
+</ol>
+<p><strong>3章 やりたいことをプログラムにする</strong></p>
+<ol>
+<li>①やりたいことを1文で書く、②あいまいな言葉を数えられるものに直す、③日本語のまま小さな手順に分ける、④手順を1つずつコードの部品に置き換える、の4つです。</li>
+<li>何を数えたり比べたりすれば言えるのかを考え、数字の比較に直します。たとえば「最近敵を見た」は、「敵を最後に見てから何ターンたったか」を数えて、<code>turn_counter - last_enemy_turn &lt;= 4</code>のような式にします。</li>
+<li><code>return</code>は、その関数をそこで終わらせる命令だからです。<code>if 判断():</code>の中で<code>return</code>すると、それより下に書いた判断は実行されません。そのため、上に書いた判断ほど先に実行され、優先されます。</li>
+<li>指定した方向の<strong>2マス先</strong>のマスの情報です。<code>look</code>は、指定した方向の2マス先を中心とする周囲9マスを返し、<code>look_info[Center]</code>はその真ん中のマスを表します。</li>
+<li><code>global my_x</code>のように、<code>global</code>を書いてから変数名を宣言します。書かないと、関数の中だけの別の変数として扱われ、外の<code>my_x</code>は変わりません。</li>
+</ol>
+
+      </article>
+
+      
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
