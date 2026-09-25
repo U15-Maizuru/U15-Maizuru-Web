@@ -42,7 +42,7 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
       <ul class="space-y-1">
         <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
 <li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
@@ -59,10 +59,11 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
       <ul class="space-y-1">
         <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
 <li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
       </ul>
     </div>
 
@@ -98,6 +99,7 @@
 <li>100ターン以内でクリア</li>
 </ul>
 <p>内容を確認したら、「はじめる」ボタンを押してプログラミング画面に進みます。</p>
+<p>ステージ選択画面の右上には、「ブロック／Python」の切り替えがあります。<strong>この本では、「ブロック」にして使います。</strong> 「Python」に切り替えると、同じステージを、ブロックのかわりにPythonのコードで解く画面が開きます（続編の応用編で説明します）。切り替えは、次に開いたときにも残るので、Pythonの画面が開いたときは、「ブロック」に戻してください。</p>
 <h3>クリア条件をよく読む理由</h3>
 <p>クリア条件は3つとも「達成すればよい」ものではなく、<strong>すべて同時に満たす</strong>必要があります。「アイテムを1個取れたから、あとは何をしてもよい」わけではなく、ブロック数や残りターン数の条件も守らなければクリアになりません。特に「プログラムブロックを〇個以下」という条件は、ただ動けばよいのではなく、できるだけ少ない命令数で効率よく組み立てる練習にもなっています。ステージに挑戦する前に、必ずクリア条件を1つずつ確認する習慣をつけましょう。</p>
 <h3>プログラミング画面</h3>
@@ -106,12 +108,13 @@
 <img src="../images/guide/part1/fig1-7b_programming.png" alt="図：プログラミング画面。左がプログラムブロック、中央が組み立てスペース、右が実行結果" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
 <figcaption class="mt-2 text-sm text-gray-500">図：プログラミング画面。左がプログラムブロック、中央が組み立てスペース、右が実行結果</figcaption>
 </figure>
-<p>画面右上のタブを見ると、「python」という表示もあります。CHaserのチュートリアルは、Blocklyでブロックを組み立てる方法と、Pythonでコードを書く方法の両方に対応しています。本書でも、第2部でBlocklyの組み方を、第3部で同じ内容をPythonで書く方法を説明していきます。</p>
+<p>画面右上のタブには、「プログラムブロック」のほかに「python」などの表示もあります。これは、いま組んでいるブロックを、Pythonというプログラミング言語で書き直すとどうなるかを見るためのものです。この本では使いません。</p>
 <p>「実行」ボタンを押すと、キャラクターを動かせます。うまくいかなかったときは、「停止」や「削除」ボタンでやり直せます。目標のブロック数や残りターン数は画面下に表示されるので、クリア条件を確認しながら進めましょう。</p>
 <h3>注意したいこと</h3>
 <ul>
 <li><strong>「はじめる」を押す前にクリア条件を確認し忘れる</strong>：後から条件を思い出そうとすると、せっかく組んだブロックを見直す手間が増えます。最初に必ず目を通しましょう。</li>
 <li><strong>「実行」を押した後、結果を最後まで見ずに次の操作をしてしまう</strong>：キャラクターがどう動いたか、途中で止まってしまう瞬間はないか、画面をしっかり観察することが、うまくいかない原因を見つける第一歩です。</li>
+<li><strong>ブロックのつもりが、Pythonの画面が開く</strong>：ステージ選択画面の右上の切り替えが「Python」になっています。「ブロック」に切り替えてから、ステージを選びましょう。</li>
 <li><strong>うまくいかないとき、いきなり全部のブロックを組み直してしまう</strong>：まずは「停止」で止め、どこまでは正しく動いていたかを確認してから、うまくいかなかった部分だけを直すほうが効率的です。</li>
 </ul>
 <h2>第1部 確認クイズ</h2>
@@ -143,10 +146,10 @@
 <p><strong>6章 チュートリアルの始め方</strong></p>
 <ol>
 <li>ステージのクリア条件は、いくつのうち何個を満たせばクリアになりますか。</li>
-<li>プログラミング画面の右上のタブでは、何を切り替えられますか。</li>
+<li>組んだブロックを動かしたいとき、うまくいかなくて止めたいときは、それぞれどのボタンを押しますか。</li>
 </ol>
 <p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
-<p>準備ができたら、第2部・第3部で実際にステージを1つずつクリアしていきましょう。</p>
+<p>準備ができたら、第2部で実際にステージを1つずつクリアしていきましょう。</p>
 
       </article>
 

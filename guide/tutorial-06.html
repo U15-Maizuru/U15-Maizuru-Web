@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>6章　探査した情報で行動を決める | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
-  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 6章　探査した情報で行動を決める">
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル 6章　探査した情報で行動を決める">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
       <ul class="space-y-1">
         <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
 <li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
@@ -59,10 +59,11 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
       <ul class="space-y-1">
         <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
 <li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
       </ul>
     </div>
 
@@ -79,7 +80,7 @@
     </aside>
 
     <main class="min-w-0 flex-1">
-      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル</p>
       <h1 class="mb-6 text-3xl font-bold">6章　探査した情報で行動を決める</h1>
       <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
         <p class="font-semibold">⚠️ ネタバレ注意</p>
@@ -152,7 +153,7 @@
 </tr>
 </tbody>
 </table>
-<p>「両脇がふさがれていて危険」を判定したいなら、片方だけふさがっていても危険ではないので「かつ」を選びます。逆に「上か下のどちらかにアイテムがあれば動く」なら「または」です。日本語で条件を声に出してみて、「〜も〜も」なら「かつ」、「〜か〜か」なら「または」と考えると選び間違えにくくなります（Pythonでは<code>and</code>・<code>or</code>に対応します。第3部6章）。</p>
+<p>「両脇がふさがれていて危険」を判定したいなら、片方だけふさがっていても危険ではないので「かつ」を選びます。逆に「上か下のどちらかにアイテムがあれば動く」なら「または」です。日本語で条件を声に出してみて、「〜も〜も」なら「かつ」、「〜か〜か」なら「または」と考えると選び間違えにくくなります。</p>
 <h3>4-4 自縛を回避しよう</h3>
 <p><strong>課題</strong>：アイテムを取りに行った結果、自分の周りをブロックで挟まれてしまう「自縛」を避けよう。</p>
 <p>第1部4章で学んだ「アイテムを取ると、その場所にブロックが出現する」というルールを思い出してください。アイテムを取りに行った結果、自分の周りが両側からブロックで挟まれてしまうことがあります。</p>
@@ -170,7 +171,7 @@
 </figure>
 <hr>
 <h4>解答例</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
-<p>Blocklyでの解答例は、<strong>付録2「チュートリアル解答例集」の4-4</strong>に掲載しています。上のヒントの手順（①アイテムの方向を確認 ②その方向へ進んだ場合に両脇がブロックにならないか確認 ③危険なら別方向）が、「もし〜なら」の入れ子と「かつ」の論理演算ブロックでそのまま形になっているので、自分の組んだブロックと見比べてみてください。同じ処理をPythonで書いた例は、第3部6章の4-4で1行ずつ解説しています。</p>
+<p>Blocklyでの解答例は、<strong>付録2「チュートリアル解答例集」の4-4</strong>に掲載しています。上のヒントの手順（①アイテムの方向を確認 ②その方向へ進んだ場合に両脇がブロックにならないか確認 ③危険なら別方向）が、「もし〜なら」の入れ子と「かつ」の論理演算ブロックでそのまま形になっているので、自分の組んだブロックと見比べてみてください。</p>
 </div></details><h3>演習問題</h3>
 <ol>
 <li>4-1のプログラムで、もしアイテムが9マス目ではなく5マス目にあった場合、期待どおりに動くでしょうか。理由も考えてみましょう。</li>

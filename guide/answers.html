@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>演習・確認クイズの解答 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
-  <meta name="description" content="CHaser解説（Blockly編） 第1部・第2部・第4部の演習問題・確認クイズの解答です。">
+  <meta name="description" content="CHaser解説（Blockly編） 第1部・第2部・第3部の演習問題・確認クイズの解答です。">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
       <ul class="space-y-1">
         <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
 <li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
@@ -59,10 +59,11 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
       <ul class="space-y-1">
         <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
 <li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
       </ul>
     </div>
 
@@ -83,7 +84,7 @@
       <h1 class="mb-6 text-3xl font-bold">演習・確認クイズの解答</h1>
       <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
         <p class="font-semibold">⚠️ ネタバレ注意</p>
-        <p class="mt-1 text-sm">このページには第1部・第2部・第4部の演習問題・確認クイズの解答が含まれています。</p>
+        <p class="mt-1 text-sm">このページには第1部・第2部・第3部の演習問題・確認クイズの解答が含まれています。</p>
       </div>
       <article class="prose prose-blue max-w-none prose-img:mx-auto">
         <p>各部末の「確認クイズ」と、各章末の「演習問題」の解答をまとめました。</p>
@@ -119,7 +120,7 @@
 <p><strong>6章 チュートリアルの始め方</strong></p>
 <ol>
 <li>表示された条件を<strong>すべて</strong>満たす必要があります（本文の例では3つすべて）。1つでも満たせなければクリアになりません。</li>
-<li>BlocklyとPythonの編集モードを切り替えられます。</li>
+<li>動かしたいときは「実行」ボタン、止めたいときは「停止」ボタンです（組み直したいときは「削除」ボタンでやり直せます）。</li>
 </ol>
 <hr>
 <h3>第2部　演習問題の解答</h3>
@@ -141,7 +142,7 @@
 <h4>5章 探査：近隣探査と遠方探査</h4>
 <ol>
 <li>2番目（インデックス2）です。0番目が1マス先なので、「3マス先＝番号は2」となります。</li>
-<li>近隣探査が適切です。近隣探査は「進んだ先のマスを中心とした周囲9マス」が分かるので、その方向に進んだ後に囲まれてしまわないかを事前に確認できます。遠方探査ではその方向の一直線しか分からず、進んだ後の左右の状況が分かりません。</li>
+<li>近隣探査が適切です。近隣探査は「その方向の2マス先を中心とした周囲9マス」が分かるので、その方向に進んだ先で囲まれてしまわないかを事前に確認できます。遠方探査ではその方向の一直線しか分からず、進んだ後の左右の状況が分かりません。</li>
 </ol>
 <h4>6章 探査した情報で行動を決める</h4>
 <ol>
@@ -204,7 +205,7 @@
 </ol>
 <p><strong>5章 探査：近隣探査と遠方探査</strong></p>
 <ol>
-<li>近隣探査は、指定した方向の隣マスを中心とした<strong>正方形</strong>の9マスを調べます。遠方探査は、指定した方向への<strong>一直線</strong>の9マスを調べます。</li>
+<li>近隣探査は、指定した方向の2マス先を中心とした<strong>正方形</strong>の9マスを調べます。遠方探査は、指定した方向への<strong>一直線</strong>の9マスを調べます。</li>
 <li>8番目です（0番目から数え始めるため）。</li>
 </ol>
 <p><strong>6章 探査した情報で行動を決める</strong></p>
@@ -233,141 +234,29 @@
 <li>下に進めなくなって左へ避けた歩数を覚えておくための変数です。あとで同じ数だけ右へ戻り、元の列に復帰するために使います。</li>
 </ol>
 <hr>
-<h4>1章 移動</h4>
+<h3>第3部　演習問題の解答</h3>
+<h4>3章 やりたいことをプログラムにする</h4>
 <ol>
-<li>次のとおりです。</li>
-</ol>
-<pre><code class="language-python">player.walk(Left)
-player.walk(Left)
-player.walk(Down)
-player.walk(Left)
-player.walk(Left)
-</code></pre>
-<ol start="2">
-<li>上（Up）方向に3マス動きます。</li>
-</ol>
-<h4>2章 繰り返し</h4>
-<ol>
-<li>次のように書けます（変数名は自由です）。</li>
-</ol>
-<pre><code class="language-python">for count in range(3):
-    for count2 in range(3):
-        player.walk(Right)
-    player.walk(Down)
-</code></pre>
-<p>内側の<code>for</code>で右に3マス進み、そのあと下に1マス進む、というセットを外側の<code>for</code>が3回繰り返します。</p>
-<ol start="2">
-<li>右に6回、上に6回移動します（内側がそれぞれ2回、外側が3回なので、2×3＝6）。</li>
-</ol>
-<h4>4章 条件分岐</h4>
-<ol>
-<li>次のとおりです。</li>
-</ol>
-<pre><code class="language-python">if map_info[Right] == Item:
-    player.walk(Right)
-elif map_info[Down] == Block:
-    player.walk(Up)
-else:
-    player.walk(Down)
-</code></pre>
-<ol start="2">
-<li>「左にアイテムがあり、かつ上もブロック」という場合に結果が変わります。1行目と2行目を入れ替えると<code>map_info[Up] == Block</code>が先に成り立ってしまい、<code>player.walk(Right)</code>が実行されて、左のアイテムを取り逃します。</li>
-</ol>
-<h4>5章 探査：lookとsearch</h4>
-<ol>
-<li><code>search_info[2]</code>です。</li>
-</ol>
-<pre><code class="language-python">search_info = player.search(Right)
-search_info[2]   # 3マス先
-</code></pre>
-<ol start="2">
-<li><code>player.look(方向)</code>で指定した方向の隣のマス（＝<code>look_info[Center]</code>）から見て、左上のマスの情報を表します。自分から見た左上ではない点に注意してください。</li>
-</ol>
-<h4>6章 探査した情報で行動を決める</h4>
-<ol>
-<li>次のようになります。</li>
-</ol>
-<pre><code class="language-python">if (search_info[0] == Item or search_info[1] == Item or search_info[2] == Item
-    or search_info[3] == Item or search_info[4] == Item or search_info[5] == Item
-    or search_info[6] == Item or search_info[7] == Item or search_info[8] == Item):
-</code></pre>
-<p><code>in</code>は、この9個の比較を<code>or</code>でつないだのと同じことを、たった1つの書き方で済ませてくれている、ということが分かります。</p>
-<ol start="2">
-<li><code>and</code>を<code>or</code>に変えると、「右上か左上の<strong>どちらか一方でも</strong>ブロックなら危険」という判定になってしまいます。片側だけふさがっていても実際には挟まれないので、危険でない場面まで迂回するようになり、取れるはずのアイテムを取り逃すことが増えます。</li>
-</ol>
-<h4>7章 ターンの仕組みとget_ready</h4>
-<ol>
-<li>次の2つを見比べてください。</li>
-</ol>
-<pre><code class="language-python"># 外に1回だけ書いた場合（よくない例）
-map_info = player.get_ready()
-while True:
-    if map_info[Right] == Enemy:
-        player.put(Right)
-    else:
-        player.walk(Right)
-</code></pre>
-<pre><code class="language-python"># 中に毎回書いた場合（基本の形）
-while True:
-    map_info = player.get_ready()
-    if map_info[Right] == Enemy:
-        player.put(Right)
-    else:
-        player.walk(Right)
-</code></pre>
-<p>前者は<code>map_info</code>が最初の1回から更新されないため、相手が右隣に来ても気づけず、ずっと同じ判断を繰り返します。後者は毎ターン最新の情報で判断できます。</p>
-<ol start="2">
-<li>次のとおりです。</li>
-</ol>
-<pre><code class="language-python">while True:
-    map_info = player.get_ready()
-    if map_info[Right] == Enemy:
-        player.put(Right)
-</code></pre>
-<h4>8章 ブロック設置とアタック攻撃</h4>
-<ol>
-<li>最初に確認されるのは下（Down）です。理由は自分なりに考えて構いません。一例としては、このコードが冒頭で<code>player.put(Up)</code>を実行して上側を自分でふさいでいるため、次に相手が来る可能性が高いのは下側だから、という説明ができます。</li>
-<li>複数の方向に相手がいる可能性があるとき、<strong>どちらを先に選ぶか</strong>が変わります。順番を変えると、相手の来る方向によっては反応が1手早くなったり遅くなったりします。動きが変わらない場面も多いので、実際に順番を変えて対戦させ、結果を見比べてみるのがおすすめです。</li>
-</ol>
-<h4>9章 変数と関数を活用する</h4>
-<ol>
-<li><code>Item in search_info</code>は「あるか・ないか」だけを教えてくれます。<code>first_index(search_info, Item)</code>は、それに加えて「<strong>何番目にあるか</strong>」という位置まで教えてくれます。位置が分かると「あと何マス進めば届くか」「相手より自分のほうが近いか」といった判断に使えます。ただし<code>first_index</code>が返す位置は1から数えた番号（見つからなければ0）で、<code>search_info[番号]</code>の0から数える番号とはずれている点に注意が必要です。</li>
-<li>一例です。</li>
-</ol>
-<pre><code class="language-python">def aitemu_no_aru_hoko():
-    hoko_list = []
-    if map_info[Up] == Item:
-        hoko_list.append('上')
-    if map_info[Down] == Item:
-        hoko_list.append('下')
-    if map_info[Left] == Item:
-        hoko_list.append('左')
-    if map_info[Right] == Item:
-        hoko_list.append('右')
-    return hoko_list
-</code></pre>
-<p><code>randamu_ido</code>との違いは、条件が「ブロックでない」から「アイテムである」に変わった点と、その場で移動せずリストを返すだけにした点です。</p>
-<h4>10章 総合演習：障害物を回避しよう</h4>
-<ol>
-<li>一例です。</li>
-</ol>
-<pre><code class="language-python">item_count = 0
-while True:
-    map_info = player.get_ready()
-    if map_info[Up] == Item:
-        player.walk(Up)
-        item_count = item_count + 1
-    else:
-        player.walk(Right)
-    if item_count == 10:
-        player.put(Right)   # 10個集めたら特別な行動をする
-</code></pre>
-<p><code>item_count</code>を0から始め、アイテムを取った直後に1を足しているのがポイントです。数えるための変数は、繰り返しの<strong>外</strong>で0にしておかないと、毎ターン0に戻ってしまいます。</p>
-<ol start="2">
-<li><strong>確認のポイント</strong>：うまくいかなかった原因が「Pythonの書き方が分からなかった」のか「そもそも手順を思いつかなかった」のかを区別してみてください。前者なら第3部の対応する章と「Blockly⇔Python対応表」を、後者なら第2部の同じ番号の章を読み返すのが近道です。</li>
+<li>
+<p><strong>確認のポイント</strong>：3つの関数は、「1ターンの行動」の中で呼び出す関数を差し替えるだけで切り替えられます。「どの選択肢が強いか」よりも、<strong>相手や場面によって結果が変わるか</strong>に注目してください。負けた試合では、そのとき敵がどこにいて、自分がどう動いたかを思い出して、原因を1つ書き出してみましょう。</p>
+</li>
+<li>
+<p>一例です。まず変数「連続で待った回数」を作り、ずっと繰り返すブロックの前で0にセットしておきます。次に、「斜めの敵に備えて待つ」の中の、4つの「もし〔自分の〔斜め〕マスがプレイヤーなら〕」それぞれの中身の先頭に、次のブロックを置きます。</p>
+<ul>
+<li>もし〔連続で待った回数 ≧ 3〕なら実行：「連続で待った回数」を0にセットし、「返す〔false〕」（待つのをやめて、次の判断に回す）</li>
+<li>そうでなければ、「連続で待った回数」を1増やしてから、いつもの「近隣探査する」と「返す〔true〕」</li>
+</ul>
+<p>さらに、関数の最後の「返す〔false〕」の直前で、「連続で待った回数」を0にセットします（斜めに敵がいなければ、数え直すため）。「連続で待った回数」を、関数の<strong>外</strong>で作っておくのがポイントです。上限の数字を変えて、動きがどう変わるかも試してみましょう。</p>
+</li>
+<li>
+<p>「≦ 4」を大きくすると、敵を見てから近隣探査し続ける期間が長くなります。「≧ 3」を小さくすると、近隣探査の間隔が短くなります。どちらも近隣探査を使う回数が増えます。近隣探査は1ターンを使い、その間は移動もアイテム取得もできないので、使いすぎるとアイテムを集める速さが落ちます。</p>
+</li>
+<li>
+<p><strong>確認のポイント</strong>：4つのステップの、どこで手が止まったかを書き留めておきましょう。たとえば例の「直前に進んだ方向とは、反対には進まない」なら、①1文で書く ②「反対」を数えられるものに直す（進行方向を変数に入れておき、上の反対は下、というように決める） ③手順に分ける（進む方向の候補から、反対のものを除く）、と進められます。</p>
+</li>
 </ol>
 <hr>
-<h3>第4部　確認クイズの解答</h3>
+<h3>第3部　確認クイズの解答</h3>
 <p><strong>1章 プログラミング画面の使い方</strong></p>
 <ol>
 <li>「合言葉で〇〇マップの〇〇対戦にプレイヤー名〇〇で接続する」という接続ブロックです。プログラム本体は、このブロックの中に入れる必要があります。</li>
@@ -377,6 +266,14 @@ while True:
 <ol>
 <li>VS対戦（人と人との対戦）と、CPU対戦（コンピューターが操作する相手との対戦）の2種類です。</li>
 <li>cool側とhot側の両方のプレイヤーがプログラムファイルを読み込み、準備が整うと表示されます。</li>
+</ol>
+<p><strong>3章 やりたいことをプログラムにする</strong></p>
+<ol>
+<li>①やりたいことを1文で書く、②あいまいな言葉を数えられるものに直す、③日本語のまま小さな手順に分ける、④手順を1つずつブロックに置き換える、の4つです。</li>
+<li>何を数えたり比べたりすれば言えるのかを考え、数字の比較に直します。たとえば「最近敵を見た」は、「敵を最後に見てから何ターンたったか」を数えて、「ターン数 − 最後に敵を見たターン ≦ 4」のような式にします。</li>
+<li>「返す」ブロックは、その関数をそこで終わらせるブロックだからです。「もし〔関数の呼び出し〕 返す」で<code>true</code>が返ってくると、それより下に並べた判断は実行されません。そのため、上に並べた判断ほど先に実行され、優先されます。</li>
+<li>指定した方向の<strong>2マス先</strong>のマスの情報です。近隣探査は、指定した方向の2マス先を中心とする周囲9マスを調べ、「中央」はその真ん中のマスを表します。</li>
+<li>変数に入れておきます。変数は、ターンが変わっても値が残るので、前のターンの情報を次のターンで使えます（例：「進行方向」「最後に敵を見たターン」）。</li>
 </ol>
 
       </article>

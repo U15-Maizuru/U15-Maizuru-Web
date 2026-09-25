@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2章　対戦ルームの使い方 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
-  <meta name="description" content="CHaser解説（Blockly編） 第4部　実践 2章　対戦ルームの使い方">
+  <meta name="description" content="CHaser解説（Blockly編） 第3部　実践 2章　対戦ルームの使い方">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
       <ul class="space-y-1">
         <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
 <li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
@@ -59,10 +59,11 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
       <ul class="space-y-1">
         <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
 <li><a href="./practice-02.html" class="font-bold text-blue-700">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
       </ul>
     </div>
 
@@ -79,7 +80,7 @@
     </aside>
 
     <main class="min-w-0 flex-1">
-      <p class="mb-2 text-sm text-gray-500">第4部　実践</p>
+      <p class="mb-2 text-sm text-gray-500">第3部　実践</p>
       <h1 class="mb-6 text-3xl font-bold">2章　対戦ルームの使い方</h1>
       
       <article class="prose prose-blue max-w-none prose-img:mx-auto">
@@ -90,11 +91,11 @@
 <img src="../images/guide/part4/fig4-02a_room_select.png" alt="図：ルーム選択画面。マップ一覧から選び、対戦方法と合言葉を決める" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
 <figcaption class="mt-2 text-sm text-gray-500">図：ルーム選択画面。マップ一覧から選び、対戦方法と合言葉を決める</figcaption>
 </figure>
-<p>まずはマップを選びます。大会本番で使われるマップだけでなく、ランダムマップや迷路マップなど、練習用のマップもたくさん用意されています。第1部から第3部までのチュートリアルでは、あらかじめ決められた小さなフィールドで練習してきましたが、本番のマップはずっと広く、フィールドの形も多彩です。練習の段階から、いろいろな種類のマップで自分のプログラムを試しておくと、本番でも慌てずに対応できます。</p>
+<p>まずはマップを選びます。大会本番で使われるマップだけでなく、ランダムマップや迷路マップなど、練習用のマップもたくさん用意されています。第2部までのチュートリアルでは、あらかじめ決められた小さなフィールドで練習してきましたが、本番のマップはずっと広く、フィールドの形も多彩です。練習の段階から、いろいろな種類のマップで自分のプログラムを試しておくと、本番でも慌てずに対応できます。</p>
 <h3>対戦の種類を選ぶ</h3>
 <p>マップを選んだら、「VS対戦」（人と人との対戦）か「CPU対戦」（コンピューターが操作する相手との対戦）かを選べます。</p>
 <h4>コラム：まずはCPU対戦で試そう</h4>
-<p>いきなり人と対戦するのは緊張するものです。CPU対戦を使えば、好きなタイミングで何度でも練習でき、自分のプログラムのどこが弱点かをじっくり確認できます。第2部・第3部で学んだ「自縛を避ける」「動く相手にブロックを設置する」といった判断が、実際の対戦でちゃんと機能しているか、CPU対戦で繰り返し試してみることをおすすめします。慣れてきたら、VS対戦で実際の相手の予測不能な動きにも対応できるか試してみましょう。</p>
+<p>いきなり人と対戦するのは緊張するものです。CPU対戦を使えば、好きなタイミングで何度でも練習でき、自分のプログラムのどこが弱点かをじっくり確認できます。第2部で学んだ「自縛を避ける」「動く相手にブロックを設置する」といった判断が、実際の対戦でちゃんと機能しているか、CPU対戦で繰り返し試してみることをおすすめします。慣れてきたら、VS対戦で実際の相手の予測不能な動きにも対応できるか試してみましょう。</p>
 <h3>ルームを決定する</h3>
 <p>合言葉を決めてルーム情報を確認したら、「ルーム決定」ボタンを押します。「合言葉」は、同じルームに入りたい相手と共有するための合図のようなものです。友達同士で対戦したいときは、あらかじめ同じ合言葉を決めておきましょう。</p>
 <h3>プログラムファイルを読み込んで対戦開始</h3>
@@ -105,30 +106,15 @@
 </figure>
 <h3>注意したいこと</h3>
 <ul>
-<li><strong>プログラムを保存し忘れて、対戦の直前にファイルが見つからない</strong>：第4部1章のプログラミング画面で「保存」を押し忘れると、せっかく組んだプログラムを対戦で読み込めません。プログラムを完成させたら、まず保存する習慣をつけましょう。</li>
+<li><strong>プログラムを保存し忘れて、対戦の直前にファイルが見つからない</strong>：第3部1章のプログラミング画面で「保存」を押し忘れると、せっかく組んだプログラムを対戦で読み込めません。プログラムを完成させたら、まず保存する習慣をつけましょう。</li>
 <li><strong>合言葉を相手と共有し忘れる</strong>：VS対戦で友達と対戦したいときは、同じ合言葉・同じルームを選んでいるか、事前に確認しましょう。</li>
 <li><strong>マップの特徴を確認せずに対戦を始めてしまう</strong>：マップによってフィールドの広さや形が大きく異なります。自分のプログラムがそのマップの広さや形を想定して作られているか、対戦を始める前に確認しておくと安心です。</li>
 </ul>
-<h2>第4部のまとめ、そして本書の締めくくり</h2>
-<p>これで、CHaserのルールを理解し（第1部）、Blockly（第2部）とPython（第3部）でチュートリアルをクリアする力を身につけ、実際の対戦の準備の仕方（第4部）まで、ひととおり学び終えました。</p>
-<p>CHaserは、覚える命令の種類こそ多くありませんが、「今の状況をどう読み取り、どう判断するか」を突き詰めていくと、驚くほど奥の深いゲームです。本書で学んだ移動・繰り返し・条件分岐・情報の取得・変数・関数という道具は、CHaserだけでなく、これからあなたが出会う他のプログラミングの課題でも、きっと役に立つはずです。</p>
-<h2>第4部 確認クイズ</h2>
-<p><strong>1章 プログラミング画面の使い方</strong></p>
-<ol>
-<li>ワークスペースの一番上に必ず置く必要があるブロックは何ですか。</li>
-<li>実行結果がうまくいかないとき、まずどこを確認するとよいでしょうか。</li>
-</ol>
-<p><strong>2章 対戦ルームの使い方</strong></p>
-<ol>
-<li>対戦を始める前に選べる2種類の対戦方法は何ですか。</li>
-<li>「ゲームスタート」ボタンは、どんな状態になると表示されますか。</li>
-</ol>
-<p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
-<p>まずは自分のプログラムを実際に動かし、勝ったり負けたりしながら、次はどう直せばもっと強くなるかを考えてみてください。そうやって試行錯誤を重ねることこそが、プログラミングの一番の練習方法です。</p>
+<p>次の章では、「こう動かしたい」というアイデアを、どうやってブロックのプログラムにするかを、順を追って見ていきます。</p>
 
       </article>
 
-      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./practice-01.html" class="text-blue-600 hover:underline">← 1章　プログラミング画面の使い方</a><span></span></div>
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./practice-01.html" class="text-blue-600 hover:underline">← 1章　プログラミング画面の使い方</a><a href="./practice-03.html" class="text-blue-600 hover:underline sm:text-right">3章　やりたいことをプログラムにする →</a></div>
 
       <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
         <p class="font-semibold">参考資料</p>
