@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>5章　探査：近隣探査と遠方探査 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
-  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル：Blockly編 5章　探査：近隣探査と遠方探査">
+  <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル 5章　探査：近隣探査と遠方探査">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
@@ -40,7 +40,7 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
       <ul class="space-y-1">
         <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
 <li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
@@ -57,10 +57,11 @@
     </div>
 
     <div class="mb-4">
-      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第4部　実践</p>
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
       <ul class="space-y-1">
         <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
 <li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
       </ul>
     </div>
 
@@ -77,7 +78,7 @@
     </aside>
 
     <main class="min-w-0 flex-1">
-      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル：Blockly編</p>
+      <p class="mb-2 text-sm text-gray-500">第2部　チュートリアル</p>
       <h1 class="mb-6 text-3xl font-bold">5章　探査：近隣探査と遠方探査</h1>
       <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
         <p class="font-semibold">⚠️ ネタバレ注意</p>
@@ -87,23 +88,23 @@
         <h2>5章 探査：近隣探査と遠方探査</h2>
 <p>周辺情報（map_info）で分かるのは自分のすぐ隣のマスまでです。もっと遠くまで様子を見たいときのために、CHaserには2種類の探査ブロックが用意されています。</p>
 <h3>近隣探査</h3>
-<p>「近隣探査」ブロック（Python編ではlookという命令に対応します）は、指定した方向の隣のマスを中心とした、周囲9マスの情報を取得します。つまり、自分がまだ移動していない場所を、先回りして覗き見ることができます。</p>
+<p>「近隣探査」ブロック（ステージ名などでは<code>look</code>とも呼ばれます）は、指定した方向の<strong>2マス先</strong>を中心とした、周囲9マス（その方向の1〜3マス先を、横に3マス分）の情報を取得します。つまり、自分がまだ移動していない場所を、先回りして覗き見ることができます。</p>
 <figure class="my-6 flex flex-col items-center">
 <img src="../images/guide/part2/fig2-09_look.png" alt="近隣探査" style="width:50%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
 <figcaption class="mt-2 text-sm text-gray-500">近隣探査</figcaption>
 </figure>
-<p>上の例のように「右方向を近隣探査する」を実行すると、右隣のマスを中心にした周囲9マスの情報がまとめて手に入ります。得られた情報から「中央（指定方向のマス自体）はBlockか」「右上はEnemyか」のように、方角名を指定して1つずつ調べられます（実際の値の取り出し方はPython編・第3部5章で詳しく確認します）。</p>
-<h4>「1歩先」を覗く意味</h4>
-<p>3章の周辺情報だけでは、自分の隣のマスまでしか分かりません。しかし「右に1マス進んだら、その先はブロックだらけで動けなくなってしまう」という状況を、進んでしまう前に知りたいことがあります。近隣探査ブロックを使えば、実際にはまだ動いていないのに、動いた後の周囲の様子を先に確認できます。これは、6章で学ぶ「自縛（じばく）を避ける」ための重要な武器になります。</p>
+<p>上の例のように「右方向を近隣探査する」を実行すると、右に2マス進んだマスを中心にした周囲9マス（右に1〜3マス先の、上下1マスずつ）の情報がまとめて手に入ります。得られた情報から「中央（2マス先のマス）はBlockか」「右上はEnemyか」のように、方角名を指定して1つずつ調べられます（実際の取り出し方は、6章で使いながら確認します）。</p>
+<h4>「先」を覗く意味</h4>
+<p>3章の周辺情報だけでは、自分の隣のマスまでしか分かりません。しかし「右に1マス進んだら、その先はブロックだらけで動けなくなってしまう」という状況を、進んでしまう前に知りたいことがあります。近隣探査ブロックを使えば、実際にはまだ動いていないのに、進もうとしている先の様子を先に確認できます。これは、6章で学ぶ「自縛（じばく）を避ける」ための重要な武器になります。</p>
 <h3>遠方探査</h3>
-<p>「遠方探査」ブロック（Python編ではsearchという命令に対応します）は、指定した方向に一直線に9マス分の情報を、まとめて取得します。</p>
+<p>「遠方探査」ブロック（ステージ名などでは<code>search</code>とも呼ばれます）は、指定した方向に一直線に9マス分の情報を、まとめて取得します。</p>
 <figure class="my-6 flex flex-col items-center">
 <img src="../images/guide/part2/fig2-11_search.png" alt="遠方探査" style="width:50%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
 <figcaption class="mt-2 text-sm text-gray-500">遠方探査</figcaption>
 </figure>
-<p>遠方探査で得られる情報は、隣のマスが0番目、いちばん遠いマスが8番目、という番号（インデックス）で管理されています。「1マス先（0番目）はBlock」「5マス先（4番目）はEnemy」のように、番号を指定してその方向の遠くの様子を確認できます（実際の値の取り出し方はPython編・第3部5章で詳しく確認します）。</p>
+<p>遠方探査で得られる情報は、隣のマスが0番目、いちばん遠いマスが8番目、という番号（インデックス）で管理されています。「1マス先（0番目）はBlock」「5マス先（4番目）はEnemy」のように、番号を指定してその方向の遠くの様子を確認できます（実際の取り出し方は、6章で使いながら確認します）。</p>
 <h4>近隣探査と遠方探査の違いを整理する</h4>
-<p>この2つのブロックはどちらも「探査」という名前が付いていますが、調べる範囲の形がまったく違います。近隣探査は指定した1マスを中心とした「正方形（9マス）」を、遠方探査は指定した方向への「一直線（9マス）」を調べます。「周りに何があるか広く浅く知りたい」なら近隣探査、「この方向にアイテムか相手がいるか、遠くまで一気に知りたい」なら遠方探査、というように目的に応じて使い分けます。</p>
+<p>この2つのブロックはどちらも「探査」という名前が付いていますが、調べる範囲の形がまったく違います。近隣探査は指定した方向の2マス先を中心とした「正方形（9マス）」を、遠方探査は指定した方向への「一直線（9マス）」を調べます。「周りに何があるか広く浅く知りたい」なら近隣探査、「この方向にアイテムか相手がいるか、遠くまで一気に知りたい」なら遠方探査、というように目的に応じて使い分けます。</p>
 <table>
 <thead>
 <tr>
@@ -115,7 +116,7 @@
 <tbody>
 <tr>
 <td>近隣探査（look）</td>
-<td>指定方向の隣マスを中心とした周囲9マス</td>
+<td>指定方向の2マス先を中心とした周囲9マス</td>
 <td>その方向に進んだ後の安全確認</td>
 </tr>
 <tr>

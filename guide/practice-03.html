@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3章　やりたいことをプログラムにする | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Blockly編） 第3部　実践 3章　やりたいことをプログラムにする">
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Blockly編）</a>
+      <nav class="flex items-center gap-4 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">チュートリアルの始め方</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　チュートリアル</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">Blockly基本操作</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　繰り返し</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　フィールド情報を読み取る</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　条件分岐</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　探査：近隣探査と遠方探査</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　探査した情報で行動を決める</a></li>
+<li><a href="./tutorial-07.html" class="text-gray-700 hover:text-blue-600">7章　ターンの仕組みとget_ready</a></li>
+<li><a href="./tutorial-08.html" class="text-gray-700 hover:text-blue-600">8章　ブロック設置とアタック攻撃</a></li>
+<li><a href="./tutorial-09.html" class="text-gray-700 hover:text-blue-600">9章　変数と関数を活用する</a></li>
+<li><a href="./tutorial-10.html" class="text-gray-700 hover:text-blue-600">10章　総合演習</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　プログラミング画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="font-bold text-blue-700">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="text-gray-700 hover:text-blue-600">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">第3部　実践</p>
+      <h1 class="mb-6 text-3xl font-bold">3章　やりたいことをプログラムにする</h1>
+      
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <h2>3章 やりたいことをプログラムにする</h2>
+<p>第2部までで、CHaserのプログラムを組むための道具（移動・繰り返し・条件分岐・探査・変数・関数）は一通りそろいました。ところが、いざ「こう動かしたい」というアイデアが浮かんでも、<strong>それをどうやってブロックにすればよいのか</strong>が分からず、手が止まってしまうことがあります。</p>
+<p>この章では、アイデアを、動くプログラムにするまでの<strong>考え方の手順</strong>を学びます。教材には、CHaserの対戦で使える動き（隣の敵を攻撃する、斜めにいる敵への対応、遠くの様子を先に見る、など）を取り上げます。ただ、ねらいは動きそのものではなく、「どうやってブロックにしたか」を順を追って見ていくことです。第2部の内容（特に9章の変数と関数）を読んでから進んでください。</p>
+<blockquote>
+<p><strong>この章のブロックについての注意</strong></p>
+<ul>
+<li>この章のブロックは、方向を「値」として扱える【上級】のブロックで組んでいます（プログラミング画面の【上級】）。「上に移動する」のように方向が決まっているブロックではなく、「〔　〕に移動する」の〔　〕に、変数やリストの中身を入れられるブロックです。第2部9章の7-1で「移動方向」の変数に使ったものと同じ種類です。</li>
+<li>この章のブロックでは、相手のプレイヤーは「プレイヤー」と表示されます。</li>
+<li>図に出てくる関数や変数の名前は、自分で決めたものです。自分のプログラムでは、好きな名前を付けて構いません。</li>
+</ul>
+</blockquote>
+<p>また、この章は、答えを1つに決めるものではありません。同じ「やりたいこと」でも、ブロックにする方法は何通りもあります。どれを採用するかは、自分のプログラムで試しながら決めてください。</p>
+<h3>考え方：やりたいことを、プログラムにする4ステップ</h3>
+<p>「こう動かしたい」というアイデアは、日本語で浮かびます。ところが、コンピューターは日本語をそのままでは理解してくれません。日本語から、動くブロックまでの間には、次の4つのステップがあります。この章のどの例でも、この順番で考えています。</p>
+<ol>
+<li>
+<p><strong>やりたいことを1文で書く</strong></p>
+<p>例：「隣に敵がいたら、攻撃したい」</p>
+</li>
+<li>
+<p><strong>あいまいな言葉を、数えられるものに直す</strong></p>
+<p>「近い」は何マス離れているか、「最近」は何ターン前か、というように、<strong>数えたり比べたりできるもの</strong>に置き換えます。</p>
+</li>
+<li>
+<p><strong>日本語のまま、小さな手順に分ける</strong></p>
+<p>「①上下左右を1つずつ見る」「②敵がいるか確かめる」「③いたらブロックを置く」…と、1つの手順が1〜数個のブロックになる大きさまで分けます。</p>
+</li>
+<li>
+<p><strong>手順を1つずつ、ブロックに置き換える</strong></p>
+<p>下の表のように、手順の形ごとに使うブロックがだいたい決まっています。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>手順の形</th>
+<th>使うブロック（【上級】）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>候補を全部、順番に調べる</td>
+<td>「リスト〔　〕の各項目〔方向〕について」。リストは「以下を使ってリストを作成」ブロックに方向を並べて作る</td>
+</tr>
+<tr>
+<td>条件に合うものだけ選ぶ</td>
+<td>「もし〔条件〕なら実行」</td>
+</tr>
+<tr>
+<td>行動できたら、そこで終わる</td>
+<td>「もし〔true〕 返す〔true〕」（条件付きの「返す」ブロックです。条件に<code>true</code>を入れると、必ず返します）</td>
+</tr>
+<tr>
+<td>関数の判断が<code>true</code>なら、そこで終わる</td>
+<td>「もし〔関数の呼び出し〕 返す」（値を持たない関数で使う形です）</td>
+</tr>
+<tr>
+<td>「最近」「近い」を判定する</td>
+<td>「−」の演算ブロックと、「≤」「≥」の比較ブロック</td>
+</tr>
+<tr>
+<td>含まれているか調べる</td>
+<td>「リスト〔　〕で以下のアイテムの最初の出現箇所を検索」が<code>0</code>でないか（第2部6章と同じ）</td>
+</tr>
+</tbody>
+</table>
+<p>うまく作るコツは、<strong>最初から全部を作ろうとせず、手順①だけを組んで動かし、確かめてから次の手順を足していく</strong>ことです。第2部の総合演習と同じ進め方です。</p>
+<h4>やってみよう：「隣に敵がいたら攻撃する」</h4>
+<p>いちばん簡単な例で、4つのステップを一通りやってみましょう。</p>
+<p><strong>ステップ1：やりたいことを1文で書く</strong></p>
+<p>隣に敵がいたら、ブロックを置いて攻撃したい。</p>
+<p><strong>ステップ2：あいまいな言葉を、数えられるものに直す</strong></p>
+<ul>
+<li>「隣」→ 上・下・左・右のどれか</li>
+<li>「敵がいる」→ 自分のその方向のマスが「プレイヤー」（第2部3章で学んだ、周辺情報の調べ方です）</li>
+<li>「攻撃する」→ その方向に「ブロックを置く」</li>
+</ul>
+<p><strong>ステップ3：日本語のまま、小さな手順に分ける</strong></p>
+<ol>
+<li>上・下・左・右を、1つずつ見る</li>
+<li>その方向に敵がいるか、確かめる</li>
+<li>いたら、その方向にブロックを置く</li>
+<li>置いたら、この仕事は終わり（あとで使うので、<code>true</code>を返す）</li>
+<li>どの方向にもいなければ、何もしない（<code>false</code>を返す）</li>
+</ol>
+<p><strong>ステップ4：手順を1つずつ、ブロックに置き換える</strong></p>
+<p>手順1は「候補を全部、順番に調べる」なので「リスト〔　〕の各項目〔方向〕について」、手順2は「条件に合うものだけ選ぶ」なので「もし」、手順4と5は「終わったことを知らせる」ので「返す」です。</p>
+<p>関数「隣の敵を攻撃する」のブロックです。手順1は「リスト〔上・下・左・右〕の各項目〔方向〕について」、手順2は「もし〔自分の〔方向〕マスがプレイヤーなら〕」、手順3は「〔方向〕にブロックを置く」、手順4は「もし〔true〕 返す〔true〕」、手順5は関数の最後の「返す〔false〕」です。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03a_attack.png" alt="Blocklyで組んだ「隣の敵を攻撃する」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「隣の敵を攻撃する」</figcaption>
+</figure>
+<p>手順の番号とブロックが、1対1で対応していることを確かめてください。<strong>日本語の手順が細かく書けていれば、ブロックは自然に決まります</strong>。反対に、ブロックが組めなくて手が止まったときは、手順の分け方が足りていないことがほとんどです。手順を、もっと細かく分けてみましょう。</p>
+<p>この章の以降の例は、どれも、この4ステップで組み立てていきます。</p>
+<h3>部品を組み合わせる：判断を優先順位で並べる</h3>
+<p>CHaserでは、1ターンに行動できるのは1回だけです。ある行動をしたら、そのターンはもう終わりです。この性質を使うと、前の節で作ったような関数（「やりたいこと」1つぶんの部品）を、次のような形で組み合わせられます。</p>
+<ol>
+<li>「こういう状況なら、こう動く」という判断を、関数として1つずつ用意する。</li>
+<li>それぞれの関数は、<strong>行動したら<code>true</code>、当てはまらなくて何もしなかったら<code>false</code></strong>を返す。</li>
+<li>優先したい順に上から呼び出し、<code>true</code>が返ってきたらそのターンを終える。</li>
+</ol>
+<p>「もし〔関数の呼び出し〕 返す」というブロックを、優先したい順に上から並べます。「返す」ブロックは、実行されるとその関数をそこで終わらせるので、<code>true</code>が返ってきた関数より下の判断は、実行されません。つまり、<strong>上に並べた判断ほど優先される</strong>ということです。値を返さない関数「1ターンの行動」の中でこの形にして、ずっと繰り返すブロックの中では、「自分のターンを待つ」のあとにこの関数を呼び出します。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03b_take_turn.png" alt="Blocklyで組んだ「1ターンの行動」とメインループ" style="width:90%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「1ターンの行動」とメインループ</figcaption>
+</figure>
+<p>プログラム全体の動きは、この「並べる順番」と「各関数の中身」で決まります。</p>
+<p>「隣の敵を攻撃する」は前の節の図のとおりです。残りの2つも、同じ4ステップで作れます。「見えているアイテムを取る」は、敵を調べる代わりにアイテムを調べ、置く代わりに移動するだけで、形は「隣の敵を攻撃する」と同じです。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03c_grab.png" alt="Blocklyで組んだ「見えているアイテムを取る」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「見えているアイテムを取る」</figcaption>
+</figure>
+<p>「ランダムに歩く」では、まず「空いている方向」という空のリストを作り、ブロックでない方向を「リスト〔　〕挿入位置：最後 値：〔方向〕」で1つずつ加えていきます。最後に「リスト〔　〕取得 ランダム」で1つ選んで移動します（第2部9章で学んだ、ランダムに選ぶブロックです）。「近隣探査する」は、四方がふさがったときの保険です。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03d_random_walk.png" alt="Blocklyで組んだ「ランダムに歩く」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「ランダムに歩く」</figcaption>
+</figure>
+<blockquote>
+<p><strong>ここで覚えておきたい約束</strong>：1つの関数の中で「移動する」「ブロックを置く」「近隣探査する」「遠方探査する」を実行するのは、<strong>多くても1回</strong>にしましょう。1ターンに行動できるのは1回だけなので、2回実行すると2回目は次のターンにずれ込み、思ったとおりに動かなくなります。</p>
+</blockquote>
+<p>以降の節では、「1ターンの行動」の中に並べる部品を、「やりたいこと」ごとに1つずつ作っていきます。</p>
+<h3>例1 同じ「やりたいこと」を、3通りのプログラムにする（斜めに敵がいたら）</h3>
+<p><strong>この例で身につく考え方</strong>：同じ「やりたいこと」でも、プログラムにする方法は1つとは限りません。複数の組み方を作って、比べて選びます。</p>
+<p>周辺情報を見ると、敵が斜め（左上・右上・左下・右下）にいることがあります。このときの動き方は、勝敗に直結する重要な場面です。まず、何が問題になるのかを整理しましょう。</p>
+<p>敵が斜めにいるとき、次に<strong>縦か横に隣り合う形を作った側</strong>は、その直後に相手の手番が来ます。相手は隣にいる自分にブロックを置いてアタックできるので、自分から隣り合いを作るのは危険です。逆に、相手が隣り合いを作ってくれたなら、次は自分の手番なので、こちらがアタックできます。</p>
+<p>ここから、斜めに敵がいるときの動き方が3通り考えられます。どれも「自分から隣り合いを作らない」という点は共通です。</p>
+<h4>手順に分けてみよう</h4>
+<p><strong>やりたいこと</strong>：敵が斜めにいるときに、自分から隣り合いを作らないように動く。</p>
+<p>この文を、次の手順に分けると、プログラムにできます。3つの選択肢は、④だけが違い、ほかの手順は共通です。</p>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>手順</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>斜めの4方向を1つずつ調べる</td>
+</tr>
+<tr>
+<td>②</td>
+<td>その方向に敵がいるか確かめる</td>
+</tr>
+<tr>
+<td>③</td>
+<td>隣り合いができてしまう2マスの方向（または離れる方向）を求める</td>
+</tr>
+<tr>
+<td>④</td>
+<td>選択肢ごとの行動をする（A：その側を近隣探査、B：反対に歩く、C：通れるほうを塞ぐ）</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>行動したら<code>true</code>、斜めに敵がいなければ<code>false</code>を返す</td>
+</tr>
+</tbody>
+</table>
+<p>③の「2マスの方向」は、たとえば右上に敵がいるなら、敵が隣り合うために入ってくるマス、つまり<strong>自分の上と、自分の右</strong>です。この2マスは、自分にも敵にも隣り合っています。ほかの斜めも同じ考え方で決まります。</p>
+<h4>選択肢A：動かずに待つ</h4>
+<p>相手が近づいてくるのを待つ作戦です。ただし、CHaserに「何もしない」という命令はありません。動かずに1ターンを使える行動は、近隣探査・遠方探査・ブロックを置くのいずれかです。ここでは、敵のいる側を近隣探査して待つことにします。近隣探査なら情報も手に入り、なおかつ何も壊しません。</p>
+<p>斜めの4方向それぞれに「もし〔自分の〔斜め〕マスがプレイヤーなら〕」のブロックを1つずつ並べ、その中で敵のいる側を「近隣探査する」ようにします。たとえば右上に敵がいれば、上を近隣探査します。ブロックの中に、探査する方向を直接書き込みます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03e_wait.png" alt="Blocklyで組んだ「斜めの敵に備えて待つ」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「斜めの敵に備えて待つ」</figcaption>
+</figure>
+<h4>選択肢B：反対側に離れる</h4>
+<p>隣り合いを作らないように、敵から遠ざかる作戦です。</p>
+<p>斜めの4方向それぞれに「もし〔敵がいる〕」を並べるところは、選択肢Aと同じです。ただし今度は、その中で「離れる2つの方向」のリストを作り、「リストの各項目〔方向〕について」で、ブロックでない方向を探して移動します。離れる方向が2つあるのは、片方がブロックで塞がっていることもあるからです。図が縦に長いのは、この形を4方向ぶん並べているからです。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03f_evade.png" alt="Blocklyで組んだ「斜めの敵から離れる」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「斜めの敵から離れる」</figcaption>
+</figure>
+<h4>選択肢C：敵の近づく道を塞ぐ</h4>
+<p>敵が近づくために通るマスにブロックを置いて、隣り合えなくする作戦です。</p>
+<p>選択肢Bとほとんど同じ形です。リストには「敵が近づく2つの方向」を入れ、移動する代わりに「〔方向〕にブロックを置く」を使います。1回に塞げるのは、2つの接近路のうち1マスだけです。もう1マスは空いたままなので、敵がそちらから隣り合ってくる可能性は残ります。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03g_block.png" alt="Blocklyで組んだ「斜めの敵の通り道を塞ぐ」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「斜めの敵の通り道を塞ぐ」</figcaption>
+</figure>
+<h4>3つを比べて、選ぶ</h4>
+<p>3つとも、「1ターンの行動」に並べる位置は同じ（「隣の敵を攻撃する」の直後）で、呼び出す関数を差し替えるだけで切り替えられます。</p>
+<p>それぞれに長所と短所があります。</p>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>長所</th>
+<th>気をつけたい点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 待つ</td>
+<td>自分は隣り合いを作らない。近隣探査で敵の周りの様子も分かる</td>
+<td>相手も待つと、お互いに動かなくなることがある</td>
+</tr>
+<tr>
+<td>B 離れる</td>
+<td>敵との距離をあけられる</td>
+<td>逃げた先で別の敵接近や行き止まりに当たることがある</td>
+</tr>
+<tr>
+<td>C 塞ぐ</td>
+<td>敵の接近路を1つ消せる</td>
+<td>自分の隣にブロックが増え、自分の動ける方向も減る</td>
+</tr>
+</tbody>
+</table>
+<p>どれが向いているかは、相手のプログラムや、マップの形によっても変わります。3つを全部組んで、CPU対戦などで試してみましょう。</p>
+<h3>例2 あいまいな言葉を、数字にする（いつ近隣探査するか）</h3>
+<p><strong>この例で身につく考え方</strong>：「近く」「最近」のようなあいまいな言葉は、<strong>何かを数えて、数字を比べる式</strong>に直せば、プログラムにできます。</p>
+<p>前の節では、近隣探査を「動かずに1ターンを使う行動」として使いました。近隣探査のもう1つの使い方は、<strong>遠くの様子を先に知ること</strong>です。</p>
+<p>周辺情報で分かるのは、自分のすぐ周りの9マスだけです。その外側にいる敵は見えません。そこで、近隣探査を使って、進む先の様子を先に確かめます。</p>
+<p>近隣探査は、指定した方向の<strong>2マス先</strong>を中心とする周囲9マスを教えてくれます。たとえば「上方向に近隣探査する」を実行すると、上方向の1〜3マス先の範囲が、次の形で「近隣情報リスト」に入ります。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>左</th>
+<th>中</th>
+<th>右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3マス先</td>
+<td>左上</td>
+<td>上</td>
+<td>右上</td>
+</tr>
+<tr>
+<td>2マス先</td>
+<td>左</td>
+<td>中央</td>
+<td>右</td>
+</tr>
+<tr>
+<td>1マス先</td>
+<td>左下</td>
+<td>下</td>
+<td>右下</td>
+</tr>
+<tr>
+<td>自分</td>
+<td></td>
+<td>★</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>（表の中は、「近隣情報リスト」から取り出すときの方角名です。「中央」が、2マス先のマスです。）</p>
+<p>近隣探査を使うと、ちょうど周辺情報の外側にいる敵を先に見つけられます。ただし、近隣探査は<strong>1ターンを使う</strong>ので、その間は移動もアイテム取得もできません。むやみに使うと、アイテムを集める速さが落ちます。そこで、「いつ使うか」が考えどころになります。</p>
+<p>ここでは、<strong>敵を見た直後の数ターンだけ、進行方向を近隣探査する</strong>という作戦を作ります。敵がすぐ近くにいたなら、また近くにいる可能性が高いからです。</p>
+<p><strong>やりたいこと</strong>：敵が近くにいそうなときだけ、進行方向を近隣探査する。</p>
+<p>このままでは、プログラムにできません。「近くにいそう」「使いすぎない」といった<strong>あいまいな言葉</strong>を、コンピューターが計算できる形に直す必要があるからです。コツは、「何を数えれば言えるか」を考えることです。</p>
+<table>
+<thead>
+<tr>
+<th>やりたいこと（言葉）</th>
+<th>数えるもの</th>
+<th>式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>敵が近くにいそう</td>
+<td>敵を最後に見てから、何ターンたったか</td>
+<td>ターン数 − 最後に敵を見たターン ≦ 4</td>
+</tr>
+<tr>
+<td>使いすぎない</td>
+<td>最後に近隣探査してから、何ターンたったか</td>
+<td>ターン数 − 最後に近隣探査したターン ≧ 3</td>
+</tr>
+<tr>
+<td>どこを見るか</td>
+<td>最後に進んだ方向</td>
+<td>進行方向</td>
+</tr>
+</tbody>
+</table>
+<p>「4ターン以内」「3ターン以上」の数字は、この作戦の調整つまみです。そして、この式を計算するために、次の3つを覚えておく必要があります。</p>
+<ul>
+<li>いま何ターン目か（変数「ターン数」）</li>
+<li>最後に敵を見たのは何ターン目か（変数「最後に敵を見たターン」）</li>
+<li>最後に近隣探査したのは何ターン目か（変数「最後にlookしたターン」。図の変数名ではlookと書いてあります）</li>
+</ul>
+<p>さらに、「進行方向」を覚えるために、「移動する」ブロックを包む関数「移動する」を作ります。</p>
+<p>最初に、3つの数字と進行方向を「セット」します。−999は「まだ一度も見ていない」という意味です（理由は後の表で説明します）。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03h_init.png" alt="Blocklyで最初にセットする変数" style="width:98%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで最初にセットする変数</figcaption>
+</figure>
+<p>「移動する」は、方向を引数に受け取る関数です。歩いたあとで、その方向を「進行方向」にセットします。「先を見る」も引数つきの関数で、近隣探査したターンを覚え、敵が見えたら「最後に敵を見たターン」も更新します。「敵が見えたか」は、「近隣情報リスト」の中に「プレイヤー」が含まれているか、つまり検索の結果が<code>0</code>でないか、で調べます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03i_move_look.png" alt="Blocklyで組んだ「移動する」と「先を見る」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「移動する」と「先を見る」</figcaption>
+</figure>
+<p>条件を数式にした「敵が近いなら先を見る」は、次のとおりです。「最近敵を見た」と「前回のlookから間があいた」という2つの変数に、それぞれの式の結果（成り立つか、成り立たないか）を入れて、「かつ」でつなげています。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03j_look_ahead.png" alt="Blocklyで組んだ「敵が近いなら先を見る」" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだ「敵が近いなら先を見る」</figcaption>
+</figure>
+<p>Blocklyの変数は、関数の外で作ったものを、そのまま関数の中で読み書きできます。</p>
+<p><strong>条件の計算例</strong></p>
+<p>「敵が近いなら先を見る」の2つの条件は、ターン数の引き算だけで決まります。いま「ターン数」が10だとします。</p>
+<table>
+<thead>
+<tr>
+<th>最後に敵を見たターン</th>
+<th>最後にlookしたターン</th>
+<th>10 − 最後に敵を見たターン ≦ 4</th>
+<th>10 − 最後にlookしたターン ≧ 3</th>
+<th>先を見る？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>5</td>
+<td>2 ≦ 4 → 成り立つ</td>
+<td>5 ≧ 3 → 成り立つ</td>
+<td>する</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>2 ≦ 4 → 成り立つ</td>
+<td>1 ≧ 3 → 成り立たない</td>
+<td>しない（さっき探査した）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>7 ≦ 4 → 成り立たない</td>
+<td>5 ≧ 3 → 成り立つ</td>
+<td>しない（敵を見てから時間がたった）</td>
+</tr>
+<tr>
+<td>−999</td>
+<td>−999</td>
+<td>1009 ≦ 4 → 成り立たない</td>
+<td>1009 ≧ 3 → 成り立つ</td>
+<td>しない（敵をまだ見ていない）</td>
+</tr>
+</tbody>
+</table>
+<p>「最後に敵を見たターン」の最初の値を<code>-999</code>にしておくと、「まだ一度も敵を見ていない」ときは引き算の結果が大きくなり、1つ目の条件が成り立ちません。2つの条件が<strong>両方</strong>成り立ったときだけ、近隣探査します。</p>
+<p>メインループでは、ターンごとに「ターン数」を1つ増やし、周辺情報に敵がいたら「最後に敵を見たターン」を更新します。ずっと繰り返すブロックの中で、「ターン数を1増やす」と、「周辺情報リスト」の中に「プレイヤー」がいたら「最後に敵を見たターン」を「ターン数」にセットする処理を、関数「1ターンの行動」の呼び出しの前に置きます。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03k_main_loop.png" alt="Blocklyで組んだメインループ" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで組んだメインループ</figcaption>
+</figure>
+<p>「1ターンの行動」の中には、アイテム取得より下に「敵が近いなら先を見る」を置きます。アイテムを取れるときは取り、取れなくて敵が近くにいそうなときだけ先を見る、という順番です。</p>
+<p>なお、「移動する」を使うときは、これまでの「〔方向〕に移動する」をすべて関数「移動する」に置き換えておきましょう。そうしないと、「進行方向」が更新されず、進行方向が古いままになります。</p>
+<h3>全部をつなげると</h3>
+<p>ここまで作った部品を、優先順位の連鎖に並べ直すと、次のようになります。</p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part4/strategies/fig4-03l_take_turn_all.png" alt="Blocklyで作れる部品をつなげた「1ターンの行動」とメインループ" style="width:100%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">Blocklyで作れる部品をつなげた「1ターンの行動」とメインループ</figcaption>
+</figure>
+<p>上から順に、「隣の敵を攻撃する」→「斜めの敵に備えて待つ」→「見えているアイテムを取る」→「敵が近いなら先を見る」の順に判断し、どれも当てはまらなかったときは、いちばん最後に「ランダムに歩く」です。</p>
+<p>順番を入れ替えたり、一部を抜いたりして、動きがどう変わるかを見てみましょう。優先順位の連鎖は、「部品を足す」「順番を変える」「条件の数字を変える」という3つの操作だけで、プログラムの動きを組み替えられる形になっています。</p>
+<h4>もっと先へ進みたくなったら</h4>
+<p>この章のブロックで作れるのは、「いま見えているもの」から判断する動きです。もっと強いプログラムにするには、たとえば次のような動きが必要になります。</p>
+<ul>
+<li>見たことのあるマスを<strong>覚えておいて</strong>、ブロックを避けた道順を考える</li>
+<li>「まだ見ていないマスのうち、いちばん近いところ」を、近い順に調べて見つける</li>
+<li>覚えているアイテムのうち、近いものを追いかける</li>
+<li>アイテムを取ると閉じ込められそうかどうか、出口の数を数えて判断する</li>
+</ul>
+<p>これらは、座標をキーにした「辞書」や、調べる順番を管理する「順番待ちの列」を使うので、ブロックでは組めません。文字のコード（Python）で書くと、同じ4ステップの考え方でプログラムにできます。続編の応用編（Python編）の第3部3章で、これらを1つずつ作っていきます。</p>
+<h3>注意したいこと</h3>
+<ul>
+<li><strong>「やりたいこと」が大きすぎて、手が止まる</strong>：無理にブロックを組もうとせず、日本語の手順を、1つが数個のブロックになる大きさまで細かく分けましょう。分けた手順を、1つずつ組んで動かして確かめると、途中でどこが違うかも見つけやすくなります。</li>
+<li><strong>あいまいな言葉のまま、ブロックにしようとする</strong>：「近い」「最近」「多い」などは、<strong>何を数えて、いくつと比べるのか</strong>を決めてから組みます。</li>
+<li><strong>方向が決まっているブロックを使ってしまう</strong>：「上に移動する」のようなブロックには、変数やリストの中身を入れられません。この章のように方向を変数で扱うときは、【上級】の「〔　〕に移動する」「〔　〕にブロックを置く」などを使います。</li>
+<li><strong>「返す」ブロックの条件を、入れ忘れる</strong>：「もし〔　〕 返す〔　〕」は条件つきのブロックです。必ず返したいときは、条件に<code>true</code>を入れます。</li>
+<li><strong>「移動する」の関数を使わずに、直接移動してしまう</strong>：進行方向を覚えるには、歩くときは必ず関数「移動する」を通します。途中で直接「〔方向〕に移動する」を使うと、「進行方向」が実際の動きとずれてしまいます。</li>
+<li><strong>1つの関数で行動を2回実行する</strong>：「移動する」「ブロックを置く」「近隣探査する」「遠方探査する」は、1ターンに1回だけです。行動したら「返す〔true〕」で終わらせましょう。</li>
+<li><strong>周辺情報を、過去のものと取り違える</strong>：「周辺情報リスト」は毎ターン新しくなります。前のターンの情報を残したいときは、変数に書き込んでおく必要があります。</li>
+</ul>
+<h3>演習問題</h3>
+<ol>
+<li>「斜めに敵がいたら」の3つの関数（「斜めの敵に備えて待つ」「斜めの敵から離れる」「斜めの敵の通り道を塞ぐ」）を、すべて自分のプログラムに組んでみましょう。1つずつ「1ターンの行動」に差し替え、CPU対戦や友達との対戦で、結果や動き方にどんな違いが出るか記録してみましょう。</li>
+<li>選択肢A（待つ）では、相手も待つタイプだった場合、お互いに動かなくなる可能性があります。「同じ場所で連続して待った回数を数え、上限を超えたら別の行動に切り替える」という工夫を、変数を使って組んでみましょう。</li>
+<li>「敵が近いなら先を見る」の<code>≦ 4</code>と<code>≧ 3</code>の数字を変えると、近隣探査を使う頻度がどう変わるか、考えてみましょう。使いすぎると、どんな困ったことが起きるでしょうか。</li>
+<li>自分で「やりたいこと」を1つ考え、この章の4ステップ（1文で書く → あいまいな言葉を数えられるものに → 手順に分ける → ブロックにする）で、プログラムにしてみましょう。（例：直前に進んだ方向とは、反対には進まないようにしたい）</li>
+</ol>
+<h2>第3部のまとめ、そして本書の締めくくり</h2>
+<p>これで、CHaserのルールを理解し（第1部）、Blocklyでチュートリアルをクリアする力を身につけ（第2部）、実際の対戦の準備の仕方と、やりたいことをプログラムにする考え方（第3部）まで、ひととおり学び終えました。</p>
+<p>CHaserは、覚える命令の種類こそ多くありませんが、「今の状況をどう読み取り、どう判断するか」を突き詰めていくと、驚くほど奥の深いゲームです。本書で学んだ移動・繰り返し・条件分岐・情報の取得・変数・関数という道具は、CHaserだけでなく、これからあなたが出会う他のプログラミングの課題でも、きっと役に立つはずです。</p>
+<p>ブロックでは組みにくい動き（地図を覚える、道順を探索するなど）に挑戦したくなったら、続編の応用編でPythonを学んでみてください。Blocklyで身につけた「考え方」は、そのまま使えます。</p>
+<h2>第3部 確認クイズ</h2>
+<p><strong>1章 プログラミング画面の使い方</strong></p>
+<ol>
+<li>ワークスペースの一番上に必ず置く必要があるブロックは何ですか。</li>
+<li>実行結果がうまくいかないとき、まずどこを確認するとよいでしょうか。</li>
+</ol>
+<p><strong>2章 対戦ルームの使い方</strong></p>
+<ol>
+<li>対戦を始める前に選べる2種類の対戦方法は何ですか。</li>
+<li>「ゲームスタート」ボタンは、どんな状態になると表示されますか。</li>
+</ol>
+<p><strong>3章 やりたいことをプログラムにする</strong></p>
+<ol>
+<li>「やりたいこと」をプログラムにするときの、4つのステップを順に答えてください。</li>
+<li>「近くにいる」のようなあいまいな言葉は、プログラムにするために、どのように直しますか。</li>
+<li>「1ターンの行動」の中で、「もし〔関数の呼び出し〕 返す」を並べて判断を書くと、上に並べた判断ほど優先されるのはなぜですか。</li>
+<li>「上方向に近隣探査する」を実行したとき、「近隣情報リスト」の「中央」は、自分から見てどのマスの情報を表しますか。</li>
+<li>前のターンに進んだ方向のように、あとのターンで使うために覚えておきたい情報は、何に入れておけばよいですか。</li>
+</ol>
+<p>（解答は付録1「確認クイズ・演習問題の解答」を参照してください。）</p>
+<p>まずは自分のプログラムを実際に動かし、勝ったり負けたりしながら、次はどう直せばもっと強くなるかを考えてみてください。そうやって試行錯誤を重ねることこそが、プログラミングの一番の練習方法です。</p>
+
+      </article>
+
+      <div class="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-6 text-sm sm:flex-row sm:justify-between"><a href="./practice-02.html" class="text-blue-600 hover:underline">← 2章　対戦ルームの使い方</a><span></span></div>
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
