@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1章　移動 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <title>1章　移動 | CHaser解説（Blockly編）</title>
   <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル 1章　移動">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
@@ -89,6 +89,36 @@
         <h2>1章 移動：連続移動と複雑な移動</h2>
 <h3>1-1 連続移動</h3>
 <p><strong>課題</strong>：プレイヤーを同じ方向に複数回動かして、少し離れたアイテムまで移動しよう。</p>
+<!-- stage-info:1-1 -->
+<p><strong>ステージ1-1のマップとクリア条件</strong></p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/stages/stage_1-1.png" alt="ステージ1-1のマップ" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ステージ1-1のマップ</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>クリア条件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アイテム</td>
+<td>1個ゲットする</td>
+</tr>
+<tr>
+<td>ブロック数</td>
+<td>3個以下</td>
+</tr>
+<tr>
+<td>ターン数</td>
+<td>100ターン以内</td>
+</tr>
+</tbody>
+</table>
+<p>黄色の枠が自分（Cool）のスタート位置です。すべての条件を同時に満たすとクリアです。</p>
+<!-- /stage-info -->
 <p>プレイヤーを1マス動かす基本のブロックが「〇〇方向に移動する」ブロックです。まずはこのブロックがどんな形をしているか、ツールボックスから探して、ワークスペースに1つ置いてみましょう。</p>
 <h4>💡 考えるヒント</h4>
 <ul>
@@ -107,6 +137,36 @@
 <p>「3マス進む」という命令が最初から用意されていれば楽なのに、と思うかもしれません。しかしCHaserでは、あえて「1マス移動」という最小の命令だけを用意しています。理由は、CHaserが1ターンごとに1手だけ行動する対戦ゲームだからです。実際の対戦では、1マス進むごとに相手も1手動きます。もし「3マス進む」という命令があると、その間に相手がどう動いたかを確認できないまま3手分先に進んでしまい、不利な状況に気づけません。1マスずつ命令することで、後の章で学ぶ「毎ターン周囲を確認してから動く」という考え方につなげやすくしているのです。</p>
 </div></details><h3>1-4 複雑な移動</h3>
 <p><strong>課題</strong>：ブロックを避けながら、アイテムのマスまでたどり着こう。</p>
+<!-- stage-info:1-4 -->
+<p><strong>ステージ1-4のマップとクリア条件</strong></p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/stages/stage_1-4.png" alt="ステージ1-4のマップ" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ステージ1-4のマップ</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>クリア条件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アイテム</td>
+<td>1個ゲットする</td>
+</tr>
+<tr>
+<td>ブロック数</td>
+<td>8個以下</td>
+</tr>
+<tr>
+<td>ターン数</td>
+<td>100ターン以内</td>
+</tr>
+</tbody>
+</table>
+<p>黄色の枠が自分（Cool）のスタート位置です。すべての条件を同時に満たすとクリアです。</p>
+<!-- /stage-info -->
 <p>このステージでは、フィールドの途中にブロックが置かれていて、まっすぐ進むだけではアイテムにたどり着けません。実際にBlockly画面でステージ1-4を開き、フィールドの様子を確認してみましょう。</p>
 <h4>💡 考えるヒント</h4>
 <ul>
