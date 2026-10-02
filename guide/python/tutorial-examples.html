@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チュートリアル解答例集 | CHaser解説（Python編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <meta name="description" content="CHaser解説（Python編） チュートリアルステージ（1-1〜8-3）のPython解答例集です。">
+  <link rel="icon" href="../../images/favicon.ico" sizes="any">
+  <link rel="icon" href="../../images/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../src/style.css">
+</head>
+<body class="bg-white text-gray-800">
+  <header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4">
+      <a href="./index.html" class="text-lg font-bold">CHaser解説（Python編）</a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
+        <a href="./index.html" class="hover:text-blue-600">目次</a>
+        <a href="../index.html" class="hover:text-blue-600">入門編（Blockly版）へ</a>
+        <a href="../../competition.html" class="hover:text-blue-600">大会サイトへ戻る</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 py-8 lg:flex lg:items-start lg:gap-8">
+    <aside class="mb-8 lg:mb-0 lg:w-64 lg:shrink-0">
+      <details open class="rounded-lg border border-gray-200 bg-gray-50 lg:border-0 lg:bg-transparent">
+        <summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold lg:hidden">目次</summary>
+        <nav class="px-4 pb-4 text-sm lg:sticky lg:top-8 lg:px-0 lg:pb-0">
+          <ul class="mb-2"><li class="mb-3"><a href="./index.html" class="font-semibold text-gray-800 hover:text-blue-600">解説トップ</a></li></ul>
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第1部　CHaserを知る</p>
+      <ul class="space-y-1">
+        <li><a href="./rules-01.html" class="text-gray-700 hover:text-blue-600">CHaserとは</a></li>
+<li><a href="./rules-02.html" class="text-gray-700 hover:text-blue-600">フィールドの構成要素</a></li>
+<li><a href="./rules-03.html" class="text-gray-700 hover:text-blue-600">プレイヤーの行動</a></li>
+<li><a href="./rules-04.html" class="text-gray-700 hover:text-blue-600">アイテム取得とブロック出現</a></li>
+<li><a href="./rules-05.html" class="text-gray-700 hover:text-blue-600">勝利条件</a></li>
+<li><a href="./rules-06.html" class="text-gray-700 hover:text-blue-600">Pythonを書く場所</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第2部　Python編</p>
+      <ul class="space-y-1">
+        <li><a href="./tutorial-00.html" class="text-gray-700 hover:text-blue-600">0章　Pythonの基礎と、CHaserの書き方</a></li>
+<li><a href="./tutorial-01.html" class="text-gray-700 hover:text-blue-600">1章　移動と繰り返し</a></li>
+<li><a href="./tutorial-02.html" class="text-gray-700 hover:text-blue-600">2章　情報の読み取りと条件分岐</a></li>
+<li><a href="./tutorial-03.html" class="text-gray-700 hover:text-blue-600">3章　探査と、行動の決め方</a></li>
+<li><a href="./tutorial-04.html" class="text-gray-700 hover:text-blue-600">4章　ターンの仕組みと、攻撃</a></li>
+<li><a href="./tutorial-05.html" class="text-gray-700 hover:text-blue-600">5章　変数と関数</a></li>
+<li><a href="./tutorial-06.html" class="text-gray-700 hover:text-blue-600">6章　総合演習と、Blockly⇔Python対応表</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">第3部　実践</p>
+      <ul class="space-y-1">
+        <li><a href="./practice-01.html" class="text-gray-700 hover:text-blue-600">1章　Pythonの画面の使い方</a></li>
+<li><a href="./practice-02.html" class="text-gray-700 hover:text-blue-600">2章　対戦ルームの使い方</a></li>
+<li><a href="./practice-03.html" class="text-gray-700 hover:text-blue-600">3章　やりたいことをプログラムにする</a></li>
+      </ul>
+    </div>
+
+    <div class="mb-4">
+      <p class="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">資料</p>
+      <ul class="space-y-1">
+        <li><a href="./answers.html" class="text-gray-700 hover:text-blue-600">演習・確認クイズの解答</a></li>
+<li><a href="./tutorial-examples.html" class="font-bold text-blue-700">チュートリアル解答例集</a></li>
+<li><a href="./glossary.html" class="text-gray-700 hover:text-blue-600">用語集</a></li>
+      </ul>
+    </div>
+        </nav>
+      </details>
+    </aside>
+
+    <main class="min-w-0 flex-1">
+      <p class="mb-2 text-sm text-gray-500">資料</p>
+      <h1 class="mb-6 text-3xl font-bold">チュートリアル解答例集</h1>
+      <div class="mb-6 rounded-lg border border-amber-400 bg-amber-50 px-4 py-3 text-amber-900">
+        <p class="font-semibold">⚠️ ネタバレ注意</p>
+        <p class="mt-1 text-sm">このページには全ステージの解答例が掲載されています。自分で組んだプログラムと見比べたいときに開いてください。</p>
+      </div>
+      <article class="prose prose-blue max-w-none prose-img:mx-auto">
+        <p>第2部では、いくつかの代表的なステージだけを取り上げて、Pythonのコードを紹介しました。この付録では、チュートリアルのステージ1〜8（1-1〜8-3、全37ステージ）について、実際にクリアしたときのPythonのコードを1つずつ掲載します。</p>
+<p><strong>ステージ9（9-1〜9-3）は、解答例を載せていません。</strong> ここまでの力で、自分で組み立てるステージだからです（入門編の付録2も同じです）。</p>
+<p>どのコードも「これが唯一の正解」というわけではなく、あくまで一例です。動きが同じなら、書き方が違っても間違いではありません。自分のコードと見比べて、「同じ考え方で書けているか」「もっと短く書けそうか」を確認する材料として使ってください。</p>
+<ul>
+<li>コードは、チュートリアルのPython画面（<code>/tutorial-python</code>）に、そのまま入力して試せる書き方です。命令は<code>player.</code>を付けずに書きます（本番の対戦では<code>player.</code>が必要です）。</li>
+<li>実機のチュートリアルで、すべてクリアできることを確かめています（乱数のあるステージは、複数回試しました）。</li>
+<li>ブロックの解答例は、入門編の付録2にあります。</li>
+</ul>
+<h3>ステージ1　移動</h3>
+<p>本文第2部1章に対応します。上下左右への移動（<code>walk</code>）を並べる練習です。</p>
+<h4>1-1　キャラクターを移動させよう１</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、真上に2マス先 → 1回の移動で、進めるのは1マス → だから、「上へ移動」を2回</p>
+<pre><code class="language-python">walk(Up)
+walk(Up)
+</code></pre>
+</div></details><h4>1-2　キャラクターを移動させよう２</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、右に2マス先 → 向きだけが、1-1とちがう → 「右へ移動」を2回</p>
+<pre><code class="language-python">walk(Right)
+walk(Right)
+</code></pre>
+</div></details><h4>1-3　いろいろな方法に移動させよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：縦に2マス、横に4マス → 縦と横を、分けて数える → 動きを順に並べる（合計6回）</p>
+<pre><code class="language-python">walk(Up)
+walk(Up)
+walk(Right)
+walk(Right)
+walk(Right)
+walk(Right)
+</code></pre>
+</div></details><h4>1-4　移動の順序を考えよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：まっすぐ行くと、ブロックにぶつかる → 通れる道を、先に決める → 道のとおりに、向きごとに数える → 右1 → 上2 → 右4 の順に並べる</p>
+<pre><code class="language-python">walk(Right)
+walk(Up)
+walk(Up)
+walk(Right)
+walk(Right)
+walk(Right)
+walk(Right)
+</code></pre>
+<p>ブロックにぶつからない道を先に決めて、その順番どおりに書きます。</p>
+</div></details><h3>ステージ2　繰り返し</h3>
+<p>本文第2部1章に対応します。<code>for</code>で、同じ動きをまとめます。</p>
+<h4>2-1　繰り返しを使おう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：同じ向きに4マス進む → 1回ずつ書かず、繰り返しでまとめる → 「4回繰り返す」の中に「右へ移動」</p>
+<pre><code class="language-python">for i in range(4):
+    walk(Right)
+</code></pre>
+<p>繰り返したい命令は、<code>for</code>の次の行から字下げして書きます。</p>
+</div></details><h4>2-2　繰り返しをつなげよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：向きが変わる区間が、3つある → 区間ごとに、繰り返しを1つ使う → 3つを、上から順につなげる</p>
+<pre><code class="language-python">for i in range(4):
+    walk(Down)
+for i in range(4):
+    walk(Right)
+for i in range(4):
+    walk(Up)
+</code></pre>
+</div></details><h4>2-3　繰り返すところを考えよう１</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：右に6マス、そのあと上に1マス → 繰り返すのは「右」だけ → 上への1回は、繰り返しの外に置く</p>
+<pre><code class="language-python">for i in range(6):
+    walk(Right)
+walk(Up)
+</code></pre>
+</div></details><h4>2-4　繰り返すところを考えよう２</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：「右・下」の2手が、くり返されている → 間に「下」が1回だけ入る → 「繰り返し → 下1回 → 繰り返し」の3部構成</p>
+<pre><code class="language-python">for i in range(3):
+    walk(Right)
+    walk(Down)
+walk(Down)
+for i in range(3):
+    walk(Right)
+    walk(Down)
+</code></pre>
+</div></details><h4>2-5　繰り返しを繰り返そう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：「右2・上2」が、ひと組 → ひと組を、2回くり返す → 内側で右2回と上2回、外側でひと組を2回</p>
+<pre><code class="language-python">for i in range(2):
+    for j in range(2):
+        walk(Right)
+    for j in range(2):
+        walk(Up)
+</code></pre>
+<p>内側の<code>for</code>と外側の<code>for</code>で、変数の名前を変えています。</p>
+</div></details><h3>ステージ3　フィールド情報と条件分岐</h3>
+<p>本文第2部2章に対応します。<code>map_info</code>で周りを見て、<code>if</code>・<code>elif</code>・<code>else</code>で動きを選びます。</p>
+<h4>3-1　周りを見て行動しよう１</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは上方向。途中にブロックがある → 上がブロックなら右、そうでなければ上 → 毎ターン判断するので、ずっと繰り返す</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Block:
+        walk(Right)
+    else:
+        walk(Up)
+</code></pre>
+</div></details><h4>3-2　周りを見て行動しよう２</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：状況は3つ：左がアイテム／上がブロック／それ以外 → アイテムを逃さないよう、左を先に判定 → 条件は上から調べ、最初に成り立つものだけ実行</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Left] == Item:
+        walk(Left)
+    elif map_info[Up] == Block:
+        walk(Right)
+    else:
+        walk(Up)
+</code></pre>
+<p>条件は上から順に調べるので、アイテムを逃さないよう、左のアイテムを先に判定しています。</p>
+</div></details><h4>3-3　アイテムをたどってみよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：8方向を見て、アイテムの方向を判断 → 上下左右は1回、斜めは2手で取る → どれもなければ下へ進み、下の斜めも確認</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Item:
+        walk(Up)
+    elif map_info[Left] == Item:
+        walk(Left)
+    elif map_info[Right] == Item:
+        walk(Right)
+    elif map_info[UpRight] == Item:
+        walk(Up)
+        walk(Right)
+    elif map_info[UpLeft] == Item:
+        walk(Up)
+        walk(Left)
+    else:
+        walk(Down)
+        if map_info[DownRight] == Item:
+            walk(Right)
+        elif map_info[DownLeft] == Item:
+            walk(Left)
+</code></pre>
+</div></details><h4>3-4　周りだけじゃわからない？</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：隣だけ見ても、正解が分からない場所がある → 最初の動きは、先に決めて書いておく → そのあとは「下がブロックなら左、そうでなければ下」</p>
+<pre><code class="language-python">walk(Up)
+walk(Up)
+walk(Up)
+walk(Up)
+walk(Left)
+while True:
+    map_info = get_ready()
+    if map_info[Down] == Block:
+        walk(Left)
+    else:
+        walk(Down)
+</code></pre>
+</div></details><h4>3-5　ジグザグの迷路を進もう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：通れる道に、アイテムが並んでいる → 上・下・左・右のアイテムを順に判定 → アイテムの向きに進めば、迷路を自然にたどれる</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Item:
+        walk(Up)
+    elif map_info[Down] == Item:
+        walk(Down)
+    elif map_info[Left] == Item:
+        walk(Left)
+    elif map_info[Right] == Item:
+        walk(Right)
+</code></pre>
+</div></details><h4>3-6　市松模様の壁を進もう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、左右の壁ぎわに現れる → 右 → 左 の順に調べ、なければ下へ → ターン数が短い。むだな動きは、しない</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Right] == Item:
+        walk(Right)
+    elif map_info[Left] == Item:
+        walk(Left)
+    else:
+        walk(Down)
+</code></pre>
+</div></details><h3>ステージ4　探査（look・search）の活用</h3>
+<p>本文第2部3章に対応します。<code>look</code>と<code>search</code>で、遠くを調べてから動きます。</p>
+<h4>4-1　遠くを見てみよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、上下左右のどこか1か所 → 4方向を順に search（遠方探査）する → 見つかった方向を覚えて、進み続ける</p>
+<pre><code class="language-python">for direction in (Up, Down, Left, Right):
+    search_info = search(direction)
+    if Item in search_info:
+        break
+while True:
+    walk(direction)
+</code></pre>
+<p><code>for</code>で4方向を順に<code>search</code>し、アイテムが見つかった時点で<code>break</code>します。そのあと、<code>direction</code>に入ったままの方向へ進み続けます。</p>
+</div></details><h4>4-2　情報をリストにまとめよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：4-1と同じ：アイテムの方向を探す → search の結果は、9マスぶんのリスト → 「リストに含まれるか」で、位置は気にしない</p>
+<pre><code class="language-python">for direction in (Up, Down, Left, Right):
+    search_info = search(direction)
+    if Item in search_info:
+        break
+while True:
+    walk(direction)
+</code></pre>
+</div></details><h4>4-3　自分の位置を確かめよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：スタート位置は、毎回ちがう → 上を search。壁が見えれば、上半分にいる → 右を search して、見えるまで縦に進む → 見えたら、右へ進み続ける</p>
+<pre><code class="language-python">search_info = search(Up)
+if Block in search_info:
+    vertical = Down
+else:
+    vertical = Up
+while True:
+    search_info = search(Right)
+    if Item in search_info:
+        break
+    walk(vertical)
+while True:
+    walk(Right)
+</code></pre>
+</div></details><h4>4-4　自縛を回避しよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：上にアイテムがあるときだけ、危険を確認 → 左上・右上がブロックなら、挟まれる恐れ → look で2マス先を見て、ブロックなら右へ迂回 → 安全なら、そのまま取る</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Item:
+        if map_info[UpLeft] == Block and map_info[UpRight] == Block:
+            look_info = look(Up)
+            map_info = get_ready()
+            if look_info[Center] == Block:
+                walk(Right)
+            else:
+                walk(Up)
+        else:
+            walk(Up)
+    else:
+        walk(Right)
+</code></pre>
+<p><code>look</code>は1回の行動なので、直後に<code>get_ready()</code>で情報を取り直してから<code>walk</code>しています。</p>
+</div></details><h4>4-5　斜め方向をlookで見つけよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、斜め方向にある → 上・右・下・左の順に look（近隣探査） → 見つかった向きと位置から、3手を決める</p>
+<pre><code class="language-python">look_info = look(Up)
+if look_info[Right] == Item:
+    walk(Up)
+    walk(Up)
+    walk(Right)
+else:
+    look_info = look(Right)
+    if look_info[Up] == Item:
+        walk(Right)
+        walk(Right)
+        walk(Up)
+    else:
+        look_info = look(Down)
+        if look_info[Left] == Item:
+            walk(Down)
+            walk(Down)
+            walk(Left)
+        else:
+            walk(Left)
+            walk(Left)
+            walk(Down)
+</code></pre>
+</div></details><h4>4-6　近くはlook、遠くはsearch</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：近くは look、遠くは search → look で4方向を調べ、近くのアイテムを取る → なければ search で、一直線を調べる → 見つかった方向へ、進み続ける</p>
+<pre><code class="language-python">found = False
+for direction, side, path in (
+        (Up, Right, (Up, Up, Right)),
+        (Right, Down, (Right, Right, Down)),
+        (Down, Left, (Down, Down, Left)),
+        (Left, Up, (Left, Left, Up))):
+    look_info = look(direction)
+    if look_info[side] == Item:
+        for step in path:
+            walk(step)
+        found = True
+        break
+if not found:
+    for direction in (Up, Down, Right, Left):
+        search_info = search(direction)
+        if Item in search_info:
+            break
+    while True:
+        walk(direction)
+</code></pre>
+</div></details><h3>ステージ5　ターンの仕組み</h3>
+<p>本文第2部4章に対応します。CPUがいるステージです。毎ターン<code>get_ready()</code>で、自分の番を待ちます。</p>
+<h4>5-1　自分の番を待ってみよう１</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：CPUがいるので、毎ターン自分の番を待つ → <code>get_ready()</code>してから、動く → ずっと繰り返す</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    walk(Right)
+</code></pre>
+</div></details><h4>5-2　自分の番を待ってみよう２</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：最初に、上へ1マス → アイテムが上下にあれば、2マス続けて進む → 1手動くたびに、<code>get_ready()</code></p>
+<pre><code class="language-python">get_ready()
+walk(Up)
+while True:
+    map_info = get_ready()
+    if map_info[Down] == Item:
+        walk(Down)
+        get_ready()
+        walk(Down)
+    elif map_info[Up] == Item:
+        walk(Up)
+        get_ready()
+        walk(Up)
+    else:
+        walk(Right)
+</code></pre>
+</div></details><h4>5-3　たくさんアイテムをゲットしよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムが50個ある → 上・下・左にアイテムがあれば、取りに行く → どれもなければ、右へ進む</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Up] == Item:
+        walk(Up)
+    elif map_info[Down] == Item:
+        walk(Down)
+    elif map_info[Left] == Item:
+        walk(Left)
+    else:
+        walk(Right)
+</code></pre>
+</div></details><h4>5-4　CPUとアイテムを取り合おう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムの場所は決まっている → CPUと取り合うので、最短の道を決めておく → 1手ごとに<code>get_ready()</code>してから動く</p>
+<pre><code class="language-python">for direction in (Right, Right, Down, Down, Right, Up, Up, Up, Up, Left):
+    get_ready()
+    walk(direction)
+</code></pre>
+<p>アイテムの場所が決まっているステージなので、道順を先に決めておきます。ただし、CPUに先に取られると失敗することがあります（実機で15回中13回クリア）。</p>
+</div></details><h4>5-5　番を待ちつつ遠くを探そう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、上下左右のどこか → 毎回<code>get_ready()</code>してから、search する → 見つかった方向へ、進み続ける</p>
+<pre><code class="language-python">for direction in (Up, Down, Left, Right):
+    get_ready()
+    search_info = search(direction)
+    if Item in search_info:
+        break
+while True:
+    get_ready()
+    walk(direction)
+</code></pre>
+</div></details><h3>ステージ6　ブロック設置とアタック</h3>
+<p>本文第2部4章に対応します。<code>put</code>で相手にブロックを置いて勝ちます。</p>
+<h4>6-1　相手にブロックを置いてみよう１</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：相手（CPU）は、動かない → 右にいたら、ブロックを置く → いなければ、右へ進む</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Right] == Enemy:
+        put(Right)
+    else:
+        walk(Right)
+</code></pre>
+</div></details><h4>6-2　広いマップでブロックを置こう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：相手が、ランダムに動く広いマップ → 最初に1個ブロックを置き、距離の偶奇をずらす → 隣に相手がいたら置く → いなければ、右へ進む</p>
+<pre><code class="language-python">map_info = get_ready()
+put(Left)
+while True:
+    map_info = get_ready()
+    if map_info[Up] == Enemy:
+        put(Up)
+    elif map_info[Down] == Enemy:
+        put(Down)
+    elif map_info[Right] == Enemy:
+        put(Right)
+    else:
+        walk(Right)
+</code></pre>
+<p>先頭の<code>put(Left)</code>は、距離の偶奇をずらすためのものです（第2部4章）。これがないとクリアできません。</p>
+</div></details><h4>6-3　相手にブロックを置いてみよう２</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：相手は下にいる。右にブロックがある → 下にいたら、ブロックを置く → 右がふさがれたら、上か下へよける → そうでなければ、右へ進む</p>
+<pre><code class="language-python">while True:
+    map_info = get_ready()
+    if map_info[Down] == Enemy:
+        put(Down)
+    elif map_info[Right] == Block:
+        if map_info[Up] == Block:
+            walk(Down)
+        else:
+            walk(Up)
+    else:
+        walk(Right)
+</code></pre>
+</div></details><h4>6-4　動く相手にブロックを置いてみよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：動く相手：毎ターン、位置が変わる → 最初に1個置いて、距離の偶奇をずらす → 4方向を順に見張り、相手がいたら置く → ふさがった向きは、次の向きに切り替える</p>
+<pre><code class="language-python">directions = [Down, Right, Up, Left]
+i = 0
+map_info = get_ready()
+put(Up)
+while True:
+    map_info = get_ready()
+    while i &lt; 3 and map_info[directions[i]] not in (Enemy, Floor):
+        i += 1
+    d = directions[i]
+    if map_info[d] == Enemy:
+        put(d)
+    elif map_info[d] == Floor:
+        walk(d)
+    else:
+        walk(Right)
+</code></pre>
+<p>先頭の<code>put(Up)</code>は、距離の偶奇をずらすためのものです（第2部4章）。そのあと、見張る方向を順に切り替えます。</p>
+</div></details><h3>ステージ7　変数と関数</h3>
+<p>本文第2部5章に対応します。変数に覚えさせ、関数（<code>def</code>）に処理をまとめます。</p>
+<h4>7-1　変数を使ってみよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムの方向を、変数に覚えておく → 4方向を search し、見つけたら変数に入れる → ずっと、変数の方向へ進む</p>
+<pre><code class="language-python">move_dir = Right
+for direction in (Up, Down, Left, Right):
+    search_info = search(direction)
+    if Item in search_info:
+        move_dir = direction
+        break
+while True:
+    walk(move_dir)
+</code></pre>
+</div></details><h4>7-2　関数を使ってみよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：処理を、2つの関数に分ける → アイテムゲット：隣にあれば取る（結果を返す） → ランダム移動：進める向きから、ランダムに選ぶ → メイン：取れなければ、ランダム移動</p>
+<pre><code class="language-python">import random
+
+
+def get_item():
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Item:
+            walk(direction)
+            return True
+    return False
+
+
+def random_move():
+    free = []
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] != Block:
+            free.append(direction)
+    if free:
+        walk(random.choice(free))
+
+
+while True:
+    map_info = get_ready()
+    if not get_item():
+        random_move()
+</code></pre>
+<p>関数は、<code>def</code>の行の下に、字下げして処理を書きます。<code>map_info</code>は関数の外で作った変数ですが、関数の中から読めます。</p>
+</div></details><h4>7-3　関数を使ってみよう２</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテム方向：アイテムのある向きを返す → ランダム方向：進める向きからランダムに選ぶ → メイン：向きが決まらなければ、ランダム</p>
+<pre><code class="language-python">import random
+
+
+def random_move():
+    free = []
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] != Block:
+            free.append(direction)
+    if free:
+        walk(random.choice(free))
+
+
+def item_direction():
+    for direction in (Up, Down, Left, Right):
+        if map_info[direction] == Item:
+            return direction
+    return None
+
+
+while True:
+    map_info = get_ready()
+    direction = item_direction()
+    if direction is None:
+        random_move()
+    else:
+        walk(direction)
+</code></pre>
+</div></details><h3>ステージ8　総合演習</h3>
+<p>本文第2部6章に対応します。これまでの道具を組み合わせる、チュートリアルの集大成です。</p>
+<h4>8-1　障害物を回避しよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：ブロックがランダムに置かれている → 進行方向を決め、ふさがったら左へよける → よけた回数を、変数に覚えておく → 安全になったら、右へ戻る</p>
+<pre><code class="language-python">search_info = search(Up)
+if Item in search_info:
+    forward = Up
+else:
+    forward = Down
+side = 0
+dodging = False
+while True:
+    map_info = get_ready()
+    if side &gt; 0 and map_info[Right] != Block and not dodging:
+        walk(Right)
+        side -= 1
+    elif map_info[forward] != Block:
+        walk(forward)
+        dodging = False
+    else:
+        walk(Left)
+        side += 1
+        dodging = True
+</code></pre>
+</div></details><h4>8-2　行き止まりを回避しよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：アイテムは、4つの行き止まりのどれか → search で、進む向きを決める → ふさがったら、よける向きへ進む → 行き止まりなら、よける向きを反対にする</p>
+<pre><code class="language-python">for forward in (Up, Down, Left, Right):
+    search_info = search(forward)
+    if Item in search_info:
+        break
+back = {Up: Down, Down: Up, Left: Right, Right: Left}[forward]
+if forward in (Up, Down):
+    left_or_up, right_or_down = Left, Right
+else:
+    left_or_up, right_or_down = Up, Down
+slide = left_or_up
+pos = 0
+depth = 0
+bad = []
+fresh = False
+while True:
+    map_info = get_ready()
+    if depth &gt; 0 and map_info[forward] == Block and map_info[left_or_up] == Block and map_info[right_or_down] == Block:
+        bad.append(pos)
+        for i in range(depth):
+            walk(back)
+        depth = 0
+    elif map_info[forward] == Block or (pos in bad and depth == 0):
+        if map_info[slide] == Block:
+            if slide == left_or_up:
+                slide = right_or_down
+            else:
+                slide = left_or_up
+        walk(slide)
+        if slide == left_or_up:
+            pos += 1
+        else:
+            pos -= 1
+        fresh = True
+    elif fresh:
+        walk(forward)
+        depth += 1
+        fresh = False
+    elif pos &gt; 0 and map_info[right_or_down] != Block:
+        walk(right_or_down)
+        pos -= 1
+        depth = 0
+    elif pos &lt; 0 and map_info[left_or_up] != Block:
+        walk(left_or_up)
+        pos += 1
+        depth = 0
+    else:
+        walk(forward)
+        if pos != 0:
+            depth += 1
+    if pos == 0:
+        bad = []
+</code></pre>
+<p>進む向き（<code>forward</code>）がふさがったら、横（<code>slide</code>）へよけます。よけた量（<code>pos</code>）を覚えておいて、障害物を通り過ぎたら元の線に戻ります。行き止まりに入ったら、その位置（<code>pos</code>）を<code>bad</code>に覚えて、別のすき間を探します。</p>
+</div></details><h4>8-3　見つけた情報を記録しよう</h4><details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">解答例を見る</summary><div class="border-t border-amber-200 px-4 py-4">
+<p><strong>考え方</strong>：自分の座標を、動くたびに更新する → 4方向を search し、アイテムの座標をメモする → いちばん近いメモへ向かう → 着いたらメモから消す。逆戻りはしない</p>
+<pre><code class="language-python">x = 0
+y = 0
+memo = []
+before = None
+opposite = {Up: Down, Down: Up, Left: Right, Right: Left}
+step = {Up: (0, -1), Down: (0, 1), Left: (-1, 0), Right: (1, 0)}
+while True:
+    for direction in (Up, Right, Down, Left):
+        search_info = search(direction)
+        dx, dy = step[direction]
+        for k in range(1, 10):
+            cell = search_info[k - 1]
+            if cell == Block:
+                break
+            if cell == Item and (x + dx * k, y + dy * k) not in memo:
+                memo.append((x + dx * k, y + dy * k))
+    map_info = get_ready()
+    choice = None
+    if memo:
+        memo.sort(key=lambda p: abs(p[0] - x) + abs(p[1] - y))
+        tx, ty = memo[0]
+        if ty &gt; y and map_info[Down] != Block and before != Up:
+            choice = Down
+        elif ty &lt; y and map_info[Up] != Block and before != Down:
+            choice = Up
+        elif tx &gt; x and map_info[Right] != Block and before != Left:
+            choice = Right
+        elif tx &lt; x and map_info[Left] != Block and before != Right:
+            choice = Left
+    if choice is None:
+        for direction in (Up, Right, Down, Left):
+            if map_info[direction] != Block and before != opposite[direction]:
+                choice = direction
+                break
+    walk(choice)
+    before = choice
+    dx, dy = step[choice]
+    x += dx
+    y += dy
+    if (x, y) in memo:
+        memo.remove((x, y))
+</code></pre>
+<p>自分の座標（<code>x</code>, <code>y</code>）を、動くたびに更新します。<code>search</code>で見つけたアイテムの座標を<code>memo</code>に記録して、いちばん近いものへ向かいます。着いたら、<code>memo</code>から消します。<code>before</code>は直前の向きで、すぐに引き返さないために使います。</p>
+<hr>
+<p>ステージ1から8まで、こうして見比べてみると、使っている道具は、移動（<code>walk</code>）・繰り返し（<code>for</code>・<code>while</code>）・条件分岐（<code>if</code>）・探査（<code>look</code>・<code>search</code>）・変数・関数という、本文で学んだ数種類だけです。ステージが進むにつれてコードが長くなるのは、道具の種類が増えているからではなく、その道具をどう組み合わせるかの工夫が積み重なっているからです。行き詰まったときは、長いコードを一度に理解しようとせず、「これはどの道具とどの道具の組み合わせでできているか」を1つずつ分解して読んでみてください。</p>
+</div></details>
+      </article>
+
+      
+
+      <div class="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+        <p class="font-semibold">参考資料</p>
+        <ul class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <li><a class="text-blue-600 hover:underline" href="./answers.html">演習・確認クイズの解答</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./tutorial-examples.html">チュートリアル解答例集</a></li>
+          <li><a class="text-blue-600 hover:underline" href="./glossary.html">用語集</a></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <footer class="mt-12 border-t border-gray-200 bg-gray-800 py-6 text-center text-sm text-gray-300">
+    <p>Copyright &copy; U-15 プログラミングコンテスト 舞鶴大会</p>
+  </footer>
+</body>
+</html>
