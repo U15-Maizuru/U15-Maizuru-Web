@@ -234,13 +234,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-1 gap-2">
                     <div class="bg-white rounded-xl p-6 hover-card flex flex-col items-center">
                         <div class="mt-10 w-full max-w-4xl bg-white shadow-lg rounded-lg p-1">
-                            <img id="slide" src="./images/CHaser/スライド2.PNG" alt="CHaser解説スライド 2枚目" class="w-full border rounded transition-opacity duration-300">
+                            <img id="slide" src="./images/CHaser/スライド1.PNG" alt="CHaser解説スライド 1枚目" class="w-full border rounded transition-opacity duration-300">
                         </div>
 
                         <div class="mt-6 items-center gap-4">
                             <button onclick="prevSlide()"
                                 class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">前へ</button>
-                            <input type="number" id="pageInput" min="1" max="46"
+                            <input type="number" id="pageInput" min="1" max="73"
                                 class="w-16 border border-blue-500 rounded px-2 py-1px-4 py-2 rounded text-center text-blue-600"/>
                             <button onclick="goToSlide()"
                                 class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">表示</button>
@@ -254,8 +254,8 @@
                         </div>
 
                         <script>
-                            let current = 2;  // 最初のスライド番号
-                            const total = 46; // スライド枚数
+                            let current = 1;  // 最初のスライド番号
+                            const total = 73; // スライド枚数
 
                             document.getElementById('pageInput').value = current;
 
