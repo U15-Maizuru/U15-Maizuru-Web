@@ -127,11 +127,13 @@ const editions = [
     manifest: pythonManifest,
     references: [
       { slug: 'answers', title: '演習・確認クイズの解答', spoiler: true },
+      { slug: 'tutorial-examples', title: 'チュートリアル解答例集', spoiler: true },
       { slug: 'glossary', title: '用語集', spoiler: false },
     ],
     files: {
       answers: 'manuscript_python/appendix/01_answers.md',
-      glossary: 'manuscript_python/appendix/02_glossary.md',
+      examples: 'manuscript_python/appendix/02_tutorial_answers.md',
+      glossary: 'manuscript_python/appendix/03_glossary.md',
     },
     switchTo: { href: '../index.html', label: '入門編（Blockly版）へ' },
     introHtml: `
@@ -145,7 +147,7 @@ const editions = [
 
   <p>いちばんおすすめの読み方は、<strong>第1部 → 第2部 → 第3部</strong>の順番です。早く対戦したいときは、第1部 → 第2部0章 → 第3部の1章・2章と読み、必要になった章に戻っても構いません。</p>
 
-  <p>チュートリアルの各ステージの解答例は、入門編の <a href="../tutorial-examples.html">チュートリアル解答例集</a> に、ブロックで載っています。この解説では、本文のコードを解答例としています。</p>`,
+  <p>チュートリアルの各ステージのPythonの解答例は、<a href="./tutorial-examples.html">チュートリアル解答例集</a> にまとめています（ブロックの解答例は、入門編の <a href="../tutorial-examples.html">チュートリアル解答例集</a> です）。</p>`,
     groupDescriptions: {
       part1: '対戦ルーム、フィールド、勝敗の決まり方と、Pythonを書く場所（チュートリアルの画面と、対戦用の画面）を説明します。まずはここから。',
       part2: 'Pythonの基礎と、CHaserの命令をPythonで書く方法を、章ごとに説明します。コードは、チュートリアルのPython画面にそのまま入力して試せる書き方です。',
@@ -227,7 +229,7 @@ function extractHeadingBlocks(html) {
 
 // predicate に一致する見出しについて、その見出し「本文」(次の h2/h3/h4 見出しの
 // 直前まで、内部の h5/h6 も含む)を <details> で折りたたむ。見出し自体は残す。
-function foldMatchingSections(html, predicate, { requireImage = false, summaryLabel = '解答例を見る' } = {}) {
+function foldMatchingSections(html, predicate, { requireAny = null, summaryLabel = '解答例を見る' } = {}) {
   const blocks = extractHeadingBlocks(html);
   for (let i = blocks.length - 1; i >= 0; i--) {
     const b = blocks[i];
@@ -236,7 +238,7 @@ function foldMatchingSections(html, predicate, { requireImage = false, summaryLa
     const contentEnd = i + 1 < blocks.length ? blocks[i + 1].tagStart : html.length;
     const inner = html.slice(contentStart, contentEnd);
     if (!inner.trim()) continue;
-    if (requireImage && !inner.includes('<img')) continue;
+    if (requireAny && !requireAny.some(marker => inner.includes(marker))) continue;
     const wrapped = `<details class="answer-details my-4 rounded-lg border border-amber-300 bg-amber-50"><summary class="cursor-pointer select-none rounded-lg px-4 py-3 font-semibold text-amber-800">${summaryLabel}</summary><div class="border-t border-amber-200 px-4 py-4">${inner}</div></details>`;
     html = html.slice(0, contentStart) + wrapped + html.slice(contentEnd);
   }
@@ -273,8 +275,20 @@ function buildAnswersHtml(ed) {
   return renderMarkdown(raw);
 }
 
-// 付録2: 分割画像(_partN)をraw(分割前)画像へ差し替え、ステージごとに折りたたむ。
+// 付録2: チュートリアル解答例集。Python版はコード(```python)が解答そのものなので、
+// 画像の分割・差し替えは行わず、ステージごとにコードの有無で折りたたむ。
+function buildPythonTutorialExamplesHtml(ed) {
+  let raw = readManuscript(ed.files.examples);
+  raw = raw.replace(/^##\s+付録\d+[^\n]*\n/m, '');
+  let html = renderMarkdown(raw);
+  html = foldMatchingSections(html, b => b.level === 4 && /^\d+-\d+/.test(b.text.trim()), { requireAny: ['<pre'] });
+  return html;
+}
+
+// 付録2(Blockly版): 分割画像(_partN)をraw(分割前)画像へ差し替え、ステージごとに折りたたむ。
 function buildTutorialExamplesHtml(ed) {
+  if (ed.id === 'python') return buildPythonTutorialExamplesHtml(ed);
+
   let raw = readManuscript(ed.files.examples);
   raw = raw.replace(/^##\s+付録2[^\n]*\n/m, '');
 
@@ -322,7 +336,7 @@ function buildTutorialExamplesHtml(ed) {
   raw = convertImages(raw, mdAbsPath, ed.root);
 
   let html = renderMarkdown(raw);
-  html = foldMatchingSections(html, b => b.level === 4 && /^\d+-\d+/.test(b.text.trim()), { requireImage: true });
+  html = foldMatchingSections(html, b => b.level === 4 && /^\d+-\d+/.test(b.text.trim()), { requireAny: ['<img'] });
   return html;
 }
 
@@ -519,9 +533,11 @@ function buildEdition(ed) {
   });
 
   if (ed.files.examples) {
+    const range = ed.id === 'python' ? '1-1〜8-3' : '1-1〜9-3';
+    const kind = ed.id === 'python' ? 'Python' : 'Blockly';
     writePage(ed, 'tutorial-examples', {
       title: 'チュートリアル解答例集',
-      description: `${ed.siteName} チュートリアル全ステージ（1-1〜9-3）のBlockly解答例集です。`,
+      description: `${ed.siteName} チュートリアルステージ（${range}）の${kind}解答例集です。`,
       breadcrumb: '資料',
       contentHtml: buildTutorialExamplesHtml(ed),
       spoiler: true,
