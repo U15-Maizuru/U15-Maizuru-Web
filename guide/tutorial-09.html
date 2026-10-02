@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>9章　変数と関数を活用する | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <title>9章　変数と関数を活用する | CHaser解説（Blockly編）</title>
   <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル 9章　変数と関数を活用する">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
@@ -100,6 +100,36 @@
 <p>変数は「名前の付いた箱」です。「セット」で箱に入れておけば、あとは<code>移動方向</code>ブロックを置くだけで、いつでも中身を取り出せます。なお、このステージでは箱の名前（「移動方向」）はあらかじめ決められています。自分で新しい変数を作れるようになるのは、ステージ8以降と本番のプログラミング画面です。</p>
 <h3>7-1 変数を活用しよう</h3>
 <p><strong>課題</strong>：右方向にアイテムがあるかどうかを一度だけ調べて方針を決め、あとはその方針に沿ってずっと進み続けるプログラムを作ろう。</p>
+<!-- stage-info:7-1 -->
+<p><strong>ステージ7-1のマップとクリア条件</strong></p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/stages/stage_7-1.png" alt="ステージ7-1のマップ" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ステージ7-1のマップ</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>クリア条件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アイテム</td>
+<td>1個ゲットする</td>
+</tr>
+<tr>
+<td>ブロック数</td>
+<td>35個以下</td>
+</tr>
+<tr>
+<td>ターン数</td>
+<td>100ターン以内</td>
+</tr>
+</tbody>
+</table>
+<p>黄色の枠が自分（Cool）のスタート位置です。すべての条件を同時に満たすとクリアです。アイテムの位置は毎回変わります（マップの半透明の表示は、出現位置の候補です）。</p>
+<!-- /stage-info -->
 <h4>💡 考えるヒント</h4>
 <ul>
 <li>5章・6章で学んだ遠方探査と「含まれているか」の判定を使って、右方向にアイテムがあるかどうかを一度だけ調べます。</li>
@@ -133,6 +163,36 @@
 <p>2つの定義ブロックをよく見ると、形が違うことに気づきます。<code>アイテムゲット</code>のほうには「返す」というくぼみが付いていて、結果を呼び出し元に返せます。<code>ランダム移動</code>のほうにはそれがなく、実行するだけです。この違いが、9章の冒頭で触れた「戻り値」のあるなしです。</p>
 <h3>7-2 関数を使ってみよう</h3>
 <p><strong>課題</strong>：「アイテムを探して取る」処理と「ランダムに動く」処理を、それぞれ名前の付いた部品にまとめて、メインの処理をすっきりさせよう。</p>
+<!-- stage-info:7-2 -->
+<p><strong>ステージ7-2のマップとクリア条件</strong></p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/stages/stage_7-2.png" alt="ステージ7-2のマップ" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ステージ7-2のマップ</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>クリア条件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アイテム</td>
+<td>10個ゲットする</td>
+</tr>
+<tr>
+<td>ブロック数</td>
+<td>実質、制限なし</td>
+</tr>
+<tr>
+<td>ターン数</td>
+<td>100ターン以内</td>
+</tr>
+</tbody>
+</table>
+<p>黄色の枠が自分（Cool）のスタート位置です。すべての条件を同時に満たすとクリアです。</p>
+<!-- /stage-info -->
 <h4>💡 考えるヒント</h4>
 <ul>
 <li>このステージのツールボックスには、紫色の関数ブロックが4つ用意されています。</li>

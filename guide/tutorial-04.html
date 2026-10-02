@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4章　条件分岐 | CHaser解説（Blockly編） | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <title>4章　条件分岐 | CHaser解説（Blockly編）</title>
   <meta name="description" content="CHaser解説（Blockly編） 第2部　チュートリアル 4章　条件分岐">
   <link rel="icon" href="../images/favicon.ico" sizes="any">
   <link rel="icon" href="../images/icon.svg" type="image/svg+xml">
@@ -92,6 +92,36 @@
 <p>周辺情報を使って「もし〇〇なら、こう動く」という判断をするブロックが「もし〜なら」ブロックです。3章で「調べる」方法を学んだので、この章ではその結果をもとに「判断して動く」方法を学びます。</p>
 <h3>3-1 もし〜なら、そうでなければ（if〜else）</h3>
 <p><strong>課題</strong>：上のマスがブロックかどうかで、動く方向を自動的に切り替えるプログラムを作ろう。「上がブロックのときは別の方向へ、そうでないときは上へ」進むようにしたい。</p>
+<!-- stage-info:3-1 -->
+<p><strong>ステージ3-1のマップとクリア条件</strong></p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/stages/stage_3-1.png" alt="ステージ3-1のマップ" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ステージ3-1のマップ</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>クリア条件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アイテム</td>
+<td>1個ゲットする</td>
+</tr>
+<tr>
+<td>ブロック数</td>
+<td>7個以下</td>
+</tr>
+<tr>
+<td>ターン数</td>
+<td>100ターン以内</td>
+</tr>
+</tbody>
+</table>
+<p>黄色の枠が自分（Cool）のスタート位置です。すべての条件を同時に満たすとクリアです。</p>
+<!-- /stage-info -->
 <h4>💡 考えるヒント</h4>
 <ul>
 <li>3章で学んだ「周辺情報を取得する」ブロックと、「もし〜なら」ブロックを組み合わせます。</li>
@@ -117,6 +147,36 @@
 </ul>
 <h3>3-2 もし〜なら、そうでなくもし〜（if〜elif）</h3>
 <p><strong>課題</strong>：3つの状況を優先順位付きで判定するプログラムを作ろう。「近くにアイテムがあれば取りに行く。なければ上がブロックかどうかを確認して、ブロックなら別方向へ、そうでなければ上へ進む」という判断をしたい。</p>
+<!-- stage-info:3-2 -->
+<p><strong>ステージ3-2のマップとクリア条件</strong></p>
+<figure class="my-6 flex flex-col items-center">
+<img src="../images/guide/part2/stages/stage_3-2.png" alt="ステージ3-2のマップ" style="width:80%;max-width:640px" class="rounded-lg border border-gray-200 shadow-sm" loading="lazy">
+<figcaption class="mt-2 text-sm text-gray-500">ステージ3-2のマップ</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>クリア条件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アイテム</td>
+<td>6個ゲットする</td>
+</tr>
+<tr>
+<td>ブロック数</td>
+<td>7個以下</td>
+</tr>
+<tr>
+<td>ターン数</td>
+<td>100ターン以内</td>
+</tr>
+</tbody>
+</table>
+<p>黄色の枠が自分（Cool）のスタート位置です。すべての条件を同時に満たすとクリアです。</p>
+<!-- /stage-info -->
 <h4>💡 考えるヒント</h4>
 <ul>
 <li>条件が2つ（if〜else）ではなく3つ以上になるとき、「もし〜なら」ブロックには条件を追加できる仕組みがあります。ツールボックスや、ブロック左上の設定アイコン（⚙）を確認してみましょう。</li>

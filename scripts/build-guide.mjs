@@ -245,8 +245,10 @@ function foldMatchingSections(html, predicate, { requireAny = null, summaryLabel
   return html;
 }
 
+// CHaser-Book側の改行コードはCRLFになっていることがあり、見出し抽出・正規表現の
+// 前提(LF)が崩れるため、読み込み時に必ずLFへ正規化する。
 function readManuscript(relPath) {
-  return fs.readFileSync(path.join(BOOK_ROOT, relPath), 'utf8');
+  return fs.readFileSync(path.join(BOOK_ROOT, relPath), 'utf8').replace(/\r\n/g, '\n');
 }
 
 // ---------------------------------------------------------------------------
@@ -255,7 +257,7 @@ function readManuscript(relPath) {
 
 function buildChapterHtml(ed, entry) {
   const mdAbsPath = path.join(BOOK_ROOT, entry.md);
-  let raw = fs.readFileSync(mdAbsPath, 'utf8');
+  let raw = fs.readFileSync(mdAbsPath, 'utf8').replace(/\r\n/g, '\n');
   raw = stripLeadingH1(raw);
   raw = convertImages(raw, mdAbsPath, ed.root);
   let html = renderMarkdown(raw);
@@ -403,7 +405,7 @@ function renderShell(ed, { slug, title, description, breadcrumb, contentHtml, sp
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title} | ${ed.siteName} | U-15 プログラミングコンテスト 舞鶴大会</title>
+  <title>${title} | ${ed.siteName}</title>
   <meta name="description" content="${description}">
   <link rel="icon" href="${ed.root}images/favicon.ico" sizes="any">
   <link rel="icon" href="${ed.root}images/icon.svg" type="image/svg+xml">
